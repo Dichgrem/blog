@@ -62,6 +62,7 @@ RSSHub是一个开源项目，旨在为用户提供一个集中化、可定制�
 社区参与： RSSHub是一个社区驱动的项目，有很多开发者和贡献者参与其中。社区可以通过GitHub进行讨论、报告问题和提交代码。
 
 部署方式： RSSHub可以自行部署，用户可以在自己的服务器上搭建RSSHub实例，以便更好地控制和定制生成的RSS源。
+![image-wbsl.webp](https://pic.dich.ink/1/2024/03/06/65e86657a4cc2.webp)
 
 确定RSS客户端
 
@@ -198,10 +199,13 @@ docker-compose up -d
 三.Miniflux的使用方法
 
 首先，初次登陆会弹出注册界面，注册为管理员账户；随后进入主页，可以看到：
+![image-eiye.webp](https://pic.dich.ink/1/2024/03/06/65e8667b963e1.webp)
 
 在设置中可以在集成中连接你自己的工作流，以及设置Api密钥便于客户端登陆，还可以添加用户来多人协作。
+![image-hqtj.webp](https://pic.dich.ink/1/2024/03/06/65e866764fcc5.webp)
 
 在源+中可以添加新源，并自动帮你查找网址中的RSS链接;也可以批量导入已有的订阅列表：
 
 完成后我们可以在客户端进行连接，当然如果就一台设备的话也不用服务端同步。如图所示，以Fluent Reader为例，输入刚刚的网址和用户名-密码，即可同步。
+![image-fozk.webp](https://pic.dich.ink/1/2024/03/06/65e86679ca967.webp)
 

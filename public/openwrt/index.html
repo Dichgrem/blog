@@ -104,16 +104,23 @@
 <p>4.一个U盘与一台双网口物理机</p>
 <p>安装流程：</p>
 <p>一、进入PE环境：</p>
-<p>1.打开微PE，将其安装进U盘中，安装完成后将ing工具和openwrt包一起放进去；</p>
-<p>2.将U盘插入目标主机，进入BIOS-boot设置U盘优先启动，各主板进入BIOS按键不同，不确定的话建议都试一遍。</p>
-<p>二、格式化硬盘并写盘</p>
-<p>1.进入PE环境中，可以看到存在名为“分区助手”的软件，打开它并将目标主机硬盘格式化；注意不要分区！不要分区！不要设置文件系统！否则后续可能无法编译！</p>
-<p>点击左上角提交并执行</p>
-<p>2.打开img写盘工具，将openwrt包写入硬盘，注意不要写进U盘里。</p>
-<p>三、进入配置界面</p>
-<p>1.重启系统并快速拔出U盘，避免重新进入PE；这时系统开始运行了。注意Esir固件是不跑码的，无需担心。</p>
-<p>2.当看到please press Enter to activate this console这个提示的时候系统就安装完毕了。可使用passwd命令设置密码。软路由将自动获取IP地址，随后我们在浏览器中打开该地址，即可看到Lucl界面。</p>
-<p>后记</p>
+<p>1.打开微PE，将其安装进U盘中，安装完成后将ing工具和openwrt包一起放进去；
+<img src="https://pic.dich.ink/1/2024/03/06/65e8665416902.webp" alt="image-xgsv.webp" />
+2.将U盘插入目标主机，进入BIOS-boot设置U盘优先启动，各主板进入BIOS按键不同，不确定的话建议都试一遍。
+<img src="https://pic.dich.ink/1/2024/03/06/65e8665ae2917.webp" alt="image-uxcl.webp" />
+二、格式化硬盘并写盘</p>
+<p>1.进入PE环境中，可以看到存在名为“分区助手”的软件，打开它并将目标主机硬盘格式化；注意不要分区！不要分区！不要设置文件系统！否则后续可能无法编译！
+<img src="https://pic.dich.ink/1/2024/03/06/65e8666fc739c.webp" alt="image-lxgv.webp" />
+点击左上角提交并执行
+<img src="https://pic.dich.ink/1/2024/03/06/65e8667fc956e.webp" alt="image-efkt.webp" />
+2.打开img写盘工具，将openwrt包写入硬盘，注意不要写进U盘里。
+<img src="https://pic.dich.ink/1/2024/03/06/65e86669be5c8.webp" alt="image-otsu.webp" />
+三、进入配置界面</p>
+<p>1.重启系统并快速拔出U盘，避免重新进入PE；这时系统开始运行了。注意Esir固件是不跑码的，无需担心。
+<img src="https://pic.dich.ink/1/2024/03/06/65e8666b11d79.webp" alt="image-ogrk.webp" />
+2.当看到please press Enter to activate this console这个提示的时候系统就安装完毕了。可使用passwd命令设置密码。软路由将自动获取IP地址，随后我们在浏览器中打开该地址，即可看到Lucl界面。
+<img src="https://pic.dich.ink/1/2024/03/06/65e86687ef0fc.webp" alt="image-ariu.webp" />
+后记</p>
 <p>开源世界还存在着 DD-WERT、Tomato等系统。正如互联网的发展并非一帆风顺，OpenWRT 也出现过核心开发者出走，另立山头推出 LEDE等波折，在18年LEDE与openwrt合并后，通过众多开发者的不懈努力， OpenWRT 有了现在丰富完善的生态。</p>
 <p>官方Wiki：https://openwrt.org/zh/start</p>
 
@@ -126,13 +133,6 @@
                 <hr />
             </div>
             <div class="pagination__buttons">
-                    <span class="button previous">
-                        <a href="https://blog.dich.ink/dsm-nas/">
-                            <span class="button__icon">←</span>&nbsp;
-                            <span class="button__text">黑群辉极速安装</span>
-                        </a>
-                    </span>
-                
                 
                     <span class="button next">
                         <a href="https://blog.dich.ink/android-tv/">

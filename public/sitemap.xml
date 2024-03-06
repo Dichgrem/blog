@@ -23,10 +23,6 @@
         <lastmod>2023-08-08</lastmod>
     </url>
     <url>
-        <loc>https://blog.dich.ink/arch-install/</loc>
-        <lastmod>2023-08-05</lastmod>
-    </url>
-    <url>
         <loc>https://blog.dich.ink/archive/</loc>
     </url>
     <url>
@@ -40,10 +36,6 @@
     <url>
         <loc>https://blog.dich.ink/chromebook/</loc>
         <lastmod>2023-08-12</lastmod>
-    </url>
-    <url>
-        <loc>https://blog.dich.ink/dsm-nas/</loc>
-        <lastmod>2023-08-07</lastmod>
     </url>
     <url>
         <loc>https://blog.dich.ink/mechrev-keyboard/</loc>
@@ -71,9 +63,6 @@
     </url>
     <url>
         <loc>https://blog.dich.ink/page/5/</loc>
-    </url>
-    <url>
-        <loc>https://blog.dich.ink/page/6/</loc>
     </url>
     <url>
         <loc>https://blog.dich.ink/podcast-use/</loc>
@@ -111,9 +100,6 @@
         <loc>https://blog.dich.ink/tags/android/</loc>
     </url>
     <url>
-        <loc>https://blog.dich.ink/tags/arch-install/</loc>
-    </url>
-    <url>
         <loc>https://blog.dich.ink/tags/calling-cards/</loc>
     </url>
     <url>
@@ -121,9 +107,6 @@
     </url>
     <url>
         <loc>https://blog.dich.ink/tags/debain/</loc>
-    </url>
-    <url>
-        <loc>https://blog.dich.ink/tags/dsm-nas/</loc>
     </url>
     <url>
         <loc>https://blog.dich.ink/tags/keyboard/</loc>
@@ -165,13 +148,6 @@
         <loc>https://blog.dich.ink/tags/wifi/</loc>
     </url>
     <url>
-        <loc>https://blog.dich.ink/tags/win-linux/</loc>
-    </url>
-    <url>
         <loc>https://blog.dich.ink/tags/working/</loc>
-    </url>
-    <url>
-        <loc>https://blog.dich.ink/win-linux/</loc>
-        <lastmod>2023-08-23</lastmod>
     </url>
 </urlset>

@@ -250,27 +250,6 @@
         
     </entry>
     <entry xml:lang="en">
-        <title>Win定制+linux双系统</title>
-        <published>2023-08-23T00:00:00+00:00</published>
-        <updated>2023-08-23T00:00:00+00:00</updated>
-        
-        <author>
-          <name>
-            
-              Unknown
-            
-          </name>
-        </author>
-        
-        <link rel="alternate" type="text/html" href="https://blog.dich.ink/win-linux/"/>
-        <id>https://blog.dich.ink/win-linux/</id>
-        
-        <summary type="html">&lt;p&gt;前言&lt;&#x2F;p&gt;
-&lt;p&gt;对于同时有着游戏和Linux环境需求的玩家来说，双系统似乎是其必经之路；而主流设备中两块的硬盘位也为双系统的安装提供了支持。本文以Revios+Garuda的安装为例介绍双系统的安装。&lt;&#x2F;p&gt;
-</summary>
-        
-    </entry>
-    <entry xml:lang="en">
         <title>ChromeBook研究记</title>
         <published>2023-08-12T00:00:00+00:00</published>
         <updated>2023-08-12T00:00:00+00:00</updated>
@@ -350,49 +329,6 @@
         
         <summary type="html">&lt;p&gt;前言&lt;&#x2F;p&gt;
 &lt;p&gt;openwrt是一个自由的、兼容性好的嵌入式linux发行版。作为软路由玩家必备的一款神器，可以实现诸如去广告，多拨和科学上网等多种功能。本文以openwrt在X86平台的安装为例，介绍其部署流程。&lt;&#x2F;p&gt;
-</summary>
-        
-    </entry>
-    <entry xml:lang="en">
-        <title>黑群辉极速安装</title>
-        <published>2023-08-07T00:00:00+00:00</published>
-        <updated>2023-08-07T00:00:00+00:00</updated>
-        
-        <author>
-          <name>
-            
-              Unknown
-            
-          </name>
-        </author>
-        
-        <link rel="alternate" type="text/html" href="https://blog.dich.ink/dsm-nas/"/>
-        <id>https://blog.dich.ink/dsm-nas/</id>
-        
-        <summary type="html">&lt;p&gt;前言&lt;&#x2F;p&gt;
-&lt;p&gt;作为NAS家族中的重要一员，Synology的DSM以完善的服务和较高的售价闻名于世，因此，一般玩家倾向于工控机加黑群晖的方案组建自己的文件服务器。本文就黑群辉安装做了详细阐述。&lt;&#x2F;p&gt;
-</summary>
-        
-    </entry>
-    <entry xml:lang="en">
-        <title>Arch从命令行安装</title>
-        <published>2023-08-05T00:00:00+00:00</published>
-        <updated>2023-08-05T00:00:00+00:00</updated>
-        
-        <author>
-          <name>
-            
-              Unknown
-            
-          </name>
-        </author>
-        
-        <link rel="alternate" type="text/html" href="https://blog.dich.ink/arch-install/"/>
-        <id>https://blog.dich.ink/arch-install/</id>
-        
-        <summary type="html">&lt;p&gt;前言&lt;&#x2F;p&gt;
-&lt;p&gt;Arch linux是一个轻量、灵活、滚动更新的 Linux 发行版，衍生了诸多优秀的桌面端linux。其官方Wiki更是被称为技术界的“武林秘籍”；&lt;&#x2F;p&gt;
-&lt;p&gt;但由于该Wiki的中文版比较陈旧，安装教程不太清楚，故先以虚拟机安装Arch为例实际操作一番。&lt;&#x2F;p&gt;
 </summary>
         
     </entry>

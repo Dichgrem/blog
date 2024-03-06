@@ -34,31 +34,33 @@ ATV Launcher: https://www.fenxm.com/592.html
 一、写盘，BIOS启动
 
 1.使用Rufus将下载好的ATV镜像写入U盘。
-
+![image-tlej.webp](https://pic.dich.ink/1/2024/03/06/65e8665dd27b9.webp)
 2.将U盘插到目标主机上，并设置BIOS-boot优先启动，不同设备进入BIOS的按键不同，大部分是F2或者DEL；
 
 二、开始安装
 
 1.boot成功后可以看到如下界面：
-
+![image-mvrh.webp](https://pic.dich.ink/1/2024/03/06/65e8666eac466.webp)
 2.我们选择自动安装：
-
+![image-yudd.webp](https://pic.dich.ink/1/2024/03/06/65e86651a32f2.webp)
 3.经过跑码后进入若干个选项，一路yes过去，文件系统选ext4;
-
+![image-zycr.webp](https://pic.dich.ink/1/2024/03/06/65e8664cc6063.webp)
+![image-hesu.webp](https://pic.dich.ink/1/2024/03/06/65e86677e6b6c.webp)
+![image-xgcp.webp](https://pic.dich.ink/1/2024/03/06/65e86653ab2b1.webp)
 随后运行ATV，并拔出U盘；
-
+![image-hwoz.webp](https://pic.dich.ink/1/2024/03/06/65e866762b828.webp)
 三、进入Google界面
 
 由于国内网络环境问题，导致一些界面无法进入，可使用如下方法或全局科学。
 
 1.如果卡在Google的logo界面或者动画比较缓慢，或者重启后无法进入ATV界面，需要在BIOS-Advanced-OS selection中将其设置为Windows 8.X或者Android。
-
+![image-ckgi.webp](https://pic.dich.ink/1/2024/03/06/65e866840ebf2.webp)
 2.然后可以看到PayPal界面，这里使用可以Ctrl+Alt+F1 进入命令行界面，随后输入
 
 pm disable com.tosanthony.tv.networkprovider #注意空格
 
 回车执行，随后按Ctrl+Alt+F7或F8回到图形界面。
-
+![image-rdqf.webp](https://pic.dich.ink/1/2024/03/06/65e8666529ea7.webp)
 3.下一步，我们可以看到自动更新界面，这里我们需要禁用它：
 
 同样Ctrl+Alt+F1 进入命令行界面，随后输入
@@ -66,17 +68,18 @@ pm disable com.tosanthony.tv.networkprovider #注意空格
 pm disable com.google.android.tungsten.setupwraith #注意空格
 
 回车执行，随后按Ctrl+Alt+F7或F8回到图形界面。
-
+![image-chcc.webp](https://pic.dich.ink/1/2024/03/06/65e866843a99e.webp)
 4.此时会进入一个WiFi界面，如果你是使用网线直连就没有问题，或者用键盘连接家里的WiFi，作者因为工控机没有WiFi模块在这里卡了半天。
 
 5.现在我们可以看到进入了ATV的桌面。
-
+![image-fjzc.webp](https://pic.dich.ink/1/2024/03/06/65e8667b8c994.webp)
 四、安装软件并设置桌面启动
 
 1.首先我们在设置中找到“设置”>“设备首选项”>“关于”，然后在“构建”上点击几次以解锁“开发人员”选项，随后开启USB调试开关。
-
+![image-ylsa.webp](https://pic.dich.ink/1/2024/03/06/65e86652f1a2a.webp)
+![image-vtwo.webp](https://pic.dich.ink/1/2024/03/06/65e86651ded04.webp)
 2.随后在设置 > 设备首选项 > 关于 > 状态中找到并记下IP 地址，然后用Tiny ADB连接上去，这里使用命令adb connect <IP 地址> 。 ，随后在ATV端授权连接；
-
+![image-mgql.webp](https://pic.dich.ink/1/2024/03/06/65e8666eec785.webp)
 3.接着使用命令adb install <path to android app.apk>将要安装的软件包上传，也可以将文件拖到命令提示符窗口上以复制其路径，回车确认。
 
 附一些ADB常用命令：
@@ -104,7 +107,7 @@ reboot
 pm disable-user --user 0 com.google.android.tvlauncher 
 
 命令，禁用google默认的桌面。随后重启，即可看到如下海报墙：
-
+![image-vjkj.webp](https://pic.dich.ink/1/2024/03/06/65e86648d6dcb.webp)
 后记
 
 Android TV google官方TV库

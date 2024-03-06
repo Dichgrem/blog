@@ -95,12 +95,14 @@
             <p>前言</p>
 <p>假期将至，不少家里有闲置设备的小伙伴想尝试开设一个我的世界（Minecraft）服务器，却不知从何下手。本文以PVE-Debian-MCSM为主线介绍其部署流程。</p>
 <span id="continue-reading"></span>
-<p>什么是PVE？</p>
-<p>PVE (全称 Proxmox Virtual Environment) 是一款开源免费的虚拟化环境平台，同时支持KVM 虚拟机和 LXC 容器。它基于 Debian 和 KVM 技术开发，可在一台 PC 或服务器上同时运行Linux、OpenWRT、Windows 等，实现计算、网络、存储一体化解决方案，即所谓的“all in one”。类似的平台还有ESXi、Unraid等。</p>
-<p>什么是MCSM？</p>
+<p>什么是PVE？
+PVE (全称 Proxmox Virtual Environment) 是一款开源免费的虚拟化环境平台，同时支持KVM 虚拟机和 LXC 容器。它基于 Debian 和 KVM 技术开发，可在一台 PC 或服务器上同时运行Linux、OpenWRT、Windows 等，实现计算、网络、存储一体化解决方案，即所谓的“all in one”。类似的平台还有ESXi、Unraid等。
+<img src="https://pic.dich.ink/1/2024/03/06/65e866888f518.webp" alt="image-acze.webp" />
+什么是MCSM？</p>
 <p>MCSManager 面板（简称：MCSM 面板）是一款全中文，轻量级，开箱即用，多实例和支持 Docker 的 Minecraft 服务端管理面板。</p>
-<p>此软件在 Minecraft 和其他游戏社区内中已有一定的流行程度，它可以帮助你集中管理多个物理服务器，动态在任何主机上创建游戏服务端，并且提供安全可靠的多用户权限系统，可以很轻松的帮助你管理多个服务器。</p>
-<p>具体步骤：安装PVE并优化，开设虚拟机并安装Debian，安装mscm界面并开设实例，配置网络服务。</p>
+<p>此软件在 Minecraft 和其他游戏社区内中已有一定的流行程度，它可以帮助你集中管理多个物理服务器，动态在任何主机上创建游戏服务端，并且提供安全可靠的多用户权限系统，可以很轻松的帮助你管理多个服务器。
+<img src="https://pic.dich.ink/1/2024/03/06/65e86679bf8aa.webp" alt="image-gfvh.webp" />
+具体步骤：安装PVE并优化，开设虚拟机并安装Debian，安装mscm界面并开设实例，配置网络服务。</p>
 <p>准备工作</p>
 <p>1.PVE镜像，推荐使用7.4版本 https://www.proxmox.com/en/downloads</p>
 <p>2.Debian镜像：https://mirrors.tuna.tsinghua.edu.cn/debian/dists/ （不建议使用DVD版，会出现奇怪的问题。）</p>
@@ -109,16 +111,25 @@
 <p>5.MC启动器HMCL：https://hmcl.huangyuhui.net/</p>
 <p>6.Zerotier客户端：https://www.zerotier.com/download/</p>
 <p>一.安装PVE并优化</p>
-<p>1.将下载好的镜像用Rufus写入U盘。</p>
-<p>2.将U盘插到目标主机上面，进入BIOS-boot设置启动顺序。这里我使用二手浪潮服务器X99主板，矿龙电源以及一块128G的SSD固态。注意：大部分服务器主板有机箱入侵检测机制，需要在说明书中找到特定针脚并用导电帽盖上，否则无法开机。</p>
-<p>3.进入安装界面，选择install；</p>
-<p>随后跑码，进入如下界面，同意协议：</p>
-<p>设置硬盘与文件类型，可以选择ext4或者btrfs;</p>
-<p>选择国家与地区，这里需要手打出China；</p>
-<p>随后设置密码与邮件，邮件可以随便填：</p>
-<p>然后设置网络连接，这里插网线就有地址；设置主机名，并记下内网IP地址；</p>
-<p>检查无误后开始安装：</p>
-<p>安装完成后reboot。</p>
+<p>1.将下载好的镜像用Rufus写入U盘。
+<img src="https://pic.dich.ink/1/2024/03/06/65e8666328232.webp" alt="image-rzsv.webp" />
+2.将U盘插到目标主机上面，进入BIOS-boot设置启动顺序。这里我使用二手浪潮服务器X99主板，矿龙电源以及一块128G的SSD固态。注意：大部分服务器主板有机箱入侵检测机制，需要在说明书中找到特定针脚并用导电帽盖上，否则无法开机。</p>
+<p>3.进入安装界面，选择install；
+<img src="https://pic.dich.ink/1/2024/03/06/65e86672288a5.webp" alt="image-jnjm.webp" />
+随后跑码，进入如下界面，同意协议：
+<img src="https://pic.dich.ink/1/2024/03/06/65e8665e5bea6.webp" alt="image-tuay.webp" />
+设置硬盘与文件类型，可以选择ext4或者btrfs;
+<img src="https://pic.dich.ink/1/2024/03/06/65e8667524dfc.webp" alt="image-jmqb.webp" />
+选择国家与地区，这里需要手打出China；
+<img src="https://pic.dich.ink/1/2024/03/06/65e86688bc677.webp" alt="image-bjtq.webp" />
+随后设置密码与邮件，邮件可以随便填：
+<img src="https://pic.dich.ink/1/2024/03/06/65e8666ca9d1c.webp" alt="image-nyjm.webp" />
+然后设置网络连接，这里插网线就有地址；设置主机名，并记下内网IP地址；
+<img src="https://pic.dich.ink/1/2024/03/06/65e8667d982ed.webp" alt="image-exsk.webp" />
+检查无误后开始安装：
+<img src="https://pic.dich.ink/1/2024/03/06/65e86670b1d4d.webp" alt="image-lizj.webp" />
+<img src="https://pic.dich.ink/1/2024/03/06/65e866883d700.webp" alt="image-alwv.webp" />
+安装完成后reboot。</p>
 <p>4.浏览器打开PVE地址，进入系统后我们需要给PVE换源。</p>
 <p>首先，移除(备份)一下 PVE 原始的官方源 (将 sources.list 改名为 sources.list.bak)</p>
 <p>mv /etc/apt/sources.list /etc/apt/sources.list.bak</p>
@@ -140,18 +151,31 @@
 <p>更新测试：</p>
 <p>apt-get update</p>
 <p>二.新建虚拟机并安装Debian</p>
-<p>1.找到local-btrfs(pve),在其中的ISO中上传下载好的Debian镜像；</p>
-<p>2.随后创建虚拟机，选择Debian镜像并设置CPU核数与硬盘、内存大小；</p>
-<p>3.一路确认后开机进入命令行界面，即可开始Debian安装。我们选择graphical install：</p>
-<p>4.选择国家和语言，随后自动配置网络；</p>
-<p>5.设置主机名，跳过域名设置；设置root账户名和密码、普通用户账户名与密码；</p>
-<p>6.对磁盘进行分区，由于是虚拟机我们选择使用整个磁盘；</p>
-<p>7.安装基本系统，随后将进入包管理器和大组件安装；</p>
-<p>我们选择清华源，速度较快。注意：Debian安装时默认开启安全源，这个源是国外的所以下载速度极慢，因此还需要修改配置文件，这里使用Ctrl+Alt+F2 从图形界面转到tty命令终端, 键入 Enter，使用命令nano /target/etc/apt/sources.list，将所有的源都改成 http://mirrors.ustc.edu.cn 或者清华源，然后Ctrl+X 退出保存， Ctrl+Alt+F5回到图形界面。</p>
-<p>下载需要一些时间，此时可以饮口茶先，随后看到如下界面：</p>
-<p>由于是服务器所以不需要桌面环境：</p>
-<p>安装grub引导：</p>
-<p>随后安装完成，reboot后进入mscm的安装。</p>
+<p>1.找到local-btrfs(pve),在其中的ISO中上传下载好的Debian镜像；
+<img src="https://pic.dich.ink/1/2024/03/06/65e8665b63a68.webp" alt="image-umwh.webp" />
+2.随后创建虚拟机，选择Debian镜像并设置CPU核数与硬盘、内存大小；
+<img src="https://pic.dich.ink/1/2024/03/06/65e8665280168.webp" alt="image-yqwh.webp" />
+3.一路确认后开机进入命令行界面，即可开始Debian安装。我们选择graphical install：
+<img src="https://pic.dich.ink/1/2024/03/06/65e866531e486.webp" alt="image-xxnf.webp" />
+4.选择国家和语言，随后自动配置网络；
+<img src="https://pic.dich.ink/1/2024/03/06/65e8668621c39.webp" alt="image-btiq.webp" />
+5.设置主机名，跳过域名设置；设置root账户名和密码、普通用户账户名与密码；
+<img src="https://pic.dich.ink/1/2024/03/06/65e866513265d.webp" alt="image-ziat.webp" />
+<img src="https://pic.dich.ink/1/2024/03/06/65e86686bb058.webp" alt="image-byig.webp" />
+6.对磁盘进行分区，由于是虚拟机我们选择使用整个磁盘；
+<img src="https://pic.dich.ink/1/2024/03/06/65e866874398d.webp" alt="image-bsyh.webp" />
+<img src="https://pic.dich.ink/1/2024/03/06/65e86677d1a34.webp" alt="image-hihs.webp" />
+7.安装基本系统，随后将进入包管理器和大组件安装；
+<img src="https://pic.dich.ink/1/2024/03/06/65e8667090f06.webp" alt="image-ldsc.webp" />
+我们选择清华源，速度较快。注意：Debian安装时默认开启安全源，这个源是国外的所以下载速度极慢，因此还需要修改配置文件，这里使用Ctrl+Alt+F2 从图形界面转到tty命令终端, 键入 Enter，使用命令nano /target/etc/apt/sources.list，将所有的源都改成 http://mirrors.ustc.edu.cn 或者清华源，然后Ctrl+X 退出保存， Ctrl+Alt+F5回到图形界面。
+<img src="https://pic.dich.ink/1/2024/03/06/65e8665b075cf.webp" alt="image-uphv.webp" />
+下载需要一些时间，此时可以饮口茶先，随后看到如下界面：
+<img src="https://pic.dich.ink/1/2024/03/06/65e86657265a4.webp" alt="image-whqy.webp" />
+由于是服务器所以不需要桌面环境：
+<img src="https://pic.dich.ink/1/2024/03/06/65e8666556171.webp" alt="image-qhns.webp" />
+安装grub引导：
+<img src="https://pic.dich.ink/1/2024/03/06/65e8665c6a5c2.webp" alt="image-ujgc.webp" />
+随后安装完成，reboot后进入mscm的安装。</p>
 <p>三.安装MCSM并开设实例</p>
 <p>1.开机进入tty1界面</p>
 <p>2.安装JAVA环境，不同版本的游戏的Java版本也不同。这里我们使用1.19版，需要安装Java18。</p>
@@ -175,9 +199,11 @@
 <p>wget -qO- https://gitee.com/mcsmanager/script/raw/master/setup.sh | bash</p>
 <p>执行完成后，使用 systemctl start mcsm-{web,daemon} 即可启动面板服务。使用 systemctl enable mcsm-{daemon,web}.service 实现开机自启。</p>
 <p>5.在浏览器中打开该地址加上23333端口后缀，即可看到面板，账户为root，密码为123456。</p>
-<p>6.新建实例，上传Purpur1.19 服务端,设置名称随后开启实例</p>
-<p>7.随后我们可以在配置文件中设置游戏的相关选项，如关闭正版验证等。</p>
-<p>8.大功告成，此时打开HMCL启动器，即可加入游戏。</p>
+<p>6.新建实例，上传Purpur1.19 服务端,设置名称随后开启实例
+<img src="https://pic.dich.ink/1/2024/03/06/65e8665e659d2.webp" alt="image-taez.webp" />
+7.随后我们可以在配置文件中设置游戏的相关选项，如关闭正版验证等。
+<img src="https://pic.dich.ink/1/2024/03/06/65e86663a7b22.webp" alt="image-sgzp.webp" />
+8.大功告成，此时打开HMCL启动器，即可加入游戏。</p>
 <p>四.配置联机网络</p>
 <p>1.此时不要忘记需要和小伙伴们一起玩耍。如果你家里有公网固定IPv4或者IPv6，直接输入联机即可；如果没有公网IP，此时就需要进行内网穿透或者DDNS。</p>
 <p>这里介绍一种名为zerotier的工具。</p>
