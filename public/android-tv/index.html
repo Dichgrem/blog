@@ -89,10 +89,10 @@
     
 
         <div class="post-content">
-            <p>前言：由于AppleTV的高昂的售价和普通电视盒子广告的泛滥，一台开源、多功能的原生安卓电视盒子逐渐成为智能家居的必备神器。出于对IPTV、YouTube和家庭影院等需求，以及对一面赏心悦目电视墙的期待，这里分享Android TV （以下简称ATV）安装的一些要点。</p>
-<span id="continue-reading"></span>
-<p>准备工作：
-1.一个ATV镜像，这里使用Tosathony制作的Android TV x86 9.0， 支持Android tv Remote，且可以下载Google Play Store 。https://pan.baidu.com/s/17eDDrf4WzWVmrc9hLw-c_w?pwd=a728</p>
+            <h2 id="qian-yan">前言</h2>
+<p>由于AppleTV的高昂的售价和普通电视盒子广告的泛滥，一台开源、多功能的原生安卓电视盒子逐渐成为智能家居的必备神器。出于对IPTV、YouTube和家庭影院等需求，以及对一面赏心悦目电视墙的期待，这里分享Android TV （以下简称ATV）安装的一些要点。</p>
+<span id="continue-reading"></span><h2 id="zhun-bei-gong-zuo">准备工作：</h2>
+<p>1.一个ATV镜像，这里使用Tosathony制作的Android TV x86 9.0， 支持Android tv Remote，且可以下载Google Play Store 。https://pan.baidu.com/s/17eDDrf4WzWVmrc9hLw-c_w?pwd=a728</p>
 <p>2.我们的老朋友Rufus写盘工具：https://www.423down.com/10080.html</p>
 <p>3.Android tv Remote手机遥控器软件：https://android-tv-remote-control.en.softonic.com/android</p>
 <p>4.Tiny ADB软件: https://androidmtk.com/tiny-adb-and-fastboot-tool#installer</p>
@@ -101,17 +101,17 @@
 <p>哔哩哔哩TV版：https://www.fenxm.com/104.html</p>
 <p>kodi: http://www.kodiplayer.cn/</p>
 <p>ATV Launcher: https://www.fenxm.com/592.html</p>
-<p>安装流程：
-一、写盘，BIOS启动
-1.使用Rufus将下载好的ATV镜像写入U盘。</p>
+<p>安装流程：</p>
+<h2 id="yi-xie-pan-biosqi-dong">一、写盘，BIOS启动</h2>
+<p>1.使用Rufus将下载好的ATV镜像写入U盘。</p>
 <p>2.将U盘插到目标主机上，并设置BIOS-boot优先启动，不同设备进入BIOS的按键不同，大部分是F2或者DEL；</p>
-<p>二、开始安装
-1.boot成功后可以看到如下界面：</p>
+<h2 id="er-kai-shi-an-zhuang">二、开始安装</h2>
+<p>1.boot成功后可以看到如下界面：</p>
 <p>2.我们选择自动安装：</p>
 <p>3.经过跑码后进入若干个选项，一路yes过去，文件系统选ext4;</p>
 <p>随后运行ATV，并拔出U盘；</p>
-<p>三、进入Google界面
-由于国内网络环境问题，导致一些界面无法进入，可使用如下方法或全局科学。</p>
+<h2 id="san-jin-ru-googlejie-mian">三、进入Google界面</h2>
+<p>由于国内网络环境问题，导致一些界面无法进入，可使用如下方法或全局科学。</p>
 <p>1.如果卡在Google的logo界面或者动画比较缓慢，或者重启后无法进入ATV界面，需要在BIOS-Advanced-OS selection中将其设置为Windows 8.X或者Android。</p>
 <p>2.然后可以看到PayPal界面，这里使用可以Ctrl+Alt+F1 进入命令行界面，随后输入</p>
 <p>pm disable com.tosanthony.tv.networkprovider #注意空格
@@ -122,8 +122,8 @@
 回车执行，随后按Ctrl+Alt+F7或F8回到图形界面。</p>
 <p>4.此时会进入一个WiFi界面，如果你是使用网线直连就没有问题，或者用键盘连接家里的WiFi，作者因为工控机没有WiFi模块在这里卡了半天。</p>
 <p>5.现在我们可以看到进入了ATV的桌面。</p>
-<p>四、安装软件并设置桌面启动
-1.首先我们在设置中找到“设置”&gt;“设备首选项”&gt;“关于”，然后在“构建”上点击几次以解锁“开发人员”选项，随后开启USB调试开关。</p>
+<h2 id="si-an-zhuang-ruan-jian-bing-she-zhi-zhuo-mian-qi-dong">四、安装软件并设置桌面启动</h2>
+<p>1.首先我们在设置中找到“设置”&gt;“设备首选项”&gt;“关于”，然后在“构建”上点击几次以解锁“开发人员”选项，随后开启USB调试开关。</p>
 <p>2.随后在设置 &gt; 设备首选项 &gt; 关于 &gt; 状态中找到并记下IP 地址，然后用Tiny ADB连接上去，这里使用命令adb connect &lt;IP 地址&gt; 。 ，随后在ATV端授权连接；</p>
 <p>3.接着使用命令adb install <path to android app.apk>将要安装的软件包上传，也可以将文件拖到命令提示符窗口上以复制其路径，回车确认。</p>
 <p>附一些ADB常用命令：</p>
@@ -139,8 +139,8 @@
 5.安装一些软件包后我们发现需要代替掉ATV自带的桌面，从而形成海报墙的效果，这和linux的桌面环境切换有异曲同工之处。注意：替换前需要已经安装完成其他桌面！！！！（比如ATV Launcher）我们使用</p>
 <p>pm disable-user --user 0 com.google.android.tvlauncher 
 命令，禁用google默认的桌面。随后重启，即可看到如下海报墙：</p>
-<p>后记
-Android TV google官方TV库</p>
+<h2 id="hou-ji">后记</h2>
+<p>Android TV google官方TV库</p>
 <p>https://github.com/googlesamples/leanback-showcase</p>
 <p>智能电视，电视盒子开发SDK</p>
 <p>https://github.com/boxmate/tvframe</p>

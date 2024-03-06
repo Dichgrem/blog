@@ -6,9 +6,10 @@ date = 2023-08-08
 tags = ["android-TV"]
 +++
 
-前言：由于AppleTV的高昂的售价和普通电视盒子广告的泛滥，一台开源、多功能的原生安卓电视盒子逐渐成为智能家居的必备神器。出于对IPTV、YouTube和家庭影院等需求，以及对一面赏心悦目电视墙的期待，这里分享Android TV （以下简称ATV）安装的一些要点。
+## 前言 
+由于AppleTV的高昂的售价和普通电视盒子广告的泛滥，一台开源、多功能的原生安卓电视盒子逐渐成为智能家居的必备神器。出于对IPTV、YouTube和家庭影院等需求，以及对一面赏心悦目电视墙的期待，这里分享Android TV （以下简称ATV）安装的一些要点。
 <!-- more -->
-准备工作：
+## 准备工作：
 1.一个ATV镜像，这里使用Tosathony制作的Android TV x86 9.0， 支持Android tv Remote，且可以下载Google Play Store 。https://pan.baidu.com/s/17eDDrf4WzWVmrc9hLw-c_w?pwd=a728
 
 2.我们的老朋友Rufus写盘工具：https://www.423down.com/10080.html
@@ -28,14 +29,14 @@ kodi: http://www.kodiplayer.cn/
 ATV Launcher: https://www.fenxm.com/592.html
 
 安装流程：
-一、写盘，BIOS启动
+## 一、写盘，BIOS启动
 1.使用Rufus将下载好的ATV镜像写入U盘。
 
 
 
 2.将U盘插到目标主机上，并设置BIOS-boot优先启动，不同设备进入BIOS的按键不同，大部分是F2或者DEL；
 
-二、开始安装
+## 二、开始安装
 1.boot成功后可以看到如下界面：
 
 
@@ -54,7 +55,7 @@ ATV Launcher: https://www.fenxm.com/592.html
 
 
 
-三、进入Google界面
+## 三、进入Google界面
 由于国内网络环境问题，导致一些界面无法进入，可使用如下方法或全局科学。
 
 1.如果卡在Google的logo界面或者动画比较缓慢，或者重启后无法进入ATV界面，需要在BIOS-Advanced-OS selection中将其设置为Windows 8.X或者Android。
@@ -83,7 +84,7 @@ pm disable com.google.android.tungsten.setupwraith #注意空格
 
 
 
-四、安装软件并设置桌面启动
+## 四、安装软件并设置桌面启动
 1.首先我们在设置中找到“设置”>“设备首选项”>“关于”，然后在“构建”上点击几次以解锁“开发人员”选项，随后开启USB调试开关。
 
 
@@ -121,7 +122,7 @@ pm disable-user --user 0 com.google.android.tvlauncher
 
 
 
-后记
+## 后记
 Android TV google官方TV库
 
 https://github.com/googlesamples/leanback-showcase

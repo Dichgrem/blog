@@ -6,7 +6,7 @@ date = 2023-08-11
 tags = ["PVE","Debain"]
 +++
 
-前言
+## 前言
 假期将至，不少家里有闲置设备的小伙伴想尝试开设一个我的世界（Minecraft）服务器，却不知从何下手。本文以PVE-Debian-MCSM为主线介绍其部署流程。
 <!-- more -->
 什么是PVE？
@@ -25,7 +25,7 @@ MCSManager 面板（简称：MCSM 面板）是一款全中文，轻量级，开�
 
 具体步骤：安装PVE并优化，开设虚拟机并安装Debian，安装mscm界面并开设实例，配置网络服务。
 
-准备工作
+## 准备工作
 1.PVE镜像，推荐使用7.4版本 https://www.proxmox.com/en/downloads
 
 2.Debian镜像：https://mirrors.tuna.tsinghua.edu.cn/debian/dists/ （不建议使用DVD版，会出现奇怪的问题。）
@@ -38,7 +38,7 @@ MCSManager 面板（简称：MCSM 面板）是一款全中文，轻量级，开�
 
 6.Zerotier客户端：https://www.zerotier.com/download/
 
-一.安装PVE并优化
+## 一.安装PVE并优化
 1.将下载好的镜像用Rufus写入U盘。
 
 
@@ -107,7 +107,7 @@ nano /etc/apt/sources.list.d/pve-enterprise.list
 更新测试：
 
 apt-get update
-二.新建虚拟机并安装Debian
+## 二.新建虚拟机并安装Debian
 1.找到local-btrfs(pve),在其中的ISO中上传下载好的Debian镜像；
 
 
@@ -160,7 +160,7 @@ apt-get update
 
 随后安装完成，reboot后进入mscm的安装。
 
-三.安装MCSM并开设实例
+## 三.安装MCSM并开设实例
 1.开机进入tty1界面
 
 
@@ -214,7 +214,7 @@ wget -qO- https://gitee.com/mcsmanager/script/raw/master/setup.sh | bash
 
 
 
-四.配置联机网络
+## 四.配置联机网络
 1.此时不要忘记需要和小伙伴们一起玩耍。如果你家里有公网固定IPv4或者IPv6，直接输入联机即可；如果没有公网IP，此时就需要进行内网穿透或者DDNS。
 
 这里介绍一种名为zerotier的工具。

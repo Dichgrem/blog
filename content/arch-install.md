@@ -6,7 +6,7 @@ date = 2023-08-05
 tags = ["arch-install"]
 +++
 
-前言
+## 前言
 Arch linux是一个轻量、灵活、滚动更新的 Linux 发行版，衍生了诸多优秀的桌面端linux。其官方Wiki更是被称为技术界的“武林秘籍”；
 
 但由于该Wiki的中文版比较陈旧，安装教程不太清楚，故先以虚拟机安装Arch为例实际操作一番。
@@ -19,7 +19,7 @@ VM学习版：https://www.ahhhhfs.com/33472/
 
 官方镜像： https://geo.mirror.pkgbuild.com/iso/2023.08.01/
 
-一.新建虚拟机
+## 一.新建虚拟机
 1.打开VM，文件—新建虚拟机—典型—下一步，对于硬盘要求建议至少20G，作为后续分区使用；CPU及内存根据实际需求分配，一般取半数。
 
 注意：完成后需先在编辑虚拟机设置—选项中设置引导为UEFI，否则会导致奇怪的Boot问题。
@@ -32,7 +32,7 @@ VM学习版：https://www.ahhhhfs.com/33472/
 
 
 
-二.联网并分区
+## 二.联网并分区
 1.使用 dhcpcd 命令获取IP地址，由于虚拟机使用NAT故联网容易。
 
 2.使用 ping www.baidu.com 命令检查是否联网，若出现ttl,time=xx ms等数据说明成功，随后再 Ctrl+C 停止命令运行，避免百度被DDOS攻击死掉。
@@ -83,7 +83,7 @@ mount /dev/sda1 /mnt/boot/EFI
 ls /mnt
 完成后即可开始组件下载。
 
-三.安装基本组件
+## 三.安装基本组件
 1.使用大名鼎鼎的vim编辑器，将下载镜像源改为国内，提高下载速度
 
 vim /etc/pacman.d/mirrorlist
@@ -153,7 +153,7 @@ reboot # 重启
 
 
 
-四.安装图形界面
+## 四.安装图形界面
 为便于在虚拟机中操作，我们可以安装KDE-plasma，Xfce等桌面环境。
 
 1.使用dhcpcd获得地址。
@@ -192,5 +192,5 @@ systemctl enable sddm
 systemctl start sddm
 7.reboot后进入桌面环境，安装完成。
 
-后记
+## 后记
 设备的多样导致安装中可能会出现一些奇怪的问题，需要自行搜索学习，以不断提高技术水平。

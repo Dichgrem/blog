@@ -6,7 +6,7 @@ date = 2023-08-08
 tags = ["openwrt"]
 +++
 
-前言
+## 前言
 openwrt是一个自由的、兼容性好的嵌入式linux发行版。作为软路由玩家必备的一款神器，可以实现诸如去广告，多拨和科学上网等多种功能。本文以openwrt在X86平台的安装为例，介绍其部署流程。
 <!-- more -->
 为什么是X86？
@@ -26,7 +26,7 @@ https://drive.google.com/drive/folders/1uRXg_krKHPrQneI3F2GNcSVRoCgkqESr
 4.一个U盘与一台双网口物理机
 
 安装流程：
-一、进入PE环境：
+## 一、进入PE环境：
 1.打开微PE，将其安装进U盘中，安装完成后将ing工具和openwrt包一起放进去；
 
 
@@ -35,7 +35,7 @@ https://drive.google.com/drive/folders/1uRXg_krKHPrQneI3F2GNcSVRoCgkqESr
 
 
 
-二、格式化硬盘并写盘
+## 二、格式化硬盘并写盘
 1.进入PE环境中，可以看到存在名为“分区助手”的软件，打开它并将目标主机硬盘格式化；注意不要分区！不要分区！不要设置文件系统！否则后续可能无法编译！
 
 
@@ -48,7 +48,7 @@ https://drive.google.com/drive/folders/1uRXg_krKHPrQneI3F2GNcSVRoCgkqESr
 
 
 
-三、进入配置界面
+## 三、进入配置界面
 1.重启系统并快速拔出U盘，避免重新进入PE；这时系统开始运行了。注意Esir固件是不跑码的，无需担心。
 
 
@@ -57,7 +57,7 @@ https://drive.google.com/drive/folders/1uRXg_krKHPrQneI3F2GNcSVRoCgkqESr
 
 
 
-后记
+## 后记
 开源世界还存在着 DD-WERT、Tomato等系统。正如互联网的发展并非一帆风顺，OpenWRT 也出现过核心开发者出走，另立山头推出 LEDE等波折，在18年LEDE与openwrt合并后，通过众多开发者的不懈努力， OpenWRT 有了现在丰富完善的生态。
 
 官方Wiki：https://openwrt.org/zh/start

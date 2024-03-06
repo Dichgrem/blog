@@ -6,7 +6,7 @@ date = 2023-08-07
 tags = ["DSM-NAS"]
 +++
 
-前言
+## 前言
 作为NAS家族中的重要一员，Synology的DSM以完善的服务和较高的售价闻名于世，因此，一般玩家倾向于工控机加黑群晖的方案组建自己的文件服务器。本文就黑群辉安装做了详细阐述。
 <!-- more -->
 准备工作：需要一个U盘，一台主机(包括屏幕与键盘)以及至少一块硬盘。
@@ -23,7 +23,7 @@ tags = ["DSM-NAS"]
 
 安装流程：ISO镜像烧入，BIOS启动，选择版本编译安装，进入群辉界面安装DSM。
 
-一.ISO镜像烧入
+## 一.ISO镜像烧入
 首先我们从 https://www.52pojie.cn/thread-1745197-1-1.html 下载arpl-1.0-beta2.img文件，随后通过写盘工具（这里推荐Rufus）将该文件写入U盘中
 
 Rufus: https://www.423down.com/10080.html
@@ -32,7 +32,7 @@ Rufus: https://www.423down.com/10080.html
 
 注意U盘将被格式化，随后我们弹出U盘，并将其插到主机上面。
 
-二.BIOS启动，编译安装
+## 二.BIOS启动，编译安装
 开机并按F2或DEL键进入BIOS，设置boot顺序为U盘优先，随后可进入如下界面：
 
 
@@ -67,7 +67,7 @@ PS：群晖设备型号与套件架构参表.https://www.shenzhuohl.com/syno_lis
 
 
 
-三.进入群辉界面安装DSM
+## 三.进入群辉界面安装DSM
 进入刚刚看到的内网地址（或用群辉助手 https://finds.synology.com/ #自动查找），可以看到如下界面：
 
 
@@ -80,6 +80,6 @@ PS：群晖设备型号与套件架构参表.https://www.shenzhuohl.com/syno_lis
 
 
 
-后记
+## 后记
 黑群辉的一些功能缺失，因此套件中心是可玩性的集中体现，推荐 https://imnks.com/1780.html 添加该源开始你的NAS之旅吧！
 
