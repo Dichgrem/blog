@@ -31,13 +31,13 @@ ATV Launcher: https://www.fenxm.com/592.html
 
 安装流程：
 
-一、写盘，BIOS启动
+## 一、写盘，BIOS启动
 
 1.使用Rufus将下载好的ATV镜像写入U盘。
 ![image-tlej.webp](https://pic.dich.ink/1/2024/03/06/65e8665dd27b9.webp)
 2.将U盘插到目标主机上，并设置BIOS-boot优先启动，不同设备进入BIOS的按键不同，大部分是F2或者DEL；
 
-二、开始安装
+## 二、开始安装
 
 1.boot成功后可以看到如下界面：
 ![image-mvrh.webp](https://pic.dich.ink/1/2024/03/06/65e8666eac466.webp)
@@ -49,7 +49,7 @@ ATV Launcher: https://www.fenxm.com/592.html
 ![image-xgcp.webp](https://pic.dich.ink/1/2024/03/06/65e86653ab2b1.webp)
 随后运行ATV，并拔出U盘；
 ![image-hwoz.webp](https://pic.dich.ink/1/2024/03/06/65e866762b828.webp)
-三、进入Google界面
+## 三、进入Google界面
 
 由于国内网络环境问题，导致一些界面无法进入，可使用如下方法或全局科学。
 
@@ -73,7 +73,7 @@ pm disable com.google.android.tungsten.setupwraith #注意空格
 
 5.现在我们可以看到进入了ATV的桌面。
 ![image-fjzc.webp](https://pic.dich.ink/1/2024/03/06/65e8667b8c994.webp)
-四、安装软件并设置桌面启动
+## 四、安装软件并设置桌面启动
 
 1.首先我们在设置中找到“设置”>“设备首选项”>“关于”，然后在“构建”上点击几次以解锁“开发人员”选项，随后开启USB调试开关。
 ![image-ylsa.webp](https://pic.dich.ink/1/2024/03/06/65e86652f1a2a.webp)
@@ -108,7 +108,7 @@ pm disable-user --user 0 com.google.android.tvlauncher
 
 命令，禁用google默认的桌面。随后重启，即可看到如下海报墙：
 ![image-vjkj.webp](https://pic.dich.ink/1/2024/03/06/65e86648d6dcb.webp)
-后记
+## 后记
 
 Android TV google官方TV库
 

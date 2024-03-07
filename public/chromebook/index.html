@@ -101,7 +101,7 @@
 <p>不过，作为触摸屏和翻转本的结合，用来当阅读器、上网本和视频播放器以及盖泡面上实用性极强，在亚马逊的kindle退出中国市场后阅读器市场群魔乱舞，高昂的售价和低配的机型遍地横行；而一般的平板生态和手机重复，价格不菲；如果没有游戏需求，ChromeBook是不错的选择。</p>
 <p>到祸啦家人们！我们看看其实际效果究竟如何？首先映入眼帘的是经典的Chrome OS界面，这里注意登录需要有Google的账号（Gmail邮箱），如果暂时没有可以用访客模式登录，在该模式下的一切操作不会保存在硬盘（似乎很好的保护了隐私）；而在登录谷歌后，可以看到其完善的生态，包括原生的play商店、Chrome浏览器，Gmail邮箱等等。</p>
 <p>那么，ChromeBook有哪些玩法呢？</p>
-<p>一.进入开发者模式</p>
+<h2 id="yi-jin-ru-kai-fa-zhe-mo-shi">一.进入开发者模式</h2>
 <p>我们假设你已经有了一个Google账号，并在往期的博客中部署了openwrt，那么此时通过全局科学让chromebook联网，随后登录账号，此时我们完成了第一步；随后拆开后盖，拧下主板上的 BIOS 写保护螺丝。注意在拆卸背板的时候，有两颗螺丝藏在上侧脚垫下，需要先用工具去除脚垫再拆卸这两颗螺丝；下侧的两个脚垫下没有螺丝。如图所示：
 <img src="https://pic.dich.ink/1/2024/03/06/65e86662ed8c9.webp" alt="image-rybv.webp" />
 随后打开背板，卸下图示位置（在蒙皮下）的大螺丝：
@@ -120,8 +120,8 @@
 随后在设置-高级中可以看到开发者模式已打开，此时传到ChromeOS中的其他APP即可安装。</p>
 <p>附阅读器和视频效果：
 <img src="https://pic.dich.ink/1/2024/03/06/65e866580fe13.webp" alt="image-wuzq.webp" />
-<img src="https://pic.dich.ink/1/2024/03/06/65e86680d5edf.webp" alt="image-acav.webp" />
-二.安装其他系统</p>
+<img src="https://pic.dich.ink/1/2024/03/06/65e86680d5edf.webp" alt="image-acav.webp" /></p>
+<h2 id="er-an-zhuang-qi-ta-xi-tong">二.安装其他系统</h2>
 <p>如果你不喜欢ChromeOS或者需要linux环境，那么可以尝试安装其他系统，例如FydeOS,manjaro等。我们以crouton脚本为例（需要全局科学）：</p>
 <p>这里是crouton项目的github地址https://github.com/dnschneid/crouton</p>
 <p>由于我们已经进入开发者模式，这时打开chromeOS的浏览器，同时按住ctrl和alt和t，会打开一个命令行窗口。 输入命令 shell ，回车，之后会出现linux的真正命令行。随后安装crouton,如果你是用chromeOS下载的crouton，那么这个文件应该在~/Downloads目录下。 执行命令：</p>
@@ -144,7 +144,7 @@
 <img src="https://pic.dich.ink/1/2024/03/06/65e8666f76c3e.webp" alt="image-lroz.webp" />
 选择标注了“Full ROM”的选项，按照提示备份BIOS和刷入BIOS，随后reboot，然后可以按正常的装系统流程（Rufus写入ISO启动）</p>
 <p>注意：需要先删除ChromeBook的硬盘分区；仅支持UEFI启动，且Windows驱动不太完整。</p>
-<p>后记</p>
+<h2 id="hou-ji">后记</h2>
 <p>合适的设备总是相对而言的，只要符合需求即可，不必过多的追求工具的完美。</p>
 
         </div>

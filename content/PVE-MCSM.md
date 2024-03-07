@@ -11,10 +11,10 @@ tags = ["PVE","Debain"]
 
 假期将至，不少家里有闲置设备的小伙伴想尝试开设一个我的世界（Minecraft）服务器，却不知从何下手。本文以PVE-Debian-MCSM为主线介绍其部署流程。
 <!-- more -->
-什么是PVE？
+## 什么是PVE？
 PVE (全称 Proxmox Virtual Environment) 是一款开源免费的虚拟化环境平台，同时支持KVM 虚拟机和 LXC 容器。它基于 Debian 和 KVM 技术开发，可在一台 PC 或服务器上同时运行Linux、OpenWRT、Windows 等，实现计算、网络、存储一体化解决方案，即所谓的“all in one”。类似的平台还有ESXi、Unraid等。
 ![image-acze.webp](https://pic.dich.ink/1/2024/03/06/65e866888f518.webp)
-什么是MCSM？
+## 什么是MCSM？
 
 MCSManager 面板（简称：MCSM 面板）是一款全中文，轻量级，开箱即用，多实例和支持 Docker 的 Minecraft 服务端管理面板。
 
@@ -22,7 +22,7 @@ MCSManager 面板（简称：MCSM 面板）是一款全中文，轻量级，开�
 ![image-gfvh.webp](https://pic.dich.ink/1/2024/03/06/65e86679bf8aa.webp)
 具体步骤：安装PVE并优化，开设虚拟机并安装Debian，安装mscm界面并开设实例，配置网络服务。
 
-准备工作
+## 准备工作
 
 1.PVE镜像，推荐使用7.4版本 https://www.proxmox.com/en/downloads
 
@@ -36,7 +36,7 @@ MCSManager 面板（简称：MCSM 面板）是一款全中文，轻量级，开�
 
 6.Zerotier客户端：https://www.zerotier.com/download/
 
-一.安装PVE并优化
+## 一.安装PVE并优化
 
 1.将下载好的镜像用Rufus写入U盘。
 ![image-rzsv.webp](https://pic.dich.ink/1/2024/03/06/65e8666328232.webp)
@@ -99,7 +99,7 @@ nano /etc/apt/sources.list.d/pve-enterprise.list
 
 apt-get update
 
-二.新建虚拟机并安装Debian
+## 二.新建虚拟机并安装Debian
 
 1.找到local-btrfs(pve),在其中的ISO中上传下载好的Debian镜像；
 ![image-umwh.webp](https://pic.dich.ink/1/2024/03/06/65e8665b63a68.webp)
@@ -127,7 +127,7 @@ apt-get update
 ![image-ujgc.webp](https://pic.dich.ink/1/2024/03/06/65e8665c6a5c2.webp)
 随后安装完成，reboot后进入mscm的安装。
 
-三.安装MCSM并开设实例
+## 三.安装MCSM并开设实例
 
 1.开机进入tty1界面
 
@@ -179,7 +179,7 @@ wget -qO- https://gitee.com/mcsmanager/script/raw/master/setup.sh | bash
 ![image-sgzp.webp](https://pic.dich.ink/1/2024/03/06/65e86663a7b22.webp)
 8.大功告成，此时打开HMCL启动器，即可加入游戏。
 
-四.配置联机网络
+## 四.配置联机网络
 
 1.此时不要忘记需要和小伙伴们一起玩耍。如果你家里有公网固定IPv4或者IPv6，直接输入联机即可；如果没有公网IP，此时就需要进行内网穿透或者DDNS。
 

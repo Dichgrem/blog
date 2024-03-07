@@ -45,8 +45,8 @@
         <link rel="alternate" type="text/html" href="https://blog.dich.ink/routing/"/>
         <id>https://blog.dich.ink/routing/</id>
         
-        <summary type="html">&lt;p&gt;一.什么是无线路由&lt;&#x2F;p&gt;
-&lt;p&gt;所谓无线路由，就是具备无线覆盖的路由器，即我们常用的有天线的家用路由器。而家庭组网中，除了选择一个最合适的上网方案，一部好的路由器也是非常重要;那么，如何科学的选购路由器呢？&lt;&#x2F;p&gt;
+        <summary type="html">&lt;p&gt;前言
+所谓无线路由，就是具备无线覆盖的路由器，即我们常用的有天线的家用路由器。而家庭组网中，除了选择一个最合适的上网方案，一部好的路由器也是非常重要;那么，如何科学的选购路由器呢？&lt;&#x2F;p&gt;
 </summary>
         
     </entry>
@@ -87,9 +87,7 @@
         <link rel="alternate" type="text/html" href="https://blog.dich.ink/rss-read/"/>
         <id>https://blog.dich.ink/rss-read/</id>
         
-        <summary type="html">&lt;p&gt;一.什么是RSS&lt;&#x2F;p&gt;
-&lt;p&gt;如果你使用过类似红板报，轻芒杂志,摸鱼kiki,今日热榜等APP，应该对 RSS 并不陌生。&lt;&#x2F;p&gt;
-&lt;p&gt;RSS（Really Simple Syndication）是一种用于发布经常更新的内容的标准，通常用于博客、新闻网站和其他线上发布的信息。RSS允许用户订阅这些站点的内容，以便在内容有更新时，用户能够获得及时的通知。&lt;&#x2F;p&gt;
+        <summary type="html">&lt;p&gt;RSS提供了一种数据格式，以XML（可扩展标记语言）的形式组织信息，包括文章标题、摘要、链接和发布日期等。这些信息形成了所谓的“订阅源”（Feed），用户可以使用RSS阅读器（Feed Reader）来订阅这些源。&lt;&#x2F;p&gt;
 </summary>
         
     </entry>
@@ -110,7 +108,7 @@
         <id>https://blog.dich.ink/chatogpt/</id>
         
         <summary type="html">&lt;p&gt;本文翻译自《The Art of Asking ChatGPT for High-Quality Answers A Complete Guide to Prompt Engineering Techniques》&lt;&#x2F;p&gt;
-&lt;p&gt;第一章：Prompt 工程技术简介&lt;&#x2F;p&gt;
+&lt;h2 id=&quot;di-yi-zhang-prompt-gong-cheng-ji-shu-jian-jie&quot;&gt;第一章：Prompt 工程技术简介&lt;&#x2F;h2&gt;
 &lt;p&gt;什么是 Prompt 工程？&lt;&#x2F;p&gt;
 &lt;p&gt;Prompt 工程是创建提示或指导像 ChatGPT 这样的语言模型输出的过程。它允许用户控制模型的输出并生成符合其特定需求的文本。&lt;&#x2F;p&gt;
 &lt;p&gt;ChatGPT 是一种先进的语言模型，能够生成类似于人类的文本。它建立在 Transformer 架构上，可以处理大量数据并生成高质量的文本。&lt;&#x2F;p&gt;
@@ -133,10 +131,7 @@
         <link rel="alternate" type="text/html" href="https://blog.dich.ink/searching/"/>
         <id>https://blog.dich.ink/searching/</id>
         
-        <summary type="html">&lt;p&gt;一.历史&lt;&#x2F;p&gt;
-&lt;p&gt;1990年，当时人们依赖ftp协议共享文件资源。必须一字不差地输入文件名称，才能得到一个能下载该文件的ftp地址。&lt;&#x2F;p&gt;
-&lt;p&gt;1995年，风云一时的Yahoo诞生。当时Yahoo利用的是人工编辑导航目录的方式来给用户提供服务。但随着互联网上的web网站越来越多，传统的人力收录形式逐渐不再适用。&lt;&#x2F;p&gt;
-&lt;p&gt;1998年，全球最大的搜索引擎Google成立，一种查找网页的自动化程序也开始被应用，这种程序就叫爬虫。&lt;&#x2F;p&gt;
+        <summary type="html">&lt;p&gt;搜索引擎原理可以简单分为三个过程：爬行，索引，排名。&lt;&#x2F;p&gt;
 </summary>
         
     </entry>
@@ -156,7 +151,7 @@
         <link rel="alternate" type="text/html" href="https://blog.dich.ink/advertising-algorithms/"/>
         <id>https://blog.dich.ink/advertising-algorithms/</id>
         
-        <summary type="html">&lt;p&gt;一.广告算法与推荐算法的区别&lt;&#x2F;p&gt;
+        <summary type="html">&lt;h2 id=&quot;yi-yan-gao-suan-fa-yu-tui-jian-suan-fa-de-qu-bie&quot;&gt;一.广告算法与推荐算法的区别&lt;&#x2F;h2&gt;
 &lt;p&gt;1.优化目标的区别&lt;&#x2F;p&gt;
 &lt;p&gt;广告算法的目标是为了直接增加公司收入。&lt;&#x2F;p&gt;
 &lt;p&gt;推荐算法虽然本质上也是为了增加公司收入，但其直接目标是为了增加用户的参与度。&lt;&#x2F;p&gt;

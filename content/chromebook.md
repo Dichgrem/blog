@@ -25,7 +25,7 @@ ChromeBook作为国外一款定位为商务办公和学生入门的机器，其�
 
 那么，ChromeBook有哪些玩法呢？
 
-一.进入开发者模式
+## 一.进入开发者模式
 
 我们假设你已经有了一个Google账号，并在往期的博客中部署了openwrt，那么此时通过全局科学让chromebook联网，随后登录账号，此时我们完成了第一步；随后拆开后盖，拧下主板上的 BIOS 写保护螺丝。注意在拆卸背板的时候，有两颗螺丝藏在上侧脚垫下，需要先用工具去除脚垫再拆卸这两颗螺丝；下侧的两个脚垫下没有螺丝。如图所示：
 ![image-rybv.webp](https://pic.dich.ink/1/2024/03/06/65e86662ed8c9.webp)
@@ -48,7 +48,7 @@ ChromeBook作为国外一款定位为商务办公和学生入门的机器，其�
 附阅读器和视频效果：
 ![image-wuzq.webp](https://pic.dich.ink/1/2024/03/06/65e866580fe13.webp)
 ![image-acav.webp](https://pic.dich.ink/1/2024/03/06/65e86680d5edf.webp)
-二.安装其他系统
+## 二.安装其他系统
 
 如果你不喜欢ChromeOS或者需要linux环境，那么可以尝试安装其他系统，例如FydeOS,manjaro等。我们以crouton脚本为例（需要全局科学）：
 
@@ -92,6 +92,6 @@ sudo firmware-util.sh
 
 注意：需要先删除ChromeBook的硬盘分区；仅支持UEFI启动，且Windows驱动不太完整。
 
-后记
+## 后记
 
 合适的设备总是相对而言的，只要符合需求即可，不必过多的追求工具的完美。
