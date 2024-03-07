@@ -1,0 +1,228 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <title>Dich&#x27;blog</title>
+    
+    <meta http-equiv="content-type" content="text/html; charset=utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=5">
+    <meta name="robots" content="noodp"/>
+
+    <link rel="stylesheet" href="https://blog.dich.ink/style.css">
+    <link rel="stylesheet" href="https://blog.dich.ink/color/blue.css">
+
+        <link rel="stylesheet" href="https://blog.dich.ink/color/background_dark.css">
+    
+    <link rel="stylesheet" href="https://blog.dich.ink/font-hack-subset.css">
+
+    <meta name="description" content="">
+
+    <meta property="og:description" content="">
+    <meta property="og:title" content="Dich'blog">
+    <meta property="og:type" content="article">
+    <meta property="og:url" content="https://blog.dich.ink/advertising-algorithms/">
+
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:description" content="">
+    <meta name="twitter:title" content="Dich'blog">
+    <meta property="twitter:domain" content="blog.dich.ink">
+    <meta property="twitter:url" content="https://blog.dich.ink/advertising-algorithms/">
+
+            
+        <link rel="alternate" type="application/atom+xml" title="RSS" href="https://blog.dich.ink/atom.xml">
+    
+    </head>
+
+<body class="">
+<div class="container">
+    
+    <header class="header">
+        <div class="header__inner">
+            <div class="header__logo">
+                    
+                <a href="https://blog.dich.ink" style="text-decoration: none;">
+                    <div class="logo">
+                      
+                            Dich&#x27;blog
+                        
+                    </div>
+                </a>
+            </div>
+        </div>
+
+        
+        
+                <nav class="menu">
+            <ul class="menu__inner">
+                <li class="active"><a href="https://blog.dich.ink">blog</a></li>
+            
+                <li><a href="https://blog.dich.ink/tags">tags</a></li>
+            
+                <li><a href="https://blog.dich.ink/archive">archive</a></li>
+            
+                <li><a href="https://blog.dich.ink/about">about me</a></li>
+            
+                <li><a href="https://github.com/Dichgrem" target="_blank" rel="noopener noreferrer">github</a></li>
+            </ul>
+        </nav>
+    
+    
+        
+    </header>
+    
+
+    <div class="content">
+        
+    <div class="post">
+        
+    <h1 class="post-title"><a href="https://blog.dich.ink/advertising-algorithms/">广告推荐算法与实例</a></h1>
+    <div class="post-meta-inline">
+        
+    <span class="post-date">
+            2023-12-25
+        </span>
+
+    </div>
+
+    
+        <span class="post-tags-inline">
+                :: tags:&nbsp;
+                <a class="post-tag" href="https://blog.dich.ink/tags/advertising/">#Advertising</a>&nbsp;
+                <a class="post-tag" href="https://blog.dich.ink/tags/algorithms/">#algorithms</a></span>
+    
+
+        <div class="post-content">
+            <p>前言 广告算法的目标是为了直接增加公司收入。推荐算法虽然本质上也是为了增加公司收入，但其直接目标是为了增加用户的参与度。</p>
+<span id="continue-reading"></span><h2 id="yi-yan-gao-suan-fa-yu-tui-jian-suan-fa-de-qu-bie">一.广告算法与推荐算法的区别</h2>
+<p>1.优化目标的区别</p>
+<p>广告算法的目标是为了直接增加公司收入。</p>
+<p>推荐算法虽然本质上也是为了增加公司收入，但其直接目标是为了增加用户的参与度。</p>
+<p>各公司广告算法的预估目标非常统一，就是预估CTR和CVR，因为CPC和CPA计价是目前效果类广告系统的主流计价方式。</p>
+<p>推荐算法的预估目标就不尽相同，视频类更多倾向于预测观看时长，新闻类预测CTR，电商类预估客单价等等，都是针对业务场景来做优化</p>
+<p>2.算法模型设计侧重点不同：</p>
+<p>由于广告算法要预测“精准”的CTR和CVR，用于后续计算精确的出价，因此数值上的“精准”就是至关重要的要求，仅仅预估广告间的相对位置是无法满足要求的。这就催生了广告算法中对calibration方法的严苛要求，一定要估的准。</p>
+<p>推荐算法的结果往往以列表的形式呈现，因此不用估的那么准，而是要更多照顾一个列表整体上，甚至一段时间内的内容多样性上对于用户的“吸引力”，让用户的参与度更高。</p>
+<p>3.算法实现原理不同：</p>
+<p>因为需要对每一条广告的CTR，CVR都估的准，广告算法基本全部都是point wise的训练方式，因为广告是很少以列表的形式连续呈现的。在采用负采样，weighted sampling等方式改变原始数据分布后，也需要在后续步骤中千方百计地把CTR，CVR纠正过来。</p>
+<p>推荐算法就有大量不同的训练方式，除了point-wise，还有pair-wise，list-wise等等。此外为了增加用户的长期参与度，还对推荐内容的多样性，新鲜度有更高的要求，这就让探索与利用，强化学习等一些列方法在推荐场景下更受重视。</p>
+<p>4.辅助策略不同</p>
+<p>广告系统中，CTR等算法只是其中关键的一步，估的准CTR只是一个前提，如何让广告系统盈利，产生更多收入，还需要pacing，bidding，budget control，ads allocation等多个同样重要的模块协同作用，才能让平台利益最大化，这显然是比推荐系统复杂的。</p>
+<p>推荐系统中，由于需要更多照顾用户的长期兴趣，需要一些补充策略做出一些看似“非最优”的选择，比如探索性的尝试一些长尾内容，在生成整个推荐列表时要加入多样性的约束，等等。这一点上，广告系统也需要，但远没有推荐系统的重视程度高。</p>
+<p>5.本身的差异</p>
+<p>在广告模型中，用户的兴趣是不那么连贯的，因此容易造成sequential model的失效，attention机制可能会更加重要一些。</p>
+<p>推荐模型中，如果不抓住用户兴趣的连续变化，是很难做好推荐模型的。</p>
+<p>总而言之，广告算法的问题更加琐碎，各模块协同工作找到平台全局利润最大化方法的难度非常大，系统往往异常复杂到难以掌控的地步；而推荐算法这边，问题往往卡在长期利益与短期利益的平衡上。
+<img src="https://pic.dich.ink/1/2024/03/06/65e8664a7b760.webp" alt="v2-63ba4b30e68137b031601f44c5d34ef1_r.webp" /></p>
+<h2 id="ps-chang-yong-shu-yu">PS：常用术语</h2>
+<p>1.CPA(Cost Per Action) 每行动成本。CPA是一种按广告投放实际效果计价方式的广告，即按回应的有效问卷或注册来计费，而不限广告投放量。电子邮件营销（EDM）现在有很多都是CPA的方式在进行。</p>
+<p>2.CPS(Cost Per Sales)：以实际销售产品数量来换算广告刊登金额。CPS是一种以实际销售产品数量来计算广告费用的广告，这种广告更多的适合购物类、导购类、网址导航类的网站，需要精准的流量才能带来转化。</p>
+<p>3.CPM(Cost Per Mille) 每千人成本。CPM是一种展示付费广告，只要展示了广告主的广告内容，广告主就为此付费。</p>
+<p>4.CPT(Cost Per Time) 每时间段成本。CPT是一种以时间来计费的广告，国内很多的网站都是按照“一个星期多少钱”这种固定收费模式来收费。</p>
+<p>5.CPC(Cost Per Click) 每点击成本。CPC是一种点击付费广告，根据广告被点击的次数收费。如关键词广告一般采用这种定价模式，比较典型的有Google广告联盟的AdSense for Content和百度联盟的百度竞价广告。</p>
+<p>通过以上信息我们知道：</p>
+<p>（1）CPT和CPM只在第一步收取广告费用，即媒体只需要将广告对广告受众进行了展示，即可向广告商收取广告费用。</p>
+<p>（2）CPC只收取第二步费用，消费者看到广告后并进行了点击行为以后，媒体向广告商收取广告费用。</p>
+<p>（3）CPA和CPS处于第三步，即消费者有看到广告后并点击了广告，进一步了解活动情况后在广告主的网站完成某些特定行为（例如付款消费，填表注册等）。</p>
+<h2 id="er-chang-jian-de-tui-jian-suan-fa-you-na-xie">二.常见的推荐算法有哪些？</h2>
+<ol>
+<li>协同过滤（Collaborative Filtering）</li>
+</ol>
+<p>它是一种**基于用户行为或物品之间的相似性来进行推荐的方法。</p>
+<ol start="2">
+<li>矩阵分解（ Matrix Factorization ）</li>
+</ol>
+<p>它是一种用于处理稀疏数据的推荐算法。将用户-物品评分矩阵分解为低维的用户和物品隐向量，通过计算隐向量之间的内积来进行推荐。</p>
+<ol start="3">
+<li>深度学习推荐（ Deep Learning Recomendation ）</li>
+</ol>
+<p>它指使用深度神经网络来学习用户和物品之间的复杂关系。比如常见的多层感知机（ MLP ）、卷积神经网络（ CNN ）、循环神经网络（ RNN ）以及注意力机制等模型。</p>
+<ol start="4">
+<li>混合推荐（ Hybrid Recommendation ）</li>
+</ol>
+<p>顾名思义就是把多种推荐算法混合在一起进行训练，获得更优的结果。比如协调过滤可以和基于规则的推荐算法相结合，我们常逛的电商网站（淘宝、京东等）就有多种推荐算法，其中一种使用的就是混合算法。</p>
+<ol start="5">
+<li>基于内容的推荐（ Content-Based Recommendation ）</li>
+</ol>
+<p>它指根据用户的历史行为和物品的特征属性进行相似的推荐。</p>
+<ol start="6">
+<li>基于规则的推荐（ Rule-Based Recommendation ）</li>
+</ol>
+<p>它是使用预定义的规则（可以手动定义或数据挖掘再学习）或条件来进行推荐。
+<img src="https://pic.dich.ink/1/2024/03/06/65e8749416ee6.webp" alt="v2-2a278d7caf78cfa628749d772d358aec_1440w.webp" /></p>
+<h2 id="san-shi-li-fen-xi">三.实例分析</h2>
+<p>1.流量分级</p>
+<p>以视频平台B站和抖音为例，存在如下分级流量池机制：</p>
+<p>1.Up主发了一个视频，并推送到他的粉丝那里，算法抓取视频的一些特征（如标题和标签的关键字），向有可能对这些关键字感兴趣的人推荐；</p>
+<p>2.根据第一波推送的粉丝+用户的反馈数据（点赞、投币、收藏、完播、弹幕）的情况，B站根据推荐算法，再推荐给流量池B（其他用户），根据流量池B的用户反馈数据，再推荐到流量池C。</p>
+<p>3.如此不断的进行推荐，如果算法认为该视频是热门（视频分数达到某个级别），那么B站就会给你一个更大的流量池，并且把你的视频推荐到“热门、排行榜、资源位”。</p>
+<p>2.用户画像</p>
+<p>平台会记录用户使用App的习惯，得出用户行为路径，从而确定用户的初始标签，伴随着用户的持续使用，将持续优化标签。这个过程都是实时的机器算法。</p>
+<blockquote>
+<p>那么这个采集的方法：就是个人资料的填写，关键词搜索的记录，浏览的比较多的类目视频，点赞视频数据，评论数据，通讯录的圈子关系等。</p>
+</blockquote>
+<p>通过不断的标签优化升级后，呈现出来的用户标签就会越立体，我们也称之为用户画像；根据用户标签池，将拥有相同标签的用户画像的人汇聚在一起，成为社区。</p>
+<p>标签主要分成两大类：静态标签与动态标签。</p>
+<p>静态标签是用户主动呈现给平台的，例如初始关注，个人信息，个人昵称，喜好的频道，稍后再看，反馈以及不感兴趣等等；</p>
+<p>动态标签是用户在浏览平台时所产生的，主要是用户的行为特征，如阅读某一类标签视频时的停留时长，通过搜索功能提供的关键词等，包括搜索，评价，历史记录，稍后再看，离线缓存，我的收藏，以及最近看过的频道；收藏，点赞，投币，转发，三连操作等等。</p>
+<p>3.数据共享</p>
+<p>除了用户使用APP的行为习惯会被记录之外，使用同系其他产品的行为习惯也同样会共享。如头条系，阿里系，腾讯系等等。</p>
+<p>4.评论系统</p>
+<p>以B站阿瓦隆系统为例</p>
+<p>阿瓦隆系统是哔哩哔哩官方在2021年6月26日发布的[BILIBILI 12周年演讲]中提到的一项评论管理系统。然而，其上线后评论区和弹幕区的语言环境并没有得到明显改善，反而出现了一些问题。恶意评论，人身攻击，辱骂和水军行为并没有减少，相反，合理的言论却面临高概率的误判和清除，尤其是包含情绪或见解的评论。</p>
+<p>该系统的应用领域主要包括评论区、弹幕和私信。在直播评论区和弹幕上，实时审核是不可行的，因此系统选择将涉及不良内容的评论在所有人面前隐藏，除非是评论者本人。此外，在博主开启实时评论时，系统允许用户检查评论是否成功发布。</p>
+<p>评论处置方面，阿瓦隆系统采取了多种手段。首先，系统会发出警告，提示评论内容可能包含敏感信息，并阻止其发送。其次，评论可能被标记为“发送成功”但实际上被删除，仅评论者可见，这被称为“ShadowBan”。此外，系统还承认一种隐藏评论的机制，仅评论者可见，并在发布14天后自动删除，而up主可以选择公开这些评论。</p>
+<p>阿瓦隆系统的评论审查机制主要采用了正则表达式、人工审核以及AI神经网络审核。这些技术用于识别和过滤不良内容，提高了系统的智能性和效率。</p>
+<p>戒严机制是一种被动且隐性的评论区封锁，用户可能无法察觉到自己的评论受到了限制。这种机制可能在涉及争议性话题的评论区中发挥作用，甚至影响到up主的评论。至于是怎么被戒严的？或许这些由阿瓦隆自动识别并标记，或许在审核员的控制台上，有一个勾选框，可以将其评论区设置为戒严状态。</p>
+<p>至于评论被删除的具体条件和审查内容，目前尚不清楚。然而，已知系统审查包括政治敏感词以及一些特定词语的组合。评论越长，涉及的词语越多，越容易被系统审查。此外，特殊字符和emoji的使用也可能导致评论被删除或者仅对评论者可见。</p>
+<p>总体而言，阿瓦隆系统采用了复杂而高效的控评手段，使得用户可能不清楚其评论是否被删除。这种方法似乎在一定程度上成功，尽管一些用户可能对其审查的合理性产生质疑。</p>
+
+        </div>
+
+        
+        <div class="pagination">
+            <div class="pagination__title">
+                <span class="pagination__title-h">Thanks for reading! Read other posts?</span>
+                <hr />
+            </div>
+            <div class="pagination__buttons">
+                    <span class="button previous">
+                        <a href="https://blog.dich.ink/about-working/">
+                            <span class="button__icon">←</span>&nbsp;
+                            <span class="button__text">应届生工作指南</span>
+                        </a>
+                    </span>
+                
+                
+                    <span class="button next">
+                        <a href="https://blog.dich.ink/searching/">
+                            <span class="button__text">搜索引擎与爬虫</span>&nbsp;
+                            <span class="button__icon">→</span>
+                        </a>
+                    </span>
+                </div>
+        </div>
+    
+    </div>
+
+    </div>
+
+    
+    <footer class="footer">
+        <div class="footer__inner">
+                <div class="copyright">
+                        <span>© 
+    2024
+ Dichgrem</span>
+                    <span class="copyright-theme">
+                        <span class="copyright-theme-sep">:: </span>
+                        Theme: <a href="https://github.com/pawroman/zola-theme-terminimal/">Terminimal</a> by pawroman
+                    </span>
+                </div>
+            </div>
+    </footer>
+    
+
+</div>
+</body>
+
+</html>
