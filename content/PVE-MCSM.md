@@ -7,9 +7,7 @@ tags = ["PVE","Debain"]
 +++
 
 
-前言
-
-假期将至，不少家里有闲置设备的小伙伴想尝试开设一个我的世界（Minecraft）服务器，却不知从何下手。本文以PVE-Debian-MCSM为主线介绍其部署流程。
+前言 假期将至，不少家里有闲置设备的小伙伴想尝试开设一个我的世界（Minecraft）服务器，却不知从何下手。本文以PVE-Debian-MCSM为主线介绍其部署流程。
 <!-- more -->
 ## 什么是PVE？
 PVE (全称 Proxmox Virtual Environment) 是一款开源免费的虚拟化环境平台，同时支持KVM 虚拟机和 LXC 容器。它基于 Debian 和 KVM 技术开发，可在一台 PC 或服务器上同时运行Linux、OpenWRT、Windows 等，实现计算、网络、存储一体化解决方案，即所谓的“all in one”。类似的平台还有ESXi、Unraid等。

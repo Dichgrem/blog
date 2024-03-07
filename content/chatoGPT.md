@@ -7,8 +7,8 @@ tags = ["Prompt"]
 +++
 
 
-本文翻译自《The Art of Asking ChatGPT for High-Quality Answers A Complete Guide to Prompt Engineering Techniques》
-
+前言 本文翻译自《The Art of Asking ChatGPT for High-Quality Answers A Complete Guide to Prompt Engineering Techniques》
+<!-- more -->
 ## 第一章：Prompt 工程技术简介
 
 什么是 Prompt 工程？
@@ -16,7 +16,7 @@ tags = ["Prompt"]
 Prompt 工程是创建提示或指导像 ChatGPT 这样的语言模型输出的过程。它允许用户控制模型的输出并生成符合其特定需求的文本。
 
 ChatGPT 是一种先进的语言模型，能够生成类似于人类的文本。它建立在 Transformer 架构上，可以处理大量数据并生成高质量的文本。
-<!-- more -->
+
 然而，为了从 ChatGPT 中获得最佳结果，重要的是要了解如何正确地提示模型。 提示可以让用户控制模型的输出并生成相关、准确和高质量的文本。 在使用 ChatGPT 时，了解它的能力和限制非常重要。
 
 该模型能够生成类似于人类的文本，但如果没有适当的指导，它可能无法始终产生期望的输出。
