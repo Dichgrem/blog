@@ -65,6 +65,9 @@
         <loc>https://blog.dich.ink/page/5/</loc>
     </url>
     <url>
+        <loc>https://blog.dich.ink/page/6/</loc>
+    </url>
+    <url>
         <loc>https://blog.dich.ink/podcast-use/</loc>
         <lastmod>2024-01-20</lastmod>
     </url>
@@ -98,6 +101,9 @@
     </url>
     <url>
         <loc>https://blog.dich.ink/tags/android/</loc>
+    </url>
+    <url>
+        <loc>https://blog.dich.ink/tags/blog/</loc>
     </url>
     <url>
         <loc>https://blog.dich.ink/tags/calling-cards/</loc>
@@ -149,5 +155,12 @@
     </url>
     <url>
         <loc>https://blog.dich.ink/tags/working/</loc>
+    </url>
+    <url>
+        <loc>https://blog.dich.ink/tags/zola/</loc>
+    </url>
+    <url>
+        <loc>https://blog.dich.ink/zola-blog/</loc>
+        <lastmod>2024-03-12</lastmod>
     </url>
 </urlset>
