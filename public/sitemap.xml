@@ -112,6 +112,9 @@
         <loc>https://blog.dich.ink/tags/chromebook/</loc>
     </url>
     <url>
+        <loc>https://blog.dich.ink/tags/console/</loc>
+    </url>
+    <url>
         <loc>https://blog.dich.ink/tags/debain/</loc>
     </url>
     <url>
@@ -148,7 +151,13 @@
         <loc>https://blog.dich.ink/tags/searching/</loc>
     </url>
     <url>
+        <loc>https://blog.dich.ink/tags/shell/</loc>
+    </url>
+    <url>
         <loc>https://blog.dich.ink/tags/software/</loc>
+    </url>
+    <url>
+        <loc>https://blog.dich.ink/tags/terminal/</loc>
     </url>
     <url>
         <loc>https://blog.dich.ink/tags/wifi/</loc>
@@ -158,6 +167,10 @@
     </url>
     <url>
         <loc>https://blog.dich.ink/tags/zola/</loc>
+    </url>
+    <url>
+        <loc>https://blog.dich.ink/terminal-console-shell/</loc>
+        <lastmod>2024-03-12</lastmod>
     </url>
     <url>
         <loc>https://blog.dich.ink/zola-blog/</loc>

@@ -8,6 +8,26 @@
     <updated>2024-03-12T00:00:00+00:00</updated>
     <id>https://blog.dich.ink/atom.xml</id>
     <entry xml:lang="en">
+        <title>Terminal，Console and Shell</title>
+        <published>2024-03-12T00:00:00+00:00</published>
+        <updated>2024-03-12T00:00:00+00:00</updated>
+        
+        <author>
+          <name>
+            
+              Unknown
+            
+          </name>
+        </author>
+        
+        <link rel="alternate" type="text/html" href="https://blog.dich.ink/terminal-console-shell/"/>
+        <id>https://blog.dich.ink/terminal-console-shell/</id>
+        
+        <summary type="html">&lt;p&gt;前言 在linux的学习过程中，我们常常遇到诸如 Terminal，Console，bash,zsh,shell,tty 等概念，这些概念常常被混淆，似乎都和命令行相关。本文从历史角度出发介绍它们的前世今生。&lt;&#x2F;p&gt;
+</summary>
+        
+    </entry>
+    <entry xml:lang="en">
         <title>个人博客搭建记</title>
         <published>2024-03-12T00:00:00+00:00</published>
         <updated>2024-03-12T00:00:00+00:00</updated>
