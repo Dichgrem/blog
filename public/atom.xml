@@ -8,6 +8,26 @@
     <updated>2024-03-15T00:00:00+00:00</updated>
     <id>https://blog.dich.ink/atom.xml</id>
     <entry xml:lang="en">
+        <title>Git使用简明手册</title>
+        <published>2024-03-15T00:00:00+00:00</published>
+        <updated>2024-03-15T00:00:00+00:00</updated>
+        
+        <author>
+          <name>
+            
+              Unknown
+            
+          </name>
+        </author>
+        
+        <link rel="alternate" type="text/html" href="https://blog.dich.ink/git/"/>
+        <id>https://blog.dich.ink/git/</id>
+        
+        <summary type="html">&lt;p&gt;前言 Git，作为现代软件开发中不可或缺的版本控制工具，常常让初学者感到困惑。本文旨在介绍 Git 的全流程安装和基本使用，希望能够帮助新手更轻松地理解和掌握 Git 的基本概念和操作。&lt;&#x2F;p&gt;
+</summary>
+        
+    </entry>
+    <entry xml:lang="en">
         <title>BIOS-UEFI-MBR-GPT-GRUB</title>
         <published>2024-03-15T00:00:00+00:00</published>
         <updated>2024-03-15T00:00:00+00:00</updated>
