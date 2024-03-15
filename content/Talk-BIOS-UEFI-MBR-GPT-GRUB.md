@@ -1,5 +1,5 @@
 +++
-title = "Talkabout:BIOS-UEFI-MBR-GPT-GRUB"
+title = "BIOS-UEFI-MBR-GPT-GRUB"
 date = 2024-03-15
 
 [taxonomies]
