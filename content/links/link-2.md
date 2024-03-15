@@ -1,6 +1,6 @@
 +++
-title = "世纪大道 | 春风少年兄"
+title = "Ice Year の位面"
 weight = 2
 +++
 
-[blog.0pt.icu](https://blog.0pt.icu/)
+[blog.iceyear.eu.org](https://blog.iceyear.eu.org/)

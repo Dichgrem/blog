@@ -1,6 +1,6 @@
 +++
-title = "Ice Year の位面"
+title = "Yon Zilch"
 weight = 1
 +++
 
-[blog.iceyear.eu.org](https://blog.iceyear.eu.org/)
+[blog.yon.im/](https://blog.yon.im/)
