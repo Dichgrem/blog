@@ -5,8 +5,28 @@
     <link rel="self" type="application/atom+xml" href="https://blog.dich.ink/atom.xml"/>
     <link rel="alternate" type="text/html" href="https://blog.dich.ink"/>
     <generator uri="https://www.getzola.org/">Zola</generator>
-    <updated>2024-03-12T00:00:00+00:00</updated>
+    <updated>2024-03-15T00:00:00+00:00</updated>
     <id>https://blog.dich.ink/atom.xml</id>
+    <entry xml:lang="en">
+        <title>Talkabout:BIOS-UEFI-MBR-GPT-GRUB</title>
+        <published>2024-03-15T00:00:00+00:00</published>
+        <updated>2024-03-15T00:00:00+00:00</updated>
+        
+        <author>
+          <name>
+            
+              Unknown
+            
+          </name>
+        </author>
+        
+        <link rel="alternate" type="text/html" href="https://blog.dich.ink/talk-bios-uefi-mbr-gpt-grub/"/>
+        <id>https://blog.dich.ink/talk-bios-uefi-mbr-gpt-grub/</id>
+        
+        <summary type="html">&lt;p&gt;前言 在计算机领域，系统引导和磁盘分区是至关重要的。本文将介绍BIOS与UEFI，MBR与GPT，以及它们之间的异同点。此外，我们还会讨论与这些概念密切相关的引导加载程序——GRUB。&lt;&#x2F;p&gt;
+</summary>
+        
+    </entry>
     <entry xml:lang="en">
         <title>Terminal，Console and Shell</title>
         <published>2024-03-12T00:00:00+00:00</published>
@@ -28,7 +48,7 @@
         
     </entry>
     <entry xml:lang="en">
-        <title>个人博客搭建记</title>
+        <title>Personal Blog</title>
         <published>2024-03-12T00:00:00+00:00</published>
         <updated>2024-03-12T00:00:00+00:00</updated>
         

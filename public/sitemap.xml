@@ -114,6 +114,9 @@
         <loc>https://blog.dich.ink/tags/android/</loc>
     </url>
     <url>
+        <loc>https://blog.dich.ink/tags/bios/</loc>
+    </url>
+    <url>
         <loc>https://blog.dich.ink/tags/blog/</loc>
     </url>
     <url>
@@ -127,6 +130,9 @@
     </url>
     <url>
         <loc>https://blog.dich.ink/tags/debain/</loc>
+    </url>
+    <url>
+        <loc>https://blog.dich.ink/tags/grub/</loc>
     </url>
     <url>
         <loc>https://blog.dich.ink/tags/keyboard/</loc>
@@ -177,6 +183,9 @@
         <loc>https://blog.dich.ink/tags/terminal/</loc>
     </url>
     <url>
+        <loc>https://blog.dich.ink/tags/uefi/</loc>
+    </url>
+    <url>
         <loc>https://blog.dich.ink/tags/wifi/</loc>
     </url>
     <url>
@@ -184,6 +193,10 @@
     </url>
     <url>
         <loc>https://blog.dich.ink/tags/zola/</loc>
+    </url>
+    <url>
+        <loc>https://blog.dich.ink/talk-bios-uefi-mbr-gpt-grub/</loc>
+        <lastmod>2024-03-15</lastmod>
     </url>
     <url>
         <loc>https://blog.dich.ink/terminal-console-shell/</loc>
