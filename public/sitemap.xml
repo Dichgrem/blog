@@ -11,6 +11,10 @@
         <loc>https://blog.dich.ink/about/</loc>
     </url>
     <url>
+        <loc>https://blog.dich.ink/accurate-pronunciation/</loc>
+        <lastmod>2023-08-25</lastmod>
+    </url>
+    <url>
         <loc>https://blog.dich.ink/advertising-algorithms/</loc>
         <lastmod>2023-12-25</lastmod>
     </url>
@@ -70,6 +74,9 @@
     </url>
     <url>
         <loc>https://blog.dich.ink/page/6/</loc>
+    </url>
+    <url>
+        <loc>https://blog.dich.ink/page/7/</loc>
     </url>
     <url>
         <loc>https://blog.dich.ink/podcast-use/</loc>
@@ -141,6 +148,9 @@
     </url>
     <url>
         <loc>https://blog.dich.ink/tags/prompt/</loc>
+    </url>
+    <url>
+        <loc>https://blog.dich.ink/tags/pronunciation/</loc>
     </url>
     <url>
         <loc>https://blog.dich.ink/tags/pve/</loc>
