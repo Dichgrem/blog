@@ -68,6 +68,10 @@
         <loc>https://blog.dich.ink/page/6/</loc>
     </url>
     <url>
+        <loc>https://blog.dich.ink/podcast-use-copy/</loc>
+        <lastmod>2023-08-23</lastmod>
+    </url>
+    <url>
         <loc>https://blog.dich.ink/podcast-use/</loc>
         <lastmod>2024-01-20</lastmod>
     </url>
@@ -119,6 +123,9 @@
     </url>
     <url>
         <loc>https://blog.dich.ink/tags/keyboard/</loc>
+    </url>
+    <url>
+        <loc>https://blog.dich.ink/tags/kgnl/</loc>
     </url>
     <url>
         <loc>https://blog.dich.ink/tags/licenses/</loc>
