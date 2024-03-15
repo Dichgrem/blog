@@ -1,7 +1,7 @@
 # Be sure to change these!
 base_url = "https://blog.dich.ink"
 title = "Dich'blog"
-description = "description of your site"
+description = "用电子罗盘，转赛博核桃，勘电磁风水，寻网络龙脉"
 
 # Sass compilation is required
 compile_sass = true
