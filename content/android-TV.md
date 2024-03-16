@@ -106,6 +106,14 @@ reboot
 
 pm disable-user --user 0 com.google.android.tvlauncher 
 
+恢复原有桌面：
+
+``cpp
+C:\Users\root>adb shell
+generic_x86:/ $ su
+generic_x86:/ # pm enable --user 0 com.google.android.tvlauncher
+Package com.google.android.tvlauncher new state: enabled``
+
 命令，禁用google默认的桌面。随后重启，即可看到如下海报墙：
 ![image-vjkj.webp](https://pic.dich.ink/1/2024/03/06/65e86648d6dcb.webp)
 ## 后记

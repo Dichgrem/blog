@@ -156,6 +156,8 @@
 <p>reboot</p>
 <p>5.安装一些软件包后我们发现需要代替掉ATV自带的桌面，从而形成海报墙的效果，这和linux的桌面环境切换有异曲同工之处。注意：替换前需要已经安装完成其他桌面！！！！（比如ATV Launcher）我们使用 </p>
 <p>pm disable-user --user 0 com.google.android.tvlauncher </p>
+<p>恢复原有桌面：</p>
+<p><code>cpp C:\Users\root&gt;adb shell generic_x86:/ $ su generic_x86:/ # pm enable --user 0 com.google.android.tvlauncher Package com.google.android.tvlauncher new state: enabled</code></p>
 <p>命令，禁用google默认的桌面。随后重启，即可看到如下海报墙：
 <img src="https://pic.dich.ink/1/2024/03/06/65e86648d6dcb.webp" alt="image-vjkj.webp" /></p>
 <h2 id="hou-ji">后记</h2>
