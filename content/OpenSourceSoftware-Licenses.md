@@ -10,13 +10,13 @@ tags = ["open","software","licenses"]
 <!-- more -->
 在全球范围内，开源软件社区的活跃程度日益增长，吸引了来自不同领域的开发者和用户。然而，开源协议的法律实际应用在各国略有不同。
 
-中国开源第一案：【 https://linux.cn/article-11683-1.html 】
+中国开源第一案：`https://linux.cn/article-11683-1.html`
 
 ## 开源软件
 开源软件，顾名思义是指能够免费且不受限制地使用、再开发、再发布的软件。但在狭义上，只有符合开放源代码促进会（Open Source Initiative）定义的软件才能被称为开源软件。这个定义提出了十个特征，必须全部符合才能认定为开源软件。
 
 这些特征包括：
-
+```
 可自由再分发。
 
 提供源代码。
@@ -28,7 +28,7 @@ tags = ["open","software","licenses"]
 不得歧视特定人、群体或用途。
 
 必须「技术中立」等。
-
+```
 根据这些标准，一些看似自由使用的软件可能不符合开源软件的定义。例如，Elasticsearch原本使用Apache 2.0授权，是真正的开源软件。但面对云服务提供商如AWS等将其用于营利目的却不回馈改进的情况，Elasticsearch在2021年1月选择了SSPL（Server Side Public License，服务器端公共许可证）和Elastic License两种许可证并行；SSPL要求如果将程序的功能或修改后的版本作为服务提供给第三方，则必须免费公开提供服务源代码，这违背了开源软件的定义。另一方面，Elastic License要求不能向第三方提供主机或托管服务，也违反了开源软件的定义，因此也不算严格意义上的「开源」。
 
 ## 开源许可证
@@ -43,7 +43,7 @@ tags = ["open","software","licenses"]
 
 尽管开源许可证种类繁多，但绝大多数开源软件使用的都是几种常见的许可证之一。根据Whitesource的调查报告，90%左右的开源软件使用的是10个常见许可证之一。
 
-常见开源许可证
+## 常见开源许可证
 
 世界上的开源许可证（Open Source License）大概有上百种，而常见的开源协议大致有GPL、BSD、MIT、Mozilla、Apache和LGPL等。
 ![da68b98e404578126b87c5afd9ba9bc3.webp](https://pic.dich.ink/1/2024/03/06/65e86e88d8580.webp)

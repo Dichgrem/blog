@@ -15,15 +15,15 @@ tags = ["openwrt"]
 
 ## 准备工作
 
-1.openwrt的编译包，由eSir大佬编译的三个经典版本：
+- 1.openwrt的编译包，由eSir大佬编译的三个经典版本：
 
 https://drive.google.com/drive/folders/1uRXg_krKHPrQneI3F2GNcSVRoCgkqESr
 
-2.PE启动盘，这里推荐微PE：https://www.wepe.com.cn/download.html
+- 2.PE启动盘，这里推荐微PE：https://www.wepe.com.cn/download.html
 
-3.img写盘工具：https://www.roadkil.net/program.php?ProgramID=12#google_vignette
+- 3.img写盘工具：https://www.roadkil.net/program.php?ProgramID=12#google_vignette
 
-4.一个U盘与一台双网口物理机
+- 4.一个U盘与一台双网口物理机
 
 安装流程：
 
@@ -31,6 +31,7 @@ https://drive.google.com/drive/folders/1uRXg_krKHPrQneI3F2GNcSVRoCgkqESr
 
 1.打开微PE，将其安装进U盘中，安装完成后将ing工具和openwrt包一起放进去；
 ![image-xgsv.webp](https://pic.dich.ink/1/2024/03/06/65e8665416902.webp)
+
 2.将U盘插入目标主机，进入BIOS-boot设置U盘优先启动，各主板进入BIOS按键不同，不确定的话建议都试一遍。
 ![image-uxcl.webp](https://pic.dich.ink/1/2024/03/06/65e8665ae2917.webp)
 ## 二、格式化硬盘并写盘
@@ -51,5 +52,4 @@ https://drive.google.com/drive/folders/1uRXg_krKHPrQneI3F2GNcSVRoCgkqESr
 
 开源世界还存在着 DD-WERT、Tomato等系统。正如互联网的发展并非一帆风顺，OpenWRT 也出现过核心开发者出走，另立山头推出 LEDE等波折，在18年LEDE与openwrt合并后，通过众多开发者的不懈努力， OpenWRT 有了现在丰富完善的生态。
 
-官方Wiki：https://openwrt.org/zh/start
-
+``官方Wiki：https://openwrt.org/zh/start``

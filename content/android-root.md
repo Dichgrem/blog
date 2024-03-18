@@ -22,33 +22,35 @@ tags = ["android","root"]
 
 首先我们要了解安卓系统的分区和启动。安卓的分区包括
 
-1.recovery分区，类似PC端的PE环境，手机上的恢复出厂设置即为从recovery恢复；
+1. recovery分区，类似PC端的PE环境，手机上的恢复出厂设置即为从recovery恢复；
 
-2.cache分区，保存系统最常访问的数据和应用程序。 擦除这个分区，不会影响个人数据，只是删除了这个分区中已经保存的缓存内容；
+2. cache分区，保存系统最常访问的数据和应用程序。 擦除这个分区，不会影响个人数据，只是删除了这个分区中已经保存的缓存内容；
 
-3.boot分区，类似PC端的MBR分区，用来引导系统启动，擦除后手机会卡在开机logo的界面；
+3. boot分区，类似PC端的MBR分区，用来引导系统启动，擦除后手机会卡在开机logo的界面；
 
-4.system分区，包括操作系统与软件，vendor定制文件与库文件等等，擦除后会卡在开机的动画界面；
+4. system分区，包括操作系统与软件，vendor定制文件与库文件等等，擦除后会卡在开机的动画界面；
 
-5.data分区，存放用户数据和系统设置，擦除后不影响系统的运行。
+5. data分区，存放用户数据和系统设置，擦除后不影响系统的运行。
 
 6.手机启动阶段存在名为bootloader的程序，与PC端的BIOS类似，被称为fastboot模式，厂商一般会将其锁定。
+
 ![图片.webp](https://pic.dich.ink/1/2024/03/06/65e8668fbcf26.webp)
+
 早些年间，存在大量一键root，kingroot 之类的软件，可以直接刷写root包，获得root权限，但成功率不高；
 
 因此，现在主流的刷机步骤为
 
-1.解开bootloader，俗称解BL锁。
+1. 解开bootloader，俗称解BL锁。
 
-2.刷入第三方recovery，比如大名鼎鼎的TWRP；
+2. 刷入第三方recovery，比如大名鼎鼎的TWRP；
 
-3.进入recovery模式，通过TWRP刷入其他系统（可选），包括线刷和卡刷两种方法；
+3. 进入recovery模式，通过TWRP刷入其他系统（可选），包括线刷和卡刷两种方法；
 
-4.刷入Magisk(面具)工具，通过修补img文件获得root权限；
+4. 刷入Magisk(面具)工具，通过修补img文件获得root权限；
 
-5.安装Magisk模块和Lsposed框架（可在其中下载许多模块，推荐一键救砖，系统优化和root隐藏）
+5. 安装Magisk模块和Lsposed框架（可在其中下载许多模块，推荐一键救砖，系统优化和root隐藏）
 
-6.安装Momo软件检测系统环境是否正常。
+6. 安装Momo软件检测系统环境是否正常。
 
 ## 四.哪些机型可以root
 
@@ -66,17 +68,17 @@ tags = ["android","root"]
 ![图片-fvmc.webp](https://pic.dich.ink/1/2024/03/06/65e8669970621.webp)
 4.随后用数据线连接手机，用其中的一键刷写刷入TWRP；随后下载rom包，可以选择原版，官改版，海外版和类原生版。相关链接：
 
-https://miuiver.com/
+``https://miuiver.com/``
 
-https://mi.fiime.cn/Android
+``https://mi.fiime.cn/Android``
 
-这里选择 https://c.mi.com/global/miuidownload/index
+这里选择 ``https://c.mi.com/global/miuidownload/index``
 
 下载时注意一并下载boot.img文件，作为Magisk的修补用。然后下载Magisk包，与rom一起存入TF卡或者U盘中。
 
-Magisk : https://magisk.me/zip/
+Magisk : ``https://magisk.me/zip/``
 
-#注意，由于本机型为新型AB分区（https://www.jianshu.com/p/b2726b304801） 因此如果刷机失败，需要下载原厂包用以恢复AB分区，否则无法启动和安装rom。
+**注意，由于本机型为新型AB分区**（``https://www.jianshu.com/p/b2726b304801``） 因此如果刷机失败，需要下载原厂包用以恢复AB分区，否则无法启动和安装rom。
 
 5.通过搞机工具箱进入recovery模式，首先我们在wipe中清除Data、Cache两个分区，俗称“双清”，随后在高级清除选项中清除Data、Cache、Dalvik Cache和System分区，俗称“四清”。
 ![图片-jout.webp](https://pic.dich.ink/1/2024/03/06/65e86697464e1.webp)
@@ -85,20 +87,23 @@ Magisk : https://magisk.me/zip/
 ![图片-tabl.webp](https://pic.dich.ink/1/2024/03/06/65e86692414a8.webp)
 7.刷完之后重启，则会进入安装界面。注意：如果刷的是海外版的包，千万不能联网安装，否则会失败且变为国内版。
 
-#据说miui13以后优化不好，这里使用12.5版。
+**据说miui13以后优化不好，这里使用12.5版。**
 ![图片-aquy.webp](https://pic.dich.ink/1/2024/03/06/65e8669b8dcb6.webp)
+
 随后可以看到桌面环境
 ![图片-ozqh.webp](https://pic.dich.ink/1/2024/03/06/65e86694ddf8e.webp)
+
 8.此刻我们将下载好的boot.img文件复制到手机上，打开Magisk软件，在其中选择修补一个文件，选中boot.img，修复完成后可以看到超级用户一栏可以使用了，说明root完成。
+
 ![图片-ufkn.webp](https://pic.dich.ink/1/2024/03/06/65e8669197f5b.webp)
 ![图片-djlq.webp](https://pic.dich.ink/1/2024/03/06/65e8669a36927.webp)
-六.Root后的模块安装
+## 六.Root后的模块安装
 
-包括大名鼎鼎的yc调度，Lposed框架，李跳跳和scene软件都是必备的，这些资源可在我的alist中下载：https://share.dich.ink/STORJ/ROOT
+包括大名鼎鼎的yc调度，Lposed框架，李跳跳和scene软件都是必备的，这些资源可在我的alist中下载：``https://share.dich.ink/STORJ/ROOT``
 
 ## 后记
 
 关于root的其他用途还有很多，这里就不一一列举，分享一些常用模块：
 
-https://sspai.com/post/68531
+``https://sspai.com/post/68531``
 
