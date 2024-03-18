@@ -100,35 +100,43 @@
 <p>根据机革一贯的“特性”，作者猜测是因为BIOS或者ACPI出现了故障，随后在翻阅论坛时发现是由于锐龙笔记本键盘中断描述与其他键盘不同：其为边缘敏 感、低电平有效的；而蛟龙16K机器键盘实际是边缘敏感、高电平有效（Edge ActiveHigh）。结合linux的特性，读取到边缘敏感、低电平有效的中断时，会认为BIOS有Bug，会直接当成边缘敏感、高电平有效进行处理。因此，键盘就没有了响应。</p>
 <h2 id="san-jie-jue-fang-fa">三.解决方法</h2>
 <p>既然是高低电平表述的错误，那么我们只需建立DSDT表副本，将其修改，然后让它优先启动，从而让键盘配置正常；另外还存在BIOS修复，内核编译的方法，比较复杂，这里不做说明。</p>
-<h3 id="shou-xian-jian-li-yi-ge-dsdtwen-jian-jia">首先建立一个DSDT文件夹：</h3>
-<p>sudo su
-mkdir -p /home/dsdt</p>
-<h3 id="sui-hou-jiang-xi-tong-de-dsdtbiao-du-qu-dao-li-mian-bing-an-zhuang-acpica-tools">随后将系统的DSDT表读取到里面，并安装acpica-tools：</h3>
-<p>cat /sys/firmware/acpi/tables/DSDT &gt; dsdt.dat
-apt install acpica-tools
-iasl -d dsdt.dat</p>
-<h3 id="jin-ru-vimbian-ji-dsdtbiao-mei-you-vimde-xian-an-zhuang-yi-ge">进入vim编辑DSDT表，没有vim的先安装一个：</h3>
-<p>apt install vim
-vim dsdt.dsl</p>
-<h3 id="sou-suo-bing-ti-huan-device-ps2k-xia-mian-de">搜索并替换 Device(PS2K) 下面的</h3>
-<p>IRQ (Edge, ActiveLow, Shared, ) 
-为
-IRQ (Edge, ActiveHigh, Shared, ) </p>
-<h3 id="vimsou-suo-de-fang-fa-wei-zai-ming-ling-mo-shi-xia-an-xia-jian-ru-sou-suo-zi-fu-bing-hui-che-ji-ke-an-n-tiao-zhuan-dao-xia-yi-chu-n-tiao-zhuan-dao-qian-yi-chu-an-wqbao-cun">vim搜索的方法为在命令模式下按下“/”，键入搜索字符并回车即可，按“n”跳转到下一处，“N”跳转到前一处，按: wq保存：</h3>
-<h3 id="sui-hou-sou-suo-definitionblock-jiang-qi-bu-jin-zhi-zeng-jia-yi-shi-liu-jin-zhi-ji-geng-gai">随后搜索DefinitionBlock，将其步进值增加一（十六进制），即更改</h3>
-<p>DefinitionBlock (&quot;&quot;, &quot;DSDT&quot;, 2, &quot;ALASKA&quot;, &quot;A M I&quot;, 0x01072009)
-为
-DefinitionBlock (&quot;&quot;, &quot;DSDT&quot;, 2, &quot;ALASKA&quot;, &quot;A M I&quot;, 0x0107200A)</p>
-<h3 id="guan-bi-dsdt-bing-she-zhi-qi-you-xian-qi-dong">关闭DSDT，并设置其优先启动</h3>
-<p>iasl dsdt.dsl
-mkdir -p kernel/firmware/acpi
-cp dsdt.aml kernel/firmware/acpi/
-find kernel | cpio -H newc --create &gt; acpi_override
-cp acpi_override /boot/acpi_override
-echo &quot;GRUB_EARLY_INITRD_LINUX_CUSTOM=&quot;acpi_override&quot;&quot; &gt;&gt;/etc/default/grub</p>
-<h3 id="geng-xin-bing-zhong-qi">更新并重启：</h3>
-<p>update-grub2
-reboot</p>
+<pre style="background-color:#151515;color:#e8e8d3;"><code><span>###  首先建立一个DSDT文件夹：
+</span><span>sudo su
+</span><span>mkdir -p /home/dsdt
+</span><span>
+</span><span>###  随后将系统的DSDT表读取到里面，并安装acpica-tools：
+</span><span>cat /sys/firmware/acpi/tables/DSDT &gt; dsdt.dat
+</span><span>apt install acpica-tools
+</span><span>iasl -d dsdt.dat
+</span><span>
+</span><span>###  进入vim编辑DSDT表，没有vim的先安装一个：
+</span><span>apt install vim
+</span><span>vim dsdt.dsl
+</span><span>
+</span><span>###  搜索并替换 Device(PS2K) 下面的
+</span><span>IRQ (Edge, ActiveLow, Shared, ) 
+</span><span>为
+</span><span>IRQ (Edge, ActiveHigh, Shared, ) 
+</span><span>
+</span><span>###  vim搜索的方法为在命令模式下按下“/”，键入搜索字符并回车即可，按“n”跳转到下一处，“N”跳转到前一处，按: wq保存：
+</span><span>
+</span><span>###  随后搜索DefinitionBlock，将其步进值增加一（十六进制），即更改
+</span><span>DefinitionBlock (&quot;&quot;, &quot;DSDT&quot;, 2, &quot;ALASKA&quot;, &quot;A M I&quot;, 0x01072009)
+</span><span>为
+</span><span>DefinitionBlock (&quot;&quot;, &quot;DSDT&quot;, 2, &quot;ALASKA&quot;, &quot;A M I&quot;, 0x0107200A)
+</span><span>
+</span><span>###  关闭DSDT，并设置其优先启动
+</span><span>iasl dsdt.dsl
+</span><span>mkdir -p kernel/firmware/acpi
+</span><span>cp dsdt.aml kernel/firmware/acpi/
+</span><span>find kernel | cpio -H newc --create &gt; acpi_override
+</span><span>cp acpi_override /boot/acpi_override
+</span><span>echo &quot;GRUB_EARLY_INITRD_LINUX_CUSTOM=\&quot;acpi_override\&quot;&quot; &gt;&gt;/etc/default/grub
+</span><span>
+</span><span>###  更新并重启：
+</span><span>update-grub2
+</span><span>reboot
+</span></code></pre>
 <p>不出意外，重启后键盘即可使用，若系统不同将apt替换即可。</p>
 
         </div>

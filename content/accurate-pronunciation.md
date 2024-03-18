@@ -10,7 +10,7 @@ tags = ["pronunciation"]
 
 <!-- more -->
 
-常见发音错误指南：公司/产品名
+**常见发音错误指南：公司/产品名**
 
 Youtube: 正确念法是 "You-tube" [tju:b]，而不是 "优吐毙"，应该是 "优tiu啵"。
 

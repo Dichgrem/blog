@@ -19,7 +19,7 @@ tags = ["keyboard"]
 ## 三.解决方法
 
 既然是高低电平表述的错误，那么我们只需建立DSDT表副本，将其修改，然后让它优先启动，从而让键盘配置正常；另外还存在BIOS修复，内核编译的方法，比较复杂，这里不做说明。
-
+```
 ###  首先建立一个DSDT文件夹：
 sudo su
 mkdir -p /home/dsdt
@@ -56,7 +56,7 @@ echo "GRUB_EARLY_INITRD_LINUX_CUSTOM=\"acpi_override\"" >>/etc/default/grub
 ###  更新并重启：
 update-grub2
 reboot
-                      
+```                   
 
 不出意外，重启后键盘即可使用，若系统不同将apt替换即可。
 
