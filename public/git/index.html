@@ -102,7 +102,7 @@
 <p>如果你的目录不是一个 Git 仓库，你需要先初始化。</p>
 <p>创建新文件夹，在你的项目目录中运行以下命令：<br />
 <code>git init</code></p>
-<p>设置默认仓库为main,避免因为main/master名称不同的牛马问题：</p>
+<p>设置默认仓库为 main,避免因为 main/master 名称不同的牛马问题：</p>
 <p><code>git init --initial-branch=main</code></p>
 <h2 id="ke-long-cang-ku">克隆仓库</h2>
 <p>执行如下命令以创建一个本地仓库的克隆版本：<br />
@@ -214,7 +214,7 @@
 <code>git fetch origin</code><br />
 <code>git reset --hard origin/master</code></p>
 <h2 id="xiu-gai-mo-ren-fen-zhi">修改默认分支</h2>
-<p>git目前默认的主分支为master，和github默认分支main不同，这使得默认配置下git往往连接失败。可以通过下两种方法改变默认分支。在本地git init时将默认分支修改成main</p>
+<p>git目前默认的主分支为 master，和 github 默认分支 main 不同，这使得默认配置下 git 往往连接失败。可以通过下两种方法改变默认分支。在本地 git init 时将默认分支修改成main</p>
 <pre data-lang="csharp" style="background-color:#151515;color:#e8e8d3;" class="language-csharp "><code class="language-csharp" data-lang="csharp"><span>1. git --version  //查看版本
 </span><span>2. git config --global init.defaultBranch main  //将默认分支修改成main
 </span><span>3. git init //本地项目文件夹内创建.git文件夹
@@ -237,7 +237,7 @@
 <p>而使用 <code>ssh协议</code> 时，代理需要配置ssh的 <code>ProxyCommand</code> 参数</p>
 </li>
 </ul>
-<p>由于个人需求仅仅是HTTP的代理（相对来说，HTTP有比较好的通适性，Windows配置git/ssh比较棘手），设置的时候，只需要针对单个设置 <code>http.proxy</code> 即可，在需要使用代理的项目下面使用 <code>git bash</code> 如下命令进行设置（你的Uri和port可能和我的不同）：</p>
+<p>由于个人需求仅仅是 HTTP 的代理（相对来说，HTTP 有比较好的通适性，Windows 配置git/ssh比较棘手），设置的时候，只需要针对单个设置 <code>http.proxy</code> 即可，在需要使用代理的项目下面使用 <code>git bash</code> 如下命令进行设置（你的Uri和port可能和我的不同）：</p>
 <p><code>git config http.proxy</code> <a href="http://127.0.0.1:8088">http://127.0.0.1:2080</a>  <code># 也可以是uri:port形式</code></p>
 <p>这个是不需要鉴权的代理设置，如果需要鉴权，可能需要添加用户名密码信息：</p>
 <p><code>git config http.proxy</code> <a href="http://username:password@127.0.0.1:8088">http://username:password@127.0.0.1:2080</a></p>
@@ -246,18 +246,18 @@
 <p>为了确认是否已经设置成功，可以使用 <code>--get</code> 来获取：</p>
 <p><code>git config --get --global http.proxy</code></p>
 <p>这样可以看到你设置在global的 <code>http.proxy</code> 值。 </p>
-<p>需要修改的时候，再次按照上面的方法设置即可，git默认会覆盖原有的配置值。</p>
+<p>需要修改的时候，再次按照上面的方法设置即可，git 默认会覆盖原有的配置值。</p>
 <p>当我们的网络出现变更时，可能需要删除掉原有的代理配置，此时需要使用 <code>--unset</code> 来进行配置：</p>
 <p><code>git config --global --unset http.proxy</code></p>
 <p>在命令之后，指定位置的设置值将会被清空，你可以再次使用 <code>--get</code> 来查看具体的设置情况。</p>
-<p>如果使用了HTTPS，肯呢个会碰到HTTPS 证书错误的情况，比如提示： <code>SSL certificate problem</code> ，此时，可以尝试将 <code>sslVerify</code> 设置为 <code>false</code> ：</p>
+<p>如果使用了 HTTPS，肯呢个会碰到 HTTPS 证书错误的情况，比如提示： <code>SSL certificate problem</code> ，此时，可以尝试将 <code>sslVerify</code> 设置为 <code>false</code> ：</p>
 <p><code>git config --global http.sslVerify false</code></p>
-<p>恩，到此，可以试试git来获取/更改项目了，此时，项目应该是使用代理来进行通讯的。</p>
+<p>恩，到此，可以试试 git 来获取/更改项目了，此时，项目应该是使用代理来进行通讯的。</p>
 <h2 id="zhu-yi">注意</h2>
 <ul>
-<li>不要多次使用不同的参数来设置代理，一般使用文中两种方式酌情选用即可， <code>--global</code> ， <code>--system</code> ， <code>--local</code> 各级设置后，可能会给自己带来不必要的麻烦。git默认是先到git Repository的配置文件中查找配置文件，如果没有才会到 <code>--global</code> 设置的文件中查找，因此，单个项目文件中的设置会覆盖 <code>--global</code> 的设置。</li>
+<li>不要多次使用不同的参数来设置代理，一般使用文中两种方式酌情选用即可， <code>--global</code> ， <code>--system</code> ， <code>--local</code> 各级设置后，可能会给自己带来不必要的麻烦。git默认是先到 git Repository 的配置文件中查找配置文件，如果没有才会到 <code>--global</code> 设置的文件中查找，因此，单个项目文件中的设置会覆盖 <code>--global</code> 的设置。</li>
 <li>使用 <code>--global</code> 来配置的信息保存在当前用户的根目录下的 <code>.config</code> 文件中，而仓库中的配置保存在项目仓库的根目录下的 <code>.git/config</code> 文件中。</li>
-<li>如果是Linux的用户，建议全局代理。</li>
+<li>如果是 Linux 的用户，建议全局代理。</li>
 </ul>
 
         </div>

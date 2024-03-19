@@ -25,7 +25,7 @@ Archlinux：`sudo pacman -S git`
 创建新文件夹，在你的项目目录中运行以下命令：  
 `git init`
 
-设置默认仓库为main,避免因为main/master名称不同的牛马问题：
+设置默认仓库为 main,避免因为 main/master 名称不同的牛马问题：
 
 `git init --initial-branch=main`
 
@@ -197,7 +197,7 @@ Archlinux：`sudo pacman -S git`
 
 ## 修改默认分支
 
-git目前默认的主分支为master，和github默认分支main不同，这使得默认配置下git往往连接失败。可以通过下两种方法改变默认分支。在本地git init时将默认分支修改成main
+git目前默认的主分支为 master，和 github 默认分支 main 不同，这使得默认配置下 git 往往连接失败。可以通过下两种方法改变默认分支。在本地 git init 时将默认分支修改成main
 
 ```csharp
 1. git --version  //查看版本
@@ -221,7 +221,7 @@ git目前默认的主分支为master，和github默认分支main不同，这使�
 
 - 而使用 `ssh协议` 时，代理需要配置ssh的 `ProxyCommand` 参数
 
-由于个人需求仅仅是HTTP的代理（相对来说，HTTP有比较好的通适性，Windows配置git/ssh比较棘手），设置的时候，只需要针对单个设置 `http.proxy` 即可，在需要使用代理的项目下面使用 `git bash` 如下命令进行设置（你的Uri和port可能和我的不同）：
+由于个人需求仅仅是 HTTP 的代理（相对来说，HTTP 有比较好的通适性，Windows 配置git/ssh比较棘手），设置的时候，只需要针对单个设置 `http.proxy` 即可，在需要使用代理的项目下面使用 `git bash` 如下命令进行设置（你的Uri和port可能和我的不同）：
 
 `git config http.proxy` [http://127.0.0.1:2080](http://127.0.0.1:8088)  `# 也可以是uri:port形式`
 
@@ -239,7 +239,7 @@ git目前默认的主分支为master，和github默认分支main不同，这使�
 
 这样可以看到你设置在global的 `http.proxy` 值。 
 
-需要修改的时候，再次按照上面的方法设置即可，git默认会覆盖原有的配置值。
+需要修改的时候，再次按照上面的方法设置即可，git 默认会覆盖原有的配置值。
 
 当我们的网络出现变更时，可能需要删除掉原有的代理配置，此时需要使用 `--unset` 来进行配置：
 
@@ -247,17 +247,17 @@ git目前默认的主分支为master，和github默认分支main不同，这使�
 
 在命令之后，指定位置的设置值将会被清空，你可以再次使用 `--get` 来查看具体的设置情况。
 
-如果使用了HTTPS，肯呢个会碰到HTTPS 证书错误的情况，比如提示： `SSL certificate problem` ，此时，可以尝试将 `sslVerify` 设置为 `false` ：
+如果使用了 HTTPS，肯呢个会碰到 HTTPS 证书错误的情况，比如提示： `SSL certificate problem` ，此时，可以尝试将 `sslVerify` 设置为 `false` ：
 
 `git config --global http.sslVerify false`
 
-恩，到此，可以试试git来获取/更改项目了，此时，项目应该是使用代理来进行通讯的。
+恩，到此，可以试试 git 来获取/更改项目了，此时，项目应该是使用代理来进行通讯的。
 
 ## 注意
 
-- 不要多次使用不同的参数来设置代理，一般使用文中两种方式酌情选用即可， `--global` ， `--system` ， `--local` 各级设置后，可能会给自己带来不必要的麻烦。git默认是先到git Repository的配置文件中查找配置文件，如果没有才会到 `--global` 设置的文件中查找，因此，单个项目文件中的设置会覆盖 `--global` 的设置。
+- 不要多次使用不同的参数来设置代理，一般使用文中两种方式酌情选用即可， `--global` ， `--system` ， `--local` 各级设置后，可能会给自己带来不必要的麻烦。git默认是先到 git Repository 的配置文件中查找配置文件，如果没有才会到 `--global` 设置的文件中查找，因此，单个项目文件中的设置会覆盖 `--global` 的设置。
 - 使用 `--global` 来配置的信息保存在当前用户的根目录下的 `.config` 文件中，而仓库中的配置保存在项目仓库的根目录下的 `.git/config` 文件中。
-- 如果是Linux的用户，建议全局代理。
+- 如果是 Linux 的用户，建议全局代理。
 
 
 
