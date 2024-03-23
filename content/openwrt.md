@@ -52,4 +52,12 @@ https://drive.google.com/drive/folders/1uRXg_krKHPrQneI3F2GNcSVRoCgkqESr
 
 开源世界还存在着 DD-WERT、Tomato 等系统。正如互联网的发展并非一帆风顺，OpenWRT 也出现过核心开发者出走，另立山头推出 LEDE 等波折，在18年 LEDE 与 openwrt 合并后，通过众多开发者的不懈努力， OpenWRT 有了现在丰富完善的生态。
 
-``官方Wiki：https://openwrt.org/zh/start``
+
+## 参考
+
+- [Openwrt wiki](https://openwrt.org/zh/docs/start)
+- [OpenWrt在线定制编译](https://openwrt.ai/?target=ipq807x%2Fgeneric&id=xiaomi_ax3600)
+- [openwrt luci 页面无法访问 问题排查](https://www.cnblogs.com/tfel-ypoc/p/17226064.html)
+- [超详细，多图，简单，OpenWRT 设置，IPV6配置](https://post.smzdm.com/p/axz6369w/)
+- [保姆级-光猫改桥接-路由拨号-openwrt端口转发](https://blog.csdn.net/weixin_44548582/article/details/121064734)
+- [360T7刷机](http://www.ttcoder.cn/index.php/2023/07/11/p0/)

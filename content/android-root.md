@@ -107,3 +107,10 @@ Magisk : ``https://magisk.me/zip/``
 
 ``https://sspai.com/post/68531``
 
+## 参考
+ 
+ - [lineageos镜像](https://download.lineageos.org/devices/lmi/builds)
+ - [lineageos教程](https://wiki.lineageos.org/devices/lmi/install/variant1/)
+ - [机型介绍](https://wiki.lineageos.org/devices/lmi/variant2/)
+ - [XDA-没有声音的问题解决](https://xdaforums.com/t/no-sound-issue-can-u-help.4479225/)
+ - [XDA-更换内核](https://xdaforums.com/t/kernel-overclocked-no-gravity-2023-08-28-protonclang.4531497/)

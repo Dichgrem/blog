@@ -30,7 +30,8 @@ tags = ["Zola","Blog"]
 - 安装Zola到一个文件夹，并为其命名；
 - 选择主题（theme），将下载好的主题与Zola同名文件夹合并；
 - 运行zola build和zola serve,在本机浏览器127.0.0.1：1111上查看站点；
-- 在content文件夹中写自己的博客；
+- 使用notion,obsdian,bluestone等软件写markdown格式的文章；
+- 保存文章到content文件夹中；
 - 随后再次运行运行zola build和zola serve，生成public文件夹；
 - 新建一个Github仓库，用Git连接并push上去；
 - 在Vercel/Fleek等平台将仓库部署并设置域名。
@@ -39,5 +40,8 @@ tags = ["Zola","Blog"]
 通过简单的步骤，我们已经快速地创建一个具有自定义主题和样式的独立站点，并将其发布到互联网上供他人访问。而在这期间，各种工具链的完善和前端基本原理了解也是收获的一部分。
 
 
-
-
+## 参考
+- [zola官方文档](https://www.getzola.org/documentation/getting-started/overview/)
+- [zoal-terminimal主题](https://github.com/pawroman/zola-theme-terminimal)
+- [中文排版指南](https://github.com/aaranxu/chinese-copywriting-guidelines)
+- [如何提高用户网页阅读体验](https://atpx.com/blog/improving-online-reading-experience/)
