@@ -156,3 +156,9 @@ CC 许可协议更多的是在设计类工程中使用，而不是开发类，�
 
 最后，我们希望读者能够在使用和贡献开源软件时，牢记开源精神，尊重他人的劳动成果，并积极参与到开源社区的建设中去。只有通过共同的努力和合作，我们才能够推动开源软件的进步，为全球科技发展贡献自己的一份力量。
 
+## 参考
+
+- [开源软件指南](https://opensource.guide/zh-hans/)
+- [Browse Software Licenses and Summaries](https://www.tldrlegal.com/browse)
+- [开源协议检索](https://opensource.org/license)
+- [开源指北](https://oschina.gitee.io/opensource-guide/)
