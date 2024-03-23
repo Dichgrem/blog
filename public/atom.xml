@@ -228,7 +228,7 @@
         
     </entry>
     <entry xml:lang="en">
-        <title>广告推荐算法与实例</title>
+        <title>常用跨平台开源软件</title>
         <published>2023-12-25T00:00:00+00:00</published>
         <updated>2023-12-25T00:00:00+00:00</updated>
         
@@ -240,10 +240,10 @@
           </name>
         </author>
         
-        <link rel="alternate" type="text/html" href="https://blog.dich.ink/advertising-algorithms/"/>
-        <id>https://blog.dich.ink/advertising-algorithms/</id>
+        <link rel="alternate" type="text/html" href="https://blog.dich.ink/open-source-cross-platform-softs/"/>
+        <id>https://blog.dich.ink/open-source-cross-platform-softs/</id>
         
-        <summary type="html">&lt;p&gt;前言 广告算法的目标是为了直接增加公司收入。推荐算法虽然本质上也是为了增加公司收入，但其直接目标是为了增加用户的参与度。&lt;&#x2F;p&gt;
+        <summary type="html">&lt;p&gt;前言 本文旨在介绍一些常用的跨平台开源软件，涵盖了多个领域，包括办公、开发工具、多媒体处理等。这些软件不仅在功能上具有优势，而且秉承着开放、自由的精神，是上上之选。&lt;&#x2F;p&gt;
 </summary>
         
     </entry>
