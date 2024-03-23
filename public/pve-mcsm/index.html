@@ -145,6 +145,7 @@
 <img src="https://pic.dich.ink/1/2024/03/06/65e866883d700.webp" alt="image-alwv.webp" />
 安装完成后 reboot。</p>
 <p>4.浏览器打开 PVE 地址，进入系统后我们需要给PVE换源。</p>
+<h2 id="huan-yuan">换源</h2>
 <p>首先，移除(备份)一下 PVE 原始的官方源 (将 sources.list 改名为 sources.list.bak)</p>
 <p><code>mv /etc/apt/sources.list /etc/apt/sources.list.bak</code></p>
 <p>添加国内 Debian 软件源：</p>
@@ -185,7 +186,15 @@
 <img src="https://pic.dich.ink/1/2024/03/06/65e86677d1a34.webp" alt="image-hihs.webp" /></p>
 <p>7.安装基本系统，随后将进入包管理器和大组件安装；
 <img src="https://pic.dich.ink/1/2024/03/06/65e8667090f06.webp" alt="image-ldsc.webp" /></p>
-<p>我们选择清华源，速度较快。注意：Debian 安装时默认开启安全源，这个源是国外的所以下载速度极慢，因此还需要修改配置文件，这里使用 Ctrl+Alt+F2 从图形界面转到tty命令终端, 键入 Enter，使用命令<code>nano /target/etc/apt/sources.list</code>，将所有的源都改成 http://mirrors.ustc.edu.cn 或者清华源，然后 Ctrl+X 退出保存， Ctrl+Alt+F5 回到图形界面。</p>
+<p>我们选择清华源，速度较快。注意：Debian 安装时默认开启安全源，这个源是国外的所以下载速度极慢，因此还需要修改配置文件。</p>
+<p>在安装步骤进入到选择安装的桌面环境和软件时, 键入 Ctrl+Alt+F2 可以看到从图形界面转到了tty命令终端, 键入 Enter
+这里修改软件源配置文件</p>
+<pre style="background-color:#151515;color:#e8e8d3;"><code><span>nano /target/etc/apt/sources.list
+</span></code></pre>
+<p>修改debian-security源地址  <code>http://mirrors.ustc.edu.cn </code> 目测最快</p>
+<pre style="background-color:#151515;color:#e8e8d3;"><code><span>deb http://mirrors.ustc.edu.cn/debian-security bullseye-security main
+</span></code></pre>
+<p>修改后 Ctrl+X 退出保存,然后退出终端重新进入界面继续安装，键入 Ctrl+Alt+F5。</p>
 <p><img src="https://pic.dich.ink/1/2024/03/06/65e8665b075cf.webp" alt="image-uphv.webp" /></p>
 <p>下载需要一些时间，此时可以饮口茶先，随后看到如下界面：</p>
 <p><img src="https://pic.dich.ink/1/2024/03/06/65e86657265a4.webp" alt="image-whqy.webp" /></p>

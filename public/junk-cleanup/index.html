@@ -163,6 +163,75 @@
 <li><strong>Stacer：</strong> Stacer 是一款开源的系统优化和监控工具，提供了垃圾清理、系统管理、系统监控等功能，适用于多种 Linux 发行版。</li>
 <li><strong>Sweeper（KDE 扫除者）：</strong> Sweeper 是 KDE 桌面环境的一部分，提供了简单易用的垃圾清理功能，可以帮助您清理系统中的临时文件、缓存等。</li>
 </ol>
+<h2 id="arch-linux-qing-li">Arch linux 清理</h2>
+<ol>
+<li>
+<p><strong>缓存清理</strong>:</p>
+<ul>
+<li><code>sudo pacman -Sc</code>: 清理包缓存，删除已安装的但不再需要的软件包。</li>
+<li><code>sudo pacman -Scc</code>: 进一步清理所有包文件，包括已下载的包。</li>
+</ul>
+</li>
+<li>
+<p><strong>系统日志</strong>:</p>
+<ul>
+<li><code>/var/log</code> 目录下包含系统日志文件。你可以删除较旧的日志文件，或者使用日志轮换工具，如 <code>logrotate</code>。</li>
+</ul>
+</li>
+<li>
+<p><strong>临时文件</strong>:</p>
+<ul>
+<li><code>/tmp</code> 目录下包含临时文件。你可以通过 <code>sudo rm -rf /tmp/*</code> 清理它们。</li>
+</ul>
+</li>
+<li>
+<p><strong>缓存文件</strong>:</p>
+<ul>
+<li>一些应用程序会在 <code>~/.cache</code> 目录下存储缓存文件。你可以检查该目录并删除不再需要的文件。</li>
+</ul>
+</li>
+<li>
+<p><strong>AUR 缓存</strong>:</p>
+<ul>
+<li>AUR 辅助工具（如 <code>yay</code>）会在 <code>~/.cache/yay</code> 目录下存储构建和下载的软件包。你可以清理这些文件。</li>
+</ul>
+</li>
+<li>
+<p><strong>旧内核</strong>:</p>
+<ul>
+<li>如果你安装了多个内核版本，你可以删除不再需要的旧内核。首先使用 <code>uname -r</code> 查看当前内核版本，然后使用 <code>sudo pacman -Rns linux-older-kernel</code> 删除不需要的版本。</li>
+</ul>
+</li>
+<li>
+<p><strong>不再使用的配置文件</strong>:</p>
+<ul>
+<li>检查家目录下的隐藏文件，如 <code>~/.config</code>，并删除不再需要的配置文件。</li>
+</ul>
+</li>
+<li>
+<p><strong>Docker日志文件</strong>:<br />
+使用 <code>docker ps -a</code> 命令查找你感兴趣的容器的 ID。</p>
+<pre style="background-color:#151515;color:#e8e8d3;"><code><span>docker ps -a
+</span></code></pre>
+<p>进入容器的日志目录，路径类似于 <code>/var/lib/docker/containers/&lt;container-id&gt;/</code>。</p>
+<pre style="background-color:#151515;color:#e8e8d3;"><code><span>cd /var/lib/docker/containers/&lt;container-id&gt;/
+</span></code></pre>
+<p>使用命令清理或删除日志文件。你可以删除所有日志文件，或者只删除特定的日志文件。</p>
+<pre style="background-color:#151515;color:#e8e8d3;"><code><span># 删除所有日志文件
+</span><span>rm *.log
+</span><span>
+</span><span># 删除特定日志文件（例如 stdout 和 stderr）
+</span><span>rm *-json.log
+</span></code></pre>
+</li>
+</ol>
+<h2 id="arch-linux-an-zhuang-bei-fen"><strong>Arch Linux 安装备份</strong></h2>
+<p>你可以定期备份 Arch Linux 安装的软件列表，以便在需要时轻松还原。</p>
+<pre style="background-color:#151515;color:#e8e8d3;"><code><span>pacman -Qqe &gt; package-list.txt
+</span></code></pre>
+<p>这将列出所有已安装的软件包，并将其保存到文件 <code>package-list.txt</code> 中。在还原系统时，你可以使用以下命令：</p>
+<pre style="background-color:#151515;color:#e8e8d3;"><code><span>sudo pacman -S --needed - &lt; package-list.txt
+</span></code></pre>
 <h2 id="hou-ji">后记</h2>
 <p>垃圾文件的产生总是无可避免，这是因为随着使用时间的流逝，系统的熵值也在增大；生命以负熵为食，同样的为系统清理垃圾也是逆熵的一部分。在你的生命中会有许多电子设备，但它们往往只有你一任主人，请善待它们！</p>
 

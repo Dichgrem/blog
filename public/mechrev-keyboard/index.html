@@ -138,6 +138,116 @@
 </span><span>reboot
 </span></code></pre>
 <p>不出意外，重启后键盘即可使用，若系统不同将 apt 替换即可。</p>
+<h2 id="si-qi-ta-wen-ti">四.其他问题</h2>
+<p>对于Redmi 或 Lenovo刚发布的AMD R7 6800H机型：</p>
+<ul>
+<li>WIFI没有驱动 - （螃蟹卡 8852be）。</li>
+<li>蓝牙没有驱动 - (螃蟹卡 8852be)。</li>
+<li>开启窗口特效后，kwin_x11进程CPU占用飙升。</li>
+<li>电源管理，无论怎么调，笔记本都发热很严重。</li>
+</ul>
+<h3 id="xiu-fu-wifiqu-dong">修复wifi驱动</h3>
+<pre data-lang="shell" style="background-color:#151515;color:#e8e8d3;" class="language-shell "><code class="language-shell" data-lang="shell"><span># 内核小于5.18的
+</span><span>git clone https://github.com/HRex39/rtl8852be.git
+</span><span># 内核大于等于5.18的
+</span><span>git clone https://github.com/HRex39/rtl8852be.git -b dev
+</span><span>
+</span><span>cd rtl8852be
+</span><span>make -j8
+</span><span>sudo make install
+</span><span>sudo modprobe 8852be
+</span></code></pre>
+<h3 id="xiu-fu-lan-ya-qu-dong">修复蓝牙驱动</h3>
+<pre data-lang="shell" style="background-color:#151515;color:#e8e8d3;" class="language-shell "><code class="language-shell" data-lang="shell"><span># 内核=5.15
+</span><span>git clone https://github.com/HRex39/rtl8852be_bt.git -b 5.15
+</span><span># 内核=5.18
+</span><span>git clone https://github.com/HRex39/rtl8852be_bt.git -b 5.18
+</span><span>
+</span><span>cd rtl8852be_bt
+</span><span>make -j8
+</span><span>sudo make install
+</span></code></pre>
+<h3 id="xiu-fu-kwin-x11xian-qia-wei-qu-dong">修复kwin_x11显卡未驱动</h3>
+<p>首先去amd官网下载最新的linux-amd驱动：</p>
+<pre style="background-color:#151515;color:#e8e8d3;"><code><span>https://www.amd.com/zh-hans/support/linux-drivers // 22.20 for Ubuntu 20.04.5 HWE
+</span></code></pre>
+<p>修改Deepin为ubuntu</p>
+<pre style="background-color:#151515;color:#e8e8d3;"><code><span>sudo vim /etc/os-release // ID=Deepin =&gt; ID=ubuntu
+</span><span>
+</span><span>sudo apt install ./amdgpu-install_22.20.50200-1_all.deb
+</span><span>
+</span><span>sudo vim /etc/apt/sources.list.d/amdgpu.list // focal =&gt; bionic
+</span><span>
+</span><span>sudo apt update
+</span><span>
+</span><span>sudo amdgpu-install --no-dkms
+</span><span>
+</span><span>sudo apt install inxi clinfo
+</span></code></pre>
+<p>安装成功以后，用inxi查看下：</p>
+<p><code>inxi -G</code></p>
+<pre style="background-color:#151515;color:#e8e8d3;"><code><span>Graphics:  Device-1: AMD Rembrandt driver: amdgpu v: kernel 
+</span><span>           Display: x11 server: X.Org 1.20.11 driver: amdgpu,ati unloaded: fbdev,modesetting,vesa 
+</span><span>           resolution: 1920x1080~60Hz 
+</span><span>           OpenGL: renderer: AMD YELLOW_CARP (LLVM 14.0.1 DRM 3.42 5.15.34-amd64-desktop) 
+</span><span>           v: 4.6 Mesa 22.1.0-devel
+</span></code></pre>
+<p>最后还原最初的修改：</p>
+<pre style="background-color:#151515;color:#e8e8d3;"><code><span>sudo vim /etc/os-release // ID=ubuntu =&gt; ID=Deepin
+</span><span>sudo apt purge amdgpu-install
+</span></code></pre>
+<p>看下效果图：</p>
+<pre style="background-color:#151515;color:#e8e8d3;"><code><span>➜  ~ glxinfo -B
+</span><span>name of display: :0
+</span><span>display: :0  screen: 0
+</span><span>direct rendering: Yes
+</span><span>Extended renderer info (GLX_MESA_query_renderer):
+</span><span>    Vendor: AMD (0x1002)
+</span><span>    Device: AMD YELLOW_CARP (LLVM 14.0.1, DRM 3.42, 5.15.34-amd64-desktop) (0x1681)
+</span><span>    Version: 22.1.0
+</span><span>    Accelerated: yes
+</span><span>    Video memory: 2048MB
+</span><span>    Unified memory: no
+</span><span>    Preferred profile: core (0x1)
+</span><span>    Max core profile version: 4.6
+</span><span>    Max compat profile version: 4.6
+</span><span>    Max GLES1 profile version: 1.1
+</span><span>    Max GLES[23] profile version: 3.2
+</span><span>Memory info (GL_ATI_meminfo):
+</span><span>    VBO free memory - total: 1388 MB, largest block: 1388 MB
+</span><span>    VBO free aux. memory - total: 3047 MB, largest block: 3047 MB
+</span><span>    Texture free memory - total: 1388 MB, largest block: 1388 MB
+</span><span>    Texture free aux. memory - total: 3047 MB, largest block: 3047 MB
+</span><span>    Renderbuffer free memory - total: 1388 MB, largest block: 1388 MB
+</span><span>    Renderbuffer free aux. memory - total: 3047 MB, largest block: 3047 MB
+</span><span>Memory info (GL_NVX_gpu_memory_info):
+</span><span>    Dedicated video memory: 2048 MB
+</span><span>    Total available memory: 5120 MB
+</span><span>    Currently available dedicated video memory: 1388 MB
+</span><span>OpenGL vendor string: AMD
+</span><span>OpenGL renderer string: AMD YELLOW_CARP (LLVM 14.0.1, DRM 3.42, 5.15.34-amd64-desktop)
+</span><span>OpenGL core profile version string: 4.6 (Core Profile) Mesa 22.1.0-devel
+</span><span>OpenGL core profile shading language version string: 4.60
+</span><span>OpenGL core profile context flags: (none)
+</span><span>OpenGL core profile profile mask: core profile
+</span><span>
+</span><span>OpenGL version string: 4.6 (Compatibility Profile) Mesa 22.1.0-devel
+</span><span>OpenGL shading language version string: 4.60
+</span><span>OpenGL context flags: (none)
+</span><span>OpenGL profile mask: compatibility profile
+</span><span>
+</span><span>OpenGL ES profile version string: OpenGL ES 3.2 Mesa 22.1.0-devel
+</span><span>OpenGL ES profile shading language version string: OpenGL ES GLSL ES 3.20
+</span></code></pre>
+<h3 id="shou-dong-guan-li-dian-yuan-bi-mian-cpuguo-du-shi-yong-er-fa-re">手动管理电源，避免CPU过度使用而发热</h3>
+<p>安装下面的三方电源管理工具 <code>Boost Changer</code>，选择 <code>Performance</code>策略即可</p>
+<pre style="background-color:#151515;color:#e8e8d3;"><code><span>wget https://github.com/nbebaw/boostchanger/releases/download/v4.4.0/boostchanger_4.4.0_amd64.deb
+</span></code></pre>
+<h2 id="can-kao">参考</h2>
+<p><a href="https://zhuanlan.zhihu.com/p/530643928">https://zhuanlan.zhihu.com/p/530643928</a></p>
+<p><a href="https://github.com/HRex39/rtl8852be">https://github.com/HRex39/rtl8852be</a></p>
+<p><a href="https://github.com/HRex39/rtl8852be_bt">https://github.com/HRex39/rtl8852be_bt</a></p>
+<p><a href="https://bbs.deepin.org/post/241607">https://bbs.deepin.org/post/241607</a></p>
 
         </div>
 
@@ -149,9 +259,9 @@
             </div>
             <div class="pagination__buttons">
                     <span class="button previous">
-                        <a href="https://blog.dich.ink/accurate-pronunciation/">
+                        <a href="https://blog.dich.ink/windows-secondary-menu-recovery-and-settings-boot-startup/">
                             <span class="button__icon">←</span>&nbsp;
-                            <span class="button__text">常见发音错误术语集合</span>
+                            <span class="button__text">Windows二级菜单恢复及设置开机启动</span>
                         </a>
                     </span>
                 

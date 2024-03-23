@@ -1,0 +1,161 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <title>Dich&#x27;blog</title>
+    
+    <meta http-equiv="content-type" content="text/html; charset=utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=5">
+    <meta name="robots" content="noodp"/>
+
+    <link rel="stylesheet" href="https://blog.dich.ink/style.css">
+    <link rel="stylesheet" href="https://blog.dich.ink/color/blue.css">
+
+        <link rel="stylesheet" href="https://blog.dich.ink/color/background_dark.css">
+    
+    <link rel="stylesheet" href="https://blog.dich.ink/font-hack-subset.css">
+
+    <meta name="description" content="">
+
+    <meta property="og:description" content="">
+    <meta property="og:title" content="Dich'blog">
+    <meta property="og:type" content="article">
+    <meta property="og:url" content="https://blog.dich.ink/windows-secondary-menu-recovery-and-settings-boot-startup/">
+
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:description" content="">
+    <meta name="twitter:title" content="Dich'blog">
+    <meta property="twitter:domain" content="blog.dich.ink">
+    <meta property="twitter:url" content="https://blog.dich.ink/windows-secondary-menu-recovery-and-settings-boot-startup/">
+
+            
+        <link rel="alternate" type="application/atom+xml" title="RSS" href="https://blog.dich.ink/atom.xml">
+    
+    </head>
+
+<body class="">
+<div class="container">
+    
+    <header class="header">
+        <div class="header__inner">
+            <div class="header__logo">
+                    
+                <a href="https://blog.dich.ink" style="text-decoration: none;">
+                    <div class="logo">
+                      
+                            Dich&#x27;blog
+                        
+                    </div>
+                </a>
+            </div>
+        </div>
+
+        
+        
+                <nav class="menu">
+            <ul class="menu__inner">
+                <li class="active"><a href="https://blog.dich.ink">blog</a></li>
+            
+                <li><a href="https://blog.dich.ink/tags">tags</a></li>
+            
+                <li><a href="https://blog.dich.ink/archive">archive</a></li>
+            
+                <li><a href="https://blog.dich.ink/about">about me</a></li>
+            
+                <li><a href="https://blog.dich.ink/links">links</a></li>
+            
+                <li><a href="https://github.com/Dichgrem" target="_blank" rel="noopener noreferrer">github</a></li>
+            </ul>
+        </nav>
+    
+    
+        
+    </header>
+    
+
+    <div class="content">
+        
+    <div class="post">
+        
+    <h1 class="post-title"><a href="https://blog.dich.ink/windows-secondary-menu-recovery-and-settings-boot-startup/">Windows二级菜单恢复及设置开机启动</a></h1>
+    <div class="post-meta-inline">
+        
+    <span class="post-date">
+            2023-08-26
+        </span>
+
+    </div>
+
+    
+        <span class="post-tags-inline">
+                :: tags:&nbsp;
+                <a class="post-tag" href="https://blog.dich.ink/tags/windows11/">#Windows11</a></span>
+    
+
+        <div class="post-content">
+            <p>前言 Windows操作系统作为全球最为普及的桌面操作系统之一，其用户界面的设计非常经典；而win11中的二级菜单令人感到无语，本文教你回到一级菜单。</p>
+<span id="continue-reading"></span><h2 id="shi-yong-cmdhui-fu-wan-zheng-you-jian-cai-dan"><strong>使用CMD恢复完整右键菜单</strong></h2>
+<p>Win11的<code>显示更多选项</code>怎么设置才能将其关闭,并恢复成Win10的状态呢？系统内置的命令提示符（CMD）可以帮助我们完成这一任务，另外请注意，此操作仅适用于CMD，并不适用于Windows PowerShell。</p>
+<p><strong>步骤1.</strong> 按<strong>Win+S</strong>打开搜索框，输入<strong>cmd</strong>并以管理员身份运行命令提示符。</p>
+<p><strong>步骤2.</strong> 输入以下命令并按<strong>Enter</strong>键执行。</p>
+<pre style="background-color:#151515;color:#e8e8d3;"><code><span>reg add HKCU\Software\Classes\CLSID{86ca1aa0-34aa-4e8b-a509-50c905bae2a2}\InprocServer32 /ve /d “” /f
+</span></code></pre>
+<p>注意：如果您想要重新打开Win11新样式的右键菜单的话，以同样的方式在命令提示符中执行此命令：</p>
+<pre style="background-color:#151515;color:#e8e8d3;"><code><span>reg delete &quot;HKCU\Software\Classes\CLSID{86ca1aa0-34aa-4e8b-a509-50c905bae2a2}&quot; /f
+</span></code></pre>
+<h2 id="win11tian-jia-kai-ji-zi-qi-dong-xiang-fang-fa"><strong>Win11添加开机自启动项方法</strong></h2>
+<p>选择“开始”按钮 ，然后滚动查找你希望在启动时运行的应用。</p>
+<p>右键单击该应用，选择“更多”，然后选择“打开文件位置”。此操作会打开保存应用快捷方式的位置。如果没有“打开文件位置”选项，这意味着该应用无法在启动时运行。</p>
+<p>文件位置打开后，按win+ R，键入“shell:startup”，然后选择“确定”。这将打开“启动”文件夹。</p>
+<p>将该应用的快捷方式从文件位置复制并粘贴到“启动”文件夹中,即添加启动项成功。</p>
+
+        </div>
+
+        
+        <div class="pagination">
+            <div class="pagination__title">
+                <span class="pagination__title-h">Thanks for reading! Read other posts?</span>
+                <hr />
+            </div>
+            <div class="pagination__buttons">
+                    <span class="button previous">
+                        <a href="https://blog.dich.ink/accurate-pronunciation/">
+                            <span class="button__icon">←</span>&nbsp;
+                            <span class="button__text">常见发音错误术语集合</span>
+                        </a>
+                    </span>
+                
+                
+                    <span class="button next">
+                        <a href="https://blog.dich.ink/mechrev-keyboard/">
+                            <span class="button__text">机械革命键盘失灵拯救记</span>&nbsp;
+                            <span class="button__icon">→</span>
+                        </a>
+                    </span>
+                </div>
+        </div>
+    
+    </div>
+
+    </div>
+
+    
+    <footer class="footer">
+        <div class="footer__inner">
+                <div class="copyright">
+                        <span>© 
+    2024
+ Dichgrem</span>
+                    <span class="copyright-theme">
+                        <span class="copyright-theme-sep">:: </span>
+                        Theme: <a href="https://github.com/pawroman/zola-theme-terminimal/">Terminimal</a> by pawroman
+                    </span>
+                </div>
+            </div>
+    </footer>
+    
+
+</div>
+</body>
+
+</html>

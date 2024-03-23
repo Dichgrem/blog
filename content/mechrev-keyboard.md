@@ -60,4 +60,143 @@ reboot
 
 不出意外，重启后键盘即可使用，若系统不同将 apt 替换即可。
 
+## 四.其他问题
 
+对于Redmi 或 Lenovo刚发布的AMD R7 6800H机型：
+- WIFI没有驱动 - （螃蟹卡 8852be）。
+- 蓝牙没有驱动 - (螃蟹卡 8852be)。
+- 开启窗口特效后，kwin_x11进程CPU占用飙升。
+- 电源管理，无论怎么调，笔记本都发热很严重。
+
+### 修复wifi驱动
+
+```shell
+# 内核小于5.18的
+git clone https://github.com/HRex39/rtl8852be.git
+# 内核大于等于5.18的
+git clone https://github.com/HRex39/rtl8852be.git -b dev
+
+cd rtl8852be
+make -j8
+sudo make install
+sudo modprobe 8852be
+```
+
+### 修复蓝牙驱动
+
+```shell
+# 内核=5.15
+git clone https://github.com/HRex39/rtl8852be_bt.git -b 5.15
+# 内核=5.18
+git clone https://github.com/HRex39/rtl8852be_bt.git -b 5.18
+
+cd rtl8852be_bt
+make -j8
+sudo make install
+```
+
+### 修复kwin_x11显卡未驱动
+
+首先去amd官网下载最新的linux-amd驱动：
+
+````
+https://www.amd.com/zh-hans/support/linux-drivers // 22.20 for Ubuntu 20.04.5 HWE
+````
+
+修改Deepin为ubuntu
+
+````
+sudo vim /etc/os-release // ID=Deepin => ID=ubuntu
+
+sudo apt install ./amdgpu-install_22.20.50200-1_all.deb
+
+sudo vim /etc/apt/sources.list.d/amdgpu.list // focal => bionic
+
+sudo apt update
+
+sudo amdgpu-install --no-dkms
+
+sudo apt install inxi clinfo
+````
+
+安装成功以后，用inxi查看下：
+
+`inxi -G`
+
+````
+Graphics:  Device-1: AMD Rembrandt driver: amdgpu v: kernel 
+           Display: x11 server: X.Org 1.20.11 driver: amdgpu,ati unloaded: fbdev,modesetting,vesa 
+           resolution: 1920x1080~60Hz 
+           OpenGL: renderer: AMD YELLOW_CARP (LLVM 14.0.1 DRM 3.42 5.15.34-amd64-desktop) 
+           v: 4.6 Mesa 22.1.0-devel
+````
+
+最后还原最初的修改：
+
+````
+sudo vim /etc/os-release // ID=ubuntu => ID=Deepin
+sudo apt purge amdgpu-install
+````
+
+看下效果图：
+
+````
+➜  ~ glxinfo -B
+name of display: :0
+display: :0  screen: 0
+direct rendering: Yes
+Extended renderer info (GLX_MESA_query_renderer):
+    Vendor: AMD (0x1002)
+    Device: AMD YELLOW_CARP (LLVM 14.0.1, DRM 3.42, 5.15.34-amd64-desktop) (0x1681)
+    Version: 22.1.0
+    Accelerated: yes
+    Video memory: 2048MB
+    Unified memory: no
+    Preferred profile: core (0x1)
+    Max core profile version: 4.6
+    Max compat profile version: 4.6
+    Max GLES1 profile version: 1.1
+    Max GLES[23] profile version: 3.2
+Memory info (GL_ATI_meminfo):
+    VBO free memory - total: 1388 MB, largest block: 1388 MB
+    VBO free aux. memory - total: 3047 MB, largest block: 3047 MB
+    Texture free memory - total: 1388 MB, largest block: 1388 MB
+    Texture free aux. memory - total: 3047 MB, largest block: 3047 MB
+    Renderbuffer free memory - total: 1388 MB, largest block: 1388 MB
+    Renderbuffer free aux. memory - total: 3047 MB, largest block: 3047 MB
+Memory info (GL_NVX_gpu_memory_info):
+    Dedicated video memory: 2048 MB
+    Total available memory: 5120 MB
+    Currently available dedicated video memory: 1388 MB
+OpenGL vendor string: AMD
+OpenGL renderer string: AMD YELLOW_CARP (LLVM 14.0.1, DRM 3.42, 5.15.34-amd64-desktop)
+OpenGL core profile version string: 4.6 (Core Profile) Mesa 22.1.0-devel
+OpenGL core profile shading language version string: 4.60
+OpenGL core profile context flags: (none)
+OpenGL core profile profile mask: core profile
+
+OpenGL version string: 4.6 (Compatibility Profile) Mesa 22.1.0-devel
+OpenGL shading language version string: 4.60
+OpenGL context flags: (none)
+OpenGL profile mask: compatibility profile
+
+OpenGL ES profile version string: OpenGL ES 3.2 Mesa 22.1.0-devel
+OpenGL ES profile shading language version string: OpenGL ES GLSL ES 3.20
+````
+
+### 手动管理电源，避免CPU过度使用而发热
+
+安装下面的三方电源管理工具 `Boost Changer`，选择 `Performance`策略即可
+
+````
+wget https://github.com/nbebaw/boostchanger/releases/download/v4.4.0/boostchanger_4.4.0_amd64.deb
+````
+## 参考
+
+[https://zhuanlan.zhihu.com/p/530643928](https://zhuanlan.zhihu.com/p/530643928)
+
+[https://github.com/HRex39/rtl8852be](https://github.com/HRex39/rtl8852be)
+
+[https://github.com/HRex39/rtl8852be_bt](https://github.com/HRex39/rtl8852be_bt)
+
+[https://bbs.deepin.org/post/241607](https://bbs.deepin.org/post/241607)

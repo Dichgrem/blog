@@ -3,7 +3,7 @@ title = "Terminal，Console and Shell"
 date = 2024-03-12
 
 [taxonomies]
-tags = ["Terminal","Console","Shell"]
+tags = ["linux"]
 +++
 
 
