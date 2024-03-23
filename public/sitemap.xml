@@ -71,6 +71,10 @@
         <loc>https://blog.dich.ink/links/link-6/</loc>
     </url>
     <url>
+        <loc>https://blog.dich.ink/local-isps-to-cn-report/</loc>
+        <lastmod>2024-02-10</lastmod>
+    </url>
+    <url>
         <loc>https://blog.dich.ink/mechrev-keyboard/</loc>
         <lastmod>2023-09-04</lastmod>
     </url>
@@ -155,6 +159,9 @@
         <loc>https://blog.dich.ink/tags/grub/</loc>
     </url>
     <url>
+        <loc>https://blog.dich.ink/tags/isp/</loc>
+    </url>
+    <url>
         <loc>https://blog.dich.ink/tags/junk-cleanup/</loc>
     </url>
     <url>
@@ -168,6 +175,9 @@
     </url>
     <url>
         <loc>https://blog.dich.ink/tags/linux/</loc>
+    </url>
+    <url>
+        <loc>https://blog.dich.ink/tags/net/</loc>
     </url>
     <url>
         <loc>https://blog.dich.ink/tags/open-source/</loc>
