@@ -19,6 +19,8 @@ tags = ["soft","Open-Source"]
 
 - FireFox
 
+- Floorp
+
 ## 解压
 
 - PeaZip 
