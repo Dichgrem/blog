@@ -213,19 +213,6 @@ volumes:
 ``docker-compose up -d``
 
 在浏览器中访问服务器ip:端口号（如http://123.45.67.890:8080），如显示登录界面，即代表安装成功。域名解析和反代步骤略。
-
-## 三.Miniflux的使用方法
-首先，初次登陆会弹出注册界面，注册为管理员账户；随后进入主页，可以看到：
-![image-eiye.webp](https://pic.dich.ink/1/2024/03/06/65e8667b963e1.webp)
-
-在设置中可以在集成中连接你自己的工作流，以及设置Api密钥便于客户端登陆，还可以添加用户来多人协作。
-![image-hqtj.webp](https://pic.dich.ink/1/2024/03/06/65e866764fcc5.webp)
-
-在源+中可以添加新源，并自动帮你查找网址中的RSS链接;也可以批量导入已有的订阅列表：
-
-完成后我们可以在客户端进行连接，当然如果就一台设备的话也不用服务端同步。如图所示，以Fluent Reader为例，输入刚刚的网址和用户名-密码，即可同步。
-![image-fozk.webp](https://pic.dich.ink/1/2024/03/06/65e86679ca967.webp)
-
 ## 后记
 
 [RSS源](https://morerss.com/tools_zh.html)

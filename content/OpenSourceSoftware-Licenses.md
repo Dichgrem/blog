@@ -47,11 +47,9 @@ tags = ["open","software","licenses"]
 
 世界上的开源许可证（Open Source License）大概有上百种，而常见的开源协议大致有GPL、BSD、MIT、Mozilla、Apache和LGPL等。
 
-![Image](pic/65e86e88d8580.webp)
 
+![65e86e88d8580.webp](https://pic.dich.ink//i/2024/04/20/6622f837a561f.webp)
 
-![da68b98e404578126b87c5afd9ba9bc3.webp](https://pic.dich.ink/1/2024/03/06/65e86e88d8580.webp)
-![free_software_licenses.webp](https://pic.dich.ink/1/2024/03/06/65e86f310fd5f.webp)
 ## Apache License
 
 Apache License（Apache许可证），是Apache软件基金会发布的一个自由软件许可证。

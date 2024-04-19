@@ -179,8 +179,6 @@ SPF 解决了接收方验证发件人域名 SPF 记录内 IP 地址从而验证�
 
 当邮件服务器接收到邮件时，先验证 DKIM，SPF，然后再根据 DMARC 的配置检查。这样就能确保最终用户看到的 `From` 字段和 SPF、DKIM 认证的发件人一致了。
 
-## 后记
 
-改变自：[电子邮件的工作原理](https://einverne.github.io/post/2022/03/how-email-send-and-receive.html)
 
 
