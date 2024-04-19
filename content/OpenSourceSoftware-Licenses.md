@@ -46,7 +46,9 @@ tags = ["open","software","licenses"]
 ## 常见开源许可证
 
 世界上的开源许可证（Open Source License）大概有上百种，而常见的开源协议大致有GPL、BSD、MIT、Mozilla、Apache和LGPL等。
-![kyxkz](pic/65e86e88d8580.webp)
+
+![Image](pic/65e86e88d8580.webp)
+
 
 ![da68b98e404578126b87c5afd9ba9bc3.webp](https://pic.dich.ink/1/2024/03/06/65e86e88d8580.webp)
 ![free_software_licenses.webp](https://pic.dich.ink/1/2024/03/06/65e86f310fd5f.webp)
