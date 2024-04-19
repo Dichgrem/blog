@@ -308,26 +308,6 @@
         
     </entry>
     <entry xml:lang="en">
-        <title>安卓刷机与root教程</title>
-        <published>2023-09-07T00:00:00+00:00</published>
-        <updated>2023-09-07T00:00:00+00:00</updated>
-        
-        <author>
-          <name>
-            
-              Unknown
-            
-          </name>
-        </author>
-        
-        <link rel="alternate" type="text/html" href="https://blog.dich.ink/android-root/"/>
-        <id>https://blog.dich.ink/android-root/</id>
-        
-        <summary type="html">&lt;p&gt;前言 自安卓系统诞生以来，root 一直是玩机的必备过程。时至今日，在安卓定制系统日益完善的情况下，能 root 的机型越来越少，本文以小米手机为例，介绍 root 的具体方法。&lt;&#x2F;p&gt;
-</summary>
-        
-    </entry>
-    <entry xml:lang="en">
         <title>机械革命键盘失灵拯救记</title>
         <published>2023-09-04T00:00:00+00:00</published>
         <updated>2023-09-04T00:00:00+00:00</updated>
@@ -424,86 +404,6 @@
         <id>https://blog.dich.ink/kgnl/</id>
         
         <summary type="html">&lt;p&gt;前言 快过年了系列笑话常常于过年期间在各大平台传播，反应了各技术人士的爱好与工作。本文收集了24个该系列的笑话，欢迎补充。&lt;&#x2F;p&gt;
-</summary>
-        
-    </entry>
-    <entry xml:lang="en">
-        <title>ChromeBook研究记</title>
-        <published>2023-08-12T00:00:00+00:00</published>
-        <updated>2023-08-12T00:00:00+00:00</updated>
-        
-        <author>
-          <name>
-            
-              Unknown
-            
-          </name>
-        </author>
-        
-        <link rel="alternate" type="text/html" href="https://blog.dich.ink/chromebook/"/>
-        <id>https://blog.dich.ink/chromebook/</id>
-        
-        <summary type="html">&lt;p&gt;前言 ChromeBook 作为国外一款定位为商务办公和学生入门的机器，其性能在2023年的当下似乎已经过时；在其退出中国市场后更是接近绝迹。不过，针对特殊需求下的部分机型在今天仍然极具性价比。&lt;&#x2F;p&gt;
-</summary>
-        
-    </entry>
-    <entry xml:lang="en">
-        <title>PVE安装与MC服务器搭建</title>
-        <published>2023-08-11T00:00:00+00:00</published>
-        <updated>2023-08-11T00:00:00+00:00</updated>
-        
-        <author>
-          <name>
-            
-              Unknown
-            
-          </name>
-        </author>
-        
-        <link rel="alternate" type="text/html" href="https://blog.dich.ink/pve-mcsm/"/>
-        <id>https://blog.dich.ink/pve-mcsm/</id>
-        
-        <summary type="html">&lt;p&gt;前言 假期将至，不少家里有闲置设备的小伙伴想尝试开设一个我的世界（Minecraft）服务器，却不知从何下手。本文以 PVE-Debian-MCSM 为主线介绍其部署流程。&lt;&#x2F;p&gt;
-</summary>
-        
-    </entry>
-    <entry xml:lang="en">
-        <title>Android TV 折腾小记</title>
-        <published>2023-08-08T00:00:00+00:00</published>
-        <updated>2023-08-08T00:00:00+00:00</updated>
-        
-        <author>
-          <name>
-            
-              Unknown
-            
-          </name>
-        </author>
-        
-        <link rel="alternate" type="text/html" href="https://blog.dich.ink/android-tv/"/>
-        <id>https://blog.dich.ink/android-tv/</id>
-        
-        <summary type="html">&lt;p&gt;前言 由于 AppleTV 的高昂的售价和普通电视盒子广告的泛滥，一台开源、多功能的原生安卓电视盒子逐渐成为智能家居的必备神器。出于对 IPTV、YouTube 和家庭影院等需求，以及对一面赏心悦目电视墙的期待，这里分享 Android TV （以下简称ATV）安装的一些要点。&lt;&#x2F;p&gt;
-</summary>
-        
-    </entry>
-    <entry xml:lang="en">
-        <title>OpenWrt 软路由部署</title>
-        <published>2023-08-08T00:00:00+00:00</published>
-        <updated>2023-08-08T00:00:00+00:00</updated>
-        
-        <author>
-          <name>
-            
-              Unknown
-            
-          </name>
-        </author>
-        
-        <link rel="alternate" type="text/html" href="https://blog.dich.ink/openwrt/"/>
-        <id>https://blog.dich.ink/openwrt/</id>
-        
-        <summary type="html">&lt;p&gt;前言 openwrt 是一个自由的、兼容性好的嵌入式 linux 发行版。作为软路由玩家必备的一款神器，可以实现诸如去广告，多拨和科学上网等多种功能。本文以 openwrt 在X86平台的安装为例，介绍其部署流程。&lt;&#x2F;p&gt;
 </summary>
         
     </entry>

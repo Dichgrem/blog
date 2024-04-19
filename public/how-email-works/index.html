@@ -187,8 +187,6 @@
 <p>而现在的邮件服务给用户展示的发件人都是 From 字段，而不是 SPF 的 <code>Return-Path</code>，也不是 DKIM 的 <code>DKIM-Sginatur: d=</code>，所以攻击者可以通过伪造这两个字段，发送如上的邮件，完美通过 SPF 和 DKIM 检查，因为 SPF 检查 <code>Return-Path</code> 而 DKIM 验证的 <code>d=</code> 也是 <code>fake.com</code> 所以最终用户看到的发件人却是 <code>admin@q.com</code>。</p>
 <p>所以就诞生了 DMARC。DMARC 结合了 SPF 和 DKIM，规定了 <code>Return-Path</code> 和 <code>DKIM-Signature: d=</code> 两个至少需要有一个与 From 头对应，否则判定为失败。</p>
 <p>当邮件服务器接收到邮件时，先验证 DKIM，SPF，然后再根据 DMARC 的配置检查。这样就能确保最终用户看到的 <code>From</code> 字段和 SPF、DKIM 认证的发件人一致了。</p>
-<h2 id="hou-ji">后记</h2>
-<p>改变自：<a href="https://einverne.github.io/post/2022/03/how-email-send-and-receive.html">电子邮件的工作原理</a></p>
 
         </div>
 
@@ -200,9 +198,9 @@
             </div>
             <div class="pagination__buttons">
                     <span class="button previous">
-                        <a href="https://blog.dich.ink/android-root/">
+                        <a href="https://blog.dich.ink/mechrev-keyboard/">
                             <span class="button__icon">←</span>&nbsp;
-                            <span class="button__text">安卓刷机与root教程</span>
+                            <span class="button__text">机械革命键盘失灵拯救记</span>
                         </a>
                     </span>
                 
