@@ -11,6 +11,7 @@ tags = ["Git"]
 前言 Git，作为现代软件开发中不可或缺的版本控制工具，常常让初学者感到困惑。本文旨在介绍 Git 的全流程安装和基本使用，希望能够帮助新手更轻松地理解和掌握 Git 的基本概念和操作。
 <!-- more -->
 ## 安装git
+![Image](pic/65e86e88d8580.webp)
 
 Windows：[https://git-scm.com/download/](https://git-scm.com/download/)
 
