@@ -20,32 +20,32 @@ tags = ["keyboard"]
 
 既然是高低电平表述的错误，那么我们只需建立DSDT 表副本，将其修改，然后让它优先启动，从而让键盘配置正常；另外还存在 BIOS 修复，内核编译的方法，比较复杂，这里不做说明。
 ```
-###  首先建立一个DSDT文件夹：
+首先建立一个DSDT文件夹：
 sudo su
 mkdir -p /home/dsdt
 
-###  随后将系统的DSDT表读取到里面，并安装acpica-tools：
+随后将系统的DSDT表读取到里面，并安装acpica-tools：
 cat /sys/firmware/acpi/tables/DSDT > dsdt.dat
 apt install acpica-tools
 iasl -d dsdt.dat
 
-###  进入vim编辑DSDT表，没有vim的先安装一个：
+进入vim编辑DSDT表，没有vim的先安装一个：
 apt install vim
 vim dsdt.dsl
 
-###  搜索并替换 Device(PS2K) 下面的
+搜索并替换 Device(PS2K) 下面的
 IRQ (Edge, ActiveLow, Shared, ) 
 为
 IRQ (Edge, ActiveHigh, Shared, ) 
 
-###  vim搜索的方法为在命令模式下按下“/”，键入搜索字符并回车即可，按“n”跳转到下一处，“N”跳转到前一处，按: wq保存：
+vim搜索的方法为在命令模式下按下“/”，键入搜索字符并回车即可，按“n”跳转到下一处，“N”跳转到前一处，按: wq保存：
 
-###  随后搜索DefinitionBlock，将其步进值增加一（十六进制），即更改
+随后搜索DefinitionBlock，将其步进值增加一（十六进制），即更改
 DefinitionBlock ("", "DSDT", 2, "ALASKA", "A M I", 0x01072009)
 为
 DefinitionBlock ("", "DSDT", 2, "ALASKA", "A M I", 0x0107200A)
 
-###  关闭DSDT，并设置其优先启动
+关闭DSDT，并设置其优先启动
 iasl dsdt.dsl
 mkdir -p kernel/firmware/acpi
 cp dsdt.aml kernel/firmware/acpi/
@@ -53,10 +53,10 @@ find kernel | cpio -H newc --create > acpi_override
 cp acpi_override /boot/acpi_override
 echo "GRUB_EARLY_INITRD_LINUX_CUSTOM=\"acpi_override\"" >>/etc/default/grub
 
-###  更新并重启：
+更新并重启：
 update-grub2
 reboot
-```                   
+```              
 
 不出意外，重启后键盘即可使用，若系统不同将 apt 替换即可。
 
@@ -70,7 +70,7 @@ reboot
 
 ### 修复wifi驱动
 
-```shell
+```
 # 内核小于5.18的
 git clone https://github.com/HRex39/rtl8852be.git
 # 内核大于等于5.18的
@@ -84,7 +84,7 @@ sudo modprobe 8852be
 
 ### 修复蓝牙驱动
 
-```shell
+```
 # 内核=5.15
 git clone https://github.com/HRex39/rtl8852be_bt.git -b 5.15
 # 内核=5.18
