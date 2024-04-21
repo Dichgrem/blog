@@ -48,6 +48,30 @@ tags = ["Tech","open","licenses"]
 世界上的开源许可证（Open Source License）大概有上百种，而常见的开源协议大致有GPL、BSD、MIT、Mozilla、Apache和LGPL等。
 ![alt text](https://www.ruanyifeng.com/blogimg/asset/201105/free_software_licenses.png)
 
+                                                             他人修改源码后，
+                                                              是否可以闭源？
+                                      +--------- No ----------             ---------- Yes ---------+
+                                      │                                                            | 
+                                      │                                                            |
+                                      |                                                            |
+                                      |                                                            |  
+                                新增代码是否采用                                            每一个修改过的文件，
+                                  同样许可证？                                              是否都必须放置版权
+                    +---- No -----           ----- Yes ----+                                       说明？ 
+                    |                                      |                         +---- No -----     ----- Yes ----+
+                    |                                      |                         |                                |
+                    |                                      |                         |                                |  
+                    |                                      |                         |                                |
+             是否需要对源码的                               |                         |                                 |
+             修改之处，提供说                               |                   衍生软件的广告，                         |  
+                 明文档？                                  GPL                 是否可以用你的                         Apache
+    +---- No -----       ----- Yes ----+                                         名字销售？
+    |                                  |                             +---- No -----       ----- Yes ----+
+    |                                  |                             |                                  |
+    |                                  |                             |                                  |
+    |                                  |                             |                                  |
+   LGPL                             Mozilla                         BSD                                MIT
+
 
 ## Apache License
 
