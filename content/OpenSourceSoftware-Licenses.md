@@ -1,6 +1,6 @@
 +++
-title = "开源软件与协议"
-date = 2024-03-04
+title = "开源世界:开源软件与协议"
+date = 2024-03-03
 
 [taxonomies]
 tags = ["Tech","open","licenses"]
@@ -46,9 +46,8 @@ tags = ["Tech","open","licenses"]
 ## 常见开源许可证
 
 世界上的开源许可证（Open Source License）大概有上百种，而常见的开源协议大致有GPL、BSD、MIT、Mozilla、Apache和LGPL等。
+![alt text](https://www.ruanyifeng.com/blogimg/asset/201105/free_software_licenses.png)
 
-
-![65e86e88d8580.webp](https://pic.dich.ink//i/2024/04/20/6622f837a561f.webp)
 
 ## Apache License
 
