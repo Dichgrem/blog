@@ -1,6 +1,6 @@
 +++
 title = "常用跨平台开源软件"
-date = 2023-12-25
+date = 2023-12-26
 
 [taxonomies]
 tags = ["Tech","soft","Open-Source"]
