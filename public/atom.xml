@@ -428,6 +428,26 @@
         
     </entry>
     <entry xml:lang="en">
+        <title>电子邮件是如何工作的:POP3&#x2F;IMAP&#x2F;SMTP</title>
+        <published>2023-12-25T00:00:00+00:00</published>
+        <updated>2023-12-25T00:00:00+00:00</updated>
+        
+        <author>
+          <name>
+            
+              Unknown
+            
+          </name>
+        </author>
+        
+        <link rel="alternate" type="text/html" href="https://blog.dich.ink/how-email-works-2/"/>
+        <id>https://blog.dich.ink/how-email-works-2/</id>
+        
+        <summary type="html">&lt;p&gt;前言 POP3、IMAP 和 SMTP 是用于电子邮件传输的常见协议和服务,这些协议共同构成了电子邮件系统的基础，允许用户接收、发送和管理电子邮件。&lt;&#x2F;p&gt;
+</summary>
+        
+    </entry>
+    <entry xml:lang="en">
         <title>常用跨平台开源软件</title>
         <published>2023-12-25T00:00:00+00:00</published>
         <updated>2023-12-25T00:00:00+00:00</updated>
@@ -468,7 +488,7 @@
         
     </entry>
     <entry xml:lang="en">
-        <title>电子邮件是如何工作的</title>
+        <title>电子邮件是如何工作的:SPF&#x2F;DKIM&#x2F;DMARC</title>
         <published>2023-12-24T00:00:00+00:00</published>
         <updated>2023-12-24T00:00:00+00:00</updated>
         
@@ -480,8 +500,8 @@
           </name>
         </author>
         
-        <link rel="alternate" type="text/html" href="https://blog.dich.ink/how-email-works/"/>
-        <id>https://blog.dich.ink/how-email-works/</id>
+        <link rel="alternate" type="text/html" href="https://blog.dich.ink/how-email-works-1/"/>
+        <id>https://blog.dich.ink/how-email-works-1/</id>
         
         <summary type="html">&lt;p&gt;前言 在互联网的日常使用中，电子邮件作为一项基础服务扮演着重要的角色。尽管在过去几十年里出现了各种新型的通讯方式，但电子邮件仍然保持着其不可替代的地位。了解电子邮件的工作原理，有助于更好地理解这一基础服务是如何运作的。&lt;&#x2F;p&gt;
 </summary>
