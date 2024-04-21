@@ -3,7 +3,7 @@ title = "Git使用简明手册"
 date = 2024-03-15
 
 [taxonomies]
-tags = ["Git"]
+tags = ["Tech","Git"]
 +++
 
 

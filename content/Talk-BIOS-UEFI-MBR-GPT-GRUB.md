@@ -3,7 +3,7 @@ title = "BIOS-UEFI-MBR-GPT-GRUB"
 date = 2024-03-15
 
 [taxonomies]
-tags = ["GRUB","BIOS","UEFI"]
+tags = ["Tech","GRUB","BIOS","UEFI"]
 +++
 
 前言 在计算机领域，系统引导和磁盘分区是至关重要的。本文将介绍BIOS与UEFI，MBR与GPT，以及它们之间的异同点。此外，我们还会讨论与这些概念密切相关的引导加载程序——GRUB。

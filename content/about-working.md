@@ -3,7 +3,7 @@ title = "应届生工作指南"
 date = 2023-12-24
 
 [taxonomies]
-tags = ["working"]
+tags = ["Life","Work"]
 +++
 
 

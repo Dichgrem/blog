@@ -191,6 +191,9 @@
         <loc>https://blog.dich.ink/tags/licenses/</loc>
     </url>
     <url>
+        <loc>https://blog.dich.ink/tags/life/</loc>
+    </url>
+    <url>
         <loc>https://blog.dich.ink/tags/linux/</loc>
     </url>
     <url>
@@ -224,13 +227,10 @@
         <loc>https://blog.dich.ink/tags/searching/</loc>
     </url>
     <url>
-        <loc>https://blog.dich.ink/tags/smtp/</loc>
-    </url>
-    <url>
         <loc>https://blog.dich.ink/tags/soft/</loc>
     </url>
     <url>
-        <loc>https://blog.dich.ink/tags/software/</loc>
+        <loc>https://blog.dich.ink/tags/tech/</loc>
     </url>
     <url>
         <loc>https://blog.dich.ink/tags/uefi/</loc>
@@ -239,10 +239,10 @@
         <loc>https://blog.dich.ink/tags/wifi/</loc>
     </url>
     <url>
-        <loc>https://blog.dich.ink/tags/windows11/</loc>
+        <loc>https://blog.dich.ink/tags/windows/</loc>
     </url>
     <url>
-        <loc>https://blog.dich.ink/tags/working/</loc>
+        <loc>https://blog.dich.ink/tags/work/</loc>
     </url>
     <url>
         <loc>https://blog.dich.ink/tags/zola/</loc>

@@ -3,7 +3,7 @@ title = "Personal Blog"
 date = 2024-03-12
 
 [taxonomies]
-tags = ["Zola","Blog"]
+tags = ["Tech","Zola","Blog"]
 +++
 
 

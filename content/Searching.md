@@ -3,7 +3,7 @@ title = "搜索引擎与爬虫"
 date = 2024-01-07
 
 [taxonomies]
-tags = ["Searching"]
+tags = ["Tech","Searching"]
 +++
 
 前言 搜索引擎原理可以简单分为三个过程：爬行，索引，排名。
