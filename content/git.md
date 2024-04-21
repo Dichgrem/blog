@@ -199,7 +199,7 @@ Archlinux：`sudo pacman -S git`
 
 git目前默认的主分支为 master，和 github 默认分支 main 不同，这使得默认配置下 git 往往连接失败。可以通过下两种方法改变默认分支。在本地 git init 时将默认分支修改成main
 
-```csharp
+```
 1. git --version  //查看版本
 2. git config --global init.defaultBranch main  //将默认分支修改成main
 3. git init //本地项目文件夹内创建.git文件夹
