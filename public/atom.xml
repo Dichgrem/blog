@@ -300,8 +300,8 @@
           </name>
         </author>
         
-        <link rel="alternate" type="text/html" href="https://blog.dich.ink/open-source-cross-platform-softs/"/>
-        <id>https://blog.dich.ink/open-source-cross-platform-softs/</id>
+        <link rel="alternate" type="text/html" href="https://blog.dich.ink/common-misconceptions-about-open-source/"/>
+        <id>https://blog.dich.ink/common-misconceptions-about-open-source/</id>
         
         <summary type="html">&lt;p&gt;前言 本文旨在介绍一些常用的跨平台开源软件，涵盖了多个领域，包括办公、开发工具、多媒体处理等。这些软件不仅在功能上具有优势，而且秉承着开放、自由的精神，是上上之选。&lt;&#x2F;p&gt;
 </summary>
@@ -324,6 +324,26 @@
         <id>https://blog.dich.ink/opensourcesoftware-licenses/</id>
         
         <summary type="html">&lt;p&gt;前言 本文旨在介绍开源软件许可证，这些许可证规定了使用、修改和分发开源软件的条件。通过了解不同类型的开源许可证及其特点，读者将能够更好地理解在开发和使用开源软件时的法律和道德责任。&lt;&#x2F;p&gt;
+</summary>
+        
+    </entry>
+    <entry xml:lang="en">
+        <title>开源世界:有关开源的常见误区</title>
+        <published>2024-03-02T00:00:00+00:00</published>
+        <updated>2024-03-02T00:00:00+00:00</updated>
+        
+        <author>
+          <name>
+            
+              Unknown
+            
+          </name>
+        </author>
+        
+        <link rel="alternate" type="text/html" href="https://blog.dich.ink/open-source-cross-platform-softs/"/>
+        <id>https://blog.dich.ink/open-source-cross-platform-softs/</id>
+        
+        <summary type="html">&lt;p&gt;前言 在当今的软件开发领域，开源软件已经成为推动技术创新和知识共享的重要力量。尽管开源软件的理念和实践已经深入人心，但围绕它的一些误解和误区依然存在。本文旨在深入探讨和澄清这些常见的开源误区，帮助读者更全面、更准确地理解开源软件的本质、价值和实践方式。&lt;&#x2F;p&gt;
 </summary>
         
     </entry>
