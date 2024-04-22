@@ -173,4 +173,4 @@ Wayland是一个由Red Hat主导开发的新一代图形显示协议，旨在取
 
 ## **六.后记**
 
-个人使用推荐Zen+Zsh+Pacman+Btrfs+Hyprland,并使用 paru xxx 来搜索软件包，使用paru -S 安装软件。
+个人使用推荐Zen+Zsh+Pacman+Btrfs+Hyprland,并使用 paru xxx 来搜索软件包，使用paru -S xxx 安装软件。
