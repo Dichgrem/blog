@@ -705,4 +705,24 @@
 </summary>
         
     </entry>
+    <entry xml:lang="en">
+        <title>Linux-For-PC(一):构成与发行版</title>
+        <published>2023-07-20T00:00:00+00:00</published>
+        <updated>2023-07-20T00:00:00+00:00</updated>
+        
+        <author>
+          <name>
+            
+              Unknown
+            
+          </name>
+        </author>
+        
+        <link rel="alternate" type="text/html" href="https://blog.dich.ink/linux-for-pc-1/"/>
+        <id>https://blog.dich.ink/linux-for-pc-1/</id>
+        
+        <summary type="html">&lt;p&gt;前言 Linux 作为一款强大、灵活且免费的操作系统，吸引了越来越多的用户。然而，对于初学者来说，Linux 可能显得有些陌生，甚至有些令人望而生畏。本文旨在为那些刚踏入 Linux 世界的新手提供一份指南，帮助他们更好地了解、使用这个令人着迷的操作系统。我们将探讨Linux的基本概念，解释为何选择Linux，深入剖析其主要构成要素以及不同的发行版之间的差异。&lt;&#x2F;p&gt;
+</summary>
+        
+    </entry>
 </feed>
