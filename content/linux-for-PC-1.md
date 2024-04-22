@@ -29,7 +29,7 @@ Linux 是一种开源的类 UNIX 操作系统内核。它由芬兰的 Linus Torv
 实际上著名的 Steam Deck 的系统就是基于Arch linux 的。对于个人使用而言，现在有不少原生支持linux 的游戏；也可以使用Wine来运行Windows下的游戏。
 
 >Linux上软件会不会太少？
-参见 [常用跨平台开源软件](https://blog.dich.ink/common-misconceptions-about-open-source/)一文，在社区的努力下如今软件生态已经非常丰富，你也可以使用如Flatpak等商店安装软件，或者直接使用Wine。如果有不得不在Windows下使用的软件，可以装双系统。
+参见 [常用跨平台开源软件](https://blog.dich.ink/open-source-software)一文，在社区的努力下如今软件生态已经非常丰富，你也可以使用如Flatpak等商店安装软件，或者直接使用Wine。如果有不得不在Windows下使用的软件，可以装双系统。
 ## 三.Linux的主要构成
 
 Linux操作系统主要由以下几个部分组成：

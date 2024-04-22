@@ -1,5 +1,5 @@
 +++
-title = "Linux-For-PC(二):内核/shell/包管理/文件系统"
+title = "Linux-For-PC(三):内核/shell/包管理/文件系统"
 date = 2023-07-22
 
 [taxonomies]
