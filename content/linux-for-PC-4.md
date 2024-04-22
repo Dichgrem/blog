@@ -1,6 +1,6 @@
 +++
-title = "Terminal，Console and Shell"
-date = 2024-03-12
+title = "Linux-For-PC(四):Terminal，Console and Shell"
+date = 2023-07-23
 
 [taxonomies]
 tags = ["Tech","linux"]

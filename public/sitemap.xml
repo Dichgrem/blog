@@ -115,6 +115,18 @@
         <lastmod>2023-07-21</lastmod>
     </url>
     <url>
+        <loc>https://blog.dich.ink/linux-for-pc-3/</loc>
+        <lastmod>2023-07-22</lastmod>
+    </url>
+    <url>
+        <loc>https://blog.dich.ink/linux-for-pc-4/</loc>
+        <lastmod>2023-07-23</lastmod>
+    </url>
+    <url>
+        <loc>https://blog.dich.ink/linux-for-pc-5/</loc>
+        <lastmod>2023-07-24</lastmod>
+    </url>
+    <url>
         <loc>https://blog.dich.ink/local-isps-to-cn-report/</loc>
         <lastmod>2024-02-10</lastmod>
     </url>
@@ -263,14 +275,6 @@
     </url>
     <url>
         <loc>https://blog.dich.ink/tags/zola/</loc>
-    </url>
-    <url>
-        <loc>https://blog.dich.ink/talk-bios-uefi-mbr-gpt-grub/</loc>
-        <lastmod>2024-03-15</lastmod>
-    </url>
-    <url>
-        <loc>https://blog.dich.ink/terminal-console-shell/</loc>
-        <lastmod>2024-03-12</lastmod>
     </url>
     <url>
         <loc>https://blog.dich.ink/windows-secondary-menu-recovery-and-settings-boot-startup/</loc>

@@ -1,6 +1,6 @@
 +++
-title = "BIOS-UEFI-MBR-GPT-GRUB"
-date = 2024-03-15
+title = "Linux-For-PC(五):BIOS-UEFI-MBR-GPT-GRUB"
+date = 2023-07-24
 
 [taxonomies]
 tags = ["Tech","GRUB","BIOS","UEFI"]
