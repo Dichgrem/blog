@@ -6,7 +6,7 @@ date = 2023-07-25
 tags = ["Tech","Linux"]
 +++
 
-前言 在计算机领域，系统引导和磁盘分区是至关重要的。本文将介绍BIOS与UEFI，MBR与GPT，以及它们之间的异同点。此外，我们还会讨论与这些概念密切相关的引导加载程序——GRUB。
+前言 在学习Linux操作系统时，熟悉常用命令和性能分析工具是至关重要的。让我们一起探索Linux的世界，提升技能，解锁无限可能！
 <!-- more -->
 
 > 翻译自https://medium.com/netflix-techblog/linux-performance-analysis-in-60-000-milliseconds-accc10403c55。
