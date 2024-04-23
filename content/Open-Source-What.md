@@ -7,7 +7,7 @@ tags = ["Tech","Open-Source"]
 +++
 前言 「开源」一词对应英文 Open Source，最初起源于软件开发领域，因此也称为「开放源代码」，对应的软件则称为开源软件（Open Source Software，简称 OSS）。
 
-
+<!-- more -->
 ## 开源的概念
 
 「开源」一词对应英文 Open Source，最初起源于软件开发领域，因此也称为「开放源代码」，对应的软件则称为开源软件（Open Source Software，简称 OSS）。除了我们熟知的开源软件以外，开源的表现形式还有很多，例如开源硬件（Open Source Hardware）、开放设计（Open Design）、开放文档（Open Document）等等。开源的目的是分享共享、加速创新，可以说开源已经成为一种超越软件生产界限的运动和工作方式。
