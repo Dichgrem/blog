@@ -15,15 +15,43 @@
         <lastmod>2023-08-25</lastmod>
     </url>
     <url>
-        <loc>https://blog.dich.ink/android-root/</loc>
+        <loc>https://blog.dich.ink/archive/</loc>
+    </url>
+    <url>
+        <loc>https://blog.dich.ink/awesome-android-root/</loc>
         <lastmod>2023-08-13</lastmod>
     </url>
     <url>
-        <loc>https://blog.dich.ink/android-tv/</loc>
+        <loc>https://blog.dich.ink/awesome-android-tv/</loc>
         <lastmod>2023-08-14</lastmod>
     </url>
     <url>
-        <loc>https://blog.dich.ink/archive/</loc>
+        <loc>https://blog.dich.ink/awesome-arch-linux/</loc>
+        <lastmod>2023-08-16</lastmod>
+    </url>
+    <url>
+        <loc>https://blog.dich.ink/awesome-chromebook/</loc>
+        <lastmod>2023-08-15</lastmod>
+    </url>
+    <url>
+        <loc>https://blog.dich.ink/awesome-nas-dsm-copy/</loc>
+        <lastmod>2023-08-18</lastmod>
+    </url>
+    <url>
+        <loc>https://blog.dich.ink/awesome-nas-dsm/</loc>
+        <lastmod>2023-08-17</lastmod>
+    </url>
+    <url>
+        <loc>https://blog.dich.ink/awesome-openwrt/</loc>
+        <lastmod>2023-08-12</lastmod>
+    </url>
+    <url>
+        <loc>https://blog.dich.ink/awesome-podcast-use/</loc>
+        <lastmod>2024-01-20</lastmod>
+    </url>
+    <url>
+        <loc>https://blog.dich.ink/awesome-pve-mcsm/</loc>
+        <lastmod>2023-08-11</lastmod>
     </url>
     <url>
         <loc>https://blog.dich.ink/calling-cards/</loc>
@@ -32,10 +60,6 @@
     <url>
         <loc>https://blog.dich.ink/chatogpt/</loc>
         <lastmod>2024-01-07</lastmod>
-    </url>
-    <url>
-        <loc>https://blog.dich.ink/chromebook/</loc>
-        <lastmod>2023-08-15</lastmod>
     </url>
     <url>
         <loc>https://blog.dich.ink/docker-learn-1/</loc>
@@ -163,10 +187,6 @@
         <lastmod>2024-03-03</lastmod>
     </url>
     <url>
-        <loc>https://blog.dich.ink/openwrt/</loc>
-        <lastmod>2023-08-12</lastmod>
-    </url>
-    <url>
         <loc>https://blog.dich.ink/page/1/</loc>
     </url>
     <url>
@@ -192,14 +212,6 @@
     </url>
     <url>
         <loc>https://blog.dich.ink/page/9/</loc>
-    </url>
-    <url>
-        <loc>https://blog.dich.ink/podcast-use/</loc>
-        <lastmod>2024-01-20</lastmod>
-    </url>
-    <url>
-        <loc>https://blog.dich.ink/pve-mcsm/</loc>
-        <lastmod>2023-08-11</lastmod>
     </url>
     <url>
         <loc>https://blog.dich.ink/routing/</loc>
@@ -238,6 +250,9 @@
         <loc>https://blog.dich.ink/tags/docker/</loc>
     </url>
     <url>
+        <loc>https://blog.dich.ink/tags/dualsystem/</loc>
+    </url>
+    <url>
         <loc>https://blog.dich.ink/tags/git/</loc>
     </url>
     <url>
@@ -263,6 +278,9 @@
     </url>
     <url>
         <loc>https://blog.dich.ink/tags/mail/</loc>
+    </url>
+    <url>
+        <loc>https://blog.dich.ink/tags/nas/</loc>
     </url>
     <url>
         <loc>https://blog.dich.ink/tags/net/</loc>
