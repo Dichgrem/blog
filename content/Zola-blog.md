@@ -1,5 +1,5 @@
 +++
-title = "Personal Blog"
+title = "乱七八糟:个人博客搭建"
 date = 2024-03-12
 
 [taxonomies]

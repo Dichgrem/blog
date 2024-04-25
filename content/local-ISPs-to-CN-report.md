@@ -1,5 +1,5 @@
 +++
-title = "Network的艺术：国内至国际骨干ISP线路整理"
+title = "Network的艺术:国内至国际骨干ISP线路整理"
 date = 2024-02-10
 
 [taxonomies]

@@ -1,5 +1,5 @@
 +++
-title = "如何高效地向 ChatGPT 提问"
+title = "乱七八糟:如何高效地向 ChatGPT 提问"
 date = 2024-01-07
 
 [taxonomies]
