@@ -1,6 +1,6 @@
 +++
-title = "搜索引擎与爬虫"
-date = 2024-01-07
+title = "Network的艺术:搜索引擎与爬虫"
+date = 2024-02-11
 
 [taxonomies]
 tags = ["Tech","Searching"]
