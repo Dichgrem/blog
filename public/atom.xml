@@ -408,6 +408,26 @@
         
     </entry>
     <entry xml:lang="en">
+        <title>Network的艺术:下载技术的历史</title>
+        <published>2024-02-09T00:00:00+00:00</published>
+        <updated>2024-02-09T00:00:00+00:00</updated>
+        
+        <author>
+          <name>
+            
+              Unknown
+            
+          </name>
+        </author>
+        
+        <link rel="alternate" type="text/html" href="https://blog.dich.ink/network-download-1/"/>
+        <id>https://blog.dich.ink/network-download-1/</id>
+        
+        <summary type="html">&lt;p&gt;前言 下载，就是将我们所需要的文件数据，通过网络从拥有该文件资源的计算机上传输过来并保存到我们的计算机上，供我们使用。本系列将详细讲述各种常见网络下载技术的原理，包括HTTP,FTP,BT等等。&lt;&#x2F;p&gt;
+</summary>
+        
+    </entry>
+    <entry xml:lang="en">
         <title>乱七八糟:如何高效地向 ChatGPT 提问</title>
         <published>2024-01-07T00:00:00+00:00</published>
         <updated>2024-01-07T00:00:00+00:00</updated>
