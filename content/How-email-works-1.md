@@ -1,6 +1,6 @@
 +++
 title = "电子邮件是如何工作的:SPF/DKIM/DMARC"
-date = 2023-12-24
+date = 2024-02-20
 
 [taxonomies]
 tags = ["Tech","Mail"]
