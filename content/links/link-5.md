@@ -1,6 +1,6 @@
 +++
-title = "世纪大道 | 春风少年兄"
+title = "Milvoid"
 weight = 5
 +++
 
-[blog.0pt.icu](https://blog.0pt.icu/)
+[milvoid.com/](https://milvoid.com/)

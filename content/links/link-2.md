@@ -1,6 +1,6 @@
 +++
-title = "Ice Year の位面"
+title = "diredocks"
 weight = 2
 +++
 
-[blog.iceyear.eu.org](https://blog.iceyear.eu.org/)
+[diredocks.github.io](https://diredocks.github.io/blog/)

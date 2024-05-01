@@ -1,6 +1,6 @@
 +++
-title = "nanimonai's Blog"
+title = "世纪大道 | 春风少年兄"
 weight = 6
 +++
 
-[blog.nanimonai.org/](https://blog.nanimonai.org/)
+[blog.0pt.icu](https://blog.0pt.icu/)
