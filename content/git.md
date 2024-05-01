@@ -260,6 +260,17 @@ git目前默认的主分支为 master，和 github 默认分支 main 不同，�
 - 如果是 Linux 的用户，建议全局代理。
 
 
+> 20240501更新完系统出现以下报错:
 
+```
+sign_and_send_pubkey: signing failed for RSA "/home/dich/.ssh/id_rsa" from agent: agent refused operation
+git@github.com: Permission denied (publickey).
+致命错误：无法读取远程仓库。
 
+请确认您有正确的访问权限并且仓库存在。
+```
+解决方法是使用 ssh-add 命令重新添加你的密钥。
 
+```
+ssh-add ~/.ssh/id_rsa
+```

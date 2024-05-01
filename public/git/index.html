@@ -260,6 +260,18 @@
 <li>使用 <code>--global</code> 来配置的信息保存在当前用户的根目录下的 <code>.config</code> 文件中，而仓库中的配置保存在项目仓库的根目录下的 <code>.git/config</code> 文件中。</li>
 <li>如果是 Linux 的用户，建议全局代理。</li>
 </ul>
+<blockquote>
+<p>20240501更新完系统出现以下报错:</p>
+</blockquote>
+<pre style="background-color:#151515;color:#e8e8d3;"><code><span>sign_and_send_pubkey: signing failed for RSA &quot;/home/dich/.ssh/id_rsa&quot; from agent: agent refused operation
+</span><span>git@github.com: Permission denied (publickey).
+</span><span>致命错误：无法读取远程仓库。
+</span><span>
+</span><span>请确认您有正确的访问权限并且仓库存在。
+</span></code></pre>
+<p>解决方法是使用 ssh-add 命令重新添加你的密钥。</p>
+<pre style="background-color:#151515;color:#e8e8d3;"><code><span>ssh-add ~/.ssh/id_rsa
+</span></code></pre>
 
         </div>
 
