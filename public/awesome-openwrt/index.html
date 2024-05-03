@@ -132,6 +132,17 @@
 2.当看到 <code>please press Enter to activate this console</code>这个提示的时候系统就安装完毕了。可使用 passwd 命令设置密码。软路由将自动获取IP地址，随后我们在浏览器中打开该地址，即可看到 Lucl 界面。
 <img src="https://pic.dich.ink/1/2024/03/06/65e86687ef0fc.webp" alt="image-ariu.webp" /></p>
 <h2 id="hou-ji">后记</h2>
+<p>常用命令:</p>
+<pre style="background-color:#151515;color:#e8e8d3;"><code><span># 更新软件列表
+</span><span>opkg update
+</span><span>
+</span><span># 更新所有 LUCI 插件
+</span><span>opkg list-upgradable | grep luci- | cut -f 1 -d &#39; &#39; | xargs opkg upgrade
+</span><span>
+</span><span># 如果要更新所有软件，包括 OpenWRT 内核、固件等
+</span><span>opkg list-upgradable | cut -f 1 -d &#39; &#39; | xargs opkg upgrade
+</span><span>
+</span></code></pre>
 <p>开源世界还存在着 DD-WERT、Tomato 等系统。正如互联网的发展并非一帆风顺，OpenWRT 也出现过核心开发者出走，另立山头推出 LEDE 等波折，在18年 LEDE 与 openwrt 合并后，通过众多开发者的不懈努力， OpenWRT 有了现在丰富完善的生态。</p>
 <h2 id="can-kao">参考</h2>
 <ul>

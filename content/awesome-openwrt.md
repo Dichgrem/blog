@@ -50,8 +50,21 @@ https://drive.google.com/drive/folders/1uRXg_krKHPrQneI3F2GNcSVRoCgkqESr
 ![image-ariu.webp](https://pic.dich.ink/1/2024/03/06/65e86687ef0fc.webp)
 ## 后记
 
-开源世界还存在着 DD-WERT、Tomato 等系统。正如互联网的发展并非一帆风顺，OpenWRT 也出现过核心开发者出走，另立山头推出 LEDE 等波折，在18年 LEDE 与 openwrt 合并后，通过众多开发者的不懈努力， OpenWRT 有了现在丰富完善的生态。
 
+
+常用命令:
+```
+# 更新软件列表
+opkg update
+
+# 更新所有 LUCI 插件
+opkg list-upgradable | grep luci- | cut -f 1 -d ' ' | xargs opkg upgrade
+
+# 如果要更新所有软件，包括 OpenWRT 内核、固件等
+opkg list-upgradable | cut -f 1 -d ' ' | xargs opkg upgrade
+
+```
+开源世界还存在着 DD-WERT、Tomato 等系统。正如互联网的发展并非一帆风顺，OpenWRT 也出现过核心开发者出走，另立山头推出 LEDE 等波折，在18年 LEDE 与 openwrt 合并后，通过众多开发者的不懈努力， OpenWRT 有了现在丰富完善的生态。
 
 ## 参考
 
