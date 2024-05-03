@@ -38,13 +38,25 @@ tags = ["Tech","android","root"]
 
 因此，现在主流的刷机步骤为
 
-- 解开 bootloader，俗称解BL锁。
+- 解开 bootloader，俗称解BL锁.
 
-- 刷入第三方 recovery，比如大名鼎鼎的 TWRP；
+- 打开机器上的允许USB调试;
 
-- 进入 recovery 模式，通过TWRP刷入其他系统（可选），包括线刷和卡刷两种方法；
+- 备份Data分区(可使用Neobackup或系统自带),字库/基带/官方固件,桌面样式截图;
 
-- 刷入 Magisk (面具)工具，通过修补img文件获得 root 权限；
+- 下载该机器的官方原厂包以及要刷的第三方系统包;
+
+- 提取以上两个包中的boot.img和recovery.img文件备份;
+
+- 将机器与PC等设备连接,并进入bootloader;
+
+- 刷入第三方 recovery，比如大名鼎鼎的 TWRP,或者对应新系统的recovery.img；
+
+- 进入 recovery 模式，清空原系统数据;然后刷入原系统作为底包，避免出现固件问题;
+
+- 刷入新系统Zip包,随后重启,再次进入 recovery .
+
+- 刷入 Magisk (面具)工具，随后重启进入桌面,安装Magisk(apk),通过修补boot.img文件获得 root 权限；
 
 - 安装 Magisk 模块和 Lsposed 框架（可在其中下载许多模块，推荐一键救砖，系统优化和 root 隐藏）
 
@@ -101,3 +113,5 @@ Magisk : ``https://magisk.me/zip/``
  - [机型介绍](https://wiki.lineageos.org/devices/lmi/variant2/)
  - [XDA-没有声音的问题解决](https://xdaforums.com/t/no-sound-issue-can-u-help.4479225/)
  - [XDA-更换内核](https://xdaforums.com/t/kernel-overclocked-no-gravity-2023-08-28-protonclang.4531497/)
+
+
