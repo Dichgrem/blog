@@ -40,13 +40,8 @@ tags = ["Life","Podcast"]
 
 ## 四.播客资源
 
-天仙子的播客年度总结：播客选录
+[天仙子的播客年度总结：播客选录](https://tianxianzi.me/2023/12/11/selected_podcast/)
 
-中文播客榜：中文播客榜
+[中文播客榜](https://xyzrank.com/#/)
 
-Github播客大全：中文播客源
-
-播客RSS链接大全：播客 RSS Feed
-
-播客搜索引擎：Share a Podcast和Podcast search
-
+[Podcast search](https://www.listennotes.com/)

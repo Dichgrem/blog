@@ -11,13 +11,16 @@ tags = ["Tech","linux"]
 但由于该Wiki的中文版比较陈旧，安装教程不太清楚，故先以虚拟机安装Arch为例实际操作一番。
 
 <!-- more -->
-![bafkreie4fj4pavox7pt37tjabqo33fv7fnehmonw2che6mjht2y5x3jgly](ipfs://bafybeibajrsesaarkzymrbiwzvnda6eaejvb6zcjdreahtjs3j4mrsogei)
-
 
 ***
 
-准备工作：需要虚拟机环境（这里推荐使用VMware Workstation Pro),以及一个ISO镜像
+准备工作：需要
+- 虚拟机环境,这里推荐使用VMware Workstation Pro.
+
+- ISO镜像
+
 VM学习版：https://www.ahhhhfs.com/33472/
+
 官方镜像： https://geo.mirror.pkgbuild.com/iso/2023.08.01/
 
 ***
@@ -26,64 +29,46 @@ VM学习版：https://www.ahhhhfs.com/33472/
 1.打开VM，文件—新建虚拟机—典型—下一步，对于硬盘要求建议至少20G，作为后续分区使用；CPU及内存根据实际需求分配，一般取半数。
 注意：完成后需先在编辑虚拟机设置—选项中设置引导为UEFI，否则会导致奇怪的Boot问题。
 
-
-![图片](ipfs://bafybeibs4brehmnvjkfvd7ltyqhwzkmhdbxywftgls7eoqt7r3bcqe5xv4)
-
-
-![图片](ipfs://bafybeig5lfxizsc44etbvzqf663fmp3yeooffijwsngstxmxkgsbcg7s4m)
-
-
-
 2.开启此虚拟机，随后进入界面，回车，跑码后进入tty1。
-
-![图片](ipfs://bafkreihlwb3442do3fajm5znev4pycyfoutczvstyfitk7qtzuzuhcfez4)
-
-
-
-![图片](ipfs://bafkreiccfhgcm4vk4rxza6pz7exjzgigaf2bakd7dsjh5ryzd2jxmeykne)
-
 
 
 ## **二、联网并分区**
 1.使用 **dhcpcd** 命令获取IP地址，由于虚拟机使用NAT故联网容易。
+
 2.使用 **ping www.baidu.com** 命令检查是否联网，若出现ttl,time=xx ms等数据说明成功，随后再 **Ctrl+C** 停止命令运行，~~避免百度被DDOS攻击死掉。~~
+
 3.使用 **timedatectl set-ntp true** 命令更新系统时间，该命令无输出，正所谓无事发生就是最好的。
+
 4.使用 **fdisk -l** 命令查看系统分区，由于虚拟机的存在只会显示一块硬盘。
+
 5.接下来是Arch安装中较难的一部分，以20G硬盘空间为例，我们需要划分出512MB的引导分区，15G的根分区以及5G左右的交换分区。由于纯命令行分区比较繁琐，这里使用 **cfdisk** 命令打开分区工具。
 
-![图片](ipfs://bafkreia6qdsqeidr6vq2b6ptfl4ctxdvlrqa6aecdspvc27vnebwxa7kla)
 
 
 回车选择gpt类型，可以看到如下界面：
-
-![图片](ipfs://bafkreielrel5p5ssgalppawbfbqwnlyk6t7ryg7j4j7r2o4kbs4eqyhkgy)
-
 
 
 使用左右方向键移动至**New**,新建一个分区，大小为**512MB**,回车确认，并移动至**type**将其类型改为**EFI system**，随后如法炮制，建立根分区（类型为linux filesystem）和交换分区（linux swap）。
 注意：上诉操作完成后需在**Write**中选择**yes**,否则无法保存分区，随后**quit**回到命令行。
 
 
-![图片](ipfs://bafkreibrlvexhzffrrgqeqlj4pd2n23sxnmusiipbkgfsutyy6v5w4lpgy)
-
-
 6.分区结束后分别对其进行格式化，命令为
 ```
-**mkfs.fat -F32 /dev/sda1
+mkfs.fat -F32 /dev/sda1
 mkfs.ext4 /dev/sda2
-mkswap -f /dev/sda3**
+mkswap -f /dev/sda3
 ```
 注意不同分区类型与格式所用命令不同。
 7.格式完成后进行挂载，使用如下命令：
 ```
-**swapon /dev/sda3
+swapon /dev/sda3
 mount /dev/sda2 /mnt
 mkdir /dev/sda2 /mnt/home
 ls /mnt
 mkdir /mnt/boot
 mkdir /mnt/boot/EFI
 mount /dev/sda1 /mnt/boot/EFI
-ls /mnt**
+ls /mnt
 ```
 完成后即可开始组件下载。
 
@@ -93,10 +78,6 @@ ls /mnt**
 1.使用大名鼎鼎的**vim**编辑器，将下载镜像源改为国内，提高下载速度**vim /etc/pacman.d/mirrorlist**
 
 
-![394c1fa62cbd585145343b3f8bbba2ad](ipfs://bafkreictwulvg2xhhir5nhfodjum2sc6zjbgz2pcsik35ecwlpmih3vgda)
-
-
-
 推荐使用清华源，在首行中改为如下命令：
 
 ```
@@ -104,19 +85,15 @@ Server = http://mirrors.tuna.tsinghua.edu.cn/archlinux/$repo/os/$arch
 ```
 随后**ESC**，**: wq** 保存退出。
 
-![basic-install_mirrorlist-2.d629c732](ipfs://bafkreid3iaak75h5tvdhrfu5nkuv5dxfsd4j2ery74w4g4o5ykrs2yoayy)
-
 2.安装基本包，使用命令
 ```
 pacstrap /mnt base base-devel linux linux-firmware dhcpcd
 ```
 一路回车下载。
 
-![basic-install_pacstrap-2.4c230553](ipfs://bafkreieody2vfglni6mu7gjpbkh7lsmrptjkqrho6yo22enm7pi2aemufy)
-
 3.生成**fstab**文件 ，使用命令
 ```
-**genfstab -U /mnt > /mnt/etc/fstab**
+genfstab -U /mnt > /mnt/etc/fstab
 ```
 自动挂载分区，并用**cat /mnt/etc/fstab**观察分区情况。
 4.使用**arch-chroot /mnt**命令切换至系统环境下，此时可以设置时区，语言和主机名（hostname）。
@@ -132,7 +109,6 @@ ln -sf /usr/share/zoneinfo/Asia/Shanghai /etc/localtime
 ```
 设置语言：使用**vim /etc/locale.gen**命令去掉 **en_US.UTF-8 UTF-8** 以及 **zh_CN.UTF-8 UTF-8** 行前的注释符号，并用**locale-gen**生成新locale，用**echo 'LANG=en_US.UTF-8' > /etc/locale.conf**命令确认输出。
 
-![basic-install_locale-1.59ffa6db](ipfs://bafkreihddeih5fe46ysb42inueignbo2dfc5dm7d75tvjpmtr4lo5rrm7i)
 
 4.设置root密码：使用**passwd**命令，设置并重复密码。
 5.安装微码：根据硬件选择命令：
@@ -155,22 +131,17 @@ reboot # 重启
 ```
 若成功进入登录界面即为成功，可使用**neofetch**命令打印系统信息。
 
-![basic-install_neofetch.d338d5c5](ipfs://bafkreihnuyjb6tzcp3pqo6irmmml3tp5gpw2b2sl5amr5qiykvtmi5ufpu)
-
 
 ***
 ## **四、安装图形界面**
 为便于在虚拟机中操作，我们可以安装KDE-plasma，Xfce等桌面环境。
 1.使用**dhcpcd**获得地址。
-2.新建普通用户**useradd -m -G wheel username** （替换username为你的用户名）
-并设置密码**passwd username** 。
-3.配置Sudo,使用**pacman -S sudo**安装并在**ln -s /usr/bin/vim /usr/bin/vi
-visudo**中删除 **%wheel ALL=(ALL)ALL** 前的注释符。
+
+2.新建普通用户**useradd -m -G wheel username** （替换username为你的用户名）并设置密码**passwd username** 。
+
+3.配置Sudo,使用**pacman -S sudo**安装并在**ln -s /usr/bin/vim /usr/bin/vi/visudo** 中删除 **%wheel ALL=(ALL)ALL** 前的注释符。
+
 4.reboot后开始安装驱动。由于~~NVIDIA fuck you~~ 众所周知的原因，独显驱动比较难以安装，建议先只上核显。
-
-
-![图片](ipfs://bafkreic4wammkoj27s35kh3ajhhbsx6p3sn2kxnsnoc4z4gphv2vrehbjq)
-
 
 
 以此为例，若为AMD核显，命令为
@@ -194,8 +165,6 @@ systemctl enable sddm
 systemctl start sddm
 ```
 7.reboot后进入桌面环境，安装完成。
-
-![arch-2023-08-07-17-35-13](ipfs://bafkreigb3tgkdvtwjvbchvd742sc7v6pehyepiax7saobhqae4tn5bkkxa)
 
 
 ## **后记**

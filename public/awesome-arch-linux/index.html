@@ -97,65 +97,62 @@
             <p>前言 Arch linux是一个轻量、灵活、滚动更新的 Linux 发行版，衍生了诸多优秀的桌面端linux。其官方Wiki更是被称为技术界的“武林秘籍”；
 但由于该Wiki的中文版比较陈旧，安装教程不太清楚，故先以虚拟机安装Arch为例实际操作一番。</p>
 <span id="continue-reading"></span>
-<p><img src="ipfs://bafybeibajrsesaarkzymrbiwzvnda6eaejvb6zcjdreahtjs3j4mrsogei" alt="bafkreie4fj4pavox7pt37tjabqo33fv7fnehmonw2che6mjht2y5x3jgly" /></p>
 <hr />
-<p>准备工作：需要虚拟机环境（这里推荐使用VMware Workstation Pro),以及一个ISO镜像
-VM学习版：https://www.ahhhhfs.com/33472/
-官方镜像： https://geo.mirror.pkgbuild.com/iso/2023.08.01/</p>
+<p>准备工作：需要</p>
+<ul>
+<li>
+<p>虚拟机环境,这里推荐使用VMware Workstation Pro.</p>
+</li>
+<li>
+<p>ISO镜像</p>
+</li>
+</ul>
+<p>VM学习版：https://www.ahhhhfs.com/33472/</p>
+<p>官方镜像： https://geo.mirror.pkgbuild.com/iso/2023.08.01/</p>
 <hr />
 <h2 id="yi-xin-jian-xu-ni-ji"><strong>一、新建虚拟机</strong></h2>
 <p>1.打开VM，文件—新建虚拟机—典型—下一步，对于硬盘要求建议至少20G，作为后续分区使用；CPU及内存根据实际需求分配，一般取半数。
 注意：完成后需先在编辑虚拟机设置—选项中设置引导为UEFI，否则会导致奇怪的Boot问题。</p>
-<p><img src="ipfs://bafybeibs4brehmnvjkfvd7ltyqhwzkmhdbxywftgls7eoqt7r3bcqe5xv4" alt="图片" /></p>
-<p><img src="ipfs://bafybeig5lfxizsc44etbvzqf663fmp3yeooffijwsngstxmxkgsbcg7s4m" alt="图片" /></p>
 <p>2.开启此虚拟机，随后进入界面，回车，跑码后进入tty1。</p>
-<p><img src="ipfs://bafkreihlwb3442do3fajm5znev4pycyfoutczvstyfitk7qtzuzuhcfez4" alt="图片" /></p>
-<p><img src="ipfs://bafkreiccfhgcm4vk4rxza6pz7exjzgigaf2bakd7dsjh5ryzd2jxmeykne" alt="图片" /></p>
 <h2 id="er-lian-wang-bing-fen-qu"><strong>二、联网并分区</strong></h2>
-<p>1.使用 <strong>dhcpcd</strong> 命令获取IP地址，由于虚拟机使用NAT故联网容易。
-2.使用 <strong>ping www.baidu.com</strong> 命令检查是否联网，若出现ttl,time=xx ms等数据说明成功，随后再 <strong>Ctrl+C</strong> 停止命令运行，<del>避免百度被DDOS攻击死掉。</del>
-3.使用 <strong>timedatectl set-ntp true</strong> 命令更新系统时间，该命令无输出，正所谓无事发生就是最好的。
-4.使用 <strong>fdisk -l</strong> 命令查看系统分区，由于虚拟机的存在只会显示一块硬盘。
-5.接下来是Arch安装中较难的一部分，以20G硬盘空间为例，我们需要划分出512MB的引导分区，15G的根分区以及5G左右的交换分区。由于纯命令行分区比较繁琐，这里使用 <strong>cfdisk</strong> 命令打开分区工具。</p>
-<p><img src="ipfs://bafkreia6qdsqeidr6vq2b6ptfl4ctxdvlrqa6aecdspvc27vnebwxa7kla" alt="图片" /></p>
+<p>1.使用 <strong>dhcpcd</strong> 命令获取IP地址，由于虚拟机使用NAT故联网容易。</p>
+<p>2.使用 <strong>ping www.baidu.com</strong> 命令检查是否联网，若出现ttl,time=xx ms等数据说明成功，随后再 <strong>Ctrl+C</strong> 停止命令运行，<del>避免百度被DDOS攻击死掉。</del></p>
+<p>3.使用 <strong>timedatectl set-ntp true</strong> 命令更新系统时间，该命令无输出，正所谓无事发生就是最好的。</p>
+<p>4.使用 <strong>fdisk -l</strong> 命令查看系统分区，由于虚拟机的存在只会显示一块硬盘。</p>
+<p>5.接下来是Arch安装中较难的一部分，以20G硬盘空间为例，我们需要划分出512MB的引导分区，15G的根分区以及5G左右的交换分区。由于纯命令行分区比较繁琐，这里使用 <strong>cfdisk</strong> 命令打开分区工具。</p>
 <p>回车选择gpt类型，可以看到如下界面：</p>
-<p><img src="ipfs://bafkreielrel5p5ssgalppawbfbqwnlyk6t7ryg7j4j7r2o4kbs4eqyhkgy" alt="图片" /></p>
 <p>使用左右方向键移动至<strong>New</strong>,新建一个分区，大小为<strong>512MB</strong>,回车确认，并移动至<strong>type</strong>将其类型改为<strong>EFI system</strong>，随后如法炮制，建立根分区（类型为linux filesystem）和交换分区（linux swap）。
 注意：上诉操作完成后需在<strong>Write</strong>中选择<strong>yes</strong>,否则无法保存分区，随后<strong>quit</strong>回到命令行。</p>
-<p><img src="ipfs://bafkreibrlvexhzffrrgqeqlj4pd2n23sxnmusiipbkgfsutyy6v5w4lpgy" alt="图片" /></p>
 <p>6.分区结束后分别对其进行格式化，命令为</p>
-<pre style="background-color:#151515;color:#e8e8d3;"><code><span>**mkfs.fat -F32 /dev/sda1
+<pre style="background-color:#151515;color:#e8e8d3;"><code><span>mkfs.fat -F32 /dev/sda1
 </span><span>mkfs.ext4 /dev/sda2
-</span><span>mkswap -f /dev/sda3**
+</span><span>mkswap -f /dev/sda3
 </span></code></pre>
 <p>注意不同分区类型与格式所用命令不同。
 7.格式完成后进行挂载，使用如下命令：</p>
-<pre style="background-color:#151515;color:#e8e8d3;"><code><span>**swapon /dev/sda3
+<pre style="background-color:#151515;color:#e8e8d3;"><code><span>swapon /dev/sda3
 </span><span>mount /dev/sda2 /mnt
 </span><span>mkdir /dev/sda2 /mnt/home
 </span><span>ls /mnt
 </span><span>mkdir /mnt/boot
 </span><span>mkdir /mnt/boot/EFI
 </span><span>mount /dev/sda1 /mnt/boot/EFI
-</span><span>ls /mnt**
+</span><span>ls /mnt
 </span></code></pre>
 <p>完成后即可开始组件下载。</p>
 <hr />
 <h2 id="san-an-zhuang-ji-ben-zu-jian"><strong>三、安装基本组件</strong></h2>
 <p>1.使用大名鼎鼎的<strong>vim</strong>编辑器，将下载镜像源改为国内，提高下载速度<strong>vim /etc/pacman.d/mirrorlist</strong></p>
-<p><img src="ipfs://bafkreictwulvg2xhhir5nhfodjum2sc6zjbgz2pcsik35ecwlpmih3vgda" alt="394c1fa62cbd585145343b3f8bbba2ad" /></p>
 <p>推荐使用清华源，在首行中改为如下命令：</p>
 <pre style="background-color:#151515;color:#e8e8d3;"><code><span>Server = http://mirrors.tuna.tsinghua.edu.cn/archlinux/$repo/os/$arch
 </span></code></pre>
 <p>随后<strong>ESC</strong>，<strong>: wq</strong> 保存退出。</p>
-<p><img src="ipfs://bafkreid3iaak75h5tvdhrfu5nkuv5dxfsd4j2ery74w4g4o5ykrs2yoayy" alt="basic-install_mirrorlist-2.d629c732" /></p>
 <p>2.安装基本包，使用命令</p>
 <pre style="background-color:#151515;color:#e8e8d3;"><code><span>pacstrap /mnt base base-devel linux linux-firmware dhcpcd
 </span></code></pre>
 <p>一路回车下载。</p>
-<p><img src="ipfs://bafkreieody2vfglni6mu7gjpbkh7lsmrptjkqrho6yo22enm7pi2aemufy" alt="basic-install_pacstrap-2.4c230553" /></p>
 <p>3.生成<strong>fstab</strong>文件 ，使用命令</p>
-<pre style="background-color:#151515;color:#e8e8d3;"><code><span>**genfstab -U /mnt &gt; /mnt/etc/fstab**
+<pre style="background-color:#151515;color:#e8e8d3;"><code><span>genfstab -U /mnt &gt; /mnt/etc/fstab
 </span></code></pre>
 <p>自动挂载分区，并用<strong>cat /mnt/etc/fstab</strong>观察分区情况。
 4.使用<strong>arch-chroot /mnt</strong>命令切换至系统环境下，此时可以设置时区，语言和主机名（hostname）。
@@ -168,7 +165,6 @@ VM学习版：https://www.ahhhhfs.com/33472/
 </span><span>127.0.1.1 name.localdomain name
 </span></code></pre>
 <p>设置语言：使用<strong>vim /etc/locale.gen</strong>命令去掉 <strong>en_US.UTF-8 UTF-8</strong> 以及 <strong>zh_CN.UTF-8 UTF-8</strong> 行前的注释符号，并用<strong>locale-gen</strong>生成新locale，用<strong>echo 'LANG=en_US.UTF-8' &gt; /etc/locale.conf</strong>命令确认输出。</p>
-<p><img src="ipfs://bafkreihddeih5fe46ysb42inueignbo2dfc5dm7d75tvjpmtr4lo5rrm7i" alt="basic-install_locale-1.59ffa6db" /></p>
 <p>4.设置root密码：使用<strong>passwd</strong>命令，设置并重复密码。
 5.安装微码：根据硬件选择命令：
 <strong>pacman -S intel-ucode # Intel
@@ -186,17 +182,13 @@ pacman -S amd-ucode # AMD</strong>
 </span><span>reboot # 重启
 </span></code></pre>
 <p>若成功进入登录界面即为成功，可使用<strong>neofetch</strong>命令打印系统信息。</p>
-<p><img src="ipfs://bafkreihnuyjb6tzcp3pqo6irmmml3tp5gpw2b2sl5amr5qiykvtmi5ufpu" alt="basic-install_neofetch.d338d5c5" /></p>
 <hr />
 <h2 id="si-an-zhuang-tu-xing-jie-mian"><strong>四、安装图形界面</strong></h2>
 <p>为便于在虚拟机中操作，我们可以安装KDE-plasma，Xfce等桌面环境。
-1.使用<strong>dhcpcd</strong>获得地址。
-2.新建普通用户<strong>useradd -m -G wheel username</strong> （替换username为你的用户名）
-并设置密码<strong>passwd username</strong> 。
-3.配置Sudo,使用<strong>pacman -S sudo</strong>安装并在<strong>ln -s /usr/bin/vim /usr/bin/vi
-visudo</strong>中删除 <strong>%wheel ALL=(ALL)ALL</strong> 前的注释符。
-4.reboot后开始安装驱动。由于~~NVIDIA fuck you~~ 众所周知的原因，独显驱动比较难以安装，建议先只上核显。</p>
-<p><img src="ipfs://bafkreic4wammkoj27s35kh3ajhhbsx6p3sn2kxnsnoc4z4gphv2vrehbjq" alt="图片" /></p>
+1.使用<strong>dhcpcd</strong>获得地址。</p>
+<p>2.新建普通用户<strong>useradd -m -G wheel username</strong> （替换username为你的用户名）并设置密码<strong>passwd username</strong> 。</p>
+<p>3.配置Sudo,使用<strong>pacman -S sudo</strong>安装并在<strong>ln -s /usr/bin/vim /usr/bin/vi/visudo</strong> 中删除 <strong>%wheel ALL=(ALL)ALL</strong> 前的注释符。</p>
+<p>4.reboot后开始安装驱动。由于~~NVIDIA fuck you~~ 众所周知的原因，独显驱动比较难以安装，建议先只上核显。</p>
 <p>以此为例，若为AMD核显，命令为</p>
 <pre style="background-color:#151515;color:#e8e8d3;"><code><span>sudo pacman -S xf86-video-amdgpu
 </span></code></pre>
@@ -213,7 +205,6 @@ visudo</strong>中删除 <strong>%wheel ALL=(ALL)ALL</strong> 前的注释符。
 </span><span>systemctl start sddm
 </span></code></pre>
 <p>7.reboot后进入桌面环境，安装完成。</p>
-<p><img src="ipfs://bafkreigb3tgkdvtwjvbchvd742sc7v6pehyepiax7saobhqae4tn5bkkxa" alt="arch-2023-08-07-17-35-13" /></p>
 <h2 id="hou-ji"><strong>后记</strong></h2>
 <p>设备的多样导致安装中可能会出现一些奇怪的问题，需要自行搜索学习，以不断提高技术水平。</p>
 

@@ -12,7 +12,6 @@ tags = ["Tech","chromebook"]
 前言 ChromeBook 作为国外一款定位为商务办公和学生入门的机器，其性能在2023年的当下似乎已经过时；在其退出中国市场后更是接近绝迹。不过，针对特殊需求下的部分机型在今天仍然极具性价比。
 <!-- more -->
 作为一个垃圾佬，作者常常去发掘二手平台的诸多“洋垃圾”；而就在某一天，一台名为 ASUS ChromeBook C302 的机器吸引了我的注意力，且看其配置：
-![image-kmux.webp](https://pic.dich.ink/1/2024/03/06/65e8667181a0f.webp)
 
 此前作者一直认为 ChromeBook 只存在于 Google 的 Pixelbook 机型之上，就如同 Mircosoft的Surface Pro 一样；实际上，主流 OEM 厂商——美帝良心想、社会主义戴、惠普宏碁华硕三星等等—-都推出过 Chromebook。
 
@@ -26,36 +25,31 @@ tags = ["Tech","chromebook"]
 
 ## 一.进入开发者模式
 
-我们假设你已经有了一个 Google 账号，并在往期的博客中部署了 openwrt，那么此时通过全局科学让 chromebook 联网，随后登录账号，此时我们完成了第一步；随后拆开后盖，拧下主板上的 BIOS 写保护螺丝。注意在拆卸背板的时候，有两颗螺丝藏在上侧脚垫下，需要先用工具去除脚垫再拆卸这两颗螺丝；下侧的两个脚垫下没有螺丝。如图所示：
-![image-rybv.webp](https://pic.dich.ink/1/2024/03/06/65e86662ed8c9.webp)
+我们假设你已经有了一个 Google 账号，并在往期的博客中部署了 openwrt，那么此时通过全局科学让 chromebook 联网，随后登录账号，此时我们完成了第一步；
+
+随后拆开后盖，拧下主板上的 BIOS 写保护螺丝。注意在拆卸背板的时候，有两颗螺丝藏在上侧脚垫下，需要先用工具去除脚垫再拆卸这两颗螺丝；下侧的两个脚垫下没有螺丝。如图所示：
+
 随后打开背板，卸下图示位置（在蒙皮下）的大螺丝：
-![image-mfjq.webp](https://pic.dich.ink/1/2024/03/06/65e866496a43d.webp)
+
 随后装回后盖，按住键盘上的Esc和“刷新”键不动，然后按下电源键。这样Chromebook会进入“恢复”模式：
-![image-edcy.webp](https://pic.dich.ink/1/2024/03/06/65e8668011f98.webp)
 
 然后同时按下键盘上的Ctrl键和D键：
 
-![image-efqm.webp](https://pic.dich.ink/1/2024/03/06/65e8667e34bdd.webp)
 
 按下Enter，系统重启：
 这时会有一声“滴！”的BIOS提示音。
 
-![image-hzut.webp](https://pic.dich.ink/1/2024/03/06/65e866753ff2d.webp)
 
 随后等待Chrome OS重置即可。
 
-![image-ntmm.webp](https://pic.dich.ink/1/2024/03/06/65e8666e00a56.webp)
 
 重置完成后看到如下界面，以后每次开机都要按Ctrl+D进入系统：
 
-![image-goit.webp](https://pic.dich.ink/1/2024/03/06/65e866790a8f6.webp)
 
 随后在设置-高级中可以看到开发者模式已打开，此时传到ChromeOS中的其他APP即可安装。
 
 附阅读器和视频效果：
 
-![image-wuzq.webp](https://pic.dich.ink/1/2024/03/06/65e866580fe13.webp)
-![image-acav.webp](https://pic.dich.ink/1/2024/03/06/65e86680d5edf.webp)
 
 ## 二.安装其他系统
 
