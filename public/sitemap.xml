@@ -4,6 +4,10 @@
         <loc>https://blog.dich.ink/</loc>
     </url>
     <url>
+        <loc>https://blog.dich.ink/about-time/</loc>
+        <lastmod>2024-05-13</lastmod>
+    </url>
+    <url>
         <loc>https://blog.dich.ink/about-working/</loc>
         <lastmod>2023-12-27</lastmod>
     </url>
@@ -194,6 +198,9 @@
         <loc>https://blog.dich.ink/page/1/</loc>
     </url>
     <url>
+        <loc>https://blog.dich.ink/page/10/</loc>
+    </url>
+    <url>
         <loc>https://blog.dich.ink/page/2/</loc>
     </url>
     <url>
@@ -330,6 +337,9 @@
     </url>
     <url>
         <loc>https://blog.dich.ink/tags/tech/</loc>
+    </url>
+    <url>
+        <loc>https://blog.dich.ink/tags/time/</loc>
     </url>
     <url>
         <loc>https://blog.dich.ink/tags/wifi/</loc>
