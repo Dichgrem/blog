@@ -101,6 +101,11 @@
 <p><strong>步骤2.</strong> 输入以下命令并按<strong>Enter</strong>键执行。</p>
 <pre style="background-color:#151515;color:#e8e8d3;"><code><span>reg add HKCU\Software\Classes\CLSID{86ca1aa0-34aa-4e8b-a509-50c905bae2a2}\InprocServer32 /ve /d “” /f
 </span></code></pre>
+<p>或者</p>
+<pre style="background-color:#151515;color:#e8e8d3;"><code><span>reg add &quot;HKCU\Software\Classes\CLSID\{86ca1aa0-34aa-4e8b-a509-50c905bae2a2}\InprocServer32&quot; /f /ve
+</span><span>taskkill /f /im explorer.exe 
+</span><span>start explorer.exe
+</span></code></pre>
 <p>注意：如果您想要重新打开Win11新样式的右键菜单的话，以同样的方式在命令提示符中执行此命令：</p>
 <pre style="background-color:#151515;color:#e8e8d3;"><code><span>reg delete &quot;HKCU\Software\Classes\CLSID{86ca1aa0-34aa-4e8b-a509-50c905bae2a2}&quot; /f
 </span></code></pre>
