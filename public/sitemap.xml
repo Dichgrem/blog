@@ -66,6 +66,10 @@
         <lastmod>2024-01-07</lastmod>
     </url>
     <url>
+        <loc>https://blog.dich.ink/chrome-shortcut-key/</loc>
+        <lastmod>2024-05-23</lastmod>
+    </url>
+    <url>
         <loc>https://blog.dich.ink/docker-learn-1/</loc>
         <lastmod>2024-03-25</lastmod>
     </url>
@@ -247,6 +251,9 @@
     </url>
     <url>
         <loc>https://blog.dich.ink/tags/blog/</loc>
+    </url>
+    <url>
+        <loc>https://blog.dich.ink/tags/browser/</loc>
     </url>
     <url>
         <loc>https://blog.dich.ink/tags/calling-cards/</loc>
