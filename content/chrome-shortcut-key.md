@@ -1,5 +1,5 @@
 +++
-title = "Chrome常用快捷键"
+title = "乱七八糟:Chrome常用快捷键"
 date = 2024-05-23
 
 [taxonomies]
