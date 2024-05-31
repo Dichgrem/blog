@@ -38,7 +38,9 @@ tags = ["Tech","android","root"]
 
 因此，现在主流的刷机步骤为
 
-- 解开 bootloader，俗称解BL锁.
+- 解开 bootloader，俗称解BL锁. 
+
+> [BL锁原理参考](https://telegra.ph/BL%E9%94%81%E7%9A%84%E5%8E%9F%E7%90%86%E6%98%AF%E4%BB%80%E4%B9%88-05-29)
 
 - 打开机器上的允许USB调试;
 
