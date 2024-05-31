@@ -4,6 +4,10 @@
         <loc>https://blog.dich.ink/</loc>
     </url>
     <url>
+        <loc>https://blog.dich.ink/about-bilibili/</loc>
+        <lastmod>2024-05-31</lastmod>
+    </url>
+    <url>
         <loc>https://blog.dich.ink/about-time/</loc>
         <lastmod>2024-05-13</lastmod>
     </url>
@@ -260,6 +264,9 @@
     </url>
     <url>
         <loc>https://blog.dich.ink/tags/chromebook/</loc>
+    </url>
+    <url>
+        <loc>https://blog.dich.ink/tags/cs/</loc>
     </url>
     <url>
         <loc>https://blog.dich.ink/tags/debain/</loc>
