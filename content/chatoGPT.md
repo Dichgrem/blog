@@ -3,7 +3,7 @@ title = "乱七八糟:如何高效地向 ChatGPT 提问"
 date = 2024-01-07
 
 [taxonomies]
-tags = ["Tech","乱七八糟"]
+tags = ["乱七八糟"]
 +++
 
 

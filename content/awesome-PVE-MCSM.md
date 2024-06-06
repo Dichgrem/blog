@@ -3,7 +3,7 @@ title = "综合工程:PVE安装与MC服务器搭建"
 date = 2023-08-11
 
 [taxonomies]
-tags = ["Tech","综合工程"]
+tags = ["综合工程"]
 +++
 
 

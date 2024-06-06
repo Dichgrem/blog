@@ -3,7 +3,7 @@ title = "综合工程:Win/linux双系统部署"
 date = 2023-08-18
 
 [taxonomies]
-tags = ["Tech","综合工程"]
+tags = ["综合工程"]
 +++
 
 

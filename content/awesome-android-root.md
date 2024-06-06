@@ -3,7 +3,7 @@ title = "综合工程:安卓刷机与root教程"
 date = 2023-08-13
 
 [taxonomies]
-tags = ["Tech","综合工程"]
+tags = ["综合工程"]
 +++
 
 

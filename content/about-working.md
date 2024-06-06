@@ -3,7 +3,7 @@ title = "乱七八糟:应届生工作指南"
 date = 2023-12-27
 
 [taxonomies]
-tags = ["Life","乱七八糟"]
+tags = ["乱七八糟"]
 +++
 
 
