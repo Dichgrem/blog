@@ -3,7 +3,7 @@ title = "开源世界:什么是开源"
 date = 2024-03-01
 
 [taxonomies]
-tags = ["Tech","Open-Source"]
+tags = ["Tech","开源世界"]
 +++
 前言 「开源」一词对应英文 Open Source，最初起源于软件开发领域，因此也称为「开放源代码」，对应的软件则称为开源软件（Open Source Software，简称 OSS）。
 

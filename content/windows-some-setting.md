@@ -3,7 +3,7 @@ title = "乱七八糟:Windows单级菜单/开机启动/关闭更新"
 date = 2023-08-26
 
 [taxonomies]
-tags = ["Tech","Windows"]
+tags = ["Tech","乱七八糟"]
 +++
 
 前言 Windows操作系统作为全球最为普及的桌面操作系统之一，其用户界面的设计非常经典；而win11中的二级菜单令人感到无语，本文教你回到一级菜单。

@@ -3,7 +3,7 @@ title = "综合工程:Android TV 折腾小记"
 date = 2023-08-14
 
 [taxonomies]
-tags = ["Tech","android-TV"]
+tags = ["Tech","综合工程"]
 +++
 
 

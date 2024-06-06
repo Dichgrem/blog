@@ -3,7 +3,7 @@ title = "搭建个人信息流:RSS阅读指南"
 date = 2024-03-05
 
 [taxonomies]
-tags = ["Tech","RSS"]
+tags = ["Tech","乱七八糟"]
 +++
 前言 RSS 提供了一种数据格式，以 XML（可扩展标记语言）的形式组织信息，包括文章标题、摘要、链接和发布日期等。这些信息形成了所谓的“订阅源”（Feed），用户可以使用RSS阅读器（Feed Reader）来订阅这些源。
 <!-- more -->

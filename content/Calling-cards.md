@@ -3,7 +3,7 @@ title = "乱七八糟:流量卡购买与套路"
 date = 2023-08-24
 
 [taxonomies]
-tags = ["Life","Calling-cards"]
+tags = ["Life","乱七八糟"]
 +++
 
 

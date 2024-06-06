@@ -3,7 +3,7 @@ title = "电子邮件是如何工作的:POP3/IMAP/SMTP"
 date = 2024-02-21
 
 [taxonomies]
-tags = ["Tech","Mail"]
+tags = ["Tech","乱七八糟"]
 +++
 
 前言 POP3、IMAP 和 SMTP 是用于电子邮件传输的常见协议和服务,这些协议共同构成了电子邮件系统的基础，允许用户接收、发送和管理电子邮件。

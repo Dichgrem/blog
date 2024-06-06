@@ -3,7 +3,7 @@ title = "综合工程:ChromeBook研究记"
 date = 2023-08-15
 
 [taxonomies]
-tags = ["Tech","chromebook"]
+tags = ["Tech","综合工程"]
 +++
 
 

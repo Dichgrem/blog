@@ -3,7 +3,7 @@ title = "Docker学习笔记(二)"
 date = 2024-03-26
 
 [taxonomies]
-tags = ["Tech","Docker"]
+tags = ["Tech","学习笔记"]
 +++
 
 前言 了解支持 Docker 的核心技术将有助于更深入地了解 Docker 的工作原理，并更有效地使用该平台。

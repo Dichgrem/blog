@@ -3,7 +3,7 @@ title = "Docker学习笔记(九)"
 date = 2024-04-02
 
 [taxonomies]
-tags = ["Tech","Docker"]
+tags = ["Tech","学习笔记"]
 +++
 
 前言 Docker CLI（命令行界面）是一个强大的工具，允许您与 Docker 容器、映像、卷和网络进行交互和管理。它为用户提供了广泛的命令，用于在开发和生产工作流中创建、运行和管理 Docker 容器和其他 Docker 资源。

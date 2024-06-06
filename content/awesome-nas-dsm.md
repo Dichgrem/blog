@@ -3,7 +3,7 @@ title = "综合工程:黑群辉NAS极速安装"
 date = 2023-08-17
 
 [taxonomies]
-tags = ["Tech","Nas"]
+tags = ["Tech","综合工程"]
 +++
 
 

@@ -3,7 +3,7 @@ title = "综合工程:OpenWrt 软路由部署"
 date = 2023-08-12
 
 [taxonomies]
-tags = ["Tech","openwrt"]
+tags = ["Tech","综合工程"]
 +++
 
 
