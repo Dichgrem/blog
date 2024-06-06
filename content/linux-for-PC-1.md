@@ -3,7 +3,7 @@ title = "Linux-For-PC(一):构成与发行版"
 date = 2023-07-20
 
 [taxonomies]
-tags = ["Tech","Linux"]
+tags = ["Linux"]
 +++
 
 

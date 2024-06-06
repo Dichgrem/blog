@@ -3,7 +3,7 @@ title = "乱七八糟:个人博客搭建"
 date = 2023-10-12
 
 [taxonomies]
-tags = ["Tech","乱七八糟"]
+tags = ["乱七八糟"]
 +++
 
 

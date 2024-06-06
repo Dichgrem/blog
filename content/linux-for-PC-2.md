@@ -3,7 +3,7 @@ title = "Linux-For-PC(二):FHS与目录结构"
 date = 2023-07-21
 
 [taxonomies]
-tags = ["Tech","Linux"]
+tags = ["Linux"]
 +++
 
 前言 在Linux世界中，Filesystem Hierarchy Standard（FHS）是一座引导我们进入系统核心的桥梁，它定义了Linux系统中目录结构的规范与作用，为我们提供了一张清晰的地图，指引我们轻松管理和理解系统。本文将深入探讨FHS规范与Linux系统目录结构，解释各个目录的用途与功能，帮助我们更好地理解和利用Linux系统。

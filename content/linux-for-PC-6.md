@@ -3,7 +3,7 @@ title = "Linux-For-PC(六):常用命令与性能分析"
 date = 2023-07-25
 
 [taxonomies]
-tags = ["Tech","Linux"]
+tags = ["Linux"]
 +++
 
 前言 在学习Linux操作系统时，熟悉常用命令和性能分析工具是至关重要的。让我们一起探索Linux的世界，提升技能，解锁无限可能！

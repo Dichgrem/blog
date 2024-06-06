@@ -3,7 +3,7 @@ title = "Linux-For-PC(三):内核/shell/包管理/文件系统/桌面环境"
 date = 2023-07-22
 
 [taxonomies]
-tags = ["Tech","Linux"]
+tags = ["Linux"]
 +++
 
 前言 在Linux世界中，内核/shell/包管理/文件系统构成了Linux系统的核心，它们相互配合，共同构建了一个强大而稳定的操作环境。本文将深入探讨这些关键组成部分，解释它们的作用和原理，帮助读者更好地理解Linux系统的运作机制。
