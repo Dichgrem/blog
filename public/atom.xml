@@ -5,8 +5,28 @@
     <link rel="self" type="application/atom+xml" href="https://blog.dich.ink/atom.xml"/>
     <link rel="alternate" type="text/html" href="https://blog.dich.ink"/>
     <generator uri="https://www.getzola.org/">Zola</generator>
-    <updated>2024-06-08T00:00:00+00:00</updated>
+    <updated>2024-06-11T00:00:00+00:00</updated>
     <id>https://blog.dich.ink/atom.xml</id>
+    <entry xml:lang="en">
+        <title>乱七八糟:跑步笔记(二)</title>
+        <published>2024-06-11T00:00:00+00:00</published>
+        <updated>2024-06-11T00:00:00+00:00</updated>
+        
+        <author>
+          <name>
+            
+              Unknown
+            
+          </name>
+        </author>
+        
+        <link rel="alternate" type="text/html" href="https://blog.dich.ink/about-runer-2/"/>
+        <id>https://blog.dich.ink/about-runer-2/</id>
+        
+        <summary type="html">&lt;p&gt;前言 最近读得&amp;lt;&amp;lt;亮哥跑经&amp;gt;&amp;gt;一书,遂迷上跑步;奈何体重偏高,略微有些吃力.以下是一些笔记:&lt;&#x2F;p&gt;
+</summary>
+        
+    </entry>
     <entry xml:lang="en">
         <title>乱七八糟:跑步笔记(一)</title>
         <published>2024-06-08T00:00:00+00:00</published>
@@ -20,8 +40,8 @@
           </name>
         </author>
         
-        <link rel="alternate" type="text/html" href="https://blog.dich.ink/about-runer/"/>
-        <id>https://blog.dich.ink/about-runer/</id>
+        <link rel="alternate" type="text/html" href="https://blog.dich.ink/about-runer-1/"/>
+        <id>https://blog.dich.ink/about-runer-1/</id>
         
         <summary type="html">&lt;p&gt;前言 最近读得&amp;lt;&amp;lt;亮哥跑经&amp;gt;&amp;gt;一书,遂迷上跑步;奈何体重偏高,略微有些吃力.以下是一些笔记:&lt;&#x2F;p&gt;
 </summary>
