@@ -28,9 +28,6 @@
     <meta property="twitter:domain" content="blog.dich.ink">
     <meta property="twitter:url" content="https://blog.dich.ink/awesome-arch-linux/">
 
-            
-        <link rel="alternate" type="application/atom+xml" title="RSS" href="https://blog.dich.ink/atom.xml">
-    
     </head>
 
 <body class="">
@@ -187,7 +184,7 @@ pacman -S amd-ucode # AMD</strong>
 1.使用<strong>dhcpcd</strong>获得地址。</p>
 <p>2.新建普通用户<strong>useradd -m -G wheel username</strong> （替换username为你的用户名）并设置密码<strong>passwd username</strong> 。</p>
 <p>3.配置Sudo,使用<strong>pacman -S sudo</strong>安装并在<strong>ln -s /usr/bin/vim /usr/bin/vi/visudo</strong> 中删除 <strong>%wheel ALL=(ALL)ALL</strong> 前的注释符。</p>
-<p>4.reboot后开始安装驱动。由于~~NVIDIA fuck you~~ 众所周知的原因，独显驱动比较难以安装，建议先只上核显。</p>
+<p>4.reboot后开始安装驱动。由于<del>NVIDIA fuck you</del> 众所周知的原因，独显驱动比较难以安装，建议先只上核显。</p>
 <p>以此为例，若为AMD核显，命令为</p>
 <pre style="background-color:#151515;color:#e8e8d3;"><code><span>sudo pacman -S xf86-video-amdgpu
 </span></code></pre>
