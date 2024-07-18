@@ -28,6 +28,9 @@
     <meta property="twitter:domain" content="blog.dich.ink">
     <meta property="twitter:url" content="https://blog.dich.ink/about-g/">
 
+            
+        <link rel="alternate" type="application/atom+xml" title="RSS" href="https://blog.dich.ink/atom.xml">
+    
     </head>
 
 <body class="">
@@ -96,7 +99,7 @@
 <ol>
 <li><code>g++</code>: 这是 GNU C++ 编译器的命令。它负责将C++源代码编译成可执行程序。</li>
 <li><code>-DONLINE_JUDGE</code>: 这是一个预处理器宏定义。在编译时，<code>-D</code>选项会将<code>ONLINE_JUDGE</code>定义为一个预处理器符号。通常情况下，这种宏定义用于在代码中启用或禁用特定的功能或特性。在这个命令中，<code>ONLINE_JUDGE</code>可能会被用来控制代码中的一些条件编译部分，使得在在线评测系统中编译和执行时特定的功能或特性被启用或禁用。</li>
-<li><code>-fno-tree-ch</code>: 这是一个编译选项，用于控制编译器的优化行为。具体来说，<code>-fno-tree-ch</code>选项会禁用掉编译器中的一种叫做"树形优化"的技术的一部分。树形优化是GCC编译器中的一种高级优化技术，用于优化代码的执行效率。在某些情况下，禁用特定的优化技术可能会对调试或特定的代码结构有所帮助。</li>
+<li><code>-fno-tree-ch</code>: 这是一个编译选项，用于控制编译器的优化行为。具体来说，<code>-fno-tree-ch</code>选项会禁用掉编译器中的一种叫做&quot;树形优化&quot;的技术的一部分。树形优化是GCC编译器中的一种高级优化技术，用于优化代码的执行效率。在某些情况下，禁用特定的优化技术可能会对调试或特定的代码结构有所帮助。</li>
 <li><code>-O2</code>: 这是优化级别选项。<code>-O2</code>指示编译器进行较高级别的优化，以提高生成的代码的执行速度。优化级别通常从<code>-O0</code>（无优化）到<code>-O3</code>（最高级别优化）之间。在这种情况下，选择了较高的优化级别，以期望生成更高效的可执行代码。</li>
 <li><code>-Wall</code>: 这个选项会开启编译器的警告提示。它会提示一些常见的代码问题和潜在的错误。开启警告提示有助于开发者在编译过程中发现潜在的问题，提高代码的质量和可靠性。</li>
 <li><code>-std=c++17</code>: 这个选项指定了所使用的C++标准版本。在这种情况下，使用的是C++17标准。指定C++标准版本是为了确保编译器按照指定的标准进行语法和语义检查，以及生成相应版本的代码。</li>

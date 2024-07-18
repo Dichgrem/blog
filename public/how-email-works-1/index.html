@@ -28,6 +28,9 @@
     <meta property="twitter:domain" content="blog.dich.ink">
     <meta property="twitter:url" content="https://blog.dich.ink/how-email-works-1/">
 
+            
+        <link rel="alternate" type="application/atom+xml" title="RSS" href="https://blog.dich.ink/atom.xml">
+    
     </head>
 
 <body class="">
@@ -131,7 +134,7 @@
 <p>如果邮件服务器收到一封来自主机 <code>1.1.1.1</code> 的邮件，并且发件人是 <code>a@gmai.com</code>，为了确认发件人，邮件服务器就会去查询 <code>gmail.com</code> 的 SPF 记录。如果域名设置了 SPF 记录，允许 <code>1.1.1.1</code> 的 IP 地址发送邮件，那么收件的邮件服务器就会认为邮件是合法的，否则就会退信。</p>
 <p>有了 SPF 记录之后，如果有人想要伪装成 <code>a@gmail.com</code> 他既不能修改 gmail.com 的 DNS 解析，也无法伪造 IP 地址，就有效的防止了伪装。</p>
 <ul>
-<li>SPF 的语法</li>
+<li>SPF 的语法 </li>
 </ul>
 <p>在自建邮件服务器的时候，经常会让我们设置一个 TXT 记录，配置值为 <code>v=spf1 mx ~all</code>，这表示的意思是允许当前域名的 MX 记录对应的 IP 地址。</p>
 <p>下面再举个非常常见的例子：</p>
@@ -139,7 +142,7 @@
 </span></code></pre>
 <p>表示允许当前域名配置的 A 记录，MX 记录的 IP 地址，以及一个额外的 IP 进行发信。</p>
 <ul>
-<li>SPF 存在的问题</li>
+<li>SPF 存在的问题 </li>
 </ul>
 <p>SPF 机制可以有效地规避了发送邮件方伪造发件人的问题。但实际使用的时候，如果你使用多个邮箱，然后设置了其中 <a href="mailto:c@163.com">c@163.com</a> 邮箱自动转发到 <a href="mailto:a@gmail.com">a@gmail.com</a> 中。</p>
 <p>那么这个时候如果 <code>b@qq.com</code> QQ 邮箱发送了一封邮件到 <code>c@163.com</code> 邮箱，163 邮箱原封不动地将邮件转发到 Gmail 邮箱，这个时候发件人是 <code>b@qq.com</code>，但是 Gmail 回去查询 qq.com 的 SPF 记录，但会发现并不包含 163 邮箱的 IP 地址，会误判转发的邮件；所以又诞生了 DKIM。</p>
