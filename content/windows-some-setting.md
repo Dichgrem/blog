@@ -164,3 +164,4 @@ reg add HKEY_LOCAL_MACHINE\SOFTWARE\Microsoft\WindowsUpdate\UX\Settings /v Pause
 pause
 ```
 以上为恢复更新的脚本。
+
