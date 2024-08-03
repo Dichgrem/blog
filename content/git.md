@@ -76,6 +76,8 @@ Archlinux：`sudo pacman -S git`
 
     IdentityFile ~/.ssh/github_key2
 
+随后将cat ~/.ssh/id_rsa.pub,将其添加至 Github的Deploy密钥中，勾选write权限；
+
 连接到github：
 
 `ssh -T git@github.com`
