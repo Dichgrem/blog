@@ -167,6 +167,35 @@ systemctl start sddm
 7.reboot后进入桌面环境，安装完成。
 
 
+> 添加Windows引导
+```
+安装 os-prober：首先确保系统中安装了 os-prober，这是一个用于检测其他操作系统的工具。
+
+sudo pacman -S os-prober
+
+sudo os-prober
+
+更新 GRUB 配置：更新 GRUB 的配置文件，使其包含检测到的 Windows 引导项。
+
+sudo grub-mkconfig -o /boot/grub/grub.cfg
+
+如果GRUB 配置中 GRUB_DISABLE_OS_PROBER=true ，会禁止 os-prober 在 grub-mkconfig 运行时检测其他可引导的分区或系统。
+
+打开 /etc/default/grub 文件进行编辑：
+
+sudo nano /etc/default/grub
+
+确保以下设置处于如下状态，即 GRUB_DISABLE_OS_PROBER 设置为 false：
+
+GRUB_DISABLE_OS_PROBER=false
+
+如果该行不存在，可以手动添加或者修改为上述内容。
+
+保存文件并退出编辑器后，运行以下命令更新 GRUB 配置：
+
+sudo grub-mkconfig -o /boot/grub/grub.cfg
+```
+
 ## **后记**
 
 设备的多样导致安装中可能会出现一些奇怪的问题，需要自行搜索学习，以不断提高技术水平。

@@ -134,6 +134,11 @@
 </span><span>echo &quot;GRUB_EARLY_INITRD_LINUX_CUSTOM=\&quot;acpi_override\&quot;&quot; &gt;&gt;/etc/default/grub
 </span><span>
 </span><span>更新并重启：
+</span><span>
+</span><span>sudo grub-mkconfig -o /boot/grub/grub.cfg
+</span><span>sudo grub-install /dev/sdX
+</span><span>sudo grub-install --target=x86_64-efi --efi-directory=/boot/efi --bootloader-id=grub
+</span><span>
 </span><span>update-grub2
 </span><span>reboot
 </span></code></pre>

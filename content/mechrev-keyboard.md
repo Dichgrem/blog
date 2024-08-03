@@ -54,6 +54,11 @@ cp acpi_override /boot/acpi_override
 echo "GRUB_EARLY_INITRD_LINUX_CUSTOM=\"acpi_override\"" >>/etc/default/grub
 
 更新并重启：
+
+sudo grub-mkconfig -o /boot/grub/grub.cfg
+sudo grub-install /dev/sdX
+sudo grub-install --target=x86_64-efi --efi-directory=/boot/efi --bootloader-id=grub
+
 update-grub2
 reboot
 ```              
