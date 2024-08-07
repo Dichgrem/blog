@@ -7,7 +7,7 @@ description = "用电子罗盘，转赛博核桃，勘电磁风水，寻网络�
 compile_sass = true
 
 # The theme supports feeds (RSS and ATOM)
-generate_feed = true
+generate_feeds = true
 
 # Use `rss.xml` for RSS feeds and `atom.xml` for ATOM.
 
@@ -63,6 +63,7 @@ menu_items = [
     {name = "archive", url = "$BASE_URL/archive"},
     {name = "about me", url = "$BASE_URL/about"},
     {name = "links", url = "$BASE_URL/links"},
+    {name = "search", url = "$BASE_URL/search"},
 
     # set newtab to true to make the link open in new tab
     {name = "github", url = "https://github.com/Dichgrem", newtab = true},
