@@ -2,7 +2,7 @@
 
 {% macro head(config) %}
     <meta http-equiv="content-type" content="text/html; charset=utf-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=5">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1">
     <meta name="robots" content="noodp"/>
 
     <link rel="stylesheet" href="{{ get_url(path="style.css", trailing_slash=false) | safe }}">
@@ -19,7 +19,10 @@
     {% endif -%}
 {% endif -%}
 
-{%- if config.extra.use_full_hack_font %}
+{%- if config.extra.use_full_hack_font == "exo2" %}
+    <link rel="stylesheet" href="{{ get_url(path="font-exo2.css", trailing_slash=false) | safe }}">
+    <link rel="stylesheet" href="{{ get_url(path="font-hack.css", trailing_slash=false) | safe }}">
+{%- elif config.extra.use_full_hack_font %}
     <link rel="stylesheet" href="{{ get_url(path="font-hack.css", trailing_slash=false) | safe }}">
 {% else %}
     <link rel="stylesheet" href="{{ get_url(path="font-hack-subset.css", trailing_slash=false) | safe }}">
