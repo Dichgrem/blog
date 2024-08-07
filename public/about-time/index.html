@@ -1,0 +1,206 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <title>Dich&#x27;blog</title>
+    
+    <meta http-equiv="content-type" content="text/html; charset=utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1">
+    <meta name="robots" content="noodp"/>
+
+    <link rel="stylesheet" href="https://blog.dich.ink/style.css">
+    <link rel="stylesheet" href="https://blog.dich.ink/color/blue.css">
+
+        <link rel="stylesheet" href="https://blog.dich.ink/color/background_dark.css">
+    
+    <link rel="stylesheet" href="https://blog.dich.ink/font-hack-subset.css">
+
+    <meta name="description" content="">
+
+    <meta property="og:description" content="">
+    <meta property="og:title" content="Dich'blog">
+    <meta property="og:type" content="article">
+    <meta property="og:url" content="https://blog.dich.ink/about-time/">
+
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:description" content="">
+    <meta name="twitter:title" content="Dich'blog">
+    <meta property="twitter:domain" content="blog.dich.ink">
+    <meta property="twitter:url" content="https://blog.dich.ink/about-time/">
+
+        <link rel="alternate" type="application/atom+xml" title="Dich&#x27;blog Atom Feed" href="https://blog.dich.ink/atom.xml" />
+    
+    </head>
+
+<body class="">
+<div class="container">
+    
+    <header class="header">
+        <div class="header__inner">
+            <div class="header__logo">
+                    
+                <a href="https://blog.dich.ink" style="text-decoration: none;">
+                    <div class="logo">
+                      
+                            Dich&#x27;blog
+                        
+                    </div>
+                </a>
+            </div>
+        </div>
+
+        
+        <nav class="menu">
+            <ul class="menu__inner">
+                <li><a href="https://blog.dich.ink">blog</a></li>
+            
+                <li><a href="https://blog.dich.ink/tags">tags</a></li>
+            
+                <li><a href="https://blog.dich.ink/archive">archive</a></li>
+            
+                <li class="active"><a href="https://blog.dich.ink/about">about me</a></li>
+            
+                <li><a href="https://blog.dich.ink/links">links</a></li>
+            
+                <li><a href="https://blog.dich.ink/search">search</a></li>
+            
+                <li><a href="https://github.com/Dichgrem" target="_blank" rel="noopener noreferrer">github</a></li>
+            </ul>
+        </nav>
+    
+    
+        
+    </header>
+    
+
+    <div class="content">
+        
+    <div class="post">
+        
+    <h1 class="post-title"><a href="https://blog.dich.ink/about-time/">乱七八糟:时间的标准与格式</a></h1>
+    <div class="post-meta-inline">
+        
+    <span class="post-date">
+            2024-05-13
+        </span>
+
+    </div>
+
+    
+        <span class="post-tags-inline">
+                :: tags:&nbsp;
+                <a class="post-tag" href="https://blog.dich.ink/tags/luan-qi-ba-zao/">#乱七八糟</a></span>
+    
+
+        <div class="post-content">
+            <p>前言 时间，作为人类社会中不可或缺的重要元素，其标准化与格式化一直是人类社会发展过程中的重要课题之一。本文将探讨一系列时间标准与格式，从最古老的GMT（格林威治标准时间）到最新的RFC3339，以及各种时区表示方法和日期时间的格式化方式。</p>
+<span id="continue-reading"></span><h2 id="ji-shi-ji-shu-yu-guo-ji-yuan-zi-shi">计时技术与国际原子时</h2>
+<p>人类历史上出现的计时手段大体上能分为三类:</p>
+<ul>
+<li>通过某种匀速的运动来表示时间、比如沙漏、水钟、香钟（烧香）。这种方 式的缺陷很大，是一种很粗略的时间衡量方法</li>
+<li>通过天文观测，通过日月或其他星辰的参考确定时间。现在我们已经知道，星系的运动也不是匀速的过程。</li>
+<li>通过固定频率的震动，最早是伽利略通过教堂的吊灯发现了摆的等时性，也就是摆角较小时，吊灯摆动一次的时间是相同的。距今三四百年前的摆钟，基本上都是利用 这一原理实现的。</li>
+</ul>
+<p>现在，人类已知的最精确的计时技术是原子钟，它以原子共振频率标准来计算和保持 时间的准确。它的精度可以达到持续运行上亿年而误差不超过 1 秒。</p>
+<p>基于这种技术，后来国际计量协会结合了全球 400 多个原子钟，规定 1 秒为铯-133 原子基态两个超精细能级间跃迁辐射震荡 9,192,631,770 周所持续的时间。这个定义就叫国际 原子时（International Atomic Time， TAI）。这样，我们钟表里指针应该转多快也有了一个 统一的标准。</p>
+<p>国际原子时的秒长以格林威治时间 <code>1958 年 1 月 1 日 0 时</code>的秒长为基准。也就是规定， 在这一瞬间，国际原子时的秒长和世界时的秒长是一样的。</p>
+<h2 id="gmt-ge-lin-wei-zhi-biao-zhun-shi-jian">GMT（格林威治标准时间）</h2>
+<p>格林威治（又译格林尼治）它是一个位处英国伦敦的小镇。</p>
+<p>17 世纪，英国航海事业发展迅速，当时海上航行亟需精确的精度指示，于是英国皇家在格林威治这个地方设立了一个天文台负责测量正确经度的工作。</p>
+<p>后来 1884 年，在美国华盛顿召开的国际经度会以决定以经过格林尼治天文台（旧址） 的经线为本初子午线（0 度经线）。同时这次会以也将全球划分为了 24 个时区。0 度经线所 在的时区为 0 时区。</p>
+<p>现在，有时候你要买一个机械表，如果它说支持 GMT，意思就是支持显示格林威治标准时间。</p>
+<h2 id="utc-shi-jie-shi">UTC（世界时）</h2>
+<p>UTC 主要用来衡量一天究竟有多长。一旦 一天的长度可以确定，那么将这个长度除以 24 就能确定一小时的长度。以此类推、分钟、 秒的长度我们就都能确定了。</p>
+<p>随着科学技术的发展和对时间测量精确度的要求提高，人们逐渐意识到地球自转并不是一个完全恒定的过程，因此需要更准确的时间标准。1928 年，国际天文联合会提出了 UTC（Coordinated Universal Time，协调世界时）的概念.中文称为世界时，是一种基于地球自转的时间标准。它旨在提供一种统一的时间系统，使得全球各地的时间能够保持一致。</p>
+<p>世界时是一种天文时间系统，它以地球的自转周期为基础，一天分为24小时，每小时60分钟，每分钟60秒。尽管UTC已经成为现代国际时间标准，但世界时仍然在一些科学和天文领域中使用，尤其是在历法、天文观测和计算机编程等领域。</p>
+<h2 id="xiao-jie-utc-gmt">小结：UTC/GMT</h2>
+<p>GMT 是最早的国际时间标准，后来是 UTC
+因为 UTC 要逼近 UT，而 UT 又以 GMT 为标准。十分严格地说，UTC 和 GMT 不是 一个东西。但宽松地说，你可以把 UTC 等同于 GMT，而且有些网站和应用程序就是这么 干的。
+因为 UTC 标准已经使用多年。所以现在如果再看到 GMT 这个词，它指的通常不是 国际时间，而是格林威治所在的时区，也就是 0 时区。同时，通常行政区有很多适应自己 所在地的时区缩写，遗憾的是，这种写法经常会撞车。
+比如，CCT，它可以表示美国中部时间（Central Standard Time），澳大利亚中部时间 （Central Standard Time），中国标准时间（China Standard Time）和古巴标准时间（Cuba Standard Time）</p>
+<p>所以、如果我写 CCT 2022-08-03 11:56 就很容易误解了。这个时候我们非常需要一种 没有歧义的日期时间写法。</p>
+<h2 id="shi-qu-yu-utc-pian-yi-liang">时区与 UTC 偏移量</h2>
+<p>现行的时区表示更多是使用 UTC+偏移量的方式来表示的。比如北京是在东 8 区，时 间比 UTC 要早 8 小时，那么在表示北京时区的方式就是 UTC+08:00。虽然地理界定上只有 东西十二区，但是什么地方采用什么方式表达时间实际取决于当地的行政命令。因此 UTC+12:00 并不是偏移量的上限。打开你电脑上的日期时间设置，你会发现有的的国家采用的是 UTC+14:00。还有的国家偏移量并不完全是小时的整数倍，比如 UTC+12:45。同时，也有很多应用会使用 GMT+0800 的方式表示，效果是一样的。</p>
+<h2 id="ri-qi-shi-jian-de-biao-shi-ge-shi">日期时间的表示格式</h2>
+<p>2022 年 9 月 3 日该怎么表示？是 2022/09/03 还是 2022-09-03 还是 Sep 03 2022 ？这又 是一个标准问题，当前的情况是，各个国家有符合本地习惯的日期时间格式标准，同时国 际上也有诸多日期时间格式标准，比如 ISO 8601 和 RFC3339 等。</p>
+<p>各种格式都有软件采用，所以编程语言中的日期标准库，一般都会准备 dateformat 工 具，自己编码日期时间的格式。</p>
+<h2 id="iso-8601">ISO 8601</h2>
+<p>国际标准 ISO 8601，是国际标准化组织的日期和时间的表示方法和我们之前提过的 UTC 不同，UTC 是一种时间标准，而 ISO 8601 是一种标准的时间格式，大多数的编程语 言都支持。</p>
+<p>使用 ISO 8601 格式可以明确表示下面的时间。</p>
+<ul>
+<li>公历日期</li>
+<li>24 小时制的时间</li>
+<li>UTC 时区偏移量</li>
+<li>时间间隔</li>
+</ul>
+<p>以及上面几种元素的组合。</p>
+<p>比如，下面就是一个符合 ISO 8601 的日期时间表示。</p>
+<p><code>2022-09-03T14:13:00Z</code>，这个时间戳中间的 T 用来分隔 日期 和 时间，最后字母 Z 表示 0 时区，也就是 UTC 或 GMT 时间。</p>
+<h2 id="unix-shi-jian-chuo-yu-run-miao">Unix 时间戳与闰秒</h2>
+<p>Unix 时间戳是一种将时间跟踪为运行总秒数的方法，这个技术从 1970 年 1 月 1 日的 UTC 开始。因此，Unix 时间戳只表示从特定时间点到现在的秒数。而且，需要注意的是，无论你身处何地，这个总秒数的值在技术上都不会发生改变。所以这对计算机系统，客户端和服务端的通信和日期跟踪十分有用。</p>
+<p>闰秒是为了调整世界时（UTC）与地球自转的不同步而引入的时间修正措施。地球自转速度并不是完全恒定的，它受到地球内部和外部因素的影响，例如地球的摆动和潮汐等。这些因素会导致地球自转周期的微小变化，使得世界时（UTC）和地球自转之间产生了微小的差距。</p>
+<p>为了使UTC与地球自转保持同步，国际上约定在需要时通过添加或减少一秒来调整时间。这一秒被称为“闰秒”。通常情况下，闰秒会在 UTC 时间的最后一天（6月30日或12月31日）的23:59:59之后添加，成为23:59:60，这样当UTC时间跨越到下一秒时，就保持了与地球自转的同步。需要注意的是，由于闰秒的引入，这一分钟（含有闰秒的那一秒）会比平常的分钟长一秒。</p>
+<p>闰秒由国际地球自转服务（IERS）负责决定何时引入，以及应该是添加一秒还是减少一秒。尽管闰秒对大多数人来说没有太大影响，但对于一些关键系统，如卫星导航、通信和金融交易等，可能会引起一些问题，因为它会导致系统的时间同步需要进行调整。</p>
+<p>关于闰秒问题，什么时候出现闰秒是不确定的。那么在 Unix 时间戳里，是怎么处理闰秒的呢？答案是减慢时钟。</p>
+<pre style="background-color:#151515;color:#e8e8d3;"><code><span>[root@influxdb ~]# date -d &#39;@867715199&#39;
+</span><span>1997年 07月 01日 星期二 07:59:59 CST
+</span><span>[root@influxdb ~]# date -d &#39;@867715200&#39;
+</span><span>1997年 07月 01日 星期二 08:00:00 CST
+</span></code></pre>
+<p>比如 1997 年 6 月 30 日 23:59:59 到 1997 年 7 月 1 日 00:00:00 应该发生一次闰秒。</p>
+<p>那么 867715200 这个时间戳应该对应 1997 年 6 月 30 日的 23:59:60。但是 Linux 好像压 根不知道这件事。这是因为 Unix 时间戳标准里，把一天定死为 86400 秒了。所以类 Unix 的处理方案是，当闰秒发生时由 ntrp 服务把时钟慢下来，当时间戳为 867715199 的时候， 让它在这个值上多停留 1 秒然后再进入 867715200。</p>
+<h2 id="zai-bian-cheng-yu-yan-zhong-huo-qu-utc-shi-jian-he-iso-ge-shi">在编程语言中获取 UTC 时间和 ISO 格式</h2>
+<p>https://www.rfc-editor.org/rfc/rfc3339</p>
+<h2 id="rfc3339-he-iso8601-zhi-jian-de-guan-xi">RFC3339 和 ISO8601 之间的关系</h2>
+<p>https://ijmacd.github.io/rfc3339-iso8601/</p>
+
+        </div>
+
+        
+        <div class="pagination">
+            <div class="pagination__title">
+                <span class="pagination__title-h">Thanks for reading! Read other posts?</span>
+                <hr />
+            </div>
+            <div class="pagination__buttons">
+                    <span class="button previous">
+                        <a href="https://blog.dich.ink/docker-learn-9/">
+                            <span class="button__icon">←</span>&nbsp;
+                            <span class="button__text">Docker学习笔记(九)</span>
+                        </a>
+                    </span>
+                
+                
+                    <span class="button next">
+                        <a href="https://blog.dich.ink/chrome-shortcut-key/">
+                            <span class="button__text">乱七八糟:Chrome常用快捷键</span>&nbsp;
+                            <span class="button__icon">→</span>
+                        </a>
+                    </span>
+                </div>
+        </div>
+    
+    </div>
+
+    </div>
+
+    
+    <footer class="footer">
+        <div class="footer__inner">
+                <div class="copyright">
+                        <span>© 
+    2024
+ Dichgrem</span>
+                    <span class="copyright-theme">
+                        <span class="copyright-theme-sep">:: </span>
+                        Theme: <a href="https://github.com/pawroman/zola-theme-terminimal/">Terminimal</a> by pawroman
+                    </span>
+                </div>
+            </div>
+    </footer>
+    
+
+</div>
+</body>
+
+</html>
