@@ -99,6 +99,7 @@ DMIT 称，已注意到 ``AS4809(CN2)、AS23764(CGT) 与 AS10099(联通国际) �
 
 [基于自定义规则的番剧采集APP，支持流媒体在线观看，支持弹幕。 ](https://github.com/Predidit/Kazumi)
 
+[一站式开源高质量数据提取工具，支持PDF/网页/多格式电子书提取](https://github.com/opendatalab/MinerU)
 
 [一个开源的跨平台文件浏览器，由用 Rust 编写的虚拟分布式文件系统提供支持](https://github.com/spacedriveapp/spacedrive)
 
@@ -106,4 +107,3 @@ DMIT 称，已注意到 ``AS4809(CN2)、AS23764(CGT) 与 AS10099(联通国际) �
 
 [bytebase 为开发人员、DBA 和平台工程团队提供世界上最先进的数据库 DevOps 和 CI/CD](https://github.com/bytebase/bytebase)
 
-[一站式开源高质量数据提取工具，支持PDF/网页/多格式电子书提取 https://github.com/opendatalab/MinerU](https://github.com/opendatalab/MinerU)
