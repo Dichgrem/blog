@@ -14,13 +14,14 @@ tags = ["乱七八糟"]
 
 - 关闭BIOS安全启动,快速启动
 - 解锁BitLocker
-- 恢复简洁的设备分区
+- 删除OEM分区，恢复简洁的设备分区
 
 
 ## **二.系统级:**
 
 - 退出云端账号,杀死家庭组策略
-- 家庭版升级为专业工作站版
+- [家庭版升级为专业工作站版](https://support.microsoft.com/zh-cn/windows/%E5%88%9B%E5%BB%BA%E9%80%82%E7%94%A8%E4%BA%8E-windows-%E7%9A%84%E5%AE%89%E8%A3%85%E4%BB%8B%E8%B4%A8-99a58364-8c02-206f-aa6f-40c3b507420d)
+
 - 激活Windows与MS office
 - 停止自动更新并恢复单级菜单
 
@@ -28,6 +29,11 @@ tags = ["乱七八糟"]
 ## **三.驱动级:**
 
 - 备份并寻找适合驱动进行安装
+
+[AMD](https://www.amd.com/en/support/download/drivers.html)
+[Intel](https://www.intel.cn/content/www/cn/zh/support/detect.html)
+[NVIDIA](https://www.nvidia.cn/geforce/drivers/)
+
 
 
 ## **四.软件级:**
@@ -65,5 +71,4 @@ tags = ["乱七八糟"]
 
 有待补充.
 
-## 常见问题:
 
