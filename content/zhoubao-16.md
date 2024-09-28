@@ -43,8 +43,6 @@ OpenSSH 9.9 新增并默认启用了对 mlkem768x25519-sha256 混合量子抗性
 
 # **文推**
 
-[Vim Cheat Sheet](https://vim.rtorr.com/lang/zh_cn)
-
 [居家健身入门指南](https://blog.douchi.space/workout-from-home/#gsc.tab=0)
 
 [为什么古埃及后来不再建造金字塔了？](https://daily.zhihu.com/story/9775545)
@@ -56,6 +54,8 @@ OpenSSH 9.9 新增并默认启用了对 mlkem768x25519-sha256 混合量子抗性
 # **项目**
 
 [一个漂亮的面板](https://github.com/hslr-s/sun-panel)
+
+[Vim Cheat Sheet](https://vim.rtorr.com/lang/zh_cn)
 
 [UI 用于在 Linux 上使用 eBPF 嗅探网络流量](https://github.com/pythops/oryx)
 
