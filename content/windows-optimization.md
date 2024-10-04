@@ -6,15 +6,15 @@ date = 2024-05-26
 tags = ["乱七八糟"]
 +++
 
-前言 由于厂商默认安装windows家庭版导致各种问题频发,这里对widnows优化流程做一个总结.
+前言 由于厂商默认安装windows家庭版导致各种问题频发,这里对 widnows 优化流程做一个总结.
 
 <!-- more -->
 
 ## **一.设备级:**
 
-- 关闭BIOS安全启动,快速启动
-- 解锁BitLocker
-- 删除OEM分区，恢复简洁的设备分区
+- 关闭 BIOS 安全启动,快速启动
+- 解锁 BitLocker
+- 删除 OEM 分区，恢复简洁的设备分区
 
 
 ## **二.系统级:**
@@ -22,7 +22,7 @@ tags = ["乱七八糟"]
 - 退出云端账号,杀死家庭组策略
 - [家庭版升级为专业工作站版](https://support.microsoft.com/zh-cn/windows/%E5%88%9B%E5%BB%BA%E9%80%82%E7%94%A8%E4%BA%8E-windows-%E7%9A%84%E5%AE%89%E8%A3%85%E4%BB%8B%E8%B4%A8-99a58364-8c02-206f-aa6f-40c3b507420d)
 
-- 激活Windows与MS office
+- 激活 Windows 与 MS office
 - 停止自动更新并恢复单级菜单
 
 
@@ -56,7 +56,7 @@ tags = ["乱七八糟"]
 - 设置简洁高效的浏览器
 - 优化桌面布局与任务栏布局
 - 关闭开机自启软件
-- 关闭Windows Defender等烦人的通知
+- 关闭 Windows Defender 等烦人的通知
 
 
 ## **六.测试级(可选)**

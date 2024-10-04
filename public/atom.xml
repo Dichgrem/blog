@@ -5,8 +5,28 @@
     <link rel="self" type="application/atom+xml" href="https://blog.dich.bid/atom.xml"/>
     <link rel="alternate" type="text/html" href="https://blog.dich.bid"/>
     <generator uri="https://www.getzola.org/">Zola</generator>
-    <updated>2024-09-28T00:00:00+00:00</updated>
+    <updated>2024-10-04T00:00:00+00:00</updated>
     <id>https://blog.dich.bid/atom.xml</id>
+    <entry xml:lang="en">
+        <title>乱七八糟:Windows开发环境搭建</title>
+        <published>2024-10-04T00:00:00+00:00</published>
+        <updated>2024-10-04T00:00:00+00:00</updated>
+        
+        <author>
+          <name>
+            
+              Unknown
+            
+          </name>
+        </author>
+        
+        <link rel="alternate" type="text/html" href="https://blog.dich.bid/windows-sde/"/>
+        <id>https://blog.dich.bid/windows-sde/</id>
+        
+        <summary type="html">&lt;p&gt;前言 刚刚拿到windows的小伙伴可能对开发环境比较陌生，这里对常用的开发环境设置进行总结。&lt;&#x2F;p&gt;
+</summary>
+        
+    </entry>
     <entry xml:lang="en">
         <title>谈天说地:狄奇周刊(十六)</title>
         <published>2024-09-28T00:00:00+00:00</published>
@@ -443,7 +463,7 @@
         <link rel="alternate" type="text/html" href="https://blog.dich.bid/windows-optimization/"/>
         <id>https://blog.dich.bid/windows-optimization/</id>
         
-        <summary type="html">&lt;p&gt;前言 由于厂商默认安装windows家庭版导致各种问题频发,这里对widnows优化流程做一个总结.&lt;&#x2F;p&gt;
+        <summary type="html">&lt;p&gt;前言 由于厂商默认安装windows家庭版导致各种问题频发,这里对 widnows 优化流程做一个总结.&lt;&#x2F;p&gt;
 </summary>
         
     </entry>
