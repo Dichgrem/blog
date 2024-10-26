@@ -19,6 +19,7 @@ tags = ["乱七八糟"]
 
 ## **二.系统级:**
 
+- 注意用户名不能是中文
 - 退出云端账号,杀死家庭组策略
 - [家庭版升级为专业工作站版](https://support.microsoft.com/zh-cn/windows/%E5%88%9B%E5%BB%BA%E9%80%82%E7%94%A8%E4%BA%8E-windows-%E7%9A%84%E5%AE%89%E8%A3%85%E4%BB%8B%E8%B4%A8-99a58364-8c02-206f-aa6f-40c3b507420d)
 
