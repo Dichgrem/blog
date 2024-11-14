@@ -103,15 +103,19 @@ Magisk : ``https://magisk.me/zip/``
 
 > 截至2024年5月1日,该机已经刷入crdroid 10.4 类原生系统,非常丝滑,步骤同上,但需要刷入[新固件](https://xiaomifirmwareupdater.com/firmware/lmi/stable/V14.0.1.0.SJKMIXM/).
 
+> 注：这里使用的root方案为[magisk](https://github.com/topjohnwu/Magisk)，你也可以使用[kernelSU](https://kernelsu.org/zh_CN/)或者[Kitsune Mask](https://jesse205.github.io/MagiskChineseDocument/delta/main.html)以及[apatch](https://apatch.dev/zh_CN/)等。
+
 ## **六.Root后的模块安装**
 
-隐藏root的 shamiko 和 lsposed 框架,以及yc调度，李跳跳等等。
+隐藏root的 shamiko 和 lsposed 框架,shizuku等等。
 
 ## **后记**
 
 关于 root 的其他用途还有很多，这里就不一一列举，分享一些常用模块：
 
-``https://sspai.com/post/68531``
+[lsposed模块大全](https://modules.lsposed.org/)
+
+[刷了 Magisk 之后装什么？我推荐这 20+ 个模块](https://sspai.com/post/68531)
 
 ## **参考**
  
