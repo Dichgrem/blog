@@ -167,34 +167,34 @@
 </blockquote>
 <h2 id="si-na-xie-ji-xing-ke-yi-root"><strong>四.哪些机型可以root</strong></h2>
 <p>看到这里很多小伙伴肯定跃跃欲试，不过在 2023 年的今天，能 root 的机型还是比较少。首先是最容易的一加和小米，可以申请官方解 BL 锁，需要等待7天；其次是联想，索尼等海外品牌，也比较容易；而 oppo 和 vivo 及其子品牌 iqoo 和 realme 有些是不行的；苹果的越狱在10代前是可以的，而华为全部机型都是不可以的，除非上万能的淘宝收费解锁，直接烧录芯片；至于三星，BL 锁一旦解开就会触发芯片物理熔断机制，无法使用 pay 以及升级系统，体验极差。因此，刷机有风险，root 需谨慎！刷机前要了解相应的厂商，考虑保修和变砖的问题！</p>
+<p><a href="https://github.com/KHwang9883/MobileModels/blob/master/misc/bootloader-kernel-source.md">各品牌手机root情况汇总</a></p>
 <blockquote>
 <p>截至2024年5月小米手机解BL锁已经收紧,条件非常苛刻.</p>
 </blockquote>
 <h2 id="wu-ju-ti-cao-zuo-liu-cheng"><strong>五.具体操作流程</strong></h2>
 <p>1.笔者以 Redmi k30pro 5G 这款手机为例，首先我们进入手机设置界面，进入“我的设备”，在“全部参数”中找到“ MIUI 版本”，连续点击后开启开发者模式，随后在“更多设置”中开启 USB 调试， USB安装 功能。</p>
 <p>2.随后下载大名鼎鼎的搞机工具箱http://jamcz.com/ （由B站up主晨钟酱出品），里面具有许多功能，包括进入各个模式，无极调速等等：
-然后我们进入小米官网https://www.miui.com/unlock/download.html ，下载官方解锁工具，需要登陆小米账号并等待7天，随后即可解锁。
-3.解锁完成后在https://mifirm.net/downloadtwrp/148 中下载对应的 TWRP 版本，注意 redmi 的海外名为 Poco 。
-4.随后用数据线连接手机，用其中的一键刷写刷入 TWRP；随后下载 rom 包，可以选择原版，官改版，海外版和类原生版。相关链接：</p>
-<p><code>https://miuiver.com/</code></p>
-<p><code>https://mi.fiime.cn/Android</code></p>
-<p>这里选择 <code>https://c.mi.com/global/miuidownload/index</code></p>
-<p>下载时注意一并下载 boot.img 文件，作为 Magisk 的修补用。然后下载 Magisk 包，与 rom 一起存入TF卡或者U盘中。</p>
-<p>Magisk : <code>https://magisk.me/zip/</code></p>
-<p><strong>注意，由于本机型为新型AB分区</strong>（<code>https://www.jianshu.com/p/b2726b304801</code>） 因此如果刷机失败，需要下载原厂包用以恢复AB分区，否则无法启动和安装rom。</p>
-<p>5.通过搞机工具箱进入 recovery 模式，首先我们在wipe中清除Data、Cache两个分区，俗称“双清”，随后在高级清除选项中清除 Data、Cache、Dalvik Cache 和 System 分区，俗称“四清”。
-6.清除完成后即可开始刷机。将 TF 卡或者U盘插入手机，在“安装”中选择 rom 包，右滑确认刷机；随后如法炮制，刷入 magisk.zip 包，不然会卡在开机 logo 界面，俗称“卡米”。
-7.刷完之后重启，则会进入安装界面。注意：如果刷的是海外版的包，千万不能联网安装，否则会失败且变为国内版。</p>
-<p>随后可以看到桌面环境</p>
-<p>8.此刻我们将下载好的 boot.img 文件复制到手机上，打开 Magisk 软件，在其中选择修补一个文件，选中 boot.img，修复完成后可以看到超级用户一栏可以使用了，说明root完成。</p>
+然后我们进入小米官网https://www.miui.com/unlock/download.html ，下载官方解锁工具，需要登陆小米账号并等待7天，随后即可解锁。</p>
+<p>3.解锁完成后在https://mifirm.net/downloadtwrp/148 中下载对应的 TWRP 版本，注意 redmi 的海外名为 Poco 。</p>
+<p>4.随后用数据线连接手机，用其中的一键刷写刷入 TWRP；随后下载 rom 包，可以选择原版，官改版，海外版和类原生版。相关链接：</p>
+<p><a href="https://miuiver.com/">小米各机型 MIUI 历史版本分类索引</a></p>
+<p><a href="https://mi.fiime.cn/Android">Android原生项目大全</a></p>
+<p>下载时注意一并下载 boot.img 文件，作为 Magisk 的修补用。然后下载 <a href="https://magisk.me/zip/">Magisk</a> 包，与 rom 一起存入TF卡或者U盘中。</p>
 <blockquote>
-<p>截至2024年5月1日,该机已经刷入crdroid 10.4 类原生系统,非常丝滑,步骤同上,但需要刷入<a href="https://xiaomifirmwareupdater.com/firmware/lmi/stable/V14.0.1.0.SJKMIXM/">新固件</a>.</p>
+<p>注意，由于本机型为新型<a href="https://www.jianshu.com/p/b2726b304801"><strong>AB分区</strong></a>因此如果刷机失败，需要下载原厂包用以恢复AB分区，否则无法启动和安装rom。</p>
+</blockquote>
+<p>5.通过搞机工具箱进入 recovery 模式，首先我们在wipe中清除Data、Cache两个分区，俗称“双清”，随后在高级清除选项中清除 Data、Cache、Dalvik Cache 和 System 分区，俗称“四清”。</p>
+<p>6.清除完成后即可开始刷机。将 TF 卡或者U盘插入手机，在“安装”中选择 rom 包，右滑确认刷机；随后如法炮制，刷入 magisk.zip 包，不然会卡在开机 logo 界面，俗称“卡米”。</p>
+<p>7.刷完之后重启，则会进入安装界面。注意：如果刷的是海外版的包，千万不能联网安装，否则会失败且变为国内版。</p>
+<p>8.此刻我们将下载好的 boot.img 文件复制到手机上，打开 Magisk 软件，在其中选择修补一个文件，选中 boot.img，修复完成后可以看到超级用户一栏可以使用了，说明 root 完成。</p>
+<blockquote>
+<p>截至2024年5月1日,该机已经刷入 crdroid 10.4 类原生系统,非常丝滑,步骤同上,但需要刷入<a href="https://xiaomifirmwareupdater.com/firmware/lmi/stable/V14.0.1.0.SJKMIXM/">新固件</a>.</p>
 </blockquote>
 <blockquote>
-<p>注：这里使用的root方案为<a href="https://github.com/topjohnwu/Magisk">magisk</a>，你也可以使用<a href="https://kernelsu.org/zh_CN/">kernelSU</a>或者<a href="https://jesse205.github.io/MagiskChineseDocument/delta/main.html">Kitsune Mask</a>以及<a href="https://apatch.dev/zh_CN/">apatch</a>等。</p>
+<p>注：这里使用的 root 方案为<a href="https://github.com/topjohnwu/Magisk">magisk</a>，你也可以使用<a href="https://kernelsu.org/zh_CN/">kernelSU</a>或者<a href="https://jesse205.github.io/MagiskChineseDocument/delta/main.html">Kitsune Mask</a>以及<a href="https://apatch.dev/zh_CN/">apatch</a>等。</p>
 </blockquote>
 <h2 id="liu-roothou-de-mo-kuai-an-zhuang"><strong>六.Root后的模块安装</strong></h2>
-<p>隐藏root的 shamiko 和 lsposed 框架,shizuku等等。</p>
+<p>隐藏 root 的 shamiko 和 lsposed 框架,shizuku 等等。</p>
 <h2 id="hou-ji"><strong>后记</strong></h2>
 <p>关于 root 的其他用途还有很多，这里就不一一列举，分享一些常用模块：</p>
 <p><a href="https://modules.lsposed.org/">lsposed模块大全</a></p>
