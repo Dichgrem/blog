@@ -34,7 +34,6 @@ tags = ["综合工程"]
 ## 一、写盘，BIOS启动
 
 1.使用 Rufus 将下载好的 ATV 镜像写入U盘。
-![image-tlej.webp](https://pic.dich.ink/1/2024/03/06/65e8665dd27b9.webp)
 
 2.将U盘插到目标主机上，并设置 BIOS-boot 优先启动，不同设备进入 BIOS 的按键不同，大部分是F2或者DEL；
 
