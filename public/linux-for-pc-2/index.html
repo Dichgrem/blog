@@ -158,6 +158,53 @@
 <li>Swap分区/文件的位置：Swap分区/文件应该位于较快的存储介质上，以确保交换操作的效率。
 Swap的优先级：如果同时存在多个Swap分区/文件，可以通过设置优先级来指定系统使用的Swap空间。</li>
 </ul>
+<h2 id="si-jiang-home-mu-lu-xia-de-wen-jian-jia-gai-wei-ying-wen">四.将 <code>home</code> 目录下的文件夹改为英文</h2>
+<p>可以使用 <code>xdg-user-dirs-update</code> 工具来更新用户目录为英文版本。你可以按照以下步骤进行：</p>
+<ol>
+<li>
+<p><strong>编辑用户目录配置文件</strong>：
+打开或创建 <code>~/.config/user-dirs.dirs</code> 文件，用文本编辑器编辑它：</p>
+<pre data-lang="bash" style="background-color:#151515;color:#e8e8d3;" class="language-bash "><code class="language-bash" data-lang="bash"><span style="color:#ffb964;">nano ~</span><span>/.config/user-dirs.dirs
+</span></code></pre>
+</li>
+<li>
+<p><strong>将目录名称更改为英文</strong>：
+在该文件中，你可以看到类似以下的条目：</p>
+<pre data-lang="bash" style="background-color:#151515;color:#e8e8d3;" class="language-bash "><code class="language-bash" data-lang="bash"><span style="color:#ffb964;">XDG_DESKTOP_DIR</span><span>=</span><span style="color:#556633;">&quot;</span><span style="color:#99ad6a;">$</span><span style="color:#ffb964;">HOME</span><span style="color:#99ad6a;">/桌面</span><span style="color:#556633;">&quot;
+</span><span style="color:#ffb964;">XDG_DOWNLOAD_DIR</span><span>=</span><span style="color:#556633;">&quot;</span><span style="color:#99ad6a;">$</span><span style="color:#ffb964;">HOME</span><span style="color:#99ad6a;">/下载</span><span style="color:#556633;">&quot;
+</span><span style="color:#ffb964;">XDG_DOCUMENTS_DIR</span><span>=</span><span style="color:#556633;">&quot;</span><span style="color:#99ad6a;">$</span><span style="color:#ffb964;">HOME</span><span style="color:#99ad6a;">/文档</span><span style="color:#556633;">&quot;
+</span><span style="color:#ffb964;">XDG_MUSIC_DIR</span><span>=</span><span style="color:#556633;">&quot;</span><span style="color:#99ad6a;">$</span><span style="color:#ffb964;">HOME</span><span style="color:#99ad6a;">/音乐</span><span style="color:#556633;">&quot;
+</span><span style="color:#ffb964;">XDG_PICTURES_DIR</span><span>=</span><span style="color:#556633;">&quot;</span><span style="color:#99ad6a;">$</span><span style="color:#ffb964;">HOME</span><span style="color:#99ad6a;">/图片</span><span style="color:#556633;">&quot;
+</span><span style="color:#ffb964;">XDG_VIDEOS_DIR</span><span>=</span><span style="color:#556633;">&quot;</span><span style="color:#99ad6a;">$</span><span style="color:#ffb964;">HOME</span><span style="color:#99ad6a;">/视频</span><span style="color:#556633;">&quot;
+</span></code></pre>
+<p>将这些路径改为英文，例如：</p>
+<pre data-lang="bash" style="background-color:#151515;color:#e8e8d3;" class="language-bash "><code class="language-bash" data-lang="bash"><span style="color:#ffb964;">XDG_DESKTOP_DIR</span><span>=</span><span style="color:#556633;">&quot;</span><span style="color:#99ad6a;">$</span><span style="color:#ffb964;">HOME</span><span style="color:#99ad6a;">/Desktop</span><span style="color:#556633;">&quot;
+</span><span style="color:#ffb964;">XDG_DOWNLOAD_DIR</span><span>=</span><span style="color:#556633;">&quot;</span><span style="color:#99ad6a;">$</span><span style="color:#ffb964;">HOME</span><span style="color:#99ad6a;">/Downloads</span><span style="color:#556633;">&quot;
+</span><span style="color:#ffb964;">XDG_DOCUMENTS_DIR</span><span>=</span><span style="color:#556633;">&quot;</span><span style="color:#99ad6a;">$</span><span style="color:#ffb964;">HOME</span><span style="color:#99ad6a;">/Documents</span><span style="color:#556633;">&quot;
+</span><span style="color:#ffb964;">XDG_MUSIC_DIR</span><span>=</span><span style="color:#556633;">&quot;</span><span style="color:#99ad6a;">$</span><span style="color:#ffb964;">HOME</span><span style="color:#99ad6a;">/Music</span><span style="color:#556633;">&quot;
+</span><span style="color:#ffb964;">XDG_PICTURES_DIR</span><span>=</span><span style="color:#556633;">&quot;</span><span style="color:#99ad6a;">$</span><span style="color:#ffb964;">HOME</span><span style="color:#99ad6a;">/Pictures</span><span style="color:#556633;">&quot;
+</span><span style="color:#ffb964;">XDG_VIDEOS_DIR</span><span>=</span><span style="color:#556633;">&quot;</span><span style="color:#99ad6a;">$</span><span style="color:#ffb964;">HOME</span><span style="color:#99ad6a;">/Videos</span><span style="color:#556633;">&quot;
+</span></code></pre>
+</li>
+<li>
+<p><strong>重命名现有的文件夹</strong>：
+手动将 <code>home</code> 目录下的文件夹重命名为英文版本：</p>
+<pre data-lang="bash" style="background-color:#151515;color:#e8e8d3;" class="language-bash "><code class="language-bash" data-lang="bash"><span style="color:#ffb964;">mv ~</span><span>/桌面 </span><span style="color:#ffb964;">~</span><span>/Desktop
+</span><span style="color:#ffb964;">mv ~</span><span>/下载 </span><span style="color:#ffb964;">~</span><span>/Downloads
+</span><span style="color:#ffb964;">mv ~</span><span>/文档 </span><span style="color:#ffb964;">~</span><span>/Documents
+</span><span style="color:#ffb964;">mv ~</span><span>/音乐 </span><span style="color:#ffb964;">~</span><span>/Music
+</span><span style="color:#ffb964;">mv ~</span><span>/图片 </span><span style="color:#ffb964;">~</span><span>/Pictures
+</span><span style="color:#ffb964;">mv ~</span><span>/视频 </span><span style="color:#ffb964;">~</span><span>/Videos
+</span></code></pre>
+</li>
+<li>
+<p><strong>应用更改</strong>：
+完成以上操作后，运行以下命令应用新配置：</p>
+<pre data-lang="bash" style="background-color:#151515;color:#e8e8d3;" class="language-bash "><code class="language-bash" data-lang="bash"><span style="color:#ffb964;">xdg-user-dirs-update
+</span></code></pre>
+</li>
+</ol>
+<p>这样，<code>home</code> 目录下的文件夹就会改为英文，并且系统也会正确识别这些新的目录路径。</p>
 
         </div>
 

@@ -76,3 +76,52 @@ Swap分区可以通过以下几种方式实现：
 - Swap大小：Swap的大小应该根据系统的内存大小和使用情况来确定，一般建议为系统内存的1.5-2倍。
 - Swap分区/文件的位置：Swap分区/文件应该位于较快的存储介质上，以确保交换操作的效率。
 Swap的优先级：如果同时存在多个Swap分区/文件，可以通过设置优先级来指定系统使用的Swap空间。
+
+## 四.将 `home` 目录下的文件夹改为英文
+
+可以使用 `xdg-user-dirs-update` 工具来更新用户目录为英文版本。你可以按照以下步骤进行：
+
+1. **编辑用户目录配置文件**：
+   打开或创建 `~/.config/user-dirs.dirs` 文件，用文本编辑器编辑它：
+   ```bash
+   nano ~/.config/user-dirs.dirs
+   ```
+
+2. **将目录名称更改为英文**：
+   在该文件中，你可以看到类似以下的条目：
+   ```bash
+   XDG_DESKTOP_DIR="$HOME/桌面"
+   XDG_DOWNLOAD_DIR="$HOME/下载"
+   XDG_DOCUMENTS_DIR="$HOME/文档"
+   XDG_MUSIC_DIR="$HOME/音乐"
+   XDG_PICTURES_DIR="$HOME/图片"
+   XDG_VIDEOS_DIR="$HOME/视频"
+   ```
+   将这些路径改为英文，例如：
+   ```bash
+   XDG_DESKTOP_DIR="$HOME/Desktop"
+   XDG_DOWNLOAD_DIR="$HOME/Downloads"
+   XDG_DOCUMENTS_DIR="$HOME/Documents"
+   XDG_MUSIC_DIR="$HOME/Music"
+   XDG_PICTURES_DIR="$HOME/Pictures"
+   XDG_VIDEOS_DIR="$HOME/Videos"
+   ```
+
+3. **重命名现有的文件夹**：
+   手动将 `home` 目录下的文件夹重命名为英文版本：
+   ```bash
+   mv ~/桌面 ~/Desktop
+   mv ~/下载 ~/Downloads
+   mv ~/文档 ~/Documents
+   mv ~/音乐 ~/Music
+   mv ~/图片 ~/Pictures
+   mv ~/视频 ~/Videos
+   ```
+
+4. **应用更改**：
+   完成以上操作后，运行以下命令应用新配置：
+   ```bash
+   xdg-user-dirs-update
+   ```
+
+这样，`home` 目录下的文件夹就会改为英文，并且系统也会正确识别这些新的目录路径。
