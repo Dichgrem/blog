@@ -1,5 +1,5 @@
 +++
-title = "乱七八糟:Windows单级菜单/开机启动/关闭更新"
+title = "乱七八糟:Windows单级菜单/开机启动/关闭更新/本地登录"
 date = 2023-08-26
 
 [taxonomies]
@@ -164,4 +164,18 @@ reg add HKEY_LOCAL_MACHINE\SOFTWARE\Microsoft\WindowsUpdate\UX\Settings /v Pause
 pause
 ```
 以上为恢复更新的脚本。
+
+## **Windows11跳过联网激活 & 使用本地账号**
+
+
+开机之前，先断网，然后输入Shift+F10，会弹出命令行界面，并输入
+``
+oobe\BypassNRO.cmd：
+``
+回车之后会重启，之后就可以跳过联网了，选择
+``
+I don't have internet
+``
+即可。
+
 
