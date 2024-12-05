@@ -1,5 +1,5 @@
 +++
-title = "综合工程:OpenWrt 软路由部署与软件编译"
+title = "综合工程:OpenWrt路由部署与软件编译"
 date = 2023-08-12
 
 [taxonomies]
@@ -9,19 +9,22 @@ tags = ["综合工程"]
 
 前言 openwrt 是一个自由的、兼容性好的嵌入式 linux 发行版。作为软路由玩家必备的一款神器，可以实现诸如去广告，多拨和科学上网等多种功能。本文以 openwrt 在X86平台的安装为例，介绍其部署流程。
 <!-- more -->
-## 为什么是X86？
 
-无论是作为主路由或是旁路由，传统路由器由于主频低，内存小，并不适合作为软路由；而 NAS-软路由一体式 又有 all in boom 的风险，因此推荐X86平台作为物理机。当然，也可以采用 armbian 平台或是开发板，例如网心云老母鸡、树莓派等设备。截至本文撰写时间，二手平台上的价格不太利好：一台J1900平台的售价往往在200左右，而专门的多网口工控机价格在200到1000不等，树莓派更是成为了理财产品，需要慎重选择。
+## 选择合适的设备
+
+无论是传统的无线路由器还是小主机都有成为openwrt路由的潜力。截止到今天，已经有20多个品牌（小米，华硕，锐捷，华三等）30多种架构（x86,ipq,bcm,mtd等）支持刷入openwrt；你可以在这个[网站](https://mao.fan/select)找到符合你预算和其他要求的，能刷机的路由器。
 
 ## 在X86小主机上面安装OpenWrt
 
+无论是作为主路由或是旁路由，传统路由器由于主频低，内存小，并不适合作为软路由；而 NAS-软路由一体式 又有 all in boom 的风险，因此推荐X86平台作为物理机。当然，也可以采用 armbian 平台或是开发板，例如网心云老母鸡、树莓派等设备。截至本文撰写时间，二手平台上的价格不太利好：一台J1900平台的售价往往在200左右，而专门的多网口工控机价格在200到1000不等，树莓派更是成为了理财产品，需要慎重选择。
+
 ### 准备以下工具：
 
-- 1.openwrt 的编译包，由 eSir 大佬编译的三个经典版本：
+- openwrt 的编译包，由 eSir 大佬编译的三个经典版本：
 https://drive.google.com/drive/folders/1uRXg_krKHPrQneI3F2GNcSVRoCgkqESr
-- 2.PE 启动盘，这里推荐微PE：https://www.wepe.com.cn/download.html
-- 3.img 写盘工具：https://www.roadkil.net/program.php?ProgramID=12#google_vignette
-- 4.一个U盘与一台双网口物理机
+- PE 启动盘，这里推荐微PE：https://www.wepe.com.cn/download.html
+- img 写盘工具：https://www.roadkil.net/program.php?ProgramID=12#google_vignette
+- 一个U盘与一台双网口物理机
 
 ### 安装流程：
 
@@ -40,10 +43,28 @@ https://drive.google.com/drive/folders/1uRXg_krKHPrQneI3F2GNcSVRoCgkqESr
 - 重启系统并快速拔出U盘，避免重新进入PE；这时系统开始运行了。注意Esir固件是不跑码的，无需担心。
 - 当看到 `please press Enter to activate this console`这个提示的时候系统就安装完毕了。可使用 passwd 命令设置密码。软路由将自动获取IP地址，随后我们在浏览器中打开该地址，即可看到 Lucl 界面。
 
+## 在arm架构的硬路由上面安装OpenWrt
+
+相比X86平台，arm架构的设备兼容性不高，不能随便找一个包就能安装。以下是一般步骤：
+
+- 首先得知道你的设备的CPU，比如ipq40XX系列，然后在对应的[仓库](https://archive.openwrt.org/releases/23.05.4/targets/)查看并下载包体。
+
+- 当然也可以在[这里](https://firmware-selector.openwrt.org/)直接下载相关型号对应的固件，其中 Sysupgrade 映像是用来更新现有运行 OpenWrt 的设备，使用 Factory 映像在首次刷机时刷入。
+
+- 随后开启Telnet或者SSH或者TTL串口连接到路由器，将对应的Uboot刷入，如果没有适配的包就无法刷openwrt。
+
+- 通过Uboot的网络界面刷入Factory包，随后就可以在后台（如192.168.1.1）进入openwrt的管理界面。
+
+
+
 ## 在ubuntu上编译openwrt的ipk包
 
-首先需要ubuntu环境，可以是虚拟机或者WSL等。``注意以下操作不能使用Root用户！``
-随后安装编译依赖的各个包：
+这里以ubuntu环境为例，我们假设你有一台虚拟机或者WSL。
+
+> ``注意编译不能使用Root用户！``
+
+**随后安装编译依赖的各个包：**
+
 ```
 sudo apt install python3-distutils-extra git gawk libncurses-dev build-essential binutils bzip2 diff find flex gawk gcc-6+ getopt grep install libc-dev libz-dev make4.1+ perl python3.7+ rsync subversion unzip which
 
@@ -57,21 +78,29 @@ sudo apt install -y build-essential python3-dev python3-setuptools swig \
 sudo apt install -y swig
 sudo apt install -y mesa-common-dev libwayland-dev libgraphene-1.0-dev
 ```
-下载和安装仓库信息
+随后下载我们**刷入openwrt的对应的SDK包**，如
+
+```
+git clone https://github.com/immortalwrt/immortalwrt.git
+```
+
+**下载和安装仓库信息**
 ```
 ./scripts/feeds update -a
 ./scripts/feeds install -a
 ```
-下载并选中我们需要编译的包,这里以inyn为例：
+**下载并选中我们需要编译的包,这里以inyn为例：**
 ```
 git clone https://github.com/diredocks/openwrt-inyn.git ./package/inyn
 make menuconfig
 ```
 
 在 `menuconfig` 的命令行界面中，选中 `Network -> inyn` 将其首部调整为 `<M>` 表示按需编译，最后选中 `Save -> OK -> Exit` 保存配置信息，然后 `Exit` 退出配置。
-编译 inyn 软件包
+
+**编译 inyn 软件包**
 ```
 make package/inyn/compile V=s
+## 如果不行则需要先编译工具链，即为 make j=4 ，j为CPU核数
 ```
 ## 常用命令:
 ```
@@ -83,9 +112,8 @@ opkg list-upgradable | grep luci- | cut -f 1 -d ' ' | xargs opkg upgrade
 
 # 如果要更新所有软件，包括 OpenWRT 内核、固件等
 opkg list-upgradable | cut -f 1 -d ' ' | xargs opkg upgrade
-
 ```
-
+> 新版本的openwrt（24.10）已经改用APK包管理器。
 
 ## 参考
 
@@ -94,4 +122,3 @@ opkg list-upgradable | cut -f 1 -d ' ' | xargs opkg upgrade
 - [openwrt luci 页面无法访问 问题排查](https://www.cnblogs.com/tfel-ypoc/p/17226064.html)
 - [超详细，多图，简单，OpenWRT 设置，IPV6配置](https://post.smzdm.com/p/axz6369w/)
 - [保姆级-光猫改桥接-路由拨号-openwrt端口转发](https://blog.csdn.net/weixin_44548582/article/details/121064734)
-- [360T7刷机](http://www.ttcoder.cn/index.php/2023/07/11/p0/)
