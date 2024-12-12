@@ -178,4 +178,32 @@ I don't have internet
 ``
 即可。
 
+## 同步 Windows 和 Linux 的时间
 
+- 让 Windows 与网络同步时间
+
+进入控制面板（找不到的，在 Win+R 弹出的「运行」对话框中输入 control ，点击确定，以打开控制面板）。打开「日期与时间」，选择「Internet 时间」标签，点击「更改设置」按钮。
+
+在弹出窗口中可以立即进行时间同步或配置自动时间同步。服务器仍然可以选择 cn.ntp.org.cn。
+
+同步出错的，可以到 services.msc 「服务」中查看是否 "Windows Time" 服务被关闭了。如果是，请启动服务后再试。
+
+
+
+- 让 Windows 把硬件时间当作 UTC
+
+> 注意：在 Windows 7 之前的系统中不建议这么做。
+
+在注册表编辑器（regedit.exe）中，找到注册表项
+```
+HKEY_LOCAL_MACHINE\SYSTEM\CurrentControlSet\Control\TimeZoneInformation
+```
+在右侧新建名为``RealTimeIsUniversal`` 的 DWORD 值，并将其设置为1。
+
+亦可将以下内容保存为 .reg 文件后双击直接导入。
+```
+Windows Registry Editor Version 5.00
+[HKEY_LOCAL_MACHINE\SYSTEM\CurrentControlSet\Control\TimeZoneInformation]
+“RealTimeIsUniversal”=dword:00000001
+```
+之后重启计算机。
