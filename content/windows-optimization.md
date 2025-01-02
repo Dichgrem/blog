@@ -3,7 +3,7 @@ title = "乱七八糟:Windows优化流程"
 date = 2024-05-26
 
 [taxonomies]
-tags = ["乱七八糟"]
+tags = ["乱七八糟","Windows"]
 +++
 
 前言 由于厂商默认安装windows家庭版导致各种问题频发,这里对 widnows 优化流程做一个总结.

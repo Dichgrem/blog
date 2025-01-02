@@ -3,7 +3,7 @@ title = "乱七八糟:Windows开发环境搭建"
 date = 2024-10-04
 
 [taxonomies]
-tags = ["乱七八糟"]
+tags = ["乱七八糟","Windows"]
 +++
 
 前言 刚刚拿到windows的小伙伴可能对开发环境比较陌生，这里对常用的开发环境设置进行总结。
