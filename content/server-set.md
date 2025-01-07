@@ -350,4 +350,31 @@ sudo systemctl enable fail2ban
 sudo systemctl status fail2ban
 ````
 
-## 待续
+## Ban IPv6
+
+手动 禁用 VPS 的 IPv6 命令:
+```
+sysctl -w net.ipv6.conf.all.disable_ipv6=1
+sysctl -w net.ipv6.conf.default.disable_ipv6=1
+```
+如果想重启系统也生效， 执行：
+```
+echo 'net.ipv6.conf.all.disable_ipv6=1' >> /etc/sysctl.conf
+echo 'net.ipv6.conf.default.disable_ipv6=1' >> /etc/sysctl.conf
+```
+手动 启用 VPS 的 IPv6 命令:
+```
+sysctl -w net.ipv6.conf.all.disable_ipv6=0
+sysctl -w net.ipv6.conf.default.disable_ipv6=0
+```
+重新载入 sysctl 配置
+```
+sysctl --system # reload sysctl
+```
+如果重载, 还无效果, 可能要 reboot 重启下.
+查看 VPS 的 IPv6 信息
+```
+ip -6 addr show scope global
+
+或者 curl ipv6.ip.sb
+```

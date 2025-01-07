@@ -294,7 +294,28 @@
 <p><strong>5、查看 Fail2ban 服务状态。</strong></p>
 <pre style="background-color:#151515;color:#e8e8d3;"><code><span>sudo systemctl status fail2ban
 </span></code></pre>
-<h2 id="dai-xu">待续</h2>
+<h2 id="ban-ipv6">Ban IPv6</h2>
+<p>手动 禁用 VPS 的 IPv6 命令:</p>
+<pre style="background-color:#151515;color:#e8e8d3;"><code><span>sysctl -w net.ipv6.conf.all.disable_ipv6=1
+</span><span>sysctl -w net.ipv6.conf.default.disable_ipv6=1
+</span></code></pre>
+<p>如果想重启系统也生效， 执行：</p>
+<pre style="background-color:#151515;color:#e8e8d3;"><code><span>echo &#39;net.ipv6.conf.all.disable_ipv6=1&#39; &gt;&gt; /etc/sysctl.conf
+</span><span>echo &#39;net.ipv6.conf.default.disable_ipv6=1&#39; &gt;&gt; /etc/sysctl.conf
+</span></code></pre>
+<p>手动 启用 VPS 的 IPv6 命令:</p>
+<pre style="background-color:#151515;color:#e8e8d3;"><code><span>sysctl -w net.ipv6.conf.all.disable_ipv6=0
+</span><span>sysctl -w net.ipv6.conf.default.disable_ipv6=0
+</span></code></pre>
+<p>重新载入 sysctl 配置</p>
+<pre style="background-color:#151515;color:#e8e8d3;"><code><span>sysctl --system # reload sysctl
+</span></code></pre>
+<p>如果重载, 还无效果, 可能要 reboot 重启下.
+查看 VPS 的 IPv6 信息</p>
+<pre style="background-color:#151515;color:#e8e8d3;"><code><span>ip -6 addr show scope global
+</span><span>
+</span><span>或者 curl ipv6.ip.sb
+</span></code></pre>
 
         </div>
 
