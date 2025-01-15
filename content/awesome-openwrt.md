@@ -7,25 +7,34 @@ tags = ["综合工程"]
 +++
 
 
-前言 openwrt 是一个自由的、兼容性好的嵌入式 linux 发行版。作为软路由玩家必备的一款神器，可以实现诸如去广告，多拨和科学上网等多种功能。本文以 openwrt 在X86平台的安装为例，介绍其部署流程。
+前言 openwrt 是一个自由的、兼容性好的嵌入式 linux 发行版。作为软路由玩家必备的一款神器，可以实现诸如去广告，多拨和科学上网等多种功能。本文介绍openwrt在各种平台上的部署流程。
 <!-- more -->
 
 ## 选择合适的设备
 
 无论是传统的无线路由器还是小主机都有成为openwrt路由的潜力。截止到今天，已经有20多个品牌（小米，华硕，锐捷，华三等）30多种架构（x86,ipq,bcm,mtd等）支持刷入openwrt；你可以在这个[网站](https://mao.fan/select)找到符合你预算和其他要求的，能刷机的路由器。
-选择合适的系统
+传统家用无线路由器由于主频低，内存小，并不适合作为软路由；而 NAS-软路由一体式 又有 all in boom 的风险，因此推荐X86平台作为物理机。当然，也可以采用 armbian 平台或是开发板，例如网心云老母鸡、树莓派等设备。截至本文撰写时间，二手平台上的价格不太利好：一台J1900平台的售价往往在200左右，而专门的多网口工控机价格在200到1000不等，树莓派更是成为了理财产品，需要慎重选择。
+
+
 ## 选择合适的系统
 除了openwrt主线外，还可以选择：
 
-- [iStoreOS](https://github.com/istoreos)iStoreOS是openwrt的一个分支，iStoreOS 提供了软件中心：iStore，以及较美观的界面和docker支持，对新手体验较好。
+- [LEDE](https://github.com/coolsnowwolf/lede) 高质量，更新快速，具有新特性的openwrt分支。
+
+- [iStoreOS](https://github.com/istoreos) iStoreOS是openwrt的一个分支，iStoreOS 提供了软件中心：iStore，以及较美观的界面和docker支持，对新手体验较好。
 
 - [ImmortalWrt](https://firmware-selector.immortalwrt.org/) 是一个原版openwrt的分支，中文优化好，更新也勤快，内置镜像源可以直连下载&更新。
 
-## 在X86小主机上面安装OpenWrt
+## 如何得到一个openwrt系统
 
-无论是作为主路由或是旁路由，传统路由器由于主频低，内存小，并不适合作为软路由；而 NAS-软路由一体式 又有 all in boom 的风险，因此推荐X86平台作为物理机。当然，也可以采用 armbian 平台或是开发板，例如网心云老母鸡、树莓派等设备。截至本文撰写时间，二手平台上的价格不太利好：一台J1900平台的售价往往在200左右，而专门的多网口工控机价格在200到1000不等，树莓派更是成为了理财产品，需要慎重选择。
+- 可以在恩山论坛上使用他人编译好的现成的镜像，如"高大全","精品小包"等等，但存在一定风险；
+- 可以使用[官方固件](https://downloads.openwrt.org/)下载得到一个最小化的系统，再一步步添加自己要用的包；
+- 可以使用[Openwrt 在线编译](https://firmware-selector.openwrt.org/)或[Openwrt.ai](https://openwrt.ai/?target=x86%2F64&id=generic)在线编译
+一个固件；
+- 可以使用GitHub action 云编译一个固件；
+- 可以在本地linux环境中进行编译。
 
-### 准备以下工具：
+## X86平台安装准备：
 
 - 一个U盘与一台双网口物理机
 
@@ -40,7 +49,7 @@ tags = ["综合工程"]
 
 
 
-### 安装流程：
+## X86平台安装流程：
 
 1.进入PE环境：
 
@@ -68,7 +77,7 @@ uci commit luci
 /etc/init.d/uhttpd restart``
 然后重新访问 Web 界面，查看是否恢复正常。
 
-## 在arm架构的硬路由上面安装OpenWrt
+## Arm平台安装OpenWrt：
 
 相比X86平台，arm架构的设备兼容性不高，不能随便找一个包就能安装。以下是一般步骤：
 
@@ -140,7 +149,7 @@ opkg list-upgradable | cut -f 1 -d ' ' | xargs opkg upgrade
 ```
 > 新版本的openwrt（24.10）已经改用APK包管理器。
 
-## 参考
+## 🔗
 
 - [Openwrt wiki](https://openwrt.org/zh/docs/start)
 - [OpenWrt在线定制编译](https://openwrt.ai/?target=ipq807x%2Fgeneric&id=xiaomi_ax3600)
