@@ -13,6 +13,13 @@ tags = ["综合工程"]
 ## 选择合适的设备
 
 无论是传统的无线路由器还是小主机都有成为openwrt路由的潜力。截止到今天，已经有20多个品牌（小米，华硕，锐捷，华三等）30多种架构（x86,ipq,bcm,mtd等）支持刷入openwrt；你可以在这个[网站](https://mao.fan/select)找到符合你预算和其他要求的，能刷机的路由器。
+选择合适的系统
+## 选择合适的系统
+除了openwrt主线外，还可以选择：
+
+- [iStoreOS](https://github.com/istoreos)iStoreOS是openwrt的一个分支，iStoreOS 提供了软件中心：iStore，以及较美观的界面和docker支持，对新手体验较好。
+
+- [ImmortalWrt](https://firmware-selector.immortalwrt.org/) 是一个原版openwrt的分支，中文优化好，更新也勤快，内置镜像源可以直连下载&更新。
 
 ## 在X86小主机上面安装OpenWrt
 
@@ -20,11 +27,18 @@ tags = ["综合工程"]
 
 ### 准备以下工具：
 
-- openwrt 的编译包，由 eSir 大佬编译的三个经典版本：
-https://drive.google.com/drive/folders/1uRXg_krKHPrQneI3F2GNcSVRoCgkqESr
-- PE 启动盘，这里推荐微PE：https://www.wepe.com.cn/download.html
-- img 写盘工具：https://www.roadkil.net/program.php?ProgramID=12#google_vignette
 - 一个U盘与一台双网口物理机
+
+- openwrt 的编译包，官方网站：[OpenWrt Firmware Selector](https://firmware-selector.openwrt.org/?version=24.10.0-rc2&target=ipq40xx%2Fgeneric&id=glinet_gl-a1300)
+
+- 或者用由 eSir 大佬编译的[懒人包](https://drive.google.com/drive/folders/1uRXg_krKHPrQneI3F2GNcSVRoCgkqESr)
+
+
+- PE 启动盘，这里推荐[HotPE](https://github.com/VirtualHotBar/HotPEToolBox)
+
+- [img 写盘工具](https://www.roadkil.net/program.php?ProgramID=12#google_vignette)
+
+
 
 ### 安装流程：
 
@@ -40,8 +54,19 @@ https://drive.google.com/drive/folders/1uRXg_krKHPrQneI3F2GNcSVRoCgkqESr
 
 3.进入配置界面
 
-- 重启系统并快速拔出U盘，避免重新进入PE；这时系统开始运行了。注意Esir固件是不跑码的，无需担心。
+- 重启系统并快速拔出U盘，避免重新进入PE；这时系统开始运行了。注意Esir固件是不跑码的，无需担心。- 一个U盘与一台双网口物理机
 - 当看到 `please press Enter to activate this console`这个提示的时候系统就安装完毕了。可使用 passwd 命令设置密码。软路由将自动获取IP地址，随后我们在浏览器中打开该地址，即可看到 Lucl 界面。
+> 硬盘空间有一部分没有被格式化，可以手动格式化为ext4并挂载。
+
+> 注意初始IP往往是192.168.1.1，如果和光猫冲突需要在网络-接口中更改。
+
+> 基本系统主题比较简陋，可以使用luci-theme-argon。
+
+> 刷错主题无法打开luci：通过 SSH 登录路由器，切换到另一个已知正常的主题（例如 Bootstrap）： 
+``uci set luci.main.mediaurlbase='/luci-static/bootstrap'
+uci commit luci
+/etc/init.d/uhttpd restart``
+然后重新访问 Web 界面，查看是否恢复正常。
 
 ## 在arm架构的硬路由上面安装OpenWrt
 
