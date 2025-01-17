@@ -95,10 +95,10 @@
 
         <div class="post-content">
             <p>前言 openwrt 是一个自由的、兼容性好的嵌入式 linux 发行版。作为软路由玩家必备的一款神器，可以实现诸如去广告，多拨和科学上网等多种功能。本文介绍openwrt在各种平台上的部署流程。</p>
-<span id="continue-reading"></span><h2 id="xuan-ze-he-gua-de-she-bei">选择合适的设备</h2>
+<span id="continue-reading"></span><h2 id="xuan-ze-he-gua-de-she-bei"><strong>选择合适的设备</strong></h2>
 <p>无论是传统的无线路由器还是小主机都有成为openwrt路由的潜力。截止到今天，已经有20多个品牌（小米，华硕，锐捷，华三等）30多种架构（x86,ipq,bcm,mtd等）支持刷入openwrt；你可以在这个<a href="https://mao.fan/select">网站</a>找到符合你预算和其他要求的，能刷机的路由器。
 传统家用无线路由器由于主频低，内存小，并不适合作为软路由；而 NAS-软路由一体式 又有 all in boom 的风险，因此推荐X86平台作为物理机。当然，也可以采用 armbian 平台或是开发板，例如网心云老母鸡、树莓派等设备。截至本文撰写时间，二手平台上的价格不太利好：一台J1900平台的售价往往在200左右，而专门的多网口工控机价格在200到1000不等，树莓派更是成为了理财产品，需要慎重选择。</p>
-<h2 id="xuan-ze-he-gua-de-xi-tong">选择合适的系统</h2>
+<h2 id="xuan-ze-he-gua-de-xi-tong"><strong>选择合适的系统</strong></h2>
 <p>除了openwrt主线外，还可以选择：</p>
 <ul>
 <li>
@@ -111,7 +111,7 @@
 <p><a href="https://firmware-selector.immortalwrt.org/">ImmortalWrt</a> 是一个原版openwrt的分支，中文优化好，更新也勤快，内置镜像源可以直连下载&amp;更新。</p>
 </li>
 </ul>
-<h2 id="ru-he-de-dao-yi-ge-openwrtxi-tong">如何得到一个openwrt系统</h2>
+<h2 id="ru-he-de-dao-yi-ge-openwrtxi-tong"><strong>如何得到一个openwrt系统</strong></h2>
 <ul>
 <li>可以在恩山论坛上使用他人编译好的现成的镜像，如"高大全","精品小包"等等，但存在一定风险；</li>
 <li>可以使用<a href="https://downloads.openwrt.org/">官方固件</a>下载得到一个最小化的系统，再一步步添加自己要用的包；</li>
@@ -120,7 +120,7 @@
 <li>可以使用GitHub action 云编译一个固件；</li>
 <li>可以在本地linux环境中进行编译。</li>
 </ul>
-<h2 id="x86ping-tai-an-zhuang-zhun-bei">X86平台安装准备：</h2>
+<h2 id="x86ping-tai-an-zhuang-zhun-bei"><strong>X86平台安装准备：</strong></h2>
 <ul>
 <li>
 <p>一个U盘与一台双网口物理机</p>
@@ -138,7 +138,7 @@
 <p><a href="https://www.roadkil.net/program.php?ProgramID=12#google_vignette">img 写盘工具</a></p>
 </li>
 </ul>
-<h2 id="x86ping-tai-an-zhuang-liu-cheng">X86平台安装流程：</h2>
+<h2 id="x86ping-tai-an-zhuang-liu-cheng"><strong>X86平台安装流程：</strong></h2>
 <p>1.进入PE环境：</p>
 <ul>
 <li>打开微PE，将其安装进U盘中，安装完成后将 img 工具和 openwrt 包一起放进去；</li>
@@ -168,6 +168,205 @@
 <code>uci set luci.main.mediaurlbase='/luci-static/bootstrap' uci commit luci /etc/init.d/uhttpd restart</code>
 然后重新访问 Web 界面，查看是否恢复正常。</p>
 </blockquote>
+<h2 id="x86ping-tai-bian-yi-wan-zheng-openwrt"><strong>X86平台编译完整openwrt</strong></h2>
+<ul>
+<li>
+<p><strong>系统版本：Debian 11 或者 Ubuntu LTS</strong></p>
+</li>
+<li>
+<p><strong>网络要求：科学上网环境，配置推荐 2H4G 以上</strong></p>
+</li>
+<li>
+<p><strong>编译依赖</strong></p>
+</li>
+</ul>
+<pre style="background-color:#151515;color:#e8e8d3;"><code><span>安装依赖
+</span><span>
+</span><span>sudo apt update -y
+</span><span>
+</span><span>sudo apt full-upgrade -y
+</span><span>
+</span><span>sudo apt install -y ack antlr3 asciidoc autoconf automake autopoint binutils bison build-essential \
+</span><span>bzip2 ccache clang cmake cpio curl device-tree-compiler flex gawk gcc-multilib g++-multilib gettext \
+</span><span>genisoimage git gperf haveged help2man intltool libc6-dev-i386 libelf-dev libfuse-dev libglib2.0-dev \
+</span><span>libgmp3-dev libltdl-dev libmpc-dev libmpfr-dev libncurses5-dev libncursesw5-dev libpython3-dev \
+</span><span>libreadline-dev libssl-dev libtool llvm lrzsz msmtp ninja-build p7zip p7zip-full patch pkgconf \
+</span><span>python3 python3-pyelftools python3-setuptools qemu-utils rsync scons squashfs-tools subversion \
+</span><span>swig texinfo uglifyjs upx-ucl unzip vim wget xmlto xxd zlib1g-dev
+</span><span>
+</span></code></pre>
+<ul>
+<li><strong>清理</strong></li>
+</ul>
+<pre style="background-color:#151515;color:#e8e8d3;"><code><span>sudo apt autoremove --purge
+</span><span>sudo apt clean
+</span></code></pre>
+<ul>
+<li><strong>新建一个用户，用于编译固件(可选)</strong></li>
+</ul>
+<pre style="background-color:#151515;color:#e8e8d3;"><code><span>useradd -m openwrt  # 新建一个名为 openwrt 的用户
+</span></code></pre>
+<blockquote>
+<p>不可以使用Root用户进行编译！!!</p>
+</blockquote>
+<ul>
+<li><strong>修改用户默认的 Shell</strong></li>
+</ul>
+<pre style="background-color:#151515;color:#e8e8d3;"><code><span>apt install -y sudo
+</span><span>
+</span><span>usermod -s /bin/bash openwrt
+</span></code></pre>
+<ul>
+<li><strong>切换用户</strong></li>
+</ul>
+<pre data-lang="Lean 大佬的  Lean 大佬的" style="background-color:#151515;color:#e8e8d3;" class="language-Lean 大佬的  Lean 大佬的 "><code class="language-Lean 大佬的  Lean 大佬的" data-lang="Lean 大佬的  Lean 大佬的"><span>su openwrt
+</span><span>
+</span><span>cd ~
+</span></code></pre>
+<ul>
+<li><strong>拉取源码，这里用的是 LEDE 分支源码：</strong></li>
+</ul>
+<pre style="background-color:#151515;color:#e8e8d3;"><code><span>git clone https://github.com/coolsnowwolf/lede
+</span><span>
+</span><span>cd lede
+</span></code></pre>
+<ul>
+<li><strong>添加软件源,可自行添加软件源至 feeds.conf.default 文件，也可以直接git添加需要的软件到lede目录下：</strong></li>
+</ul>
+<pre style="background-color:#151515;color:#e8e8d3;"><code><span>vim feeds.conf.default
+</span></code></pre>
+<pre style="background-color:#151515;color:#e8e8d3;"><code><span>常用源
+</span><span>src-git kenzo https://github.com/kenzok8/openwrt-packages
+</span><span>src-git small https://github.com/kenzok8/small
+</span><span>src-git haibo https://github.com/haiibo/openwrt-packages
+</span><span>src-git liuran001 https://github.com/liuran001/openwrt-packages
+</span></code></pre>
+<ul>
+<li><strong>单独添加</strong>（在更新并安装插件之前执行）例如：</li>
+</ul>
+<pre style="background-color:#151515;color:#e8e8d3;"><code><span>git clone https://github.com/chenmozhijin/turboacc.git
+</span></code></pre>
+<ul>
+<li><strong>更新并安装插件</strong></li>
+</ul>
+<pre style="background-color:#151515;color:#e8e8d3;"><code><span>./scripts/feeds clean
+</span><span>
+</span><span>./scripts/feeds update -a
+</span><span>
+</span><span>./scripts/feeds install -a
+</span></code></pre>
+<ul>
+<li><strong>自定义配置</strong></li>
+</ul>
+<p><strong>修改默认IP为 10.0.0.2</strong></p>
+<pre style="background-color:#151515;color:#e8e8d3;"><code><span>sed -i &#39;s/192.168.1.1/192.168.2.1/g&#39; package/base-files/files/bin/config_generate
+</span></code></pre>
+<p><strong>修改默认主机名</strong></p>
+<pre style="background-color:#151515;color:#e8e8d3;"><code><span>sed -i &#39;/uci commit system/i\uci set system.@system[0].hostname=&#39;OpenWrt&#39;&#39; package/lean/default-settings/files/zzz-default-settings
+</span></code></pre>
+<p><strong>加入编译者信息</strong></p>
+<pre style="background-color:#151515;color:#e8e8d3;"><code><span>sed -i &quot;s/OpenWrt /smith build $(TZ=UTC-8 date &quot;+%Y.%m.%d&quot;) @ OpenWrt /g&quot; package/lean/default-settings/files/zzz-default-settings
+</span></code></pre>
+<p><strong>修改默认主题</strong></p>
+<pre style="background-color:#151515;color:#e8e8d3;"><code><span>sed -i &quot;s/luci-theme-bootstrap/luci-theme-argon/g&quot; feeds/luci/collections/luci/Makefile
+</span></code></pre>
+<p>执行 <strong>make menuconfig</strong> 命令进入编译菜单。</p>
+<ul>
+<li><strong>菜单选项说明</strong></li>
+</ul>
+<p><strong>选择 CPU 类型</strong></p>
+<pre style="background-color:#151515;color:#e8e8d3;"><code><span>Target System (x86) --&gt; # 软路由选择 x86，硬路由根据型号厂家自行选择
+</span><span>
+</span><span>Subtarget (x86_64) --&gt; # CPU 子选项
+</span><span>
+</span><span>Target Profile (Generic x86/64) --&gt; # 厂家具体型号
+</span></code></pre>
+<p><strong>设置镜像编译的格式（squashfs，ext4）</strong></p>
+<pre style="background-color:#151515;color:#e8e8d3;"><code><span>Target Images --&gt; # 默认 squashfs
+</span></code></pre>
+<p><strong>添加较多插件时，为了避免空间不足，建议修改下面两项默认大小（x86/64）</strong></p>
+<pre style="background-color:#151515;color:#e8e8d3;"><code><span>Target Images --&gt; (16) Kernel partition size (in MB) # 默认是16，建议修改为256
+</span></code></pre>
+<p><strong>开启 IPv6 支持</strong></p>
+<pre style="background-color:#151515;color:#e8e8d3;"><code><span>Extra packages --&gt; ipv6helper（选定这个后，下面几项会自动选择）
+</span></code></pre>
+<p><strong>开启适用于 VMware 的 VMware Tools</strong></p>
+<pre style="background-color:#151515;color:#e8e8d3;"><code><span>Utilities --&gt; open-vm-tools
+</span><span>
+</span><span>Utilities --&gt; open-vm-tools-fuse
+</span></code></pre>
+<p><strong>选择插件</strong></p>
+<pre style="background-color:#151515;color:#e8e8d3;"><code><span>LuCI --&gt; Applications # 根据需要选择，* 代表编入固件，M 表示编译成模块或者IPK包，为空表示不编译
+</span></code></pre>
+<p><strong>选择主题</strong></p>
+<pre style="background-color:#151515;color:#e8e8d3;"><code><span>LuCI --&gt; Themes # 选择喜欢的主题，可以选多个
+</span></code></pre>
+<p>配置完成后使用编译菜单底部的 Save 保存，然后退出菜单 Exit，开始下载软件包</p>
+<ul>
+<li><strong>预下载编译所需的软件包</strong></li>
+</ul>
+<pre style="background-color:#151515;color:#e8e8d3;"><code><span>make download -j8
+</span></code></pre>
+<ul>
+<li><strong>检查文件完整性</strong></li>
+</ul>
+<pre style="background-color:#151515;color:#e8e8d3;"><code><span>find dl -size -1024c -exec ls -l {} \;
+</span></code></pre>
+<p>检查文件完整性命令可以列出下载不完整的文件，小于1k的文件属于下载不完整，如果存在则用下面的命令删除，然后重新下载编译所需的软件包，再次检查.确认所有文件完整可大大提高编译成功率，避免浪费时间</p>
+<pre style="background-color:#151515;color:#e8e8d3;"><code><span>find dl -size -1024c -exec rm -f {} \;
+</span></code></pre>
+<p>最后编译固件，编译完成后输出路径是 <strong>bin/targets</strong>，默认密码是 <strong>password</strong>.</p>
+<ul>
+<li><strong>编译固件（-j 后面是线程数，首次编译推荐用单线程）</strong></li>
+</ul>
+<pre style="background-color:#151515;color:#e8e8d3;"><code><span>make V=s -j1
+</span></code></pre>
+<ul>
+<li><strong>二次编译</strong></li>
+</ul>
+<p>拉取最新 OpenWrt 源码和更新 feeds 源中的软件包源码</p>
+<pre style="background-color:#151515;color:#e8e8d3;"><code><span>cd lede
+</span><span>
+</span><span>git pull
+</span><span>
+</span><span>./scripts/feeds update -a
+</span><span>
+</span><span>./scripts/feeds install -a
+</span></code></pre>
+<p>清除旧的编译产物和目录（可选）</p>
+<pre style="background-color:#151515;color:#e8e8d3;"><code><span>make clean
+</span></code></pre>
+<ul>
+<li>源码有大规模更新或者内核更新后执行，以保证编译质量;此操作会删除 /bin 和 /build_dir 目录中的文件</li>
+</ul>
+<pre style="background-color:#151515;color:#e8e8d3;"><code><span>make dirclean
+</span></code></pre>
+<blockquote>
+<p>更换架构编译前必须执行</p>
+</blockquote>
+<blockquote>
+<p>此操作会删除 /bin 和 /build_dir 目录的中的文件（make clean），以及 /staging_dir、/toolchain、/tmp 和 /logs 中的文件</p>
+</blockquote>
+<p>同首次编译，多线程编译失败后自动进入单线程编译，失败则输出详细日志</p>
+<pre style="background-color:#151515;color:#e8e8d3;"><code><span>make defconfig
+</span><span>
+</span><span>make download -j8
+</span><span>
+</span><span>find dl -size -1024c -exec ls -l {} \;
+</span><span>
+</span><span>make -j$(nproc) || make -j1 || make -j1 V=s
+</span></code></pre>
+<h1 id="ru-guo-xu-yao-zhong-xin-pei-zhi">如果需要重新配置</h1>
+<pre style="background-color:#151515;color:#e8e8d3;"><code><span>rm -rf ./tmp &amp;&amp; rm -rf .config # 清除临时文件和编译配置文件
+</span><span>
+</span><span>make menuconfig
+</span><span>
+</span><span>make download -j8
+</span><span>
+</span><span>find dl -size -1024c -exec ls -l {} \;
+</span><span>
+</span><span>make -j$(nproc) || make -j1 || make -j1 V=s
+</span></code></pre>
 <h2 id="armping-tai-an-zhuang-openwrt">Arm平台安装OpenWrt：</h2>
 <p>相比X86平台，arm架构的设备兼容性不高，不能随便找一个包就能安装。以下是一般步骤：</p>
 <ul>
@@ -184,7 +383,7 @@
 <p>通过Uboot的网络界面刷入Factory包，随后就可以在后台（如192.168.1.1）进入openwrt的管理界面。</p>
 </li>
 </ul>
-<h2 id="zai-ubuntushang-bian-yi-openwrtde-ipkbao">在ubuntu上编译openwrt的ipk包</h2>
+<h2 id="zai-ubuntushang-dan-du-bian-yi-openwrtde-ipkbao">在ubuntu上单独编译openwrt的ipk包</h2>
 <p>这里以ubuntu环境为例，我们假设你有一台虚拟机或者WSL。</p>
 <blockquote>
 <p><code>注意编译不能使用Root用户！</code></p>
