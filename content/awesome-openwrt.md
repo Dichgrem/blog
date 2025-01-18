@@ -123,7 +123,7 @@ usermod -s /bin/bash openwrt
 ```
  
 - **切换用户**
-``` Lean 大佬的  Lean 大佬的 
+```
 su openwrt
 
 cd ~
