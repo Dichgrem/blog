@@ -102,7 +102,13 @@
 <li>国内定制的安卓系统充满着云控，反诈以及各种广告，预装软件，这种系统实在为极客们所不容；</li>
 <li>以权限系统为例，一般软件权限需要经过用户同意，即每次安装前出现的各种请求弹窗；而 ADB 权限常常用于开发者模式，可以调试一些比较深层的设置；至于 root 权限则为系统的最高权限，与 Windows 的 system 权限相当（比 administer 还高）。因此，当我们具备了 root 权限后，就可以实现许多功能，例如屏蔽广告，虚拟定位，安装 Google 框架和软件，满血运行CPU等等。</li>
 </ul>
-<h2 id="san-ru-he-root"><strong>三.如何root</strong></h2>
+<h2 id="san-na-xie-ji-xing-ke-yi-root"><strong>三.哪些机型可以root</strong></h2>
+<p>在 2023 年的今天，能 root 的机型还是比较少。首先是最容易的一加和小米，可以申请官方解 BL 锁，需要等待7天；其次是联想，索尼等海外品牌，也比较容易；而 oppo 和 vivo 及其子品牌 iqoo 和 realme 有些是不行的；苹果的越狱在10代前是可以的，而华为全部机型都是不可以的，除非上万能的淘宝收费解锁，直接烧录芯片；至于三星，BL 锁一旦解开就会触发芯片物理熔断机制，无法使用 pay 以及升级系统，体验极差。因此，刷机有风险，root 需谨慎！刷机前要了解相应的厂商，考虑保修和变砖的问题！</p>
+<p><a href="https://github.com/KHwang9883/MobileModels/blob/master/misc/bootloader-kernel-source.md">各品牌手机root情况汇总</a></p>
+<blockquote>
+<p>截至2024年5月小米手机解BL锁已经收紧,条件非常苛刻.</p>
+</blockquote>
+<h2 id="si-ru-he-root"><strong>四.如何root</strong></h2>
 <p>首先我们要了解安卓系统的分区和启动。安卓的分区包括:</p>
 <ul>
 <li>
@@ -121,16 +127,12 @@
 <p>data 分区，存放用户数据和系统设置，擦除后不影响系统的运行。</p>
 </li>
 </ul>
-<p>手机启动阶段存在名为 bootloader 的程序，与 PC 端的 BIOS 类似，被称为 fastboot 模式，厂商一般会将其锁定。</p>
-<p>早些年间，存在大量一键 root，kingroot 之类的软件，可以直接刷写 root 包，获得 root 权限，但成功率不高；</p>
-<p>因此，现在主流的刷机步骤为</p>
+<p>手机启动阶段存在名为 bootloader 的程序，与 PC 端的 BIOS 类似，被称为 fastboot 模式，厂商一般会将其锁定。早些年间，存在大量一键 root，kingroot 之类的软件，可以直接刷写 root 包，获得 root 权限，但成功率不高；</p>
+<p>因此，现在<strong>主流的刷机步骤</strong>为</p>
 <ul>
-<li>解开 bootloader，俗称解BL锁.</li>
-</ul>
-<blockquote>
-<p><a href="https://telegra.ph/BL%E9%94%81%E7%9A%84%E5%8E%9F%E7%90%86%E6%98%AF%E4%BB%80%E4%B9%88-05-29">BL锁原理参考</a></p>
-</blockquote>
-<ul>
+<li>
+<p>解开 bootloader，俗称解BL锁. <a href="https://telegra.ph/BL%E9%94%81%E7%9A%84%E5%8E%9F%E7%90%86%E6%98%AF%E4%BB%80%E4%B9%88-05-29">BL锁原理参考</a></p>
+</li>
 <li>
 <p>打开机器上的允许USB调试;</p>
 </li>
@@ -168,12 +170,6 @@
 <blockquote>
 <p>如果旧系统上没有root权限无法直接备份Data分区,可以先用系统自带的备份,并下载好原版系统镜像以防止刷机失败.</p>
 </blockquote>
-<h2 id="si-na-xie-ji-xing-ke-yi-root"><strong>四.哪些机型可以root</strong></h2>
-<p>看到这里很多小伙伴肯定跃跃欲试，不过在 2023 年的今天，能 root 的机型还是比较少。首先是最容易的一加和小米，可以申请官方解 BL 锁，需要等待7天；其次是联想，索尼等海外品牌，也比较容易；而 oppo 和 vivo 及其子品牌 iqoo 和 realme 有些是不行的；苹果的越狱在10代前是可以的，而华为全部机型都是不可以的，除非上万能的淘宝收费解锁，直接烧录芯片；至于三星，BL 锁一旦解开就会触发芯片物理熔断机制，无法使用 pay 以及升级系统，体验极差。因此，刷机有风险，root 需谨慎！刷机前要了解相应的厂商，考虑保修和变砖的问题！</p>
-<p><a href="https://github.com/KHwang9883/MobileModels/blob/master/misc/bootloader-kernel-source.md">各品牌手机root情况汇总</a></p>
-<blockquote>
-<p>截至2024年5月小米手机解BL锁已经收紧,条件非常苛刻.</p>
-</blockquote>
 <h2 id="wu-que-ding-ni-yao-shua-de-xi-tong"><strong>五.确定你要刷的系统</strong></h2>
 <p>可以选择官方原版，官改版，海外版和类原生版。相关链接：</p>
 <p><a href="https://miuiver.com/">小米各机型 MIUI 历史版本分类索引</a></p>
@@ -189,7 +185,7 @@
 </blockquote>
 <p>5.通过搞机工具箱进入 recovery 模式，首先我们在wipe中清除Data、Cache两个分区，俗称“双清”，随后在高级清除选项中清除 Data、Cache、Dalvik Cache 和 System 分区，俗称“四清”。</p>
 <p>6.清除完成后即可开始刷机。将 TF 卡或者U盘插入手机，在“安装”中选择 rom 包，右滑确认刷机；随后如法炮制，刷入 magisk.zip 包，不然会卡在开机 logo 界面，俗称“卡米”。</p>
-<p>7.刷完之后重启，则会进入安装界面。注意：如果刷的是海外版的包，千万不能联网安装，否则会失败且变为国内版。</p>
+<p>7.刷完之后重启，则会进入安装界面。<strong>注意：如果刷的是海外版的包，千万不能联网安装，否则会失败且变为国内版。</strong></p>
 <p>8.此刻我们将下载好的 boot.img 文件复制到手机上，打开 Magisk 软件，在其中选择修补一个文件，选中 boot.img，修复完成后可以看到超级用户一栏可以使用了，说明 root 完成。</p>
 <blockquote>
 <p>截至2024年5月1日,该机已经刷入 crdroid 10.4 类原生系统,非常丝滑,步骤同上,但需要刷入<a href="https://xiaomifirmwareupdater.com/firmware/lmi/stable/V14.0.1.0.SJKMIXM/">新固件</a>.</p>
@@ -198,7 +194,16 @@
 <p>注：这里使用的 root 方案为<a href="https://github.com/topjohnwu/Magisk">magisk</a>，你也可以使用<a href="https://kernelsu.org/zh_CN/">kernelSU</a>或者<a href="https://jesse205.github.io/MagiskChineseDocument/delta/main.html">Kitsune Mask</a>以及<a href="https://apatch.dev/zh_CN/">apatch</a>等。</p>
 </blockquote>
 <h2 id="liu-roothou-de-mo-kuai-an-zhuang"><strong>六.Root后的模块安装</strong></h2>
-<p>在 Magisk 中安装 Zygisk-Lsposed 框架,即可使用 Lsposed，在 Lsposed 中可以安装 Amarok ，QAuxiliary 模块，并配合 shizuku ，MMRL 等软件等等。</p>
+<p>在 Magisk 中安装 Zygisk-Lsposed 框架,即可使用 Lsposed，在 Lsposed 中可以安装 Amarok ，QAuxiliary 模块，并配合 Shizuku ，MMRL 等软件等等。</p>
+<blockquote>
+<p>免 Root 的平替方法,目前这一套流程也很成熟了:</p>
+</blockquote>
+<ul>
+<li>利用 ADB 权限的 Shizuku</li>
+<li>利用 Device Owner 权限的 Dhizuku</li>
+<li>利用 VPN 的流量过滤</li>
+<li>利用运行库修补加载 Xposed 模块的 LSPatch</li>
+</ul>
 <h2 id="hou-ji"><strong>后记</strong></h2>
 <p>关于 root 的其他用途还有很多，这里就不一一列举，分享一些常用模块：</p>
 <p><a href="https://modules.lsposed.org/">lsposed模块大全</a></p>
