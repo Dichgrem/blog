@@ -168,7 +168,7 @@
 <code>uci set luci.main.mediaurlbase='/luci-static/bootstrap' uci commit luci /etc/init.d/uhttpd restart</code>
 然后重新访问 Web 界面，查看是否恢复正常。</p>
 </blockquote>
-<h2 id="x86ping-tai-bian-yi-wan-zheng-openwrt"><strong>X86平台编译完整openwrt</strong></h2>
+<h2 id="x86ping-tai-ben-di-bian-yi-wan-zheng-openwrt"><strong>X86平台本地编译完整openwrt</strong></h2>
 <ul>
 <li>
 <p><strong>系统版本：Debian 11 或者 Ubuntu LTS</strong></p>
@@ -230,8 +230,56 @@
 </span><span>
 </span><span>cd lede
 </span></code></pre>
+<h3 id="mu-lu-shuo-ming">目录说明</h3>
 <ul>
-<li><strong>添加软件源,可自行添加软件源至 feeds.conf.default 文件，也可以直接git添加需要的软件到lede目录下：</strong></li>
+<li>
+<p>buildroot: OpenWrt 的核心目录，包含构建系统相关的文件。</p>
+<ul>
+<li><code>feeds.conf.default</code>：定义软件包源的配置文件。</li>
+<li><code>files/</code>：存放自定义文件，用于覆盖默认的 root 文件系统。</li>
+</ul>
+</li>
+<li>
+<p>target: 包含目标设备架构的配置和构建信息。</p>
+<ul>
+<li><code>linux/</code>：包含与 Linux 内核相关的代码和配置。</li>
+<li><code>generic/</code>：通用配置文件。</li>
+<li><code>platform/</code>：针对具体设备平台的特定配置。</li>
+</ul>
+</li>
+<li>
+<p>package: 包含所有 OpenWrt 的软件包。</p>
+<ul>
+<li><code>base/</code>：基本功能相关的软件包（如 BusyBox、opkg）。</li>
+<li><code>kernel/</code>：与内核相关的补丁或模块。</li>
+<li><code>network/</code>：网络工具和协议（如 DHCP、DNS）。</li>
+<li><code>utils/</code>：各种实用工具（如编解码器、文件工具）。</li>
+</ul>
+</li>
+<li>
+<p>config: 存放默认配置文件，例如 <code>Config.in</code>，用于定义菜单项。</p>
+</li>
+<li>
+<p>scripts: 构建过程中使用的辅助脚本（如生成补丁、编译镜像）。</p>
+</li>
+<li>
+<p>toolchain: 构建工具链所需的文件，如编译器、链接器。</p>
+</li>
+<li>
+<p>tools: 一些构建系统依赖的额外工具（如 <code>autoconf</code>、<code>zlib</code>）。</p>
+</li>
+<li>
+<p>include: 存放 Makefile 的通用模板和其他全局定义文件。</p>
+</li>
+<li>
+<p>feeds: 包含通过 <code>feeds.conf</code> 配置的外部软件包源。</p>
+</li>
+<li>
+<p>documentation: 包含与 OpenWrt 项目相关的文档，如构建指南和开发文档。</p>
+</li>
+<li>
+<p><strong>添加软件源,可自行添加软件源至 feeds.conf.default 文件，也可以直接git添加需要的软件到lede目录下：</strong></p>
+</li>
 </ul>
 <pre style="background-color:#151515;color:#e8e8d3;"><code><span>vim feeds.conf.default
 </span></code></pre>
@@ -271,6 +319,56 @@
 <pre style="background-color:#151515;color:#e8e8d3;"><code><span>sed -i &quot;s/luci-theme-bootstrap/luci-theme-argon/g&quot; feeds/luci/collections/luci/Makefile
 </span></code></pre>
 <p>执行 <strong>make menuconfig</strong> 命令进入编译菜单。</p>
+<p><strong>编译配置菜单说明（部分）</strong></p>
+<pre style="background-color:#151515;color:#e8e8d3;"><code><span>Target System (Broadcom BCM27xx) #选择处理器架构
+</span><span>Subtarget (BCM2711 boards (64 bit)) #选择处理器
+</span><span>Target Profile (Raspberry Pi 4B/400/4CM (64bit)) #预制配置文件
+</span><span>Target Images #固件映像设置
+</span><span>ramdisk # 内存盘, 硬件内存充裕的话可以打开，有效提升性能
+</span><span>    Compression # 压缩等级(none表示不压缩)
+</span><span>    Root filesystem archives #根文件系统存档类型
+</span><span>        cpio.gz
+</span><span>        tar.gz
+</span><span>    Root filesystem images #根文件系统格式
+</span><span>        ext4 #适用于大容量闪存,易于修改分区大小,没有恢复出厂设置的功能
+</span><span>        squashfs #适用于小容量闪存，不可修改分区大小，有恢复出厂设置的功能
+</span><span>        Gzip images #Gzip存档
+</span><span>    Image Options
+</span><span>        Kernel partition size #内核分区大小，建议64M到256M，足够了
+</span><span>        Root filesystem partition size #跟文件系统分区大小，根据闪存大小自行设定
+</span><span>        Make /var persistent #持久化/var(开启后重启软路由/var下内容会保留)
+</span><span>Enable experimental features by default #默认启用实验性功能
+</span><span>Global build settings #全局编译设置
+</span><span>Advanced configuration options (for developers) #高级选项(仅供开发者)
+</span><span>Build the OpenWrt Image Builder #编译OpenWrt镜像编译器
+</span><span>Build the OpenWrt SDK #编译OpenWrt SDK
+</span><span>Package the OpenWrt-based Toolchain #打包OpenWrt工具链
+</span><span>Image configuration #镜像选项
+</span><span>Base system #基本组件
+</span><span>Administration #管理员工具
+</span><span>Boot Loaders #引导程序
+</span><span>Development #开发者工具
+</span><span>Extra packages #额外包
+</span><span>Firmware #固件工具
+</span><span>Fonts #字体
+</span><span>Kernel modules #内核模块
+</span><span>Languages #额外的语言(Python3,PHP,NodeJS等)
+</span><span>Libraries #系统库
+</span><span>LuCI #LuCI插件(一般只需修改应用和主题)
+</span><span>    Collections #合集
+</span><span>    Modules #模块
+</span><span>    Applications #应用程序
+</span><span>    Themes #主题
+</span><span>    Protocols #协议支持
+</span><span>    Libraries #运行库
+</span><span>    default-settings # 默认选项(自动配置语言包)
+</span><span>Mail #邮件
+</span><span>Multimedia #多媒体
+</span><span>Network #网络相关
+</span><span>Sound #音频
+</span><span>Utilities #各类实用软件(比如VIM)
+</span><span>Xorg
+</span></code></pre>
 <ul>
 <li><strong>菜单选项说明</strong></li>
 </ul>
@@ -356,7 +454,7 @@
 </span><span>
 </span><span>make -j$(nproc) || make -j1 || make -j1 V=s
 </span></code></pre>
-<h1 id="ru-guo-xu-yao-zhong-xin-pei-zhi">如果需要重新配置</h1>
+<h2 id="ru-guo-xu-yao-zhong-xin-pei-zhi">如果需要重新配置</h2>
 <pre style="background-color:#151515;color:#e8e8d3;"><code><span>rm -rf ./tmp &amp;&amp; rm -rf .config # 清除临时文件和编译配置文件
 </span><span>
 </span><span>make menuconfig
