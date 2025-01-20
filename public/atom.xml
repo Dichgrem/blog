@@ -148,7 +148,7 @@
         
     </entry>
     <entry xml:lang="en">
-        <title>乱七八糟:B站优质视频:计算机科学</title>
+        <title>乱七八糟:计算机科学优质视频</title>
         <published>2024-05-31T00:00:00+00:00</published>
         <updated>2024-05-31T00:00:00+00:00</updated>
         
@@ -160,10 +160,10 @@
           </name>
         </author>
         
-        <link rel="alternate" type="text/html" href="https://blog.dich.bid/about-bilibili/"/>
-        <id>https://blog.dich.bid/about-bilibili/</id>
+        <link rel="alternate" type="text/html" href="https://blog.dich.bid/about-cslearning/"/>
+        <id>https://blog.dich.bid/about-cslearning/</id>
         
-        <summary type="html">&lt;p&gt;前言 CSdiy珠玉在前,为CS教育做出了极大贡献.然而,受限与英文水平与课程难度,在这里分享一些B站上的中文CS相关视频.&lt;&#x2F;p&gt;
+        <summary type="html">&lt;p&gt;前言 CSdiy珠玉在前,为CS教育做出了极大贡献.这里分享一些优质的CS学习相关视频.&lt;&#x2F;p&gt;
 </summary>
         
     </entry>
