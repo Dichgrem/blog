@@ -193,6 +193,25 @@
 <blockquote>
 <p>注：这里使用的 root 方案为<a href="https://github.com/topjohnwu/Magisk">magisk</a>，你也可以使用<a href="https://kernelsu.org/zh_CN/">kernelSU</a>或者<a href="https://jesse205.github.io/MagiskChineseDocument/delta/main.html">Kitsune Mask</a>以及<a href="https://apatch.dev/zh_CN/">apatch</a>等。</p>
 </blockquote>
+<blockquote>
+<p>adb和fastboot命令示例</p>
+</blockquote>
+<pre style="background-color:#151515;color:#e8e8d3;"><code><span>adb命令：
+</span><span>adb devices		:列出adb设备
+</span><span>adb reboot		:重启设备
+</span><span>adb reboot bootloader	:重启到fastboot模式
+</span><span>adb reboot recovery	:重启到recovery模式
+</span><span>adb reboot edl		:重启到edl模式
+</span><span>adb sideload &lt;要刷写的文件路径&gt; ：刷写模块，如Magisk
+</span><span> 
+</span><span>fastboot命令：
+</span><span>fastboot devices			:列出fastboot设备
+</span><span>fastboot reboot				:重启设备
+</span><span>fastboot reboot-bootloader		:重启到fastboot模式
+</span><span>fastboot flash &lt;分区名称&gt; &lt;镜像文件名&gt;	:刷写分区
+</span><span>fastboot oem reboot-^&lt;模式名称^&gt; 		:重启到相应模式
+</span><span>fastboot oem device-info 		:查看解锁状态
+</span></code></pre>
 <h2 id="liu-roothou-de-mo-kuai-an-zhuang"><strong>六.Root后的模块安装</strong></h2>
 <p>在 Magisk 中安装 Zygisk-Lsposed 框架,即可使用 Lsposed，在 Lsposed 中可以安装 Amarok ，QAuxiliary 模块，并配合 Shizuku ，MMRL 等软件等等。</p>
 <blockquote>
