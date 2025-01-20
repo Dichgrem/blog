@@ -31,7 +31,7 @@ tags = ["乱七八糟"]
 - [显示器的色域和色准是什么东西？](https://www.bilibili.com/video/BV1kk4y167rk/)
 - [Gsync Freesync 垂直同步工作原理科普](https://www.bilibili.com/video/BV1FK4y1x7bk/)
 - [电脑散热器工作原理科普](https://www.bilibili.com/video/BV1Ca4y1W73e/)
-[硬盘的SATA M.2 NGFF NVME是什么意思，详解硬盘的总线协议与接口](https://www.bilibili.com/video/BV1Qv411t7ZL/)
+- [硬盘的SATA M.2 NGFF NVME是什么意思，详解硬盘的总线协议与接口](https://www.bilibili.com/video/BV1Qv411t7ZL/)
 - [键鼠是怎么工作的？8K回报率有意义吗？](https://www.bilibili.com/video/BV19T4y1R71r/)
 - [音响耳机麦克风这些设备是怎么工作的？](https://www.bilibili.com/video/BV1ca411t7qf/)
 - [如何选择存储卡？SD、TF和CFe卡有哪些区别？](https://www.bilibili.com/video/BV1G94y1g7Up)
