@@ -14,6 +14,7 @@ tags = ["乱七八糟"]
 ## 计算机组件发展历史
 
 - [CPU发展史](https://www.bilibili.com/video/BV1ME421A78n/)
+- [BIOS发展史](https://www.bilibili.com/video/BV1gb421h7C4/)
 - [存储器发展史](https://www.bilibili.com/video/BV1H5m6YkE9c/)
 - [显示器发展史](https://www.bilibili.com/video/BV1h2w5eREfD/)
 - [计算机发展史](https://www.bilibili.com/video/BV1ru411M7Hc/)
