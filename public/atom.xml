@@ -148,26 +148,6 @@
         
     </entry>
     <entry xml:lang="en">
-        <title>乱七八糟:PTA编译命令解析</title>
-        <published>2024-06-02T00:00:00+00:00</published>
-        <updated>2024-06-02T00:00:00+00:00</updated>
-        
-        <author>
-          <name>
-            
-              Unknown
-            
-          </name>
-        </author>
-        
-        <link rel="alternate" type="text/html" href="https://blog.dich.bid/about-g/"/>
-        <id>https://blog.dich.bid/about-g/</id>
-        
-        <summary type="html">&lt;p&gt;前言 编译器是软件开发中至关重要的工具之一，它负责将源代码转换为可执行程序，使得我们编写的代码能够在计算机上运行并实现预期的功能。在C++开发中，GNU C++编译器（g++）是最常用的编译器之一.本文将详细介绍PTA预设命令中各个参数和选项，以及它们的作用和用法。&lt;&#x2F;p&gt;
-</summary>
-        
-    </entry>
-    <entry xml:lang="en">
         <title>乱七八糟:计算机科学优质视频</title>
         <published>2024-05-31T00:00:00+00:00</published>
         <updated>2024-05-31T00:00:00+00:00</updated>
@@ -624,26 +604,6 @@
         <id>https://blog.dich.bid/network-download-1/</id>
         
         <summary type="html">&lt;p&gt;前言 下载，就是将我们所需要的文件数据，通过网络从拥有该文件资源的计算机上传输过来并保存到我们的计算机上，供我们使用。本系列将详细讲述各种常见网络下载技术的原理，包括HTTP,FTP,BT等等。&lt;&#x2F;p&gt;
-</summary>
-        
-    </entry>
-    <entry xml:lang="en">
-        <title>乱七八糟:如何高效地向 ChatGPT 提问</title>
-        <published>2024-01-07T00:00:00+00:00</published>
-        <updated>2024-01-07T00:00:00+00:00</updated>
-        
-        <author>
-          <name>
-            
-              Unknown
-            
-          </name>
-        </author>
-        
-        <link rel="alternate" type="text/html" href="https://blog.dich.bid/about-chatogpt/"/>
-        <id>https://blog.dich.bid/about-chatogpt/</id>
-        
-        <summary type="html">&lt;p&gt;前言 本文翻译自《The Art of Asking ChatGPT for High-Quality Answers A Complete Guide to Prompt Engineering Techniques》&lt;&#x2F;p&gt;
 </summary>
         
     </entry>
