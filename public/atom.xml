@@ -5,8 +5,28 @@
     <link rel="self" type="application/atom+xml" href="https://blog.dich.bid/atom.xml"/>
     <link rel="alternate" type="text/html" href="https://blog.dich.bid"/>
     <generator uri="https://www.getzola.org/">Zola</generator>
-    <updated>2025-01-04T00:00:00+00:00</updated>
+    <updated>2025-01-21T00:00:00+00:00</updated>
     <id>https://blog.dich.bid/atom.xml</id>
+    <entry xml:lang="en">
+        <title>Network的艺术:家庭组网与设备选购</title>
+        <published>2025-01-21T00:00:00+00:00</published>
+        <updated>2025-01-21T00:00:00+00:00</updated>
+        
+        <author>
+          <name>
+            
+              Unknown
+            
+          </name>
+        </author>
+        
+        <link rel="alternate" type="text/html" href="https://blog.dich.bid/about-zuwang/"/>
+        <id>https://blog.dich.bid/about-zuwang/</id>
+        
+        <summary type="html">&lt;p&gt;前言 本文介绍一些家庭组网方案和家庭网络升级方案。&lt;&#x2F;p&gt;
+</summary>
+        
+    </entry>
     <entry xml:lang="en">
         <title>乱七八糟:2024年度总结</title>
         <published>2025-01-04T00:00:00+00:00</published>
@@ -564,26 +584,6 @@
         <id>https://blog.dich.bid/how-email-works-1/</id>
         
         <summary type="html">&lt;p&gt;前言 在互联网的日常使用中，电子邮件作为一项基础服务扮演着重要的角色。尽管在过去几十年里出现了各种新型的通讯方式，但电子邮件仍然保持着其不可替代的地位。了解电子邮件的工作原理，有助于更好地理解这一基础服务是如何运作的。&lt;&#x2F;p&gt;
-</summary>
-        
-    </entry>
-    <entry xml:lang="en">
-        <title>Network的艺术:路由器原理与组网</title>
-        <published>2024-02-19T00:00:00+00:00</published>
-        <updated>2024-02-19T00:00:00+00:00</updated>
-        
-        <author>
-          <name>
-            
-              Unknown
-            
-          </name>
-        </author>
-        
-        <link rel="alternate" type="text/html" href="https://blog.dich.bid/routing/"/>
-        <id>https://blog.dich.bid/routing/</id>
-        
-        <summary type="html">&lt;p&gt;前言 所谓无线路由，就是具备无线覆盖的路由器，即我们常用的有天线的家用路由器。而家庭组网中，除了选择一个最合适的上网方案，一部好的路由器也是非常重要;那么，如何科学的选购路由器呢？&lt;&#x2F;p&gt;
 </summary>
         
     </entry>
