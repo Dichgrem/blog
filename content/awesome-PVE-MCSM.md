@@ -20,17 +20,17 @@ MCSManager 面板（简称：MCSM 面板）是一款全中文，轻量级，开�
 
 ## 准备工作
 
-- 1.PVE镜像，推荐使用7.4版本 https://www.proxmox.com/en/downloads
+- 1.[PVE镜像，推荐使用7.4版本](https://www.proxmox.com/en/downloads)
 
-- 2.Debian镜像：https://mirrors.tuna.tsinghua.edu.cn/debian/dists/ （不建议使用DVD版，会出现奇怪的问题。）
+- 2.[Debian镜像](https://mirrors.tuna.tsinghua.edu.cn/debian/dists/)（不建议使用DVD版，会出现奇怪的问题。）
 
-- 3.我们的老伙计Rufus：https://www.423down.com/10080.html
+- 3.[我们的老伙计Rufus](https://www.423down.com/10080.html)
 
-- 4.Purpur1.19 服务端：https://purpurmc.org/
+- 4.[Purpur1.19 服务端](https://purpurmc.org/)
 
-- 5.MC启动器HMCL：https://hmcl.huangyuhui.net/
+- 5.[MC启动器HMCL](https://hmcl.huangyuhui.net/)
 
-- 6.Zerotier客户端：https://www.zerotier.com/download/
+- 6.[Zerotier客户端](https://www.zerotier.com/download/)
 
 ## 一.安装PVE并优化
 
