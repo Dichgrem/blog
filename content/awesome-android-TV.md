@@ -9,27 +9,70 @@ tags = ["综合工程"]
 
 前言 由于 AppleTV 的高昂的售价和普通电视盒子广告的泛滥，一台开源、多功能的原生安卓电视盒子逐渐成为智能家居的必备神器。出于对 IPTV、YouTube 和家庭影院等需求，以及对一面赏心悦目电视墙的期待，这里分享 Android TV （以下简称ATV）安装的一些要点。
 <!-- more -->
-准备工作：
 
-- 1.一个  [ATV 镜像](https://pan.baidu.com/s/17eDDrf4WzWVmrc9hLw-c_w?pwd=a728) ，这里使用 Tosathony 制作的 Android TV x86 9.0， 支持 Android tv Remote，且可以下载 Google Play Store 。
+## 零.要实现的目标
 
-- 2.我们的老朋友 Rufus 写盘工具：https://www.423down.com/10080.html
+- 实现自己的设备(X86/Arm)上安装TV系统；
+- 实现**无开机广告和内置广告**；
+- 实现**海报墙效果**（矩形磁帖），或自定义安卓桌面启动器；
+- 实现**影视番剧观看**，基于TVbox/Kodi/Kazumi；
+- 实现**国内流媒体观看**，包括Bilibili，爱优腾等等；
+- 实现**国外流媒体观看**，包括Netflix，YouTube，Disney+，Spotify等等；
+- 实现**家庭影院**，Emby类软件自动刮削；
+- 实现**IPTV**观看，采用自抓取源或者公共源；
+- 实现**复古游戏**游玩，包括GBA/FC等等，基于RetroArch/PPSSPP，可以连接手柄；
+- 实现**游戏主机串流**，包括PS/Xbox/Switch等等；
 
-- 3.Android tv Remote 手机遥控器软件：https://android-tv-remote-control.en.softonic.com/android
 
-- 4.Tiny ADB 软件: https://androidmtk.com/tiny-adb-and-fastboot-tool#installer
 
-- 5.一些可安装的软件：
+## 一.选择合适的平台
 
-- 当贝市场：https://www.dangbei.com/apps/
+X86还是Arm？两者之间各有优点，截止到今天各种Arm电视盒子已经非常成熟，价格便宜，也可以使用运营商的电视盒子进行刷机，性能并不会太弱；而X86平台往往价格偏贵，且解码性能和功能适配没有和电视生态联系紧密，因此建议首选Arm平台。
 
-- 哔哩哔哩TV版：https://www.fenxm.com/104.html
 
-- kodi: http://www.kodiplayer.cn/
 
-- ATV Launcher: https://www.fenxm.com/592.html
+## 二.选择合适的系统
 
-安装流程：
+无论是运营商自带的电视盒子还是各种所谓的“无广告”电视盒子，往往都基于以下两种系统，且不要迷信所谓的“无广告”电视盒子，它们往往配置低下，性价比不高且还是有内置付费项目，甚至有一些根本没有做到去广告。
+
+| 特性               | **Android-x86**                                          | **Android TV**                                            |
+|--------------------|---------------------------------------------------------|----------------------------------------------------------|
+| **目标用户**        | 面向 PC 用户，将 Android 运行在 x86/x86_64 设备上。        | 面向电视和机顶盒用户，优化用于遥控器或语音操作。             |
+| **适配设备**        | 传统 PC、笔记本、平板电脑等 x86 架构设备。                 | 智能电视、电视盒子等 ARM 或特定芯片架构设备。               |
+| **界面设计**        | 和标准 Android 类似，为触摸屏和鼠标键盘优化。               | 专为大屏设计，使用 Leanback UI，适配遥控器操作。             |
+| **Google 服务**     | 默认不包含 Google 服务，需要用户手动安装。                  | 官方版本内置 Google 服务（例如 Play Store、Assistant）。    |
+| **开机启动器**      | 使用标准 Android 桌面启动器（Launcher3）。                  | 使用电视优化的启动器（Leanback Launcher）。                |
+| **架构支持**        | 专注于 **x86/x86_64**，但支持 ARM 仿真（通过 Houdini）。    | 主要支持 **ARM/ARM64** 架构，有限支持 x86。                |
+| **硬件支持**        | 需要额外优化，部分硬件（如 GPU 驱动）可能无法正常工作。       | 深度集成硬件，默认支持电视硬件（如 HDMI CEC、音频输出）。    |
+| **应用市场**        | 默认不内置 Google Play，需要手动安装 Aurora Store 等替代方案。| 默认集成 Google Play 商店，提供大屏优化的应用程序。          |
+| **遥控器支持**      | 不适配遥控器，主要使用鼠标键盘操作。                        | 专为遥控器优化，支持按键导航和语音输入。                    |
+| **开源贡献**        | 由社区维护，支持各种自定义和实验功能。                       | 由 Google 官方主导，OEM 厂商提供硬件优化支持。              |
+
+---
+> Android-x86 的安装类似windows，需要命令行界面配置；Android TV安装类似 Android手机，通过刷分区或TWRP卡刷安装。
+
+> Tosathony 制作的 Android TV x86 是一个由社区成员制作的定制化 Android TV 版本,针对 Android TV 的大屏界面 和 遥控器操作 进行特别优化,但某些硬件（如 Wi-Fi、GPU、音频设备等）的驱动可能不兼容或需要额外的配置。
+
+**刷 Tosathony Android TV X86 准备工作**：
+
+- 1.[Tosathony 制作的 Android TV x86 9.0](https://pan.baidu.com/s/17eDDrf4WzWVmrc9hLw-c_w?pwd=a728)
+
+- 2.[Rufus 写盘工具](https://www.423down.com/10080.html)
+
+- 3.[Android tv Remote 手机遥控器软件：](https://android-tv-remote-control.en.softonic.com/android)
+
+- 4.[Tiny ADB 软件](https://androidmtk.com/tiny-adb-and-fastboot-tool#installer)
+
+**一些可安装的软件**：
+
+- [kodi](http://www.kodiplayer.cn/)
+
+- [当贝市场](https://www.dangbei.com/apps/)
+
+- [哔哩哔哩TV版](https://www.fenxm.com/104.html)
+
+- [ATV Launcher](https://www.fenxm.com/592.html)
+
 
 ## 一、写盘，BIOS启动
 
@@ -69,17 +112,17 @@ tags = ["综合工程"]
 
 4.此时会进入一个 WiFi 界面，如果你是使用网线直连就没有问题，或者用键盘连接家里的WiFi，作者因为工控机没有WiFi模块在这里卡了半天。
 
-5.现在我们可以看到进入了 ATV 的桌面。
+5.随后进入了 AndroidTV 的桌面。
 
 ## 四、安装软件并设置桌面启动
 
 1.首先我们在设置中找到“设置”>“设备首选项”>“关于”，然后在“构建”上点击几次以解锁“开发人员”选项，随后开启USB调试开关。
 
-2.随后在设置 > 设备首选项 > 关于 > 状态中找到并记下IP 地址，然后用Tiny ADB连接上去，这里使用命令adb connect <IP 地址> 。 ，随后在ATV端授权连接；
+2.随后在设置 > 设备首选项 > 关于 > 状态中找到并记下IP 地址，然后用Tiny ADB连接上去，这里使用命令``adb connect <IP 地址> ``，随后在ATV端授权连接；
 
 3.接着使用命令adb install <path to android app.apk>将要安装的软件包上传，也可以将文件拖到命令提示符窗口上以复制其路径，回车确认。
 
-附一些 ADB 常用命令：
+**一些 ADB 常用命令**：
 
 ```
 adb reboot #将重启 Android 设备。
@@ -101,7 +144,7 @@ enable_nativebridge
 
 reboot
 ```
-5.安装一些软件包后我们发现需要代替掉ATV自带的桌面，从而形成海报墙的效果，这和 linux 的桌面环境切换有异曲同工之处。注意：替换前需要已经安装完成其他桌面！！！！（比如 ATV Launcher ）我们使用 
+5.安装一些软件包后我们发现需要代替掉ATV自带的桌面，从而形成海报墙的效果，这和 linux 的桌面环境切换有异曲同工之处。注意：替换前需要已经安装完成其他桌面！！！！（比如 ATV Launcher ）我们使用以下命令禁用 google 默认的桌面。随后重启，即可看到ATV的海报墙。
 
 ``pm disable-user --user 0 com.google.android.tvlauncher ``
 
@@ -114,7 +157,7 @@ generic_x86:/ # pm enable --user 0 com.google.android.tvlauncher
 Package com.google.android.tvlauncher new state: enabled
 ```
 
-命令，禁用 google 默认的桌面。随后重启，即可看到如下海报墙：
+
 
 ## 后记
 
