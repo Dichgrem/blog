@@ -20,7 +20,7 @@ tags = ["综合工程"]
 - 实现**国外流媒体观看**，包括Netflix，YouTube，Disney+，Spotify等等；
 - 实现**家庭影院**，Emby类软件自动刮削；
 - 实现**IPTV**观看，采用自抓取源或者公共源；
-- 实现**复古游戏**游玩，包括GBA/FC等等，基于RetroArch/PPSSPP，可以连接手柄；
+- 实现**复古游戏**游玩，包括GBA/FC等等，基于RetroArch/PPSSPP/Emuelec,可以连接手柄；
 - 实现**游戏主机串流**，包括PS/Xbox/Switch等等；
 
 
