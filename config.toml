@@ -64,6 +64,7 @@ menu_items = [
     {name = "about me", url = "$BASE_URL/about"},
     {name = "links", url = "$BASE_URL/links"},
     {name = "search", url = "$BASE_URL/search"},
+    {name = "weekly", url = "$BASE_URL/weekly"},
 
     # set newtab to true to make the link open in new tab
     {name = "github", url = "https://github.com/Dichgrem", newtab = true},
@@ -87,8 +88,8 @@ use_full_hack_font = false
 #           Mimetype defaults to "image/x-icon".
 #           The URL should point at a file located
 #           in your site's "static" directory.
-# favicon = "/favicon.png"
-# favicon_mimetype = "image/png"
+favicon = "/dich.webp"
+favicon_mimetype = "image/webp"
 
 # Optional: Set how <title> elements are rendered.
 # Values:
