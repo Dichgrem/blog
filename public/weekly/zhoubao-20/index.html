@@ -82,42 +82,45 @@
         
     <div class="post">
         
-    <h1 class="post-title"><a href="https://blog.dich.bid/weekly/zhoubao-20/">谈天说地:狄奇周刊(十九)</a></h1>
+    <h1 class="post-title"><a href="https://blog.dich.bid/weekly/zhoubao-20/">谈天说地:狄奇周刊(二十)</a></h1>
     <div class="post-meta-inline">
         
     <span class="post-date">
-            2024-10-23
+            2025-01-25
         </span>
 
     </div>
 
     
+        <span class="post-tags-inline">
+                :: tags:&nbsp;
+                <a class="post-tag" href="https://blog.dich.bid/tags/tan-tian-shuo-di/">#谈天说地</a></span>
+    
 
         <div class="post-content">
             <p>前言 这里是Dich的周刊,通过博客的形式讲述每周互联网形势,以及分享一些文章。</p>
 <span id="continue-reading"></span><h1 id="shi-ji"><strong>事记</strong></h1>
-<h2 id="yi-win-11-24h2-geng-xin-dao-zhi-bu-fen-xi-shu-ssdyong-hu-lan-ping"><strong>一.<a href="https://www.windowslatest.com/2024/10/15/windows-11-24h2-causing-bsods-microsoft-will-reportedly-halt-update-for-more-pcs/">Win 11 24H2 更新导致部分西数SSD用户蓝屏</a></strong></h2>
-<p>Windows 11 24H2 更新导致某些 PC 崩溃并出现蓝屏死机 (关键进程已死亡)。微软已经意识到了这一点，并计划暂停今年在受影响硬件上的更新。据透露，微软已经意识到少数搭载西部数据特定 SSD 的设备可能会遇到蓝屏死机错误的问题。蓝屏死机与存储驱动程序和 RAID 控制器有关。WD SN770 会提供 200MB 主机内存缓冲区 (HMB)，而 23H2 只会分配 64MB 所以没有问题，然而 24H2 会分配完整的 200MB ，并导致蓝屏死机错误“关键进程已死亡”。用户虽然可以通过设置注册表“HMBAllocationPolicy = 0”关闭 HMB 来缓解该问题，但可能会影响硬盘性能。</p>
-<h2 id="er-ubuntudan-sheng-20zhou-nian-canonicalfa-bu-liao-ji-jiang-dao-lai-de-24-10ban-ben-ta-yi-ru-ji-wang-de-chu-se"><strong>二.<a href="https://ubuntu.com/20years">Ubuntu诞生20周年:Canonical发布了即将到来的24.10版本——它一如既往的出色</a></strong></h2>
-<p>The story of Ubuntu is a story written by many hands. This page is a tribute to our community, partners and Canonical staff who have all given a piece of themselves to making this open source project thrive. Thank you to all of you.
-Ubuntu的故事是由许多人书写的故事。 此页面是向我们的社区、合作伙伴和 Canonical 员工致敬，他们为使这个开源项目蓬勃发展做出了自己的贡献。 谢谢大家。</p>
-<p>Above all, it’s a celebration of what Ubuntu has achieved so far, and an invitation to collaborate with us in delivering an even faster pace of innovation in the future.
-最重要的是，这是对 Ubuntu 迄今为止所取得的成就的庆祝，并邀请我们与我们合作，在未来提供更快的创新步伐。</p>
-<h2 id="san-linux-nei-he-jiang-shu-ming-yu-e-luo-si-lian-bang-xiang-guan-de-gong-xian-zhe-cong-wei-hu-zhe-lie-biao-zhong-yi-chu"><strong>三.<a href="https://lwn.net/Articles/995186/">Linux 内核将数名与俄罗斯联邦相关的贡献者从维护者列表中移除</a></strong></h2>
-<p>日前，Linux 内核主要维护者之一 Greg Kroah-Hartman (Greg K-H) 提交了一项不寻常的“文档”更新，将数名具有 &lt;.ru&gt; 顶级域名邮箱的维护者，和一名明确为俄罗斯身份的维护者从 MAINTAINERS（维护者名录）文件除名。</p>
-<p>这一提交已于上周日被 Linus Torvalds 拉取并包含于 6.12-rc4 版本的代码中。</p>
-<p>Greg K-H 并未详述这项更新的具体原因，仅含糊其辞地表示该更改是“由于某些合规性要求”，并指出“（相关人员）提供充足文档后，方可回归（维护者名录）”。</p>
-<p>相关的维护者移除方式相当暴力，其中部分子系统由于唯一维护者使用 &lt;.ru&gt; 顶级域名邮箱，整个子系统都被从 MAINTAINERS 文件中移除，这之中不乏诸如 UFS 文件系统和 PPTP 驱动等重要且被广泛使用的子系统。由于 Linux 内核开发流程完全基于邮件列表进行，当 MAINTAINERS 文件中移除相关维护者后，也就意味着与相关子系统的补丁或沟通将不再被发送至维护者的邮箱，乃至相关的邮件列表。这很可能会造成许多补丁“石沉大海”；而如果某个子系统未得到充分维护，那么其被从内核中移除也只是时间问题了。</p>
-<p>通常而言，Linux 内核补丁除了发送至邮件列表外，还需要抄送与之相关的人士（如子系统维护者和活跃贡献者），并且经过讨论和审阅后才会被拉取合并。然而，Greg K-H 似乎刻意绕过了这部分流程，仅仅将补丁发送至流量最大、几乎不会有人认真阅读每封邮件的 patches@lists.linux.dev 列表，并于仅仅两天后就向 Linus Torvalds 发起拉取请求，而 Torvalds 亦未对相关修改提出质疑和意见便拉取合并这笔更改了。</p>
-<p>考虑到 Linus Torvalds 与 Greg K-H 均受雇于 The Linux Foundation，后者为注册在美国的 501(c)(6) 组织，“某些合规性要求”为何显而易见。</p>
-<p>截至发稿时，Greg K-H 尚未回应邮件列表上的相关质询。无论结果为何，这都将是 Linux 内核社区历史上最为耻辱的提交之一。</p>
-<h2 id="si-racknerd-he-cloudcone-fu-wu-chu-xian-zhong-duan"><strong>四.<a href="https://t.me/vps_xhq/662">RackNerd 和 CloudCone 服务出现中断</a></strong></h2>
-<p>RackNerd 服务状态显示，其位于洛杉矶DC-02 所在的大楼出现火警，洛杉矶消防局因此切断了供电，DC-02的所有服务器受到影响。RackNerd 强调该公司服务器所在楼层没有火灾，因此数据是安全的。</p>
-<p>据了解，RackNerd DC-02由跨国宽带网络服务提供商 MultaCom 直接运营。另外一家运营商 CloudCone 也在此处托管有大量服务器。今天CC同样出现了大面积服务中断，截止目前该公司尚未发布通告。</p>
+<h2 id="yi-bi-li-bi-li-da-hui-yuan-xian-zhi-zhi-neng-tong-shi-2ge-zhong-duan-shi-yong"><strong>一.<a href="https://www.bilibili.com/blackboard/big-protocol.html">哔哩哔哩大会员限制只能同时2个终端使用</a></strong></h2>
+<p>近日，哔哩哔哩对大会员服务协议内容进行了更新和优化，更新版本主要针对使用限制的情形相对应的条款进行调整：(一) 同一账号同一时间最多可以在2个终端设备使用会员服务，终端设备包括但不限于手机端、电脑端、平板电脑端、网页端等 (包括小程序) 以及上述终端相应的网页端；(二) 同一账号在手机端24小时内至多支持在2个设备上使用会员服务；(三) 超过上述范围使用的，哔哩哔哩大会员将会根据情况中止或终止对您提供的服务，且哔哩哔哩大会员保留采取进一步措施的权利，包括但不限于追偿损失等。</p>
+<h2 id="er-7-zipzai-pu-gao-wei-lou-dong"><strong>二.<a href="https://www.cve.org/CVERecord?id=CVE-2025-0411">7-Zip再曝高危漏洞</a></strong></h2>
+<p>近日，7-Zip被曝出编号为CVE-2025-0411的高危漏洞，该漏洞允许远程攻击者绕过Windows的“网络标记”（Mark-of-the-Web, MOTW）保护机制，从而在受影响的系统上执行任意代码。此漏洞影响24.07及之前的所有7-Zip版本，建议用户尽快升级至24.09版本以修复漏洞，确保系统安全。</p>
+<h2 id="san-nvidia-cudajiang-dong-jie-san-da-lao-jia-gou"><strong>三.<a href="https://www.cnbeta.com.tw/articles/tech/1473990.htm">NVIDIA CUDA将「冻结」三大老架构</a></strong></h2>
+<p>NVIDIA CUDA将「冻结」三大老架构</p>
+<p>NVIDIA在最新的CUDA 12.8开发包更细日志中明确表示，针对Maxwell、Pascal、Volta三大老架构的支持，已经完成了所有功能特性，未来的新版本中将处于「冻结」状态。CUDA开发包仍会继续支持它们，但不会有任何新功能。</p>
+<h2 id="si-wei-ruan-e5kai-fa-zhe-ding-yue-yi-jing-quan-qiu-xia-jia"><strong>四.<a href="https://linux.do/t/topic/385888">微软E5开发者订阅已经全球下架</a></strong></h2>
+<p>据用户反映并通过微软客服专员证实，微软已在全球范围内下架E5开发者订阅。</p>
+<p>此消息意味着，长期以来被许多用户视为免费网盘福利的E5订阅及其附带的大容量云存储空间，即将成为历史。</p>
 <h1 id="wen-tui"><strong>文推</strong></h1>
-<p><a href="https://tls13.xargs.org/">图解网络协议系列</a></p>
-<hr />
+<p><a href="https://self-consistent-coder.vercel.app/">自洽的程序员</a></p>
+<p><a href="https://learning-guide.gitbook.io/system-design-interview">系统设计面试：内幕指南</a></p>
+<p><a href="https://telegra.ph/%E5%81%9C%E6%9C%8D%E5%80%92%E9%97%AD%E4%B8%80%E5%AE%B6%E8%A2%AB%E5%A4%A7%E5%8E%82%E6%8A%84%E8%A2%AD%E7%9A%84%E5%B0%8F%E5%85%AC%E5%8F%B8%E4%B9%8B%E6%AE%87-01-22">停服、倒闭，一家被大厂抄袭的小公司之殇</a></p>
 <h1 id="xiang-mu"><strong>项目</strong></h1>
+<p><a href="https://quant-wiki.com/">Quant Wiki 中文量化百科 </a></p>
+<p><a href="https://github.com/hzhilong/bilibili-backup/releases">哔哩哔哩账号备份</a></p>
+<p><a href="https://github.com/electh/nextflux">用 nextUI 写的阅读体验更好的 Miniflux 第三方 Web 前端</a></p>
+<p><a href="https://github.com/Serial-Studio/Serial-Studio">Serial Studio能够与串行端口、网络套接字和 MQTT 代理进行交互</a></p>
+<p><a href="https://github.com/ghostty-org/ghostty"> Ghostty 是一款快速、功能丰富且跨平台的终端仿真器，它使用平台原生 UI 和 GPU 加速。</a></p>
+<p><a href="https://github.com/honmaple/maple-file/">一款无服务端的多协议云盘文件上传和管理应用，支持多种存储协议，包括本地文件、FTP、SFTP、S3、SMB、Webdav等 </a></p>
 
         </div>
 
@@ -129,19 +132,12 @@ Ubuntu的故事是由许多人书写的故事。 此页面是向我们的社区�
             </div>
             <div class="pagination__buttons">
                     <span class="button previous">
-                        <a href="https://blog.dich.bid/weekly/zhoubao-18/">
-                            <span class="button__icon">←</span>&nbsp;
-                            <span class="button__text">谈天说地:狄奇周刊(十八)</span>
-                        </a>
-                    </span>
-                
-                
-                    <span class="button next">
                         <a href="https://blog.dich.bid/weekly/zhoubao-19/">
-                            <span class="button__text">谈天说地:狄奇周刊(十九)</span>&nbsp;
-                            <span class="button__icon">→</span>
+                            <span class="button__icon">←</span>&nbsp;
+                            <span class="button__text">谈天说地:狄奇周刊(十九)</span>
                         </a>
                     </span>
+                
                 </div>
         </div>
     
