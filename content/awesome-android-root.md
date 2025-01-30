@@ -75,9 +75,9 @@ tags = ["综合工程"]
 
 可以选择官方原版，官改版，海外版和类原生版。相关链接：
 
-[小米各机型 MIUI 历史版本分类索引](https://miuiver.com/)
+- [小米各机型 MIUI 历史版本分类索引](https://miuiver.com/)
 
-[Android原生项目大全](https://mi.fiime.cn/Android)
+- [Android原生项目大全](https://mi.fiime.cn/Android)
 
 ## **六.具体操作流程**
 
@@ -102,7 +102,7 @@ tags = ["综合工程"]
 
 > 截至2024年5月1日,该机已经刷入 crdroid 10.4 类原生系统,非常丝滑,步骤同上,但需要刷入[新固件](https://xiaomifirmwareupdater.com/firmware/lmi/stable/V14.0.1.0.SJKMIXM/).
 
-> 注：这里使用的 root 方案为[magisk](https://github.com/topjohnwu/Magisk)，你也可以使用[kernelSU](https://kernelsu.org/zh_CN/)或者[Kitsune Mask](https://jesse205.github.io/MagiskChineseDocument/delta/main.html)以及[apatch](https://apatch.dev/zh_CN/)等。
+> 注：这里使用的 root 方案为[magisk](https://github.com/topjohnwu/Magisk)，你也可以使用[kernelSU](https://kernelsu.org/zh_CN/)或者[apatch](https://apatch.dev/zh_CN/)等。
 
 
 > adb和fastboot命令示例
@@ -125,23 +125,34 @@ fastboot oem reboot-^<模式名称^> 		:重启到相应模式
 fastboot oem device-info 		:查看解锁状态
 ```
 
-## **六.Root后的模块安装**
+## **七.常用Root方案**
 
-在 Magisk 中安装 Zygisk-Lsposed 框架,即可使用 Lsposed，在 Lsposed 中可以安装 Amarok ，QAuxiliary 模块，并配合 Shizuku ，MMRL 等软件等等。
+- [Magisk](https://jesse205.github.io/MagiskChineseDocument/)
 
+- [Kitsune Mask](https://jesse205.github.io/MagiskChineseDocument/delta/main.html)
+
+- [KernelSU](https://kernelsu.org/zh_CN/)
+
+- [KernelSU Next](https://rifsxd.github.io/KernelSU-Next/zh/index.html)
+
+- [APatch](https://apatch.dev/zh_CN/)
+
+## **八.Root后的模块安装**
+
+在 Root 管理器中安装 Zygisk-Lsposed 模块,即可使用 Lsposed，在 Lsposed 中可以安装 HMA, Amarok ，QAuxiliary 模块，并配合 MMRL 等软件等等。
 
 > 免 Root 的平替方法,目前这一套流程也很成熟了:
 - 利用 ADB 权限的 Shizuku
 - 利用 Device Owner 权限的 Dhizuku
 - 利用 VPN 的流量过滤
-- 利用运行库修补加载 Xposed 模块的 LSPatch
+
 ## **后记**
 
 关于 root 的其他用途还有很多，这里就不一一列举，分享一些常用模块：
 
-[lsposed模块大全](https://modules.lsposed.org/)
+- [lsposed模块大全](https://modules.lsposed.org/)
 
-[刷了 Magisk 之后装什么？我推荐这 20+ 个模块](https://sspai.com/post/68531)
+- [刷了 Magisk 之后装什么？我推荐这 20+ 个模块](https://sspai.com/post/68531)
 
 ## **参考**
  
