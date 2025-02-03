@@ -161,16 +161,16 @@ Package com.google.android.tvlauncher new state: enabled
 
 ## 后记
 
-[Android TV google 官方 TV 库](https://github.com/googlesamples/leanback-showcase)
+- [Android TV google 官方 TV 库](https://github.com/googlesamples/leanback-showcase)
 
 
-[智能电视，电视盒子开发 SDK](https://github.com/boxmate/tvframe)
+- [智能电视，电视盒子开发 SDK](https://github.com/boxmate/tvframe)
 
 
-[选中框切换动画，适用于电视](https://github.com/EZJasonBoy/FocusChangeAnimation)
+- [选中框切换动画，适用于电视](https://github.com/EZJasonBoy/FocusChangeAnimation)
 
 
-[Android tv，盒子，投影仪 控件](https://github.com/FrozenFreeFall/Android-tv-widget)
+- [Android tv，盒子，投影仪 控件](https://github.com/FrozenFreeFall/Android-tv-widget)
 
 
-[TV 项目常用工具(焦点问题，适配问题等.)](https://github.com/genius158/TVProjectUtils)
+- [TV 项目常用工具(焦点问题，适配问题等.)](https://github.com/genius158/TVProjectUtils)
