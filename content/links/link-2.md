@@ -3,4 +3,4 @@ title = "diredocks"
 weight = 2
 +++
 
-[diredocks.github.io](https://diredocks.github.io/blog/)
+[blog.clickfling.top](https://blog.clickfling.top/)
