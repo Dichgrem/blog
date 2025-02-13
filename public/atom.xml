@@ -869,27 +869,7 @@
         
     </entry>
     <entry xml:lang="en">
-        <title>开源世界:常用跨平台开源软件</title>
-        <published>2024-03-04T00:00:00+00:00</published>
-        <updated>2024-03-04T00:00:00+00:00</updated>
-        
-        <author>
-          <name>
-            
-              Unknown
-            
-          </name>
-        </author>
-        
-        <link rel="alternate" type="text/html" href="https://blog.dich.bid/opensource-software/"/>
-        <id>https://blog.dich.bid/opensource-software/</id>
-        
-        <summary type="html">&lt;p&gt;前言 本文旨在介绍一些常用的跨平台开源软件，涵盖了多个领域，包括办公、开发工具、多媒体处理等。这些软件不仅在功能上具有优势，而且秉承着开放、自由的精神，是上上之选。&lt;&#x2F;p&gt;
-</summary>
-        
-    </entry>
-    <entry xml:lang="en">
-        <title>开源世界:开源软件与协议</title>
+        <title>乱七八糟:开源软件与协议</title>
         <published>2024-03-03T00:00:00+00:00</published>
         <updated>2024-03-03T00:00:00+00:00</updated>
         
@@ -901,30 +881,10 @@
           </name>
         </author>
         
-        <link rel="alternate" type="text/html" href="https://blog.dich.bid/opensource-licenses/"/>
-        <id>https://blog.dich.bid/opensource-licenses/</id>
+        <link rel="alternate" type="text/html" href="https://blog.dich.bid/about-opensource/"/>
+        <id>https://blog.dich.bid/about-opensource/</id>
         
-        <summary type="html">&lt;p&gt;前言 本文旨在介绍开源软件许可证，这些许可证规定了使用、修改和分发开源软件的条件。通过了解不同类型的开源许可证及其特点，读者将能够更好地理解在开发和使用开源软件时的法律和道德责任。&lt;&#x2F;p&gt;
-</summary>
-        
-    </entry>
-    <entry xml:lang="en">
-        <title>开源世界:什么是开源</title>
-        <published>2024-03-01T00:00:00+00:00</published>
-        <updated>2024-03-01T00:00:00+00:00</updated>
-        
-        <author>
-          <name>
-            
-              Unknown
-            
-          </name>
-        </author>
-        
-        <link rel="alternate" type="text/html" href="https://blog.dich.bid/opensource-what/"/>
-        <id>https://blog.dich.bid/opensource-what/</id>
-        
-        <summary type="html">&lt;p&gt;前言 「开源」一词对应英文 Open Source，最初起源于软件开发领域，因此也称为「开放源代码」，对应的软件则称为开源软件（Open Source Software，简称 OSS）。&lt;&#x2F;p&gt;
+        <summary type="html">&lt;p&gt;前言 本文旨在介绍开源以及开源许可证，这些许可证规定了使用、修改和分发开源软件的条件。通过了解不同类型的开源许可证及其特点，读者将能够更好地理解在开发和使用开源软件时的法律和道德责任。&lt;&#x2F;p&gt;
 </summary>
         
     </entry>
@@ -1025,26 +985,6 @@
         <id>https://blog.dich.bid/network-download-1/</id>
         
         <summary type="html">&lt;p&gt;前言 下载，就是将我们所需要的文件数据，通过网络从拥有该文件资源的计算机上传输过来并保存到我们的计算机上，供我们使用。本系列将详细讲述各种常见网络下载技术的原理，包括HTTP,FTP,BT等等。&lt;&#x2F;p&gt;
-</summary>
-        
-    </entry>
-    <entry xml:lang="en">
-        <title>乱七八糟:应届生工作指南</title>
-        <published>2023-12-27T00:00:00+00:00</published>
-        <updated>2023-12-27T00:00:00+00:00</updated>
-        
-        <author>
-          <name>
-            
-              Unknown
-            
-          </name>
-        </author>
-        
-        <link rel="alternate" type="text/html" href="https://blog.dich.bid/about-working/"/>
-        <id>https://blog.dich.bid/about-working/</id>
-        
-        <summary type="html">&lt;p&gt;前言 什么是“五险一金”？工资到底由那些部分组成？劳动合同怎么签？不仅仅是应届生，很多工作了几年的职场人，也不十分清楚。因此，在这里笔者打算帮助大家彻底把这些事情搞明白。&lt;&#x2F;p&gt;
 </summary>
         
     </entry>

@@ -40,6 +40,10 @@
         <lastmod>2023-09-04</lastmod>
     </url>
     <url>
+        <loc>https://blog.dich.bid/about-opensource/</loc>
+        <lastmod>2024-03-03</lastmod>
+    </url>
+    <url>
         <loc>https://blog.dich.bid/about-podcast-use/</loc>
         <lastmod>2024-03-06</lastmod>
     </url>
@@ -58,10 +62,6 @@
     <url>
         <loc>https://blog.dich.bid/about-server-set/</loc>
         <lastmod>2024-06-12</lastmod>
-    </url>
-    <url>
-        <loc>https://blog.dich.bid/about-working/</loc>
-        <lastmod>2023-12-27</lastmod>
     </url>
     <url>
         <loc>https://blog.dich.bid/about-zola-blog/</loc>
@@ -211,25 +211,10 @@
         <lastmod>2025-01-21</lastmod>
     </url>
     <url>
-        <loc>https://blog.dich.bid/opensource-licenses/</loc>
-        <lastmod>2024-03-03</lastmod>
-    </url>
-    <url>
-        <loc>https://blog.dich.bid/opensource-software/</loc>
-        <lastmod>2024-03-04</lastmod>
-    </url>
-    <url>
-        <loc>https://blog.dich.bid/opensource-what/</loc>
-        <lastmod>2024-03-01</lastmod>
-    </url>
-    <url>
         <loc>https://blog.dich.bid/page/1/</loc>
     </url>
     <url>
         <loc>https://blog.dich.bid/page/10/</loc>
-    </url>
-    <url>
-        <loc>https://blog.dich.bid/page/11/</loc>
     </url>
     <url>
         <loc>https://blog.dich.bid/page/2/</loc>
@@ -260,9 +245,6 @@
     </url>
     <url>
         <loc>https://blog.dich.bid/tags/</loc>
-    </url>
-    <url>
-        <loc>https://blog.dich.bid/tags/kai-yuan-shi-jie/</loc>
     </url>
     <url>
         <loc>https://blog.dich.bid/tags/linux/</loc>
