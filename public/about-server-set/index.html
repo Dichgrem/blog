@@ -223,7 +223,12 @@
 <p>接下来，将新用户添加到sudo组，以赋予sudo权限。执行以下命令：</p>
 <pre style="background-color:#151515;color:#e8e8d3;"><code><span>sudo usermod -aG sudo dich
 </span></code></pre>
-<p>确认一下sudo权限已经生效。可以尝试使用新用户执行一个需要sudo权限的命令，如：</p>
+<p>确认一下sudo权限已经生效。</p>
+<p>PS:删除用户及其主目录</p>
+<pre style="background-color:#151515;color:#e8e8d3;"><code><span>sudo userdel -r 用户名
+</span></code></pre>
+<p>此命令不仅删除用户，还会删除用户的主目录及邮件存储目录（如果有）。</p>
+<p>可以尝试使用新用户执行一个需要sudo权限的命令，如：</p>
 <pre style="background-color:#151515;color:#e8e8d3;"><code><span>sudo ls /root
 </span></code></pre>
 <p>系统会要求输入密码，如果成功执行，说明新用户已经成功获得sudo权限。</p>
@@ -320,6 +325,27 @@
 </span><span>
 </span><span>或者 curl ipv6.ip.sb
 </span></code></pre>
+<h2 id="gai-wei-mi-yao-deng-lu">改为密钥登录</h2>
+<ul>
+<li>
+<p>在本地执行 <code>ssh-keygen</code>，随后生成.pub后缀的公钥和无后缀的密钥，注意不同密钥对名称不能相同；同时可以为这两个文件用密码加密；</p>
+</li>
+<li>
+<p>随后将.pub后缀的公钥中的内容写入服务器的<code>~/.ssh/authorized_keys</code>中；</p>
+</li>
+<li>
+<p>使用命令<code>vim /etc/ssh/sshd_config</code>编译服务器的SSH配置，将其中的该行改为<code>PasswordAuthentication no</code>，保存退出；随后使用<code>sudo systemctl restart sshd</code>重启SSH即可禁用密码登录；</p>
+</li>
+<li>
+<p>使用<code>sudo cat /etc/ssh/sshd_config | grep -E 'PasswordAuthentication|PubkeyAuthentication' </code> 命令查看输出，如有<strong>PasswordAuthentication no → 禁用密码登录</strong>以及<strong>PubkeyAuthentication yes → 允许密钥登录</strong>则成功。    ``</p>
+</li>
+<li>
+<p>注意<strong>authorized_keys</strong>的权限为600，如果不是则需要改正：<code>chmod 600 ~/.ssh/authorized_keys</code></p>
+</li>
+<li>
+<p>随后可以在本地尝试登录，命令为<code>ssh -i ~/.ssh/id_xxx -p 端口 用户名@服务器IP</code>，第一次登录会提示服务器公钥的哈希值，需要选Yes。</p>
+</li>
+</ul>
 
         </div>
 
