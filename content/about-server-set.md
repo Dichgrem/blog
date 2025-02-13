@@ -393,12 +393,13 @@ ip -6 addr show scope global
 
 - 随后将.pub后缀的公钥中的内容写入服务器的``~/.ssh/authorized_keys``中；
 
-- 使用命令``vim /etc/ssh/sshd_config``编译服务器的SSH配置，将其中的该行改为``PasswordAuthentication no``，保存退出；随后使用``sudo systemctl restart sshd``重启SSH即可禁用密码登录；
+- 使用命令``vim /etc/ssh/sshd_config``编译服务器的SSH配置，将其中的该行改为``PasswordAuthentication no``，保存退出；随后使用``sudo systemctl restart sshd``重启SSH即可禁用密码登录；将**PermitRootLogin prohibit-password**改为prohibit-password，即可实现仅root用户密钥登录；
 
-- 使用``sudo cat /etc/ssh/sshd_config | grep -E 'PasswordAuthentication|PubkeyAuthentication'
-`` 命令查看输出，如有**PasswordAuthentication no → 禁用密码登录**以及**PubkeyAuthentication yes → 允许密钥登录**则成功。    ``  
+- 使用**sudo cat /etc/ssh/sshd_config | grep -E 'PasswordAuthentication|PubkeyAuthentication'**命令查看输出，如有**PasswordAuthentication no → 禁用密码登录**以及**PubkeyAuthentication yes → 允许密钥登录**则成功。
 
 - 注意**authorized_keys**的权限为600，如果不是则需要改正：``chmod 600 ~/.ssh/authorized_keys``
 
 - 随后可以在本地尝试登录，命令为``ssh -i ~/.ssh/id_xxx -p 端口 用户名@服务器IP``，第一次登录会提示服务器公钥的哈希值，需要选Yes。
+
+
 

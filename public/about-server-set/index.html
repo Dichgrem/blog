@@ -334,10 +334,10 @@
 <p>随后将.pub后缀的公钥中的内容写入服务器的<code>~/.ssh/authorized_keys</code>中；</p>
 </li>
 <li>
-<p>使用命令<code>vim /etc/ssh/sshd_config</code>编译服务器的SSH配置，将其中的该行改为<code>PasswordAuthentication no</code>，保存退出；随后使用<code>sudo systemctl restart sshd</code>重启SSH即可禁用密码登录；</p>
+<p>使用命令<code>vim /etc/ssh/sshd_config</code>编译服务器的SSH配置，将其中的该行改为<code>PasswordAuthentication no</code>，保存退出；随后使用<code>sudo systemctl restart sshd</code>重启SSH即可禁用密码登录；将<strong>PermitRootLogin prohibit-password</strong>改为prohibit-password，即可实现仅root用户密钥登录；</p>
 </li>
 <li>
-<p>使用<code>sudo cat /etc/ssh/sshd_config | grep -E 'PasswordAuthentication|PubkeyAuthentication' </code> 命令查看输出，如有<strong>PasswordAuthentication no → 禁用密码登录</strong>以及<strong>PubkeyAuthentication yes → 允许密钥登录</strong>则成功。    ``</p>
+<p>使用<strong>sudo cat /etc/ssh/sshd_config | grep -E 'PasswordAuthentication|PubkeyAuthentication'<strong>命令查看输出，如有</strong>PasswordAuthentication no → 禁用密码登录</strong>以及<strong>PubkeyAuthentication yes → 允许密钥登录</strong>则成功。</p>
 </li>
 <li>
 <p>注意<strong>authorized_keys</strong>的权限为600，如果不是则需要改正：<code>chmod 600 ~/.ssh/authorized_keys</code></p>
