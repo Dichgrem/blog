@@ -509,7 +509,7 @@
         
     </entry>
     <entry xml:lang="en">
-        <title>乱七八糟:服务器初始化与安全</title>
+        <title>乱七八糟:服务器初始化与安全设置</title>
         <published>2024-06-12T00:00:00+00:00</published>
         <updated>2024-06-12T00:00:00+00:00</updated>
         
@@ -524,7 +524,7 @@
         <link rel="alternate" type="text/html" href="https://blog.dich.bid/about-server-set/"/>
         <id>https://blog.dich.bid/about-server-set/</id>
         
-        <summary type="html">&lt;p&gt;前言 本文记录服务器安装docker，1panel和设置禁止root登录的步骤。&lt;&#x2F;p&gt;
+        <summary type="html">&lt;p&gt;前言 本文记录服务器常用操作步骤。&lt;&#x2F;p&gt;
 </summary>
         
     </entry>

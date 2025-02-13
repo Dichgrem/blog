@@ -1,12 +1,12 @@
 +++
-title = "乱七八糟:服务器初始化与安全"
+title = "乱七八糟:服务器初始化与安全设置"
 date = 2024-06-12
 
 [taxonomies]
 tags = ["乱七八糟"]
 +++
 
-前言 本文记录服务器安装docker，1panel和设置禁止root登录的步骤。
+前言 本文记录服务器常用操作步骤。
 <!-- more -->
 
 
@@ -22,6 +22,189 @@ tags = ["乱七八糟"]
 - **cn 域名无法删除**。如果你觉得 cn 域名暴露了你的隐私，那对不起，这是不能注销的[3](https://cyrusyip.org/zh-cn/post/2021/05/25/damn-cn-domain/#fn:3)。你只能修改邮箱地址，然后等到它过期。或者转让给别人，不过感觉把别人推到火坑里不太好啊。
 
 - **cn 域名有被停用的风险**。2008 年，有人以跳水奥运冠军吴敏霞拼音注册了 wuminxia.cn，[结果被中国互联网络信息中心（CNNIC）回收了域名](https://www.cnbeta.com/articles/tech/62209.htm)，并转交给国家体育总局。此域名在 2021 年 2 月 28 日被优视科技[注册](https://whois.cnnic.cn/WhoisServlet?queryType=Domain&domain=wuminxia.cn)，呵呵。2009 年，牛博网被域名注册商万网停止解析。
+
+## VPS
+````
+apt install curl vim sudo
+apt update && apt upgrade -y
+apt-get install --fix-missing
+````
+
+## BBR
+查询系统所支持的拥塞控制算法。
+
+````
+$ sysctl net.ipv4.tcp_available_congestion_control
+net.ipv4.tcp_congestion_control = bbr cubic reno
+````
+
+查询正在使用中的拥塞控制算法（Linux 绝大部分系统默认为 Cubic 算法）。
+
+````
+$ sysctl net.ipv4.tcp_congestion_control
+net.ipv4.tcp_congestion_control = cubic
+````
+
+指定拥塞控制算法为 bbr。
+
+````
+$ echo net.ipv4.tcp_congestion_control=bbr >> /etc/sysctl.conf && sysctl -p
+````
+
+## Safe
+
+### 更换SSH端口
+
+使用root账户或已经有sudo权限的用户登录到系统。
+
+打开SSH配置文件`sshd_config`，可以使用文本编辑器如nano或vi。以下是使用nano编辑器的示例：
+
+````
+sudo vim /etc/ssh/sshd_config
+````
+
+在配置文件中找到以下行：
+
+````
+Port 22
+````
+
+这是SSH默认的端口号，你可以将其更改为你想要的任何未被占用的端口号。例如，将端口更改为2222：
+
+````
+Port 2222
+````
+
+保存并关闭文本编辑器。重新启动SSH服务，以应用更改：
+
+````
+sudo service ssh restart
+````
+
+或者，如果你的系统使用systemd，可以使用以下命令：
+
+````
+sudo systemctl restart ssh
+````
+
+### 安装 UFW
+
+````
+sudo apt install ufw
+````
+
+**如果你在远程位置连接你的服务器，在启用 UFW 防火墙之前，你必须显式允许进来的 SSH 连接。否则，你将永远都无法连接到机器上。**
+
+````
+sudo ufw allow 22/tcp
+````
+
+> 如果 SSH 运行在非标准端口，你需要将上述命令中的 22 端口替换为对应的 SSH 端口。
+
+**放开 1Panel 系统端口。**
+
+````
+sudo ufw allow 8090/tcp
+````
+
+> 上述命令中的 8090 端口需要替换为安装 1Panel 系统时自定义的端口。
+
+**启动 UFW**
+
+````
+sudo ufw enable
+````
+
+### 安装 Fail2ban
+
+````
+sudo apt-get install fail2ban
+````
+
+**2、Debian 12 及以上的版本需要手动安装 rsyslog**
+
+````
+sudo apt-get install rsyslog
+````
+
+**3、启动 Fail2ban 服务**
+
+````
+sudo systemctl start fail2ban
+````
+
+**4、开机自启动**
+
+````
+sudo systemctl enable fail2ban
+````
+
+**5、查看 Fail2ban 服务状态。**
+
+````
+sudo systemctl status fail2ban
+````
+
+### Ban IPv6
+
+手动 禁用 VPS 的 IPv6 命令:
+```
+sysctl -w net.ipv6.conf.all.disable_ipv6=1
+sysctl -w net.ipv6.conf.default.disable_ipv6=1
+```
+如果想重启系统也生效， 执行：
+```
+echo 'net.ipv6.conf.all.disable_ipv6=1' >> /etc/sysctl.conf
+echo 'net.ipv6.conf.default.disable_ipv6=1' >> /etc/sysctl.conf
+```
+手动 启用 VPS 的 IPv6 命令:
+```
+sysctl -w net.ipv6.conf.all.disable_ipv6=0
+sysctl -w net.ipv6.conf.default.disable_ipv6=0
+```
+重新载入 sysctl 配置
+```
+sysctl --system # reload sysctl
+```
+如果重载, 还无效果, 可能要 reboot 重启下.
+查看 VPS 的 IPv6 信息
+```
+ip -6 addr show scope global
+
+或者 curl ipv6.ip.sb
+```
+
+### 改为密钥登录
+
+- 在本地执行以下命令生成.pub后缀的公钥和无后缀的密钥：
+```
+ssh-keygen
+```
+注意不同密钥对名称不能相同；同时可以为这两个文件用密码加密；
+
+- 随后将.pub后缀的公钥中的内容写入服务器的``~/.ssh/authorized_keys``中；
+
+- 使用以下命令编译服务器的SSH配置：
+```
+vim /etc/ssh/sshd_config
+```
+将其中的该行改为``PasswordAuthentication no``，保存退出；随后使用
+```
+sudo systemctl restart sshd
+```
+重启SSH即可禁用密码登录；
+
+- 将**PermitRootLogin prohibit-password**改为**prohibit-password**，即可实现仅root用户密钥登录；
+
+- 使用以下命令查看输出，
+```
+sudo cat /etc/ssh/sshd_config | grep -E 'PasswordAuthentication|PubkeyAuthentication'
+```
+如有**PasswordAuthentication no → 禁用密码登录**以及**PubkeyAuthentication yes → 允许密钥登录**则成功。
+
+- 注意**authorized_keys**的权限为600，如果不是则需要改正：``chmod 600 ~/.ssh/authorized_keys``
+
+- 随后可以在本地尝试登录，命令为``ssh -i ~/.ssh/id_xxx -p 端口 用户名@服务器IP``，第一次登录会提示服务器公钥的哈希值，需要选Yes。
 
 ## Docker
 
@@ -190,216 +373,33 @@ sudo rm -rf /var/lib/containerd
 curl -sSL https://resource.fit2cloud.com/1panel/package/quick_start.sh -o quick_start.sh && sudo bash quick_start.sh
 ````
 
-## Safe
 
-### 设置禁止Root直接登陆
 
-使用root账户或已经有sudo权限的用户登录到系统。
 
-执行以下命令来创建新用户，例如，将`newuser`替换为你想要的用户名：
+## IP证书申请部署
 
-````
-sudo adduser dich
-````
+- 在 [ZeroSSL](https://zerossl.com/) 中申请一个90天的证书；
 
-接下来，将新用户添加到sudo组，以赋予sudo权限。执行以下命令：
+- 然后在VPS上输入以下命令：
 
-````
-sudo usermod -aG sudo dich
-````
-
-确认一下sudo权限已经生效。
-
-PS:删除用户及其主目录
 ```
-sudo userdel -r 用户名
+mkdir -p ./.well-known/pki-validation
 ```
-此命令不仅删除用户，还会删除用户的主目录及邮件存储目录（如果有）。
+- 随后在ZeroSSL中将所给出的类似**B992F08CB46748D02E4C553A4038BC.txt**复制；
 
-可以尝试使用新用户执行一个需要sudo权限的命令，如：
-
-````
-sudo ls /root
-````
-
-系统会要求输入密码，如果成功执行，说明新用户已经成功获得sudo权限。
-
-打开SSH配置文件`sshd_config`，可以使用文本编辑器如nano或vi。以下是使用nano编辑器的示例：
-
-````
-sudo vim /etc/ssh/sshd_config
-````
-
-在配置文件中找到以下行：
-
-````
-#PermitRootLogin yes
-````
-
-将上述行的注释符号(#)去掉，并将`yes`改为`no`，如下所示：
-
-````
-PermitRootLogin no
-````
-
-这将禁止直接使用root账户进行SSH登录。
-
-保存并关闭文本编辑器。
-
-重新启动SSH服务，以应用更改：
-
-````
-sudo service ssh restart
-````
-
-或者，如果你的系统使用systemd，可以使用以下命令：
-
-````
-sudo systemctl restart ssh
-````
-
-### 更换SSH端口
-
-使用root账户或已经有sudo权限的用户登录到系统。
-
-打开SSH配置文件`sshd_config`，可以使用文本编辑器如nano或vi。以下是使用nano编辑器的示例：
-
-````
-sudo vim /etc/ssh/sshd_config
-````
-
-在配置文件中找到以下行：
-
-````
-Port 22
-````
-
-这是SSH默认的端口号，你可以将其更改为你想要的任何未被占用的端口号。例如，将端口更改为2222：
-
-````
-Port 2222
-````
-
-保存并关闭文本编辑器。重新启动SSH服务，以应用更改：
-
-````
-sudo service ssh restart
-````
-
-或者，如果你的系统使用systemd，可以使用以下命令：
-
-````
-sudo systemctl restart ssh
-````
-
-### 安装ufw和Fail2ban
-
-**1、更新软件包**
-
-````
-sudo apt update
-````
-
-**2、安装 UFW**
-
-````
-sudo apt install ufw
-````
-
-**3、如果你在远程位置连接你的服务器，在启用 UFW 防火墙之前，你必须显式允许进来的 SSH 连接。否则，你将永远都无法连接到机器上。**
-
-````
-sudo ufw allow 22/tcp
-````
-
-> 如果 SSH 运行在非标准端口，你需要将上述命令中的 22 端口替换为对应的 SSH 端口。
-
-**4、放开 1Panel 系统端口。**
-
-````
-sudo ufw allow 8090/tcp
-````
-
-> 上述命令中的 8090 端口需要替换为安装 1Panel 系统时自定义的端口。
-
-**5、启动 UFW**
-
-````
-sudo ufw enable
-````
-
-**1、安装 Fail2ban**
-
-````
-sudo apt-get install fail2ban
-````
-
-**2、Debian 12 及以上的版本需要手动安装 rsyslog**
-
-````
-sudo apt-get install rsyslog
-````
-
-**3、启动 Fail2ban 服务**
-
-````
-sudo systemctl start fail2ban
-````
-
-**4、开机自启动**
-
-````
-sudo systemctl enable fail2ban
-````
-
-**5、查看 Fail2ban 服务状态。**
-
-````
-sudo systemctl status fail2ban
-````
-
-## Ban IPv6
-
-手动 禁用 VPS 的 IPv6 命令:
+- 将从ZeroSSL下载得到的文件打开，复制里面的东西形成以下的格式，然后将这些命令在VPS上面运行；
 ```
-sysctl -w net.ipv6.conf.all.disable_ipv6=1
-sysctl -w net.ipv6.conf.default.disable_ipv6=1
-```
-如果想重启系统也生效， 执行：
-```
-echo 'net.ipv6.conf.all.disable_ipv6=1' >> /etc/sysctl.conf
-echo 'net.ipv6.conf.default.disable_ipv6=1' >> /etc/sysctl.conf
-```
-手动 启用 VPS 的 IPv6 命令:
-```
-sysctl -w net.ipv6.conf.all.disable_ipv6=0
-sysctl -w net.ipv6.conf.default.disable_ipv6=0
-```
-重新载入 sysctl 配置
-```
-sysctl --system # reload sysctl
-```
-如果重载, 还无效果, 可能要 reboot 重启下.
-查看 VPS 的 IPv6 信息
-```
-ip -6 addr show scope global
-
-或者 curl ipv6.ip.sb
+cat << EOF | sudo tee ./.well-known/pki-validation/B992F08CB46748D02E4C553A4038BC.txt
+254563C20918258D661E7D43D6A43A2A258857E191977DD5F740FBB9ABD25279
+comodoca.com
+ca5792984e3f0a1
+EOF
 ```
 
-## 改为密钥登录
-
-- 在本地执行 ``ssh-keygen``，随后生成.pub后缀的公钥和无后缀的密钥，注意不同密钥对名称不能相同；同时可以为这两个文件用密码加密；
-
-- 随后将.pub后缀的公钥中的内容写入服务器的``~/.ssh/authorized_keys``中；
-
-- 使用命令``vim /etc/ssh/sshd_config``编译服务器的SSH配置，将其中的该行改为``PasswordAuthentication no``，保存退出；随后使用``sudo systemctl restart sshd``重启SSH即可禁用密码登录；将**PermitRootLogin prohibit-password**改为prohibit-password，即可实现仅root用户密钥登录；
-
-- 使用**sudo cat /etc/ssh/sshd_config | grep -E 'PasswordAuthentication|PubkeyAuthentication'**命令查看输出，如有**PasswordAuthentication no → 禁用密码登录**以及**PubkeyAuthentication yes → 允许密钥登录**则成功。
-
-- 注意**authorized_keys**的权限为600，如果不是则需要改正：``chmod 600 ~/.ssh/authorized_keys``
-
-- 随后可以在本地尝试登录，命令为``ssh -i ~/.ssh/id_xxx -p 端口 用户名@服务器IP``，第一次登录会提示服务器公钥的哈希值，需要选Yes。
-
+- 开启一个临时HTTP服务器：
+```
+python3 -m http.server 80
+```
+- 随后即可在ZeroSSL中验证证书并开启SSL。
 
 

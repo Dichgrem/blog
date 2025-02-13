@@ -82,7 +82,7 @@
         
     <div class="post">
         
-    <h1 class="post-title"><a href="https://blog.dich.bid/about-server-set/">乱七八糟:服务器初始化与安全</a></h1>
+    <h1 class="post-title"><a href="https://blog.dich.bid/about-server-set/">乱七八糟:服务器初始化与安全设置</a></h1>
     <div class="post-meta-inline">
         
     <span class="post-date">
@@ -98,7 +98,7 @@
     
 
         <div class="post-content">
-            <p>前言 本文记录服务器安装docker，1panel和设置禁止root登录的步骤。</p>
+            <p>前言 本文记录服务器常用操作步骤。</p>
 <span id="continue-reading"></span><h2 id="doamin">Doamin</h2>
 <p>建站不一定需要服务器、域名和备案。尤其不要买腾讯云，不要买CN域名；备案过程要填很多个人信息，且一周没有解析网站，备案就会自动注销。</p>
 <ul>
@@ -113,6 +113,136 @@
 </li>
 <li>
 <p><strong>cn 域名有被停用的风险</strong>。2008 年，有人以跳水奥运冠军吴敏霞拼音注册了 wuminxia.cn，<a href="https://www.cnbeta.com/articles/tech/62209.htm">结果被中国互联网络信息中心（CNNIC）回收了域名</a>，并转交给国家体育总局。此域名在 2021 年 2 月 28 日被优视科技<a href="https://whois.cnnic.cn/WhoisServlet?queryType=Domain&amp;domain=wuminxia.cn">注册</a>，呵呵。2009 年，牛博网被域名注册商万网停止解析。</p>
+</li>
+</ul>
+<h2 id="vps">VPS</h2>
+<pre style="background-color:#151515;color:#e8e8d3;"><code><span>apt install curl vim sudo
+</span><span>apt update &amp;&amp; apt upgrade -y
+</span><span>apt-get install --fix-missing
+</span></code></pre>
+<h2 id="bbr">BBR</h2>
+<p>查询系统所支持的拥塞控制算法。</p>
+<pre style="background-color:#151515;color:#e8e8d3;"><code><span>$ sysctl net.ipv4.tcp_available_congestion_control
+</span><span>net.ipv4.tcp_congestion_control = bbr cubic reno
+</span></code></pre>
+<p>查询正在使用中的拥塞控制算法（Linux 绝大部分系统默认为 Cubic 算法）。</p>
+<pre style="background-color:#151515;color:#e8e8d3;"><code><span>$ sysctl net.ipv4.tcp_congestion_control
+</span><span>net.ipv4.tcp_congestion_control = cubic
+</span></code></pre>
+<p>指定拥塞控制算法为 bbr。</p>
+<pre style="background-color:#151515;color:#e8e8d3;"><code><span>$ echo net.ipv4.tcp_congestion_control=bbr &gt;&gt; /etc/sysctl.conf &amp;&amp; sysctl -p
+</span></code></pre>
+<h2 id="safe">Safe</h2>
+<h3 id="geng-huan-sshduan-kou">更换SSH端口</h3>
+<p>使用root账户或已经有sudo权限的用户登录到系统。</p>
+<p>打开SSH配置文件<code>sshd_config</code>，可以使用文本编辑器如nano或vi。以下是使用nano编辑器的示例：</p>
+<pre style="background-color:#151515;color:#e8e8d3;"><code><span>sudo vim /etc/ssh/sshd_config
+</span></code></pre>
+<p>在配置文件中找到以下行：</p>
+<pre style="background-color:#151515;color:#e8e8d3;"><code><span>Port 22
+</span></code></pre>
+<p>这是SSH默认的端口号，你可以将其更改为你想要的任何未被占用的端口号。例如，将端口更改为2222：</p>
+<pre style="background-color:#151515;color:#e8e8d3;"><code><span>Port 2222
+</span></code></pre>
+<p>保存并关闭文本编辑器。重新启动SSH服务，以应用更改：</p>
+<pre style="background-color:#151515;color:#e8e8d3;"><code><span>sudo service ssh restart
+</span></code></pre>
+<p>或者，如果你的系统使用systemd，可以使用以下命令：</p>
+<pre style="background-color:#151515;color:#e8e8d3;"><code><span>sudo systemctl restart ssh
+</span></code></pre>
+<h3 id="an-zhuang-ufw">安装 UFW</h3>
+<pre style="background-color:#151515;color:#e8e8d3;"><code><span>sudo apt install ufw
+</span></code></pre>
+<p><strong>如果你在远程位置连接你的服务器，在启用 UFW 防火墙之前，你必须显式允许进来的 SSH 连接。否则，你将永远都无法连接到机器上。</strong></p>
+<pre style="background-color:#151515;color:#e8e8d3;"><code><span>sudo ufw allow 22/tcp
+</span></code></pre>
+<blockquote>
+<p>如果 SSH 运行在非标准端口，你需要将上述命令中的 22 端口替换为对应的 SSH 端口。</p>
+</blockquote>
+<p><strong>放开 1Panel 系统端口。</strong></p>
+<pre style="background-color:#151515;color:#e8e8d3;"><code><span>sudo ufw allow 8090/tcp
+</span></code></pre>
+<blockquote>
+<p>上述命令中的 8090 端口需要替换为安装 1Panel 系统时自定义的端口。</p>
+</blockquote>
+<p><strong>启动 UFW</strong></p>
+<pre style="background-color:#151515;color:#e8e8d3;"><code><span>sudo ufw enable
+</span></code></pre>
+<h3 id="an-zhuang-fail2ban">安装 Fail2ban</h3>
+<pre style="background-color:#151515;color:#e8e8d3;"><code><span>sudo apt-get install fail2ban
+</span></code></pre>
+<p><strong>2、Debian 12 及以上的版本需要手动安装 rsyslog</strong></p>
+<pre style="background-color:#151515;color:#e8e8d3;"><code><span>sudo apt-get install rsyslog
+</span></code></pre>
+<p><strong>3、启动 Fail2ban 服务</strong></p>
+<pre style="background-color:#151515;color:#e8e8d3;"><code><span>sudo systemctl start fail2ban
+</span></code></pre>
+<p><strong>4、开机自启动</strong></p>
+<pre style="background-color:#151515;color:#e8e8d3;"><code><span>sudo systemctl enable fail2ban
+</span></code></pre>
+<p><strong>5、查看 Fail2ban 服务状态。</strong></p>
+<pre style="background-color:#151515;color:#e8e8d3;"><code><span>sudo systemctl status fail2ban
+</span></code></pre>
+<h3 id="ban-ipv6">Ban IPv6</h3>
+<p>手动 禁用 VPS 的 IPv6 命令:</p>
+<pre style="background-color:#151515;color:#e8e8d3;"><code><span>sysctl -w net.ipv6.conf.all.disable_ipv6=1
+</span><span>sysctl -w net.ipv6.conf.default.disable_ipv6=1
+</span></code></pre>
+<p>如果想重启系统也生效， 执行：</p>
+<pre style="background-color:#151515;color:#e8e8d3;"><code><span>echo &#39;net.ipv6.conf.all.disable_ipv6=1&#39; &gt;&gt; /etc/sysctl.conf
+</span><span>echo &#39;net.ipv6.conf.default.disable_ipv6=1&#39; &gt;&gt; /etc/sysctl.conf
+</span></code></pre>
+<p>手动 启用 VPS 的 IPv6 命令:</p>
+<pre style="background-color:#151515;color:#e8e8d3;"><code><span>sysctl -w net.ipv6.conf.all.disable_ipv6=0
+</span><span>sysctl -w net.ipv6.conf.default.disable_ipv6=0
+</span></code></pre>
+<p>重新载入 sysctl 配置</p>
+<pre style="background-color:#151515;color:#e8e8d3;"><code><span>sysctl --system # reload sysctl
+</span></code></pre>
+<p>如果重载, 还无效果, 可能要 reboot 重启下.
+查看 VPS 的 IPv6 信息</p>
+<pre style="background-color:#151515;color:#e8e8d3;"><code><span>ip -6 addr show scope global
+</span><span>
+</span><span>或者 curl ipv6.ip.sb
+</span></code></pre>
+<h3 id="gai-wei-mi-yao-deng-lu">改为密钥登录</h3>
+<ul>
+<li>在本地执行以下命令生成.pub后缀的公钥和无后缀的密钥：</li>
+</ul>
+<pre style="background-color:#151515;color:#e8e8d3;"><code><span>ssh-keygen
+</span></code></pre>
+<p>注意不同密钥对名称不能相同；同时可以为这两个文件用密码加密；</p>
+<ul>
+<li>
+<p>随后将.pub后缀的公钥中的内容写入服务器的<code>~/.ssh/authorized_keys</code>中；</p>
+</li>
+<li>
+<p>使用以下命令编译服务器的SSH配置：</p>
+</li>
+</ul>
+<pre style="background-color:#151515;color:#e8e8d3;"><code><span>vim /etc/ssh/sshd_config
+</span></code></pre>
+<p>将其中的该行改为<code>PasswordAuthentication no</code>，保存退出；随后使用</p>
+<pre style="background-color:#151515;color:#e8e8d3;"><code><span>sudo systemctl restart sshd
+</span></code></pre>
+<p>重启SSH即可禁用密码登录；</p>
+<ul>
+<li>
+<p>将<strong>PermitRootLogin prohibit-password</strong>改为<strong>prohibit-password</strong>，即可实现仅root用户密钥登录；</p>
+</li>
+<li>
+<p>使用以下命令查看输出，</p>
+</li>
+</ul>
+<pre style="background-color:#151515;color:#e8e8d3;"><code><span>sudo cat /etc/ssh/sshd_config | grep -E &#39;PasswordAuthentication|PubkeyAuthentication&#39;
+</span></code></pre>
+<p>如有<strong>PasswordAuthentication no → 禁用密码登录</strong>以及<strong>PubkeyAuthentication yes → 允许密钥登录</strong>则成功。</p>
+<ul>
+<li>
+<p>注意<strong>authorized_keys</strong>的权限为600，如果不是则需要改正：<code>chmod 600 ~/.ssh/authorized_keys</code></p>
+</li>
+<li>
+<p>随后可以在本地尝试登录，命令为<code>ssh -i ~/.ssh/id_xxx -p 端口 用户名@服务器IP</code>，第一次登录会提示服务器公钥的哈希值，需要选Yes。</p>
 </li>
 </ul>
 <h2 id="docker">Docker</h2>
@@ -214,137 +344,38 @@
 <p>执行如下命令一键安装 1Panel:</p>
 <pre style="background-color:#151515;color:#e8e8d3;"><code><span>curl -sSL https://resource.fit2cloud.com/1panel/package/quick_start.sh -o quick_start.sh &amp;&amp; sudo bash quick_start.sh
 </span></code></pre>
-<h2 id="safe">Safe</h2>
-<h3 id="she-zhi-jin-zhi-rootzhi-jie-deng-lu">设置禁止Root直接登陆</h3>
-<p>使用root账户或已经有sudo权限的用户登录到系统。</p>
-<p>执行以下命令来创建新用户，例如，将<code>newuser</code>替换为你想要的用户名：</p>
-<pre style="background-color:#151515;color:#e8e8d3;"><code><span>sudo adduser dich
-</span></code></pre>
-<p>接下来，将新用户添加到sudo组，以赋予sudo权限。执行以下命令：</p>
-<pre style="background-color:#151515;color:#e8e8d3;"><code><span>sudo usermod -aG sudo dich
-</span></code></pre>
-<p>确认一下sudo权限已经生效。</p>
-<p>PS:删除用户及其主目录</p>
-<pre style="background-color:#151515;color:#e8e8d3;"><code><span>sudo userdel -r 用户名
-</span></code></pre>
-<p>此命令不仅删除用户，还会删除用户的主目录及邮件存储目录（如果有）。</p>
-<p>可以尝试使用新用户执行一个需要sudo权限的命令，如：</p>
-<pre style="background-color:#151515;color:#e8e8d3;"><code><span>sudo ls /root
-</span></code></pre>
-<p>系统会要求输入密码，如果成功执行，说明新用户已经成功获得sudo权限。</p>
-<p>打开SSH配置文件<code>sshd_config</code>，可以使用文本编辑器如nano或vi。以下是使用nano编辑器的示例：</p>
-<pre style="background-color:#151515;color:#e8e8d3;"><code><span>sudo vim /etc/ssh/sshd_config
-</span></code></pre>
-<p>在配置文件中找到以下行：</p>
-<pre style="background-color:#151515;color:#e8e8d3;"><code><span>#PermitRootLogin yes
-</span></code></pre>
-<p>将上述行的注释符号(#)去掉，并将<code>yes</code>改为<code>no</code>，如下所示：</p>
-<pre style="background-color:#151515;color:#e8e8d3;"><code><span>PermitRootLogin no
-</span></code></pre>
-<p>这将禁止直接使用root账户进行SSH登录。</p>
-<p>保存并关闭文本编辑器。</p>
-<p>重新启动SSH服务，以应用更改：</p>
-<pre style="background-color:#151515;color:#e8e8d3;"><code><span>sudo service ssh restart
-</span></code></pre>
-<p>或者，如果你的系统使用systemd，可以使用以下命令：</p>
-<pre style="background-color:#151515;color:#e8e8d3;"><code><span>sudo systemctl restart ssh
-</span></code></pre>
-<h3 id="geng-huan-sshduan-kou">更换SSH端口</h3>
-<p>使用root账户或已经有sudo权限的用户登录到系统。</p>
-<p>打开SSH配置文件<code>sshd_config</code>，可以使用文本编辑器如nano或vi。以下是使用nano编辑器的示例：</p>
-<pre style="background-color:#151515;color:#e8e8d3;"><code><span>sudo vim /etc/ssh/sshd_config
-</span></code></pre>
-<p>在配置文件中找到以下行：</p>
-<pre style="background-color:#151515;color:#e8e8d3;"><code><span>Port 22
-</span></code></pre>
-<p>这是SSH默认的端口号，你可以将其更改为你想要的任何未被占用的端口号。例如，将端口更改为2222：</p>
-<pre style="background-color:#151515;color:#e8e8d3;"><code><span>Port 2222
-</span></code></pre>
-<p>保存并关闭文本编辑器。重新启动SSH服务，以应用更改：</p>
-<pre style="background-color:#151515;color:#e8e8d3;"><code><span>sudo service ssh restart
-</span></code></pre>
-<p>或者，如果你的系统使用systemd，可以使用以下命令：</p>
-<pre style="background-color:#151515;color:#e8e8d3;"><code><span>sudo systemctl restart ssh
-</span></code></pre>
-<h3 id="an-zhuang-ufwhe-fail2ban">安装ufw和Fail2ban</h3>
-<p><strong>1、更新软件包</strong></p>
-<pre style="background-color:#151515;color:#e8e8d3;"><code><span>sudo apt update
-</span></code></pre>
-<p><strong>2、安装 UFW</strong></p>
-<pre style="background-color:#151515;color:#e8e8d3;"><code><span>sudo apt install ufw
-</span></code></pre>
-<p><strong>3、如果你在远程位置连接你的服务器，在启用 UFW 防火墙之前，你必须显式允许进来的 SSH 连接。否则，你将永远都无法连接到机器上。</strong></p>
-<pre style="background-color:#151515;color:#e8e8d3;"><code><span>sudo ufw allow 22/tcp
-</span></code></pre>
-<blockquote>
-<p>如果 SSH 运行在非标准端口，你需要将上述命令中的 22 端口替换为对应的 SSH 端口。</p>
-</blockquote>
-<p><strong>4、放开 1Panel 系统端口。</strong></p>
-<pre style="background-color:#151515;color:#e8e8d3;"><code><span>sudo ufw allow 8090/tcp
-</span></code></pre>
-<blockquote>
-<p>上述命令中的 8090 端口需要替换为安装 1Panel 系统时自定义的端口。</p>
-</blockquote>
-<p><strong>5、启动 UFW</strong></p>
-<pre style="background-color:#151515;color:#e8e8d3;"><code><span>sudo ufw enable
-</span></code></pre>
-<p><strong>1、安装 Fail2ban</strong></p>
-<pre style="background-color:#151515;color:#e8e8d3;"><code><span>sudo apt-get install fail2ban
-</span></code></pre>
-<p><strong>2、Debian 12 及以上的版本需要手动安装 rsyslog</strong></p>
-<pre style="background-color:#151515;color:#e8e8d3;"><code><span>sudo apt-get install rsyslog
-</span></code></pre>
-<p><strong>3、启动 Fail2ban 服务</strong></p>
-<pre style="background-color:#151515;color:#e8e8d3;"><code><span>sudo systemctl start fail2ban
-</span></code></pre>
-<p><strong>4、开机自启动</strong></p>
-<pre style="background-color:#151515;color:#e8e8d3;"><code><span>sudo systemctl enable fail2ban
-</span></code></pre>
-<p><strong>5、查看 Fail2ban 服务状态。</strong></p>
-<pre style="background-color:#151515;color:#e8e8d3;"><code><span>sudo systemctl status fail2ban
-</span></code></pre>
-<h2 id="ban-ipv6">Ban IPv6</h2>
-<p>手动 禁用 VPS 的 IPv6 命令:</p>
-<pre style="background-color:#151515;color:#e8e8d3;"><code><span>sysctl -w net.ipv6.conf.all.disable_ipv6=1
-</span><span>sysctl -w net.ipv6.conf.default.disable_ipv6=1
-</span></code></pre>
-<p>如果想重启系统也生效， 执行：</p>
-<pre style="background-color:#151515;color:#e8e8d3;"><code><span>echo &#39;net.ipv6.conf.all.disable_ipv6=1&#39; &gt;&gt; /etc/sysctl.conf
-</span><span>echo &#39;net.ipv6.conf.default.disable_ipv6=1&#39; &gt;&gt; /etc/sysctl.conf
-</span></code></pre>
-<p>手动 启用 VPS 的 IPv6 命令:</p>
-<pre style="background-color:#151515;color:#e8e8d3;"><code><span>sysctl -w net.ipv6.conf.all.disable_ipv6=0
-</span><span>sysctl -w net.ipv6.conf.default.disable_ipv6=0
-</span></code></pre>
-<p>重新载入 sysctl 配置</p>
-<pre style="background-color:#151515;color:#e8e8d3;"><code><span>sysctl --system # reload sysctl
-</span></code></pre>
-<p>如果重载, 还无效果, 可能要 reboot 重启下.
-查看 VPS 的 IPv6 信息</p>
-<pre style="background-color:#151515;color:#e8e8d3;"><code><span>ip -6 addr show scope global
-</span><span>
-</span><span>或者 curl ipv6.ip.sb
-</span></code></pre>
-<h2 id="gai-wei-mi-yao-deng-lu">改为密钥登录</h2>
+<h2 id="ipzheng-shu-shen-qing-bu-shu">IP证书申请部署</h2>
 <ul>
 <li>
-<p>在本地执行 <code>ssh-keygen</code>，随后生成.pub后缀的公钥和无后缀的密钥，注意不同密钥对名称不能相同；同时可以为这两个文件用密码加密；</p>
+<p>在 <a href="https://zerossl.com/">ZeroSSL</a> 中申请一个90天的证书；</p>
 </li>
 <li>
-<p>随后将.pub后缀的公钥中的内容写入服务器的<code>~/.ssh/authorized_keys</code>中；</p>
+<p>然后在VPS上输入以下命令：</p>
+</li>
+</ul>
+<pre style="background-color:#151515;color:#e8e8d3;"><code><span>mkdir -p ./.well-known/pki-validation
+</span></code></pre>
+<ul>
+<li>
+<p>随后在ZeroSSL中将所给出的类似<strong>B992F08CB46748D02E4C553A4038BC.txt</strong>复制；</p>
 </li>
 <li>
-<p>使用命令<code>vim /etc/ssh/sshd_config</code>编译服务器的SSH配置，将其中的该行改为<code>PasswordAuthentication no</code>，保存退出；随后使用<code>sudo systemctl restart sshd</code>重启SSH即可禁用密码登录；将<strong>PermitRootLogin prohibit-password</strong>改为prohibit-password，即可实现仅root用户密钥登录；</p>
+<p>将从ZeroSSL下载得到的文件打开，复制里面的东西形成以下的格式，然后将这些命令在VPS上面运行；</p>
 </li>
-<li>
-<p>使用<strong>sudo cat /etc/ssh/sshd_config | grep -E 'PasswordAuthentication|PubkeyAuthentication'<strong>命令查看输出，如有</strong>PasswordAuthentication no → 禁用密码登录</strong>以及<strong>PubkeyAuthentication yes → 允许密钥登录</strong>则成功。</p>
-</li>
-<li>
-<p>注意<strong>authorized_keys</strong>的权限为600，如果不是则需要改正：<code>chmod 600 ~/.ssh/authorized_keys</code></p>
-</li>
-<li>
-<p>随后可以在本地尝试登录，命令为<code>ssh -i ~/.ssh/id_xxx -p 端口 用户名@服务器IP</code>，第一次登录会提示服务器公钥的哈希值，需要选Yes。</p>
-</li>
+</ul>
+<pre style="background-color:#151515;color:#e8e8d3;"><code><span>cat &lt;&lt; EOF | sudo tee ./.well-known/pki-validation/B992F08CB46748D02E4C553A4038BC.txt
+</span><span>254563C20918258D661E7D43D6A43A2A258857E191977DD5F740FBB9ABD25279
+</span><span>comodoca.com
+</span><span>ca5792984e3f0a1
+</span><span>EOF
+</span></code></pre>
+<ul>
+<li>开启一个临时HTTP服务器：</li>
+</ul>
+<pre style="background-color:#151515;color:#e8e8d3;"><code><span>python3 -m http.server 80
+</span></code></pre>
+<ul>
+<li>随后即可在ZeroSSL中验证证书并开启SSL。</li>
 </ul>
 
         </div>
