@@ -1,6 +1,6 @@
 +++
 title = "乱七八糟:Windows常用脚本"
-date = 2023-08-26
+date = 2024-05-24
 
 [taxonomies]
 tags = ["乱七八糟","Windows"]
