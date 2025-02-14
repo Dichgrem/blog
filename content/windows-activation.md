@@ -142,6 +142,6 @@ OEM激活（Original Equipment Manufacturer）是三种激活方式中最特殊�
    - **HWID Key 的出现**：经过逆向分析，发现 gatherosstate.exe 完全在本地运行，生成 HWID 的算法无需联网验证。专业人士破解并提取了生成 HWID 的算法，开发出 HWID Key 工具，能够在任意电脑上生成有效的 HWID 并完成数字激活。用户无需再通过升级路径或手动操作，随时随地实现数字激活。
 
 
-
+> 最新消息，MAS团队破解了SSP，现在可以使用[TSforge](https://massgrave.dev/blog/tsforge)来激活自 Windows 7 以来每个版本的 Windows 的每个版本，以及自 Office 2013 以来的每个 Windows 插件和 Office 版本！
 
 
