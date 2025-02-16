@@ -535,6 +535,35 @@
 <pre style="background-color:#151515;color:#e8e8d3;"><code><span>make package/inyn/compile V=s
 </span><span>## 如果不行则需要先编译工具链，即为 make j=4 ，j为CPU核数
 </span></code></pre>
+<h2 id="github-actions-bian-yi-openwrt">Github Actions 编译OpenWrt</h2>
+<p>Github为我们提供了免费的E5主机用来编译。</p>
+<ul>
+<li>
+<p>首先Fork<a href="https://github.com/hugcabbage/shared-lede">这个仓库</a>，可以看到有许多现成的配置，在<strong>顶栏actions里面可以直接启动一个Workflow</strong>来编译。</p>
+</li>
+<li>
+<p>大体架构是选择<strong>源码 -- 机型 -- 版本 -- 插件/主题 -- 配置（IP/密码/Hostname/编译者）</strong>，由一个config文件管理，这个文件在前面也提到过，可以在本地生成并上传；</p>
+</li>
+<li>
+<p>想要什么插件可以直接git clone过来原仓库，如果你想要添加其他架构和设备，这里<strong>使用templet里面的init.toml来创建</strong>，按照类似的格式填好；</p>
+</li>
+<li>
+<p>在actions里面运行produce，注意这需要<strong>GitHub Personal Access Token (PAT)</strong>；如果没有，必须先添加：</p>
+</li>
+<li>
+<p>打开 GitHub，进入<a href="https://github.com/settings/tokens">GitHub Developer Settings</a>点击 “Generate new token (classic)”，<strong>勾选所需权限</strong>（最关键的是 repo 和 workflow）：✅ repo（所有子权限）✅ workflow✅ read:packages <strong>Token 过期时间</strong>：选择 “No expiration”（不过期），否则过期后需要重新生成。<strong>点击</strong> “Generate token”
+<strong>复制 Token</strong>（只显示一次，一定要保存好！）</p>
+</li>
+<li>
+<p>然后添加 <strong>PRODUCE_DEVICE</strong> 到 <strong>GitHub Secrets</strong>，
+首先进入你的 GitHub 仓库，依次进入：Settings（设置）-
+Secrets and variables-Actions-New repository secret
+名称为PRODUCE_DEVICE，值为粘贴刚刚复制的 GitHub Token，点击 “Add secret” 完成添加。</p>
+</li>
+<li>
+<p>随后在actions里面运行produce，完成后即可出现新架构的编译按钮.</p>
+</li>
+</ul>
 <h2 id="chang-yong-ming-ling">常用命令:</h2>
 <pre style="background-color:#151515;color:#e8e8d3;"><code><span># 更新软件列表
 </span><span>opkg update

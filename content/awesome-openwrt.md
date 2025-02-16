@@ -392,6 +392,7 @@ make -j$(nproc) || make -j1 || make -j1 V=s
 ```
 
 
+
 ## Arm平台安装OpenWrt：
 
 相比X86平台，arm架构的设备兼容性不高，不能随便找一个包就能安装。以下是一般步骤：
@@ -451,6 +452,31 @@ make menuconfig
 make package/inyn/compile V=s
 ## 如果不行则需要先编译工具链，即为 make j=4 ，j为CPU核数
 ```
+
+## Github Actions 编译OpenWrt
+
+Github为我们提供了免费的E5主机用来编译。
+
+- 首先Fork[这个仓库](https://github.com/hugcabbage/shared-lede)，可以看到有许多现成的配置，在**顶栏actions里面可以直接启动一个Workflow**来编译。
+
+- 大体架构是选择**源码 -- 机型 -- 版本 -- 插件/主题 -- 配置（IP/密码/Hostname/编译者）**，由一个config文件管理，这个文件在前面也提到过，可以在本地生成并上传；
+
+- 想要什么插件可以直接git clone过来原仓库，如果你想要添加其他架构和设备，这里**使用templet里面的init.toml来创建**，按照类似的格式填好；
+
+- 在actions里面运行produce，注意这需要**GitHub Personal Access Token (PAT)**；如果没有，必须先添加：
+
+- 打开 GitHub，进入[GitHub Developer Settings](https://github.com/settings/tokens)点击 “Generate new token (classic)”，**勾选所需权限**（最关键的是 repo 和 workflow）：✅ repo（所有子权限）✅ workflow✅ read:packages **Token 过期时间**：选择 “No expiration”（不过期），否则过期后需要重新生成。**点击** “Generate token”
+**复制 Token**（只显示一次，一定要保存好！）
+
+- 然后添加 **PRODUCE_DEVICE** 到 **GitHub Secrets**，
+首先进入你的 GitHub 仓库，依次进入：Settings（设置）-
+Secrets and variables-Actions-New repository secret
+名称为PRODUCE_DEVICE，值为粘贴刚刚复制的 GitHub Token，点击 “Add secret” 完成添加。
+
+- 随后在actions里面运行produce，完成后即可出现新架构的编译按钮.
+
+
+
 ## 常用命令:
 ```
 # 更新软件列表
