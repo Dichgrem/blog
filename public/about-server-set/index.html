@@ -340,6 +340,23 @@
 <pre style="background-color:#151515;color:#e8e8d3;"><code><span>sudo rm -rf /var/lib/containerd
 </span></code></pre>
 <p>就是这样！ Docker 已成功删除。</p>
+<h2 id="zai-arch-linuxshang-an-zhuang-docker">在Arch Linux上安装Docker</h2>
+<pre style="background-color:#151515;color:#e8e8d3;"><code><span>sudo pacman -S docker
+</span></code></pre>
+<p>安装完成后，需要启动Docker服务，并设置为开机自启：</p>
+<pre style="background-color:#151515;color:#e8e8d3;"><code><span>sudo systemctl start docker
+</span><span>sudo systemctl enable docker
+</span></code></pre>
+<p>运行以下命令来验证Docker是否正常工作：</p>
+<pre style="background-color:#151515;color:#e8e8d3;"><code><span>sudo docker run hello-world
+</span></code></pre>
+<p>默认情况下，只有root用户才能运行Docker命令。为了避免每次运行Docker命令时都需要使用sudo，可以将当前用户添加到docker组：</p>
+<pre style="background-color:#151515;color:#e8e8d3;"><code><span>sudo usermod -aG docker $USER
+</span></code></pre>
+<p>之后，需要注销并重新登录，或者重启系统以使更改生效。</p>
+<p>安装Docker Compose：</p>
+<pre style="background-color:#151515;color:#e8e8d3;"><code><span>sudo pacman -S docker-compose
+</span></code></pre>
 <h2 id="1panel">1panel</h2>
 <p>执行如下命令一键安装 1Panel:</p>
 <pre style="background-color:#151515;color:#e8e8d3;"><code><span>curl -sSL https://resource.fit2cloud.com/1panel/package/quick_start.sh -o quick_start.sh &amp;&amp; sudo bash quick_start.sh
