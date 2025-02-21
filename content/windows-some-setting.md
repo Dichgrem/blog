@@ -149,3 +149,9 @@ Windows 会默认每隔一段时间（大约一周）同步时间，但如果你
 ```
 这条命令会在开机时触发 Windows 时间服务同步。
 - 完成设置：点击 完成，即可。
+
+- 如果有linux/win双系统，可以让 Windows 使用 UTC 作为硬件时钟时间：
+```
+# 在 Windows 中以管理员权限运行命令提示符，执行：
+reg add "HKEY_LOCAL_MACHINE\System\CurrentControlSet\Control\TimeZoneInformation" /v RealTimeIsUniversal /t REG_DWORD /d 1 /f
+```
