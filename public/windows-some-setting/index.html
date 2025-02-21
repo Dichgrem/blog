@@ -178,6 +178,52 @@
 <p>右键单击该应用，选择“更多”，然后选择“打开文件位置”。此操作会打开保存应用快捷方式的位置。如果没有“打开文件位置”选项，这意味着该应用无法在启动时运行。</p>
 <p>文件位置打开后，按win+ R，键入“shell:startup”，然后选择“确定”。这将打开“启动”文件夹。</p>
 <p>将该应用的快捷方式从文件位置复制并粘贴到“启动”文件夹中,即添加启动项成功。</p>
+<h2 id="windows-zhi-ding-shi-jian-fu-wu-qi-kai-ji-zi-dong-xiao-zhun">Windows 指定时间服务器&amp;&amp;开机自动校准</h2>
+<ul>
+<li>
+<p>打开日期和时间设置：
+右键点击任务栏上的时间，选择 "调整日期/时间"。
+在 日期和时间 窗口中，点击 "互联网时间" 标签。</p>
+</li>
+<li>
+<p>选择时间服务器：
+点击 "更改设置…" 按钮。
+在弹出的对话框中，勾选<strong>同步时钟与 Internet 时间服务器</strong>，然后在 "服务器" 输入框中填写你想要的时间服务器，例如：
+time.windows.com（微软默认服务器）
+time.nist.gov（美国国家标准技术研究院的时间服务器）
+pool.ntp.org（一个公共的 NTP 时间服务器池）</p>
+</li>
+<li>
+<p>应用更改：点击 "更新现在"，然后 "确定" 保存设置。</p>
+</li>
+</ul>
+<p>Windows 会默认每隔一段时间（大约一周）同步时间，但如果你想确保系统在开机时自动同步时间，可以通过以下方法：</p>
+<ul>
+<li>打开任务计划程序：
+在开始菜单中搜索 "任务计划程序" 并打开。</li>
+<li>创建新任务：
+在右侧点击 "创建基本任务"。
+输入任务名称（例如：“时间同步”），点击 下一步。</li>
+<li>选择触发器：
+选择 "当计算机启动时"，然后点击 下一步。</li>
+<li>设置操作：
+选择 "启动程序"，点击 下一步。
+在 "程序或脚本" 中输入 cmd，在 "添加参数" 中输入：</li>
+</ul>
+<pre style="background-color:#151515;color:#e8e8d3;"><code><span>/c w32tm /resync
+</span></code></pre>
+<p>这条命令会在开机时触发 Windows 时间服务同步。</p>
+<ul>
+<li>
+<p>完成设置：点击 完成，即可。</p>
+</li>
+<li>
+<p>如果有linux/win双系统，可以让 Windows 使用 UTC 作为硬件时钟时间：</p>
+</li>
+</ul>
+<pre style="background-color:#151515;color:#e8e8d3;"><code><span># 在 Windows 中以管理员权限运行命令提示符，执行：
+</span><span>reg add &quot;HKEY_LOCAL_MACHINE\System\CurrentControlSet\Control\TimeZoneInformation&quot; /v RealTimeIsUniversal /t REG_DWORD /d 1 /f
+</span></code></pre>
 
         </div>
 
